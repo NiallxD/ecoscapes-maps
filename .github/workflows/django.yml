@@ -5,8 +5,17 @@ on:
     branches: [ master ]
   workflow_dispatch:
 
+# Set the permissions for the GITHUB_TOKEN
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     
     steps:
@@ -42,6 +51,7 @@ jobs:
       run: touch docs/.nojekyll
     
     - name: Deploy to GitHub Pages
+      id: deployment
       uses: JamesIves/github-pages-deploy-action@v4
       with:
         folder: 'docs/'
@@ -49,3 +59,8 @@ jobs:
         clean: true
         force: true
         token: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: Show deployment status
+      run: |
+        echo "Deployment status: ${{ steps.deployment.outcome }}"
+        echo "Deployment URL: ${{ steps.deployment.outputs.page_url }}"
