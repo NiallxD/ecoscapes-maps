@@ -46,6 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: 'github-pages'
           path: 'docs/'
 
   deploy:
@@ -62,5 +63,6 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs
+          token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: 'github-pages'
+          target_branch: gh-pages
