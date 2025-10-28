@@ -30,18 +30,18 @@ def generate_pages():
     output_dir = 'docs'
     ensure_dir(output_dir)
     
-    # Generate an index.html that redirects to the first indicator
+    # Create an index.html that redirects to the first indicator
     first_indicator = next(iter(config))
     with open(os.path.join(output_dir, 'index.html'), 'w') as f:
         f.write(f'''
         <!DOCTYPE html>
         <html>
         <head>
-            <meta http-equiv="refresh" content="0; url=/{first_indicator}/" />
+            <meta http-equiv="refresh" content="0; url=./{first_indicator}/" />
             <title>Redirecting...</title>
         </head>
         <body>
-            <p>Redirecting to <a href="/{first_indicator}/">/{first_indicator}/</a>...</p>
+            <p>Redirecting to <a href="./{first_indicator}/">./{first_indicator}/</a>...</p>
         </body>
         </html>
         ''')
@@ -52,19 +52,82 @@ def generate_pages():
         indicator_dir = os.path.join(output_dir, indicator_id)
         ensure_dir(indicator_dir)
         
-        # Replace template variables
+        # Create a copy of the template for this indicator
         page = template
+        
+        # Replace template variables
         page = page.replace('{{ page_name }}', indicator_id)
         page = page.replace('{{ map1_url }}', indicator_data.get('map1_url', ''))
         page = page.replace('{{ map2_url }}', indicator_data.get('map2_url', ''))
         
-        # Add indicators data for the dropdown
+        # Create the JavaScript with proper string formatting
         indicators_js = f"""
         <script>
-            const indicators = {indicator_data};
-            const currentIndicator = '{indicator_id}';
+            // Get the current indicator data from the URL
+            const pathSegments = window.location.pathname.split('/').filter(Boolean);
+            const currentIndicatorId = pathSegments.length > 0 ? pathSegments[pathSegments.length - 1] : '{indicator_id}';
+            const indicators = {json.dumps(config, ensure_ascii=False)};
+            
+            // Update the page content
+            document.addEventListener('DOMContentLoaded', function() {{
+                const currentIndicator = indicators[currentIndicatorId] || {{}};
+                
+                // Update the title, description, and icon
+                const titleElement = document.getElementById('indicator-title');
+                const descElement = document.getElementById('indicator-description');
+                const iconElement = document.getElementById('indicator-icon');
+                
+                if (titleElement) titleElement.textContent = currentIndicator.title || 'Indicator';
+                if (descElement) descElement.textContent = currentIndicator.description || '';
+                if (iconElement) iconElement.textContent = currentIndicator.icon || '🌍';
+                
+                // Update the dropdown button
+                const dropdownButton = document.getElementById('indicatorDropdown');
+                if (dropdownButton) {{
+                    dropdownButton.textContent = currentIndicator.title || 'Select Indicator';
+                }}
+                
+                // Populate the dropdown menu
+                const menu = document.getElementById('indicatorMenu');
+                if (menu) {{
+                    menu.innerHTML = ''; // Clear existing items
+                    Object.entries(indicators).forEach(([id, data]) => {{
+                        const link = document.createElement('a');
+                        link.href = './' + id + '/';
+                        if (id === currentIndicatorId) {{
+                            link.className = 'active';
+                        }}
+                        link.textContent = data.title || id;
+                        menu.appendChild(link);
+                    }});
+                }}
+                
+                // Initialize the toggle buttons
+                const exploreBtn = document.getElementById('exploreBtn');
+                const analyzeBtn = document.getElementById('analyzeBtn');
+                const map1 = document.getElementById('map1');
+                const map2 = document.getElementById('map2');
+                
+                if (exploreBtn && analyzeBtn && map1 && map2) {{
+                    exploreBtn.addEventListener('click', () => {{
+                        exploreBtn.classList.add('active');
+                        analyzeBtn.classList.remove('active');
+                        map1.classList.add('active');
+                        map2.classList.remove('active');
+                    }});
+                    
+                    analyzeBtn.addEventListener('click', () => {{
+                        analyzeBtn.classList.add('active');
+                        exploreBtn.classList.remove('active');
+                        map2.classList.add('active');
+                        map1.classList.remove('active');
+                    }});
+                }}
+            }});
         </script>
         """
+        
+        # Insert the JavaScript before the closing head tag
         page = page.replace('</head>', indicators_js + '\n</head>')
         
         # Write the output file
