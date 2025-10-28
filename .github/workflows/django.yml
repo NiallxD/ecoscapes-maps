@@ -3,7 +3,6 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [ master ]
-  workflow_dispatch:
   # Allow manual deployment from the Actions tab
   page_build:
     types: [none]
