@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map Viewer - {{ page_name }}</title>
-    <base href="/ecoscapes-maps/">
+    <title>Map Viewer - indicator-1</title>
     <style>
         body, html {
             margin: 0;
@@ -156,15 +155,15 @@
     <div class="toolbar">
         <div class="toolbar-left">
             <div class="dropdown">
-                <button class="dropdown-toggle" id="indicatorDropdown">
-                    {{ indicators[page_name].title }}
-                </button>
+                <button class="dropdown-toggle" id="indicatorDropdown">Select Indicator</button>
                 <div class="dropdown-menu" id="indicatorMenu">
-                    {% for id, data in indicators.items() %}
-                    <a href="./{{ id }}/" {% if id == page_name %}class="active"{% endif %}>
-                        {{ data.title }}
-                    </a>
-                    {% endfor %}
+                    
+                    <a href="/sample/" >Sample Map</a>
+                    
+                    <a href="/indicator-1/" class="active">Ecosystem Connectivity</a>
+                    
+                    <a href="/indicator-2/" >Biodiversity Index</a>
+                    
                 </div>
             </div>
         </div>
@@ -175,36 +174,23 @@
             </div>
         </div>
     </div>
-    
     <div class="content-area">
         <div class="content-wrapper">
             <div class="text-content">
-                <h1 class="indicator-title">{{ indicators[page_name].title }}</h1>
-                <p class="indicator-description">{{ indicators[page_name].description }}</p>
+                <h1 class="indicator-title">Ecosystem Connectivity</h1>
+                <p class="indicator-description">This indicator measures the degree of connectivity between different ecosystems in the region.</p>
             </div>
             <div class="indicator-icon">
-                {{ indicators[page_name].icon }}
-            </div>
-        </div>
-    </div>
-    <div class="content-area">
-        <div class="content-wrapper">
-            <div class="text-content">
-                <h1 class="indicator-title" id="indicator-title">Loading...</h1>
-                <p class="indicator-description" id="indicator-description">Loading description...</p>
-            </div>
-            <div class="indicator-icon" id="indicator-icon">
-                ⏳
+                🌳
             </div>
         </div>
     </div>
     <div class="map-container">
-        <iframe id="map1" class="map-iframe active" src="{{ map1_url }}"></iframe>
-        <iframe id="map2" class="map-iframe" src="{{ map2_url }}"></iframe>
+        <iframe id="map1" class="map-iframe active" src="https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&amp;legend=1&amp;cooperativeGestures=1&amp;link=1&amp;geolocation=0&amp;zoomControls=1&amp;scaleBar=1"></iframe>
+        <iframe id="map2" class="map-iframe" src="https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&amp;legend=1&amp;cooperativeGestures=0&amp;link=1&amp;geolocation=0&amp;zoomControls=1&amp;scaleBar=1"></iframe>
     </div>
 
     <script>
-        // Initialize the map toggles
         document.addEventListener('DOMContentLoaded', function() {
             const map1 = document.getElementById('map1');
             const map2 = document.getElementById('map2');
