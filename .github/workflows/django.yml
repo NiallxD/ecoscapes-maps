@@ -1,16 +1,14 @@
-name: Django CI/CD
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
   workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: actions/checkout@v4
     
@@ -30,14 +28,18 @@ jobs:
         echo "SECRET_KEY=temp_key_for_build" >> .env
         echo "ALLOWED_HOSTS=*" >> .env
     
-    - name: Run migrations
-      run: python manage.py migrate --noinput
+    - name: Create empty static directory
+      run: |
+        mkdir -p static
+        touch static/.gitkeep
     
-    - name: Collect static files
-      run: python manage.py collectstatic --noinput
+    - name: Run export script
+      run: |
+        python manage.py collectstatic --noinput
+        python manage.py export_to_gh_pages
     
-    - name: Export static site
-      run: python manage.py export_to_gh_pages
+    - name: Create .nojekyll file
+      run: touch docs/.nojekyll
     
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
@@ -46,3 +48,4 @@ jobs:
         branch: gh-pages
         clean: true
         force: true
+        token: ${{ secrets.GITHUB_TOKEN }}
