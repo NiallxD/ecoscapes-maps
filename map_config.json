@@ -1,33 +1,23 @@
 {
-    "indicators": {
-        "sample": {
-            "name": "Sample Indicator",
-            "icon": "🌍",
-            "description": "This is a sample indicator showing the basic functionality of the map viewer.",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "connectivity": {
-            "name": "Ecological Connectivity",
-            "icon": "🌿",
-            "description": "This indicator shows the ecological connectivity across the region, highlighting key wildlife corridors and habitat linkages.",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-Ye1tzjctQci0onOCHVYUaA?loc=50.045178597%2C-122.997257193%2C8.5z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Connectivity-Analysis-2-0-0p1-9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "biodiversity": {
-            "name": "Biodiversity Hotspots",
-            "icon": "🦋",
-            "description": "Areas of high species diversity and endemism that are critical for conservation efforts.",
-            "map1_url": "https://felt.com/embed/map/Biodiversity-Hotspots-2023-ABCD1234?loc=50.1,-122.9,9z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Species-Richness-Index-2023-EFGH5678?loc=50.1,-122.9,9z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "carbon": {
-            "name": "Carbon Storage",
-            "icon": "🌳",
-            "description": "Areas with high carbon storage potential, important for climate change mitigation.",
-            "map1_url": "https://felt.com/embed/map/Carbon-Stock-2023-IJKL9012?loc=50.1,-122.9,9z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Sequestration-Potential-2023-MNOP3456?loc=50.1,-122.9,9z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        }
+    "sample": {
+        "title": "Sample Map",
+        "description": "This is a sample map showing example data. Use this to explore the basic functionality of the map viewer.",
+        "icon": "🌍",
+        "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+        "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
-    "default_indicator": "connectivity"
+    "indicator-1": {
+        "title": "Ecosystem Connectivity",
+        "description": "This indicator measures the degree of connectivity between different ecosystems in the region.",
+        "icon": "🌳",
+        "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+        "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+    },
+    "indicator-2": {
+        "title": "Biodiversity Index",
+        "description": "This indicator shows the biodiversity index across different regions, highlighting areas of high ecological value.",
+        "icon": "🦋",
+        "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+        "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+    }
 }

@@ -23,6 +23,11 @@ def map_view(request, page_name):
         'map1_url': page_config.get('map1_url', ''),
         'map2_url': page_config.get('map2_url', ''),
         'page_name': page_name,
+        'indicators': {
+            'all': config,  # All indicators for the dropdown
+            'page_name': page_config  # Current page configuration
+        },
+        'page_config': page_config  # For backward compatibility
     }
     
     return render(request, 'mapviewer/map.html', context)
