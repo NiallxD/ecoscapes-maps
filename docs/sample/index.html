@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map Viewer - sample</title>
+    <title>Map Viewer - {{ page_name }}</title>
     <style>
         body, html {
             margin: 0;
@@ -62,8 +62,8 @@
         <div id="analyzeBtn" class="toggle-option">Analyze</div>
     </div>
     <div class="map-container">
-        <iframe id="map1" class="map-iframe active" src="https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1"></iframe>
-        <iframe id="map2" class="map-iframe" src="https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"></iframe>
+        <iframe id="map1" class="map-iframe active" src="{{ map1_url }}"></iframe>
+        <iframe id="map2" class="map-iframe" src="{{ map2_url }}"></iframe>
     </div>
 
     <script>
