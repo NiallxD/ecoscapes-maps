@@ -68,13 +68,16 @@ class Command(BaseCommand):
         """Copy all static files to the output directory."""
         self.stdout.write('Copying static files...')
         
+        # Get the parent directory of static_dir (output_dir)
+        output_dir = static_dir.parent
+        
         # Copy static files from each app
         for app in settings.INSTALLED_APPS:
             if app.startswith('django.'):
                 continue
                 
             app_static = Path(app.replace('.', '/')) / 'static'
-            if app_static.exists():
+            if app_static.exists() and app_static.is_dir():
                 self.stdout.write(f'Copying static files from {app}...')
                 for item in app_static.rglob('*'):
                     if item.is_file():
@@ -87,7 +90,7 @@ class Command(BaseCommand):
         for static_dir_path in settings.STATICFILES_DIRS:
             if isinstance(static_dir_path, (str, Path)):
                 static_path = Path(static_dir_path)
-                if static_path.exists():
+                if static_path.exists() and static_path.is_dir():
                     self.stdout.write(f'Copying project static files from {static_path}...')
                     for item in static_path.rglob('*'):
                         if item.is_file():
@@ -96,7 +99,7 @@ class Command(BaseCommand):
                             dest_path.parent.mkdir(parents=True, exist_ok=True)
                             shutil.copy2(item, dest_path)
         
-        self.stdout.write(self.style.SUCCESS(f'Successfully exported site to {output_dir}'))
+        self.stdout.write(self.style.SUCCESS(f'Successfully copied static files to {static_dir}'))
     
     def export_page(self, page_name, output_dir, config, output_filename=None):
         """Export a single page to a static HTML file."""
