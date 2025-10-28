@@ -158,7 +158,7 @@
                 <button class="dropdown-toggle" id="indicatorDropdown">Select Indicator</button>
                 <div class="dropdown-menu" id="indicatorMenu">
                     {% for indicator, data in indicators.all.items %}
-                    <a href="/{{ indicator }}/" {% if indicator == page_name %}class="active"{% endif %}>{{ data.title }}</a>
+                    <a href="{{ indicator }}.html" {% if indicator == page_name %}class="active"{% endif %}>{{ data.title }}</a>
                     {% endfor %}
                 </div>
             </div>
