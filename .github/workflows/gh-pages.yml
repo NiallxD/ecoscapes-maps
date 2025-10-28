@@ -7,7 +7,7 @@ on:
   
 # Set the permissions for the GITHUB_TOKEN
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -40,15 +40,15 @@ jobs:
       - name: Collect static files
         run: python manage.py collectstatic --noinput
 
+      - name: Export static site
+        run: python manage.py export_to_gh_pages
+
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: static-site
-          path: docs/
-          retention-days: 1
+          path: 'docs/'
 
   deploy:
-    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -58,15 +58,9 @@ jobs:
       pages: write
       id-token: write
     steps:
-      - name: Download artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: static-site
-          path: ./deploy
-          
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        id: deployment
+        uses: actions/deploy-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./deploy
-          environment_name: github-pages
+          publish_dir: ./docs
