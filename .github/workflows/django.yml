@@ -59,6 +59,7 @@ jobs:
         clean: true
         force: true
         token: ${{ secrets.GITHUB_TOKEN }}
+        target-folder: '.'  # Deploy contents of docs/ to root of gh-pages
     
     - name: Show deployment status
       run: |
