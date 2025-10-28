@@ -176,30 +176,31 @@ class Command(BaseCommand):
                 },
                 'page_config': page_data,
                 'STATIC_URL': './static/'  # Relative path for static files
+            }
             
             # Render the template
             try:
                 content = render_to_string('mapviewer/map.html', context)
                 
                 # Fix any remaining static file paths to be relative to the base URL
-            content = content.replace('href="/static/', 'href="static/')
-            content = content.replace('src="/static/', 'src="static/')
-            
-            # Ensure all static file paths are relative to the base URL
-            content = content.replace('href="static/', 'href="./static/')
-            content = content.replace('src="static/', 'src="./static/')
-            
-            # Fix any remaining absolute paths that might cause issues
-            content = content.replace('href="/', 'href="./')
+                content = content.replace('href="/static/', 'href="static/')
+                content = content.replace('src="/static/', 'src="static/')
                 
-                # Ensure base URL is set correctly for relative paths
-                base_path = '../' * (len(str(output_path.parent.relative_to(output_dir)).split('/')) - 1)
-                if not base_path:
-                    base_path = './'
+                # Ensure all static file paths are relative to the base URL
+                content = content.replace('href="static/', 'href="./static/')
+                content = content.replace('src="static/', 'src="./static/')
+                
+                # Fix any remaining absolute paths that might cause issues
+                content = content.replace('href="/', 'href="./')
+                
+                # For GitHub Pages, we need to set the base URL correctly
+                # Since we're using .html files in the root, we can use './' as the base
+                base_path = './'
+                
                 # Add base tag to fix relative paths
                 head_end = content.find('</head>')
                 if head_end > 0:
-                    base_tag = f'<base href="{base_path}">\n</head>'
+                    base_tag = f'<base href="{base_path}">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">\n</head>'
                     content = content[:head_end] + base_tag + content[head_end + 7:]
                 
                 # Write the content to a file
