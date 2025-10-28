@@ -148,7 +148,13 @@ class Command(BaseCommand):
         try:
             # Determine the URL and output path
             url = f'/{page_name}/' if page_name else '/'
-            output_filename = output_filename or f'{page_name}/index.html' if page_name else 'index.html'
+            
+            # For GitHub Pages, we want to create files like 'indicator-1.html' instead of 'indicator-1/index.html'
+            if page_name and not output_filename:
+                output_filename = f'{page_name}.html'
+            else:
+                output_filename = output_filename or 'index.html'
+                
             output_path = output_dir / output_filename
             
             self.stdout.write(f'Exporting {url} to {output_path}...')
@@ -169,22 +175,27 @@ class Command(BaseCommand):
                     'page_name': page_data
                 },
                 'page_config': page_data,
-                'STATIC_URL': 'static/'  # Relative path for static files
-            }
+                'STATIC_URL': './static/'  # Relative path for static files
             
             # Render the template
             try:
                 content = render_to_string('mapviewer/map.html', context)
                 
-                # Fix any remaining static file paths
-                content = content.replace('href="/static/', 'href="static/')
-                content = content.replace('src="/static/', 'src="static/')
+                # Fix any remaining static file paths to be relative to the base URL
+            content = content.replace('href="/static/', 'href="static/')
+            content = content.replace('src="/static/', 'src="static/')
+            
+            # Ensure all static file paths are relative to the base URL
+            content = content.replace('href="static/', 'href="./static/')
+            content = content.replace('src="static/', 'src="./static/')
+            
+            # Fix any remaining absolute paths that might cause issues
+            content = content.replace('href="/', 'href="./')
                 
                 # Ensure base URL is set correctly for relative paths
                 base_path = '../' * (len(str(output_path.parent.relative_to(output_dir)).split('/')) - 1)
                 if not base_path:
                     base_path = './'
-                
                 # Add base tag to fix relative paths
                 head_end = content.find('</head>')
                 if head_end > 0:
