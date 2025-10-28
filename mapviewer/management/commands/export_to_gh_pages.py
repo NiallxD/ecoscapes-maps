@@ -21,6 +21,14 @@ class Command(BaseCommand):
         output_dir = Path(settings.BASE_DIR) / 'docs'
         static_dir = output_dir / 'static'
         
+        # Clean up previous build files (except .nojekyll and .gitkeep)
+        self.stdout.write('Cleaning up previous build...')
+        for item in output_dir.glob('*'):
+            if item.is_file() and item.name not in ['.nojekyll', 'CNAME']:
+                item.unlink()
+            elif item.is_dir() and item.name != 'static':
+                shutil.rmtree(item, ignore_errors=True)
+        
         # Clean and create output directories
         if output_dir.exists():
             shutil.rmtree(output_dir)
@@ -149,12 +157,13 @@ class Command(BaseCommand):
             # Determine the URL and output path
             url = f'/{page_name}/' if page_name else '/'
             
-            # For GitHub Pages, we want to create files like 'indicator-1.html' instead of 'indicator-1/index.html'
+            # Always create .html files in the root directory for GitHub Pages
             if page_name and not output_filename:
                 output_filename = f'{page_name}.html'
             else:
                 output_filename = output_filename or 'index.html'
                 
+            # Ensure we're always writing to the root of output_dir
             output_path = output_dir / output_filename
             
             self.stdout.write(f'Exporting {url} to {output_path}...')
