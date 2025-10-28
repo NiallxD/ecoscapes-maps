@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map Viewer - indicator-4</title>
+    <title>Indicator Four - EcoScapes Map Viewer</title>
     <style>
         body, html {
             margin: 0;
@@ -17,105 +17,36 @@
             justify-content: space-between;
             align-items: center;
             background-color: #f8f9fa;
-            padding: 5px 15px;
-            height: 40px;
+            padding: 10px 20px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        .toolbar-left {
+        .toolbar h1 {
+            margin: 0;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        .toggle-container {
             display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .toolbar-right {
-            display: flex;
-            align-items: center;
-        }
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-        .dropdown-toggle {
-            background-color: white;
-            color: #333;
-            padding: 6px 12px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            overflow: hidden;
+        }
+        .toggle-option {
+            padding: 8px 16px;
             cursor: pointer;
-            min-width: 180px;
-            text-align: left;
-            font-size: 14px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .dropdown-toggle:after {
-            content: '▼';
-            font-size: 10px;
-            margin-left: 8px;
-        }
-        .dropdown-menu {
-            display: none;
-            position: absolute;
             background-color: white;
-            min-width: 200px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-radius: 4px;
-            z-index: 1000;
-            max-height: 300px;
-            overflow-y: auto;
+            transition: background-color 0.3s;
         }
-        .dropdown-menu a {
-            color: #333;
-            padding: 8px 12px;
-            text-decoration: none;
-            display: block;
-            border-bottom: 1px solid #eee;
-        }
-        .dropdown-menu a:hover {
-            background-color: #f5f5f5;
-        }
-        .dropdown-menu a.active {
-            background-color: #4CAF50;
+        .toggle-option.active {
+            background-color: #3498db;
             color: white;
         }
-        .dropdown:hover .dropdown-menu {
-            display: block;
-        }
-        .content-area {
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #e9ecef;
-        }
-        .content-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .text-content {
-            flex: 1;
-        }
-        .indicator-title {
-            margin: 0 0 8px 0;
-            color: #2c3e50;
-            font-size: 1.4em;
-        }
-        .indicator-description {
-            margin: 0;
-            color: #495057;
-            line-height: 1.5;
-            max-width: 800px;
-        }
-        .indicator-icon {
-            font-size: 2.5em;
-            margin-left: 20px;
-            opacity: 0.8;
+        .toggle-option:not(.active):hover {
+            background-color: #f0f0f0;
         }
         .map-container {
-            position: relative;
-            width: 100%;
-            height: calc(100% - 120px); /* Adjust for toolbar and content height */
+            display: flex;
+            height: calc(100vh - 60px);
         }
         .map-iframe {
             width: 100%;
@@ -126,188 +57,65 @@
         .map-iframe.active {
             display: block;
         }
-        .toggle-container {
-            display: flex;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            padding: 5px;
-            margin-left: 20px;
+        .back-link {
+            color: #3498db;
+            text-decoration: none;
+            margin-right: 20px;
         }
-        .toggle-option {
-            padding: 10px 30px;
-            cursor: pointer;
-            border-radius: 20px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            text-align: center;
-            min-width: 120px;
+        .content-area {
+            padding: 15px 20px;
         }
-        .toggle-option.active {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .toggle-option:not(.active):hover {
-            background-color: #f0f0f0;
+        .indicator-icon {
+            font-size: 2em;
+            margin-top: 10px;
         }
     </style>
-
-        <script>
-            // Get the current indicator data from the URL
-            const pathSegments = window.location.pathname.split('/').filter(Boolean);
-            const currentIndicatorId = pathSegments.length > 0 ? pathSegments[pathSegments.length - 1] : 'indicator-4';
-            const indicators = {"indicator-1": {"title": "Indicator One", "description": "This is a sample map showing example data. Use this to explore the basic functionality of the map viewer.", "icon": "🌳", "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1", "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"}, "indicator-2": {"title": "Indicator Two", "description": "This is a sample map showing example data. Use this to explore the basic functionality of the map viewer.", "icon": "🦋", "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1", "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"}, "indicator-3": {"title": "Indicator Three", "description": "This is a sample map showing example data. Use this to explore the basic functionality of the map viewer.", "icon": "🌍", "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1", "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"}, "indicator-4": {"title": "Indicator Four", "description": "This is a sample map showing example data. Use this to explore the basic functionality of the map viewer.", "icon": "🌍", "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1", "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"}};
-            
-            // Update the page content
-            document.addEventListener('DOMContentLoaded', function() {
-                const currentIndicator = indicators[currentIndicatorId] || {};
-                
-                // Update the title, description, and icon
-                const titleElement = document.getElementById('indicator-title');
-                const descElement = document.getElementById('indicator-description');
-                const iconElement = document.getElementById('indicator-icon');
-                
-                if (titleElement) titleElement.textContent = currentIndicator.title || 'Indicator';
-                if (descElement) descElement.textContent = currentIndicator.description || '';
-                if (iconElement) iconElement.textContent = currentIndicator.icon || '🌍';
-                
-                // Update the dropdown button
-                const dropdownButton = document.getElementById('indicatorDropdown');
-                if (dropdownButton) {
-                    dropdownButton.textContent = currentIndicator.title || 'Select Indicator';
-                }
-                
-                // Populate the dropdown menu
-                const menu = document.getElementById('indicatorMenu');
-                if (menu) {
-                    menu.innerHTML = ''; // Clear existing items
-                    Object.entries(indicators).forEach(([id, data]) => {
-                        const link = document.createElement('a');
-                        link.href = './' + id + '/';
-                        if (id === currentIndicatorId) {
-                            link.className = 'active';
-                        }
-                        link.textContent = data.title || id;
-                        menu.appendChild(link);
-                    });
-                }
-                
-                // Initialize the toggle buttons
-                const exploreBtn = document.getElementById('exploreBtn');
-                const analyzeBtn = document.getElementById('analyzeBtn');
-                const map1 = document.getElementById('map1');
-                const map2 = document.getElementById('map2');
-                
-                if (exploreBtn && analyzeBtn && map1 && map2) {
-                    exploreBtn.addEventListener('click', () => {
-                        exploreBtn.classList.add('active');
-                        analyzeBtn.classList.remove('active');
-                        map1.classList.add('active');
-                        map2.classList.remove('active');
-                    });
-                    
-                    analyzeBtn.addEventListener('click', () => {
-                        analyzeBtn.classList.add('active');
-                        exploreBtn.classList.remove('active');
-                        map2.classList.add('active');
-                        map1.classList.remove('active');
-                    });
-                }
-            });
-        </script>
-        
 </head>
 <body>
     <div class="toolbar">
-        <div class="toolbar-left">
-            <div class="dropdown">
-                <button class="dropdown-toggle" id="indicatorDropdown">
-                    Loading...
-                </button>
-                <div class="dropdown-menu" id="indicatorMenu">
-                    <!-- Will be populated by JavaScript -->
-                </div>
-            </div>
+        <div>
+            <a href="../" class="back-link">← Back to Indicators</a>
+            <h1>Indicator Four</h1>
         </div>
-        <div class="toolbar-right">
-            <div class="toggle-container">
-                <div id="exploreBtn" class="toggle-option active">Explore</div>
-                <div id="analyzeBtn" class="toggle-option">Analyze</div>
-            </div>
+        <div class="toggle-container">
+            <div id="exploreBtn" class="toggle-option active">Explore</div>
+            <div id="analyzeBtn" class="toggle-option">Analyze</div>
         </div>
     </div>
+    
     <div class="content-area">
-        <div class="content-wrapper">
-            <div class="text-content">
-                <h1 class="indicator-title" id="indicator-title">Loading...</h1>
-                <p class="indicator-description" id="indicator-description">Loading description...</p>
-            </div>
-            <div class="indicator-icon" id="indicator-icon">
-                ⏳
-            </div>
-        </div>
+        <p>This is a sample map showing example data. Use this to explore the basic functionality of the map viewer.</p>
+        <div class="indicator-icon">🌍</div>
     </div>
+    
     <div class="map-container">
-        <iframe id="map1" class="map-iframe active" src="https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1"></iframe>
-        <iframe id="map2" class="map-iframe" src="https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"></iframe>
+        <iframe id="map1" class="map-iframe active" 
+            src="https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1">
+        </iframe>
+        <iframe id="map2" class="map-iframe" 
+            src="https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1">
+        </iframe>
     </div>
 
     <script>
-        // Get the current indicator data from the page
-        const currentIndicatorId = window.location.pathname.split('/')[1] || Object.keys(indicators)[0];
-        const currentIndicator = indicators[currentIndicatorId] || {};
-        
-        // Update the page content
-        document.getElementById('indicator-title').textContent = currentIndicator.title || 'Indicator';
-        document.getElementById('indicator-description').textContent = currentIndicator.description || '';
-        document.getElementById('indicator-icon').textContent = currentIndicator.icon || '🌍';
-        document.getElementById('indicatorDropdown').textContent = currentIndicator.title || 'Select Indicator';
-        
-        // Populate the dropdown menu
-        const menu = document.getElementById('indicatorMenu');
-        Object.entries(indicators).forEach(([id, data]) => {
-            const link = document.createElement('a');
-            link.href = `/${id}/`;
-            if (id === currentIndicatorId) {
-                link.className = 'active';
-            }
-            link.textContent = data.title || id;
-            menu.appendChild(link);
-        });
-        
-        // Initialize the map toggles
         document.addEventListener('DOMContentLoaded', function() {
-            const map1 = document.getElementById('map1');
-            const map2 = document.getElementById('map2');
             const exploreBtn = document.getElementById('exploreBtn');
             const analyzeBtn = document.getElementById('analyzeBtn');
-            let currentView = 'explore';
-
-            function switchView(view) {
-                if (view === 'explore') {
-                    map1.classList.add('active');
-                    map2.classList.remove('active');
-                    exploreBtn.classList.add('active');
-                    analyzeBtn.classList.remove('active');
-                    currentView = 'explore';
-                } else {
-                    map1.classList.remove('active');
-                    map2.classList.add('active');
-                    exploreBtn.classList.remove('active');
-                    analyzeBtn.classList.add('active');
-                    currentView = 'analyze';
-                }
-            }
-
+            const map1 = document.getElementById('map1');
+            const map2 = document.getElementById('map2');
+            
             exploreBtn.addEventListener('click', function() {
-                if (currentView !== 'explore') {
-                    switchView('explore');
-                }
+                exploreBtn.classList.add('active');
+                analyzeBtn.classList.remove('active');
+                map1.classList.add('active');
+                map2.classList.remove('active');
             });
-
+            
             analyzeBtn.addEventListener('click', function() {
-                if (currentView !== 'analyze') {
-                    switchView('analyze');
-                }
+                analyzeBtn.classList.add('active');
+                exploreBtn.classList.remove('active');
+                map2.classList.add('active');
+                map1.classList.remove('active');
             });
         });
     </script>

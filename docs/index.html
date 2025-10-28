@@ -1,12 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoScapes Map Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .indicator-list {
+            list-style: none;
+            padding: 0;
+        }
+        .indicator-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .indicator-item a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .indicator-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+        .indicator-item p {
+            margin: 5px 0 0 30px;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <h1>EcoScapes Map Viewer</h1>
+    <p>Select an indicator to view:</p>
+    <ul class="indicator-list">
 
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta http-equiv="refresh" content="0; url=./indicator-1/" />
-            <title>Redirecting...</title>
-        </head>
-        <body>
-            <p>Redirecting to <a href="./indicator-1/">./indicator-1/</a>...</p>
-        </body>
-        </html>
+        <li class="indicator-item">
+            <a href="indicator-1/">
+                <span class="indicator-icon">🌳</span>
+                Indicator One
+            </a>
+            <p>This is a sample map showing example data. Use this to explore the basic functionality of the map viewer.</p>
+        </li>
         
+        <li class="indicator-item">
+            <a href="indicator-2/">
+                <span class="indicator-icon">🦋</span>
+                Indicator Two
+            </a>
+            <p>This is a sample map showing example data. Use this to explore the basic functionality of the map viewer.</p>
+        </li>
+        
+        <li class="indicator-item">
+            <a href="indicator-3/">
+                <span class="indicator-icon">🌍</span>
+                Indicator Three
+            </a>
+            <p>This is a sample map showing example data. Use this to explore the basic functionality of the map viewer.</p>
+        </li>
+        
+        <li class="indicator-item">
+            <a href="indicator-4/">
+                <span class="indicator-icon">🌍</span>
+                Indicator Four
+            </a>
+            <p>This is a sample map showing example data. Use this to explore the basic functionality of the map viewer.</p>
+        </li>
+        
+    </ul>
+</body>
+</html>

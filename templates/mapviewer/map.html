@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Map Viewer - {{ page_name }}</title>
+    <base href="/ecoscapes-maps/">
     <style>
         body, html {
             margin: 0;
@@ -156,10 +157,14 @@
         <div class="toolbar-left">
             <div class="dropdown">
                 <button class="dropdown-toggle" id="indicatorDropdown">
-                    Loading...
+                    {{ indicators[page_name].title }}
                 </button>
                 <div class="dropdown-menu" id="indicatorMenu">
-                    <!-- Will be populated by JavaScript -->
+                    {% for id, data in indicators.items() %}
+                    <a href="./{{ id }}/" {% if id == page_name %}class="active"{% endif %}>
+                        {{ data.title }}
+                    </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -167,6 +172,18 @@
             <div class="toggle-container">
                 <div id="exploreBtn" class="toggle-option active">Explore</div>
                 <div id="analyzeBtn" class="toggle-option">Analyze</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content-area">
+        <div class="content-wrapper">
+            <div class="text-content">
+                <h1 class="indicator-title">{{ indicators[page_name].title }}</h1>
+                <p class="indicator-description">{{ indicators[page_name].description }}</p>
+            </div>
+            <div class="indicator-icon">
+                {{ indicators[page_name].icon }}
             </div>
         </div>
     </div>
@@ -187,28 +204,6 @@
     </div>
 
     <script>
-        // Get the current indicator data from the page
-        const currentIndicatorId = window.location.pathname.split('/')[1] || Object.keys(indicators)[0];
-        const currentIndicator = indicators[currentIndicatorId] || {};
-        
-        // Update the page content
-        document.getElementById('indicator-title').textContent = currentIndicator.title || 'Indicator';
-        document.getElementById('indicator-description').textContent = currentIndicator.description || '';
-        document.getElementById('indicator-icon').textContent = currentIndicator.icon || '🌍';
-        document.getElementById('indicatorDropdown').textContent = currentIndicator.title || 'Select Indicator';
-        
-        // Populate the dropdown menu
-        const menu = document.getElementById('indicatorMenu');
-        Object.entries(indicators).forEach(([id, data]) => {
-            const link = document.createElement('a');
-            link.href = `/${id}/`;
-            if (id === currentIndicatorId) {
-                link.className = 'active';
-            }
-            link.textContent = data.title || id;
-            menu.appendChild(link);
-        });
-        
         // Initialize the map toggles
         document.addEventListener('DOMContentLoaded', function() {
             const map1 = document.getElementById('map1');
