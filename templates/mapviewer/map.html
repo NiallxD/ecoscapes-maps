@@ -711,14 +711,23 @@
             }
 
             // Fetch posts from WordPress REST API
-            async function fetchWordPressPosts() {
+            async function fetchWordPressPosts(indicator) {
                 try {
-                    // First, get the tag ID for 'indicator one'
-                    const tagResponse = await fetch('https://newdev.naturesquamish.ca/wp-json/wp/v2/tags?slug=indicator-one');
+                    if (!indicator || !indicator.posts) {
+                        console.log('No posts filter defined for this indicator');
+                        return '';
+                    }
+
+                    // Convert the posts string to a slug format
+                    const tagSlug = indicator.posts.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    
+                    // First, get the tag ID for the indicator's posts
+                    const tagResponse = await fetch(`https://newdev.naturesquamish.ca/wp-json/wp/v2/tags?slug=${tagSlug}`);
                     const tags = await tagResponse.json();
                     
                     if (!tags || tags.length === 0) {
-                        throw new Error('Tag not found');
+                        console.log(`No posts found for tag: ${tagSlug}`);
+                        return '';
                     }
                     
                     const tagId = tags[0].id;
@@ -821,8 +830,12 @@
                 }
             }
             
-            // Fetch posts when the page loads
-            fetchWordPressPosts();
+            // Fetch posts when the page loads with the current indicator's data
+            const currentIndicator = {
+                posts: '{{ indicators.page_name.posts|escapejs }}',
+                title: '{{ indicators.page_name.title|escapejs }}'
+            };
+            fetchWordPressPosts(currentIndicator);
         });
     </script>
 </body>
