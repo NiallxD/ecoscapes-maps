@@ -562,6 +562,48 @@
         .post-link:hover {
             text-decoration: underline;
         }
+
+        /* Carousel Container Styles */
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            gap: 20px;
+            padding: 10px 0;
+            width: 100%;
+        }
+        
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome/Safari */
+        }
+        
+        .post-card {
+            flex: 0 0 auto;
+            width: 300px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .post-image {
+            width: 100%;
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .post-content {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
         .loading-posts {
             text-align: center;
             color: #718096;
@@ -920,14 +962,135 @@
                     .trim() + '...';            // Add ellipsis
             }
 
+            // Store carousel state to prevent memory leaks
+            let carouselState = {
+                resizeObserver: null,
+                resizeTimeout: null,
+                currentIndex: 0,
+                cardWidth: 0,
+                cards: []
+            };
+
+            // Clean up event listeners and observers
+            function cleanupCarousel() {
+                if (carouselState.resizeObserver) {
+                    carouselState.resizeObserver.disconnect();
+                }
+                window.removeEventListener('resize', handleResize);
+                clearTimeout(carouselState.resizeTimeout);
+            }
+
+            // Debounced resize handler
+            function handleResize() {
+                clearTimeout(carouselState.resizeTimeout);
+                carouselState.resizeTimeout = setTimeout(() => {
+                    updateCarouselSize();
+                    updateCarouselPosition();
+                }, 100);
+            }
+
+            // Update carousel size and card measurements
+            function updateCarouselSize() {
+                const carousel = document.getElementById('carousel');
+                if (!carousel || !carouselState.cards.length) return;
+                
+                const card = carouselState.cards[0];
+                const cardStyle = window.getComputedStyle(card);
+                carouselState.cardWidth = card.offsetWidth + 
+                    parseInt(cardStyle.marginLeft) + 
+                    parseInt(cardStyle.marginRight);
+                
+                updateCarouselPosition();
+            }
+
+            // Update carousel position
+            function updateCarouselPosition() {
+                const carousel = document.getElementById('carousel');
+                if (!carousel) return;
+                
+                carousel.scrollTo({
+                    left: carouselState.currentIndex * carouselState.cardWidth,
+                    behavior: 'smooth'
+                });
+                updateButtons();
+            }
+
+            // Update navigation buttons
+            function updateButtons() {
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                if (!prevBtn || !nextBtn) return;
+                
+                prevBtn.style.display = carouselState.currentIndex === 0 ? 'none' : 'flex';
+                nextBtn.style.display = carouselState.currentIndex >= carouselState.cards.length - 1 ? 'none' : 'flex';
+            }
+
+            // Initialize carousel
+            function initCarousel() {
+                cleanupCarousel();
+                
+                const carousel = document.getElementById('carousel');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                
+                if (!carousel || !prevBtn || !nextBtn) {
+                    console.warn('Carousel elements not found');
+                    return;
+                }
+                
+                carouselState.cards = Array.from(document.querySelectorAll('.post-card'));
+                if (!carouselState.cards.length) return;
+                
+                // Initial setup
+                updateCarouselSize();
+                updateButtons();
+                
+                // Event listeners
+                prevBtn.addEventListener('click', () => {
+                    if (carouselState.currentIndex > 0) {
+                        carouselState.currentIndex--;
+                        updateCarouselPosition();
+                    }
+                });
+                
+                nextBtn.addEventListener('click', () => {
+                    if (carouselState.currentIndex < carouselState.cards.length - 1) {
+                        carouselState.currentIndex++;
+                        updateCarouselPosition();
+                    }
+                });
+                
+                // Resize observer for better performance
+                carouselState.resizeObserver = new ResizeObserver(handleResize);
+                carouselState.resizeObserver.observe(document.body);
+                
+                // Initial position
+                updateCarouselPosition();
+            }
+
             // Fetch posts from WordPress REST API with improved error handling
             async function fetchWordPressPosts(indicator) {
                 const postsContainer = document.getElementById('posts-container');
                 const loadingElement = document.getElementById('loading-indicator');
                 
+                // Clean up previous carousel
+                cleanupCarousel();
+                
+                // Reset state
+                carouselState = {
+                    resizeObserver: null,
+                    resizeTimeout: null,
+                    currentIndex: 0,
+                    cardWidth: 0,
+                    cards: []
+                };
+                
                 // Show loading state
                 if (loadingElement) loadingElement.style.display = 'block';
-                if (postsContainer) postsContainer.innerHTML = '';
+                if (postsContainer) {
+                    postsContainer.innerHTML = '';
+                    postsContainer.style.display = 'block';
+                }
                 
                 try {
                     if (!indicator || !indicator.posts) {
@@ -1017,75 +1180,21 @@
             
                     // Initialize carousel after posts are loaded
                     if (postsContainer) {
-                        postsContainer.innerHTML = postsHtml;
-                        
-                        // Initialize carousel after a small delay to ensure DOM is updated
-                        setTimeout(() => {
-                            const carousel = document.getElementById('carousel');
-                            const prevBtn = document.getElementById('prevBtn');
-                            const nextBtn = document.getElementById('nextBtn');
+                        // Use requestAnimationFrame for smoother updates
+                        requestAnimationFrame(() => {
+                            postsContainer.innerHTML = postsHtml;
                             
-                            if (!carousel || !prevBtn || !nextBtn) {
-                                console.warn('Carousel elements not found');
-                                return;
-                            }
-                            
-                            const cards = document.querySelectorAll('.post-card');
-                            const cardCount = cards.length;
-                            let currentIndex = 0;
-                            
-                            if (cardCount === 0) return;
-                            
-                            // Calculate card width including margin
-                            const cardStyle = window.getComputedStyle(cards[0]);
-                            const cardWidth = cards[0].offsetWidth + 
-                                            parseInt(cardStyle.marginLeft) + 
-                                            parseInt(cardStyle.marginRight);
-                            
-                            // Update carousel position
-                            const updateCarousel = () => {
-                                carousel.scrollTo({
-                                    left: currentIndex * cardWidth,
-                                    behavior: 'smooth'
-                                });
-                                updateButtons();
-                            };
-                            
-                            // Update button states
-                            const updateButtons = () => {
-                                if (!prevBtn || !nextBtn) return;
-                                prevBtn.style.display = currentIndex === 0 ? 'none' : 'flex';
-                                nextBtn.style.display = currentIndex >= cardCount - 1 ? 'none' : 'flex';
-                            };
-                            
-                            // Add event listeners for navigation
-                            prevBtn.addEventListener('click', () => {
-                                if (currentIndex > 0) {
-                                    currentIndex--;
-                                    updateCarousel();
-                                }
+                            // Initialize carousel on next frame
+                            requestAnimationFrame(() => {
+                                initCarousel();
+                                
+                                // Force a reflow to ensure styles are applied
+                                void postsContainer.offsetHeight;
+                                
+                                // Show the container
+                                postsContainer.style.opacity = '1';
                             });
-                            
-                            nextBtn.addEventListener('click', () => {
-                                if (currentIndex < cardCount - 1) {
-                                    currentIndex++;
-                                    updateCarousel();
-                                }
-                            });
-                            
-                            // Handle window resize
-                            let resizeTimeout;
-                            window.addEventListener('resize', () => {
-                                clearTimeout(resizeTimeout);
-                                resizeTimeout = setTimeout(() => {
-                                    updateButtons();
-                                }, 250);
-                            });
-                            
-                            // Initial setup
-                            updateButtons();
-                            
-                        }, 100); // Small delay to ensure DOM is updated
+                        });
                     }
                     
                     
