@@ -797,8 +797,8 @@
       <!-- Left Column -->
       <div class="column-left">
         <div class="toolbar-top">
-            <p><strong>Step 1:</strong> Choose a Theme: </p>
           <div class="dropdown" id="indicatorDropdown">
+              <p><strong>Step 1:</strong> Choose a Theme: </p>
             <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
               <span>Click to Choose Indicator</span>
               <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 8px; transition: transform 0.2s ease;"></i>
@@ -828,8 +828,23 @@
       <!-- Right Column -->
       <div class="column-right">
         <div class="toolbar-top">
-            <p><strong>Step 2:</strong> Choose an Indicator: </p>
           <div class="dropdown" id="indicatorDropdown">
+              <p><strong>Step 2:</strong> Choose a Sub-theme: </p>
+            <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              <span>Click to Choose Indicator</span>
+              <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 8px; transition: transform 0.2s ease;"></i>
+            </button>
+            <div class="dropdown-menu" id="indicatorMenu" role="menu" aria-labelledby="indicatorDropdown">
+              {% for indicator, data in indicators.all.items %}
+                <a href="{{ indicator }}.html" role="menuitem" tabindex="-1" {% if indicator == page_name %}class="active"{% endif %}>
+                  <i class="fas {{ data.icon }}" style="width: 20px; margin-right: 10px; color: #4CAF50;"></i>
+                  <span>{{ data.title }}</span>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="dropdown" id="indicatorDropdown">
+              <p><strong>Step 3:</strong> Choose an Indicator: </p>
             <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
               <span>Click to Choose Indicator</span>
               <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 8px; transition: transform 0.2s ease;"></i>
