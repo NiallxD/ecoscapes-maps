@@ -277,7 +277,15 @@
             padding: 0;
             overflow-x: hidden;
         }
-        .column {
+        .column-left {
+            flex: 3;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+        }
+        .column-right {
             flex: 1;
             background: white;
             border-radius: 10px;
@@ -624,7 +632,7 @@
 <body>
     <div class="two-column-section">
       <!-- Left Column -->
-      <div class="column">
+      <div class="column-left">
         <div class="toolbar-top">
           <div class="dropdown" id="indicatorDropdown">
             <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
@@ -663,15 +671,8 @@
       </div>
 
       <!-- Right Column -->
-      <div class="column">
-        <div class="posts-container">
-          <div id="loadingPosts" class="loading-posts">Loading updates...</div>
-          <button class="carousel-nav prev" id="prevBtn" aria-label="Previous post">‹</button>
-          <div class="carousel-container" id="carousel">
-            <div id="postsList"></div>
-          </div>
-          <button class="carousel-nav next" id="nextBtn" aria-label="Next post">›</button>
-        </div>
+      <div class="column-right">
+
       </div>
     </div>
     <div class="map-container">
