@@ -1,58 +1,453 @@
 {
-    "indicator-1": {
-        "title": "Indicator One",
-        "posts": "indicator-one",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "icon": "fa-globe-americas",
-        "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-        "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-    },
-    "indicator-2": {
-        "title": "Indicator Two",
-        "posts": "indicator-two",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "icon": "fa-tree",
-        "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-        "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-    },
-    "indicator-3": {
-        "title": "Indicator Three",
-        "posts": "indicator-three",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "icon": "fa-bug",
-        "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-        "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-    },
-    "indicator-4": {
-        "title": "Indicator Four",
-        "posts": "indicator-four",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "icon": "fa-frog",
-        "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-        "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-    },
-    "indicator-5": {
-        "title": "Indicator Five",
-        "posts": "indicator-five",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "icon": "fa-feather",
-        "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-        "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-    },
-    "indicator-6": {
-        "title": "Indicator Six",
-        "posts": "indicator-six",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "icon": "fa-leaf",
-        "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-        "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-    },
-    "indicator-7": {
-        "title": "Indicator Seven",
-        "posts": "indicator-seven",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "icon": "fa-leaf",
-        "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-        "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+    "themes": [
+        {
+            "id": "ecosystems",
+            "name": "1.0 Ecosystems",
+            "subthemes": [
+                {
+                    "id": "values",
+                    "name": "1.0.1 Values",
+                    "indicators": [
+                        "ecosystem-health",
+                        "ecosystem-integrity",
+                        "ecosystem-services"
+                    ]
+                },
+                {
+                    "id": "threats",
+                    "name": "1.0.2 Threats",
+                    "indicators": [
+                        "human-footprint-threats",
+                        "natural-processes-threats"
+                    ]
+                },
+                {
+                    "id": "opportunities",
+                    "name": "1.0.3 Opportunities",
+                    "indicators": [
+                        "human-footprint-opportunities",
+                        "natural-processes-opportunities"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "habitats",
+            "name": "2.0 Habitats",
+            "subthemes": [
+                {
+                    "id": "mammals-habitats",
+                    "name": "2.0.1 Mammals",
+                    "indicators": [
+                        "grizzly-bear-habitat",
+                        "black-bear-habitat",
+                        "wolverine-habitat",
+                        "pacific-fisher-habitat",
+                        "lynx-habitat",
+                        "mountain-goat-habitat",
+                        "black-tailed-deer-habitat",
+                        "hoary-marmot-habitat",
+                        "douglass-squirrel-habitat",
+                        "yellow-pine-chipmunk-habitat"
+                    ]
+                },
+                {
+                    "id": "herptiles-habitats",
+                    "name": "2.0.2 Herptiles",
+                    "indicators": [
+                        "western-toad-habitat",
+                        "red-legged-frog-habitat",
+                        "pacific-tree-frog-habitat",
+                        "ensatina-habitat",
+                        "northwestern-salamander-habitat",
+                        "yellow-toed-salamander-habitat",
+                        "northern-alligator-lizard-habitat",
+                        "garter-snake-habitat"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "corridors",
+            "name": "3.0 Corridors",
+            "subthemes": [
+                {
+                    "id": "mammals-corridors",
+                    "name": "3.0.1 Mammals",
+                    "indicators": [
+                        "grizzly-bear-corridor",
+                        "black-bear-corridor",
+                        "wolverine-corridor",
+                        "pacific-fisher-corridor",
+                        "lynx-corridor",
+                        "mountain-goat-corridor",
+                        "black-tailed-deer-corridor",
+                        "hoary-marmot-corridor",
+                        "douglass-squirrel-corridor",
+                        "yellow-pine-chipmunk-corridor"
+                    ]
+                },
+                {
+                    "id": "herptiles-corridors",
+                    "name": "3.0.2 Herptiles",
+                    "indicators": [
+                        "western-toad-corridor",
+                        "red-legged-frog-corridor",
+                        "pacific-tree-frog-corridor",
+                        "ensatina-corridor",
+                        "northwestern-salamander-corridor",
+                        "yellow-toed-salamander-corridor",
+                        "northern-alligator-lizard-corridor",
+                        "garter-snake-corridor"
+                    ]
+                }
+            ]
+        }
+    ],
+    "indicators": {
+        "ecosystem-health": {
+            "title": "1.0.1.1 Ecosystem Health",
+            "posts": "ecosystem-health",
+            "description": "",
+            "icon": "fa-heartbeat",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "ecosystem-integrity": {
+            "title": "1.0.1.2 Ecosystem Integrity",
+            "posts": "ecosystem-integrity",
+            "description": "",
+            "icon": "fa-shield-alt",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "ecosystem-services": {
+            "title": "1.0.1.3 Ecosystem Services",
+            "posts": "ecosystem-services",
+            "description": "",
+            "icon": "fa-leaf",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "human-footprint-threats": {
+            "title": "1.0.2.1 Human Footprint (Threats)",
+            "posts": "human-footprint-threats",
+            "description": "",
+            "icon": "fa-footprint",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "natural-processes-threats": {
+            "title": "1.0.2.2 Natural Processes (Threats)",
+            "posts": "natural-processes-threats",
+            "description": "",
+            "icon": "fa-wind",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "human-footprint-opportunities": {
+            "title": "1.0.3.1 Human Footprint (Opportunities)",
+            "posts": "human-footprint-opportunities",
+            "description": "",
+            "icon": "fa-footprint",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "natural-processes-opportunities": {
+            "title": "1.0.3.2 Natural Processes (Opportunities)",
+            "posts": "natural-processes-opportunities",
+            "description": "",
+            "icon": "fa-wind",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "grizzly-bear-habitat": {
+            "title": "2.0.1.1 Grizzly Bear",
+            "posts": "grizzly-bear-habitat",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "black-bear-habitat": {
+            "title": "2.0.1.2 Black Bear",
+            "posts": "black-bear-habitat",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "wolverine-habitat": {
+            "title": "2.0.1.3 Wolverine",
+            "posts": "wolverine-habitat",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "pacific-fisher-habitat": {
+            "title": "2.0.1.4 Pacific Fisher",
+            "posts": "pacific-fisher-habitat",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "lynx-habitat": {
+            "title": "2.0.1.5 Lynx",
+            "posts": "lynx-habitat",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "mountain-goat-habitat": {
+            "title": "2.0.1.6 Mountain Goat",
+            "posts": "mountain-goat-habitat",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "black-tailed-deer-habitat": {
+            "title": "2.0.1.7 Black-Tailed Deer",
+            "posts": "black-tailed-deer-habitat",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "hoary-marmot-habitat": {
+            "title": "2.0.1.8 Hoary Marmot",
+            "posts": "hoary-marmot-habitat",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "douglass-squirrel-habitat": {
+            "title": "2.0.1.9 Douglas's Squirrel",
+            "posts": "douglass-squirrel-habitat",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "yellow-pine-chipmunk-habitat": {
+            "title": "2.0.1.10 Yellow-Pine Chipmunk",
+            "posts": "yellow-pine-chipmunk-habitat",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "western-toad-habitat": {
+            "title": "2.0.2.1 Western Toad",
+            "posts": "western-toad-habitat",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "red-legged-frog-habitat": {
+            "title": "2.0.2.2 Red-Legged Frog",
+            "posts": "red-legged-frog-habitat",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "pacific-tree-frog-habitat": {
+            "title": "2.0.2.3 Pacific Tree Frog",
+            "posts": "pacific-tree-frog-habitat",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "ensatina-habitat": {
+            "title": "2.0.2.4 Ensatina",
+            "posts": "ensatina-habitat",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "northwestern-salamander-habitat": {
+            "title": "2.0.2.5 Northwestern Salamander",
+            "posts": "northwestern-salamander-habitat",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "yellow-toed-salamander-habitat": {
+            "title": "2.0.2.6 Yellow-Toed Salamander",
+            "posts": "yellow-toed-salamander-habitat",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "northern-alligator-lizard-habitat": {
+            "title": "2.0.2.7 Northern Alligator Lizard",
+            "posts": "northern-alligator-lizard-habitat",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "garter-snake-habitat": {
+            "title": "2.0.2.8 Garter Snake",
+            "posts": "garter-snake-habitat",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "grizzly-bear-corridor": {
+            "title": "3.0.1.1 Grizzly Bear",
+            "posts": "grizzly-bear-corridor",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "black-bear-corridor": {
+            "title": "3.0.1.2 Black Bear",
+            "posts": "black-bear-corridor",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "wolverine-corridor": {
+            "title": "3.0.1.3 Wolverine",
+            "posts": "wolverine-corridor",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "pacific-fisher-corridor": {
+            "title": "3.0.1.4 Pacific Fisher",
+            "posts": "pacific-fisher-corridor",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "lynx-corridor": {
+            "title": "3.0.1.5 Lynx",
+            "posts": "lynx-corridor",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "mountain-goat-corridor": {
+            "title": "3.0.1.6 Mountain Goat",
+            "posts": "mountain-goat-corridor",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "black-tailed-deer-corridor": {
+            "title": "3.0.1.7 Black-Tailed Deer",
+            "posts": "black-tailed-deer-corridor",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "hoary-marmot-corridor": {
+            "title": "3.0.1.8 Hoary Marmot",
+            "posts": "hoary-marmot-corridor",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "douglass-squirrel-corridor": {
+            "title": "3.0.1.9 Douglas's Squirrel",
+            "posts": "douglass-squirrel-corridor",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "yellow-pine-chipmunk-corridor": {
+            "title": "3.0.1.10 Yellow-Pine Chipmunk",
+            "posts": "yellow-pine-chipmunk-corridor",
+            "description": "",
+            "icon": "fa-paw",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "western-toad-corridor": {
+            "title": "3.0.2.1 Western Toad",
+            "posts": "western-toad-corridor",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "red-legged-frog-corridor": {
+            "title": "3.0.2.2 Red-Legged Frog",
+            "posts": "red-legged-frog-corridor",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "pacific-tree-frog-corridor": {
+            "title": "3.0.2.3 Pacific Tree Frog",
+            "posts": "pacific-tree-frog-corridor",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "ensatina-corridor": {
+            "title": "3.0.2.4 Ensatina",
+            "posts": "ensatina-corridor",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "northwestern-salamander-corridor": {
+            "title": "3.0.2.5 Northwestern Salamander",
+            "posts": "northwestern-salamander-corridor",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "yellow-toed-salamander-corridor": {
+            "title": "3.0.2.6 Yellow-Toed Salamander",
+            "posts": "yellow-toed-salamander-corridor",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "northern-alligator-lizard-corridor": {
+            "title": "3.0.2.7 Northern Alligator Lizard",
+            "posts": "northern-alligator-lizard-corridor",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        },
+        "garter-snake-corridor": {
+            "title": "3.0.2.8 Garter Snake",
+            "posts": "garter-snake-corridor",
+            "description": "",
+            "icon": "fa-frog",
+            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        }
     }
 }
