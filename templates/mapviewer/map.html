@@ -275,8 +275,8 @@
         .two-column-section {
             display: flex;
             width: 100%;
-            padding: 15px 0;
-            background-color: #f8f9fa;
+            /* padding: 15px 15px;
+            background-color: #f8f9fa; */
             gap: 15px;
             margin: 0;
             box-sizing: border-box;
@@ -838,7 +838,7 @@
 
       <!-- Right Column -->
       <div class="column-right">
-        <div class="resources-container">
+        <div class="resources-container" id="resourcesButton">
           <div class="resource-icon">
             <i class="fas fa-book-open"></i>
           </div>
@@ -846,6 +846,40 @@
           <p class="resource-description">Access additional information and related materials</p>
         </div>
       </div>
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const resourcesButton = document.getElementById('resourcesButton');
+          
+          resourcesButton.addEventListener('click', function() {
+            try {
+              // Send a message to the parent window to navigate to the resources section
+              window.parent.postMessage({
+                type: 'NAVIGATE_TO_RESOURCES',
+                target: 'newdev.naturesquamish.ca'  // Target origin for verification
+              }, '*');
+              
+              // Also update the parent URL if we're not in an iframe (for testing)
+              if (window === window.top) {
+                const currentUrl = window.location.href.split('#')[0];
+                window.location.href = currentUrl + '#resources';
+              }
+            } catch (e) {
+              console.error('Error navigating to resources:', e);
+            }
+          });
+          
+          // Optional: Listen for a response from the parent
+          window.addEventListener('message', function(event) {
+            // Verify the message is from a trusted origin
+            if (event.origin === 'https://newdev.naturesquamish.ca') {
+              if (event.data.type === 'NAVIGATION_COMPLETE') {
+                console.log('Successfully navigated to resources section');
+              }
+            }
+          });
+        });
+      </script>
     </div>
     <div class="map-container">
         <iframe id="map1" class="map-iframe active" src="{{ map1_url }}"></iframe>
