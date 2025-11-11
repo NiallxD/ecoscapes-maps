@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map Viewer - sample</title>
+    <title>Map Viewer - {{ page_name }}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body, html {
             margin: 0;
@@ -12,14 +13,25 @@
             overflow: hidden;
             font-family: Arial, sans-serif;
         }
+        .header-bg {
+            background-color: #f8f9fa;
+            width: 100%;
+        }
+        .main-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #f8f9fa;
+        }
         .toolbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #f8f9fa;
-            padding: 5px 15px;
-            height: 40px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 10px 20px;
+            height: 60px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            width: 100%;
+            box-sizing: border-box;
+            background: white;
         }
         .toolbar-left {
             display: flex;
@@ -35,82 +47,157 @@
             display: inline-block;
         }
         .dropdown-toggle {
-            background-color: white;
-            color: #333;
-            padding: 6px 12px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            background-color: #ffffff;
+            color: #2c3e50;
+            padding: 10px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
             cursor: pointer;
-            min-width: 180px;
+            min-width: 220px;
             text-align: left;
-            font-size: 14px;
+            font-size: 15px;
+            font-weight: 500;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            transition: all 0.2s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            user-select: none;
         }
-        .dropdown-toggle:after {
-            content: '▼';
-            font-size: 10px;
-            margin-left: 8px;
+        .dropdown-toggle:hover {
+            border-color: #4CAF50;
+            background-color: #f8fafc;
+        }
+        .dropdown-toggle:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+        }
+        .dropdown-toggle i {
+            margin-left: 12px;
+            font-size: 12px;
+            transition: transform 0.2s ease;
+        }
+        .dropdown.active .dropdown-toggle i {
+            transform: rotate(180deg);
         }
         .dropdown-menu {
             display: none;
             position: absolute;
             background-color: white;
-            min-width: 200px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            border-radius: 4px;
+            min-width: 240px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            border-radius: 8px;
             z-index: 1000;
-            max-height: 300px;
+            max-height: 400px;
             overflow-y: auto;
+            margin-top: 4px;
+            border: 1px solid #e9ecef;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+            pointer-events: none;
         }
+        
+        .dropdown.active .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        /* Remove fadeIn keyframes as we're using CSS transitions now */
         .dropdown-menu a {
-            color: #333;
-            padding: 8px 12px;
+            color: #2c3e50;
+            padding: 10px 16px;
             text-decoration: none;
             display: block;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #f1f3f5;
+            transition: all 0.15s ease;
+            font-size: 14px;
         }
         .dropdown-menu a:hover {
-            background-color: #f5f5f5;
+            background-color: #f8f9fa;
+            padding-left: 20px;
+            color: #4CAF50;
         }
         .dropdown-menu a.active {
-            background-color: #4CAF50;
-            color: white;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            font-weight: 500;
+            border-left: 3px solid #4CAF50;
         }
         .dropdown:hover .dropdown-menu {
             display: block;
         }
         .content-area {
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-bottom: 1px solid #e9ecef;
+            padding: 20px 20px;
+            border-bottom: 1px solid #edf2f7;
+            width: 100%;
+            box-sizing: border-box;
+            background: white;
+            min-height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .content-wrapper {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 0 0 -15px;
+            gap: 0px;
+            width: calc(100% + 15px);
+            padding: 5px 0 0 0;
+        }
+        .icon-container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-right: 5px;
+            padding-left: 0;
+            height: 100%;
+            padding-top: 5px; /* Align with first line of text */
         }
         .text-content {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .indicator-title {
             margin: 0 0 8px 0;
-            color: #2c3e50;
-            font-size: 1.4em;
+            color: #1a365d;
+            font-size: 1.8em;
+            font-weight: 600;
+            letter-spacing: -0.3px;
         }
         .indicator-description {
             margin: 0;
-            color: #495057;
-            line-height: 1.5;
+            color: #4a5568;
+            line-height: 1.6;
             max-width: 800px;
+            font-size: 1.05em;
+            opacity: 0.9;
         }
         .indicator-icon {
-            font-size: 2.5em;
-            margin-left: 20px;
-            opacity: 0.8;
+            font-size: 4em;
+            color: #4CAF50;
+            opacity: 0.9;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+            height: 100%;
+        }
+        .indicator-icon:hover {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+        .title-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
         }
         .map-container {
             position: relative;
@@ -128,103 +215,1016 @@
         }
         .toggle-container {
             display: flex;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 25px;
-            padding: 5px;
+            align-items: center;
             margin-left: 20px;
+            gap: 12px;
         }
-        .toggle-option {
-            padding: 10px 30px;
+        .toggle-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #4a5568;
+            transition: color 0.2s ease;
+        }
+        .toggle-label.active {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .toggle-slider {
+            position: absolute;
             cursor: pointer;
-            border-radius: 20px;
-            font-weight: bold;
-            transition: all 0.3s ease;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #e2e8f0;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 24px;
+            width: 24px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .two-column-section {
+            display: flex;
+            width: 100%;
+            padding: 15px 0;
+            background-color: #f8f9fa;
+            gap: 15px;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .column {
+            flex: 1;
+            background: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+        }
+        .toolbar-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #edf2f7;
+        }
+        .indicator-info {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-top: 12px;
+        }
+        .indicator-icon {
+            font-size: 5em;
+            color: #4CAF50;
+            min-width: 60px;
             text-align: center;
-            min-width: 120px;
+            margin-top: 5px;
+            background: none;
+            padding: 5px;
         }
-        .toggle-option.active {
+        .text-content {
+            flex: 1;
+        }
+        .indicator-title {
+            margin: 0 0 6px 0;
+            color: #1a365d;
+            font-size: 1.4em;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        .indicator-description {
+            margin: 0;
+            color: #4a5568;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        .dropdown {
+            position: relative;
+            min-width: 220px;
+            z-index: 1000;
+        }
+        .dropdown-toggle {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 10px 16px;
+            width: 100%;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95em;
+            color: #2d3748;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        .dropdown-toggle:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+        }
+        .dropdown-toggle:hover {
+            border-color: #4CAF50;
+            background-color: #f8fafc;
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 5px);
+            left: 0;
+            right: 0;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            z-index: 1000;
+            max-height: 300px;
+            overflow-y: auto;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            pointer-events: none;
+        }
+        .dropdown.active .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            padding: 10px 16px;
+            color: #4a5568;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+        .dropdown-menu a:hover,
+        .dropdown-menu a:focus,
+        .dropdown-menu a.active {
+            background: #f0fdf4;
+            color: #166534;
+            padding-left: 20px;
+            outline: none;
+        }
+        .dropdown-menu a:active {
+            background: #dcfce7;
+        }
+        .toggle-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f8fafc;
+            padding: 8px 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        .toggle-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #64748b;
+            transition: all 0.2s ease;
+        }
+        .toggle-label.active {
+            color: #166534;
+            font-weight: 600;
+        }
+        .content-divider {
+            width: 100%;
+            padding: 10px 0;
+            background-color: #f8f9fa;
+            margin: 5px 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .posts-container {
+            width: 100%;
+            margin: 0;
+            padding: 5px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .post-card {
+            flex: 0 0 auto;
+            width: calc(100% - 30px);
+            max-width: 300px;
+            margin: 0 5px;
+            scroll-snap-align: start;
+            background: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .carousel-container {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 5px 0;
+            margin: 0;
+            scrollbar-width: none; /* Firefox */
+            width: 100%;
+            box-sizing: border-box;
+            gap: 15px;
+        }
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+        }
+        .post-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 15px;
+            flex: 0 0 280px;
+            height: 150px;
+            scroll-snap-align: start;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .post-title {
+            margin: 0 0 10px 0;
+            font-size: 1.1em;
+            line-height: 1.3;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .post-meta {
+            color: #666;
+            font-size: 0.85em;
+            margin-bottom: 10px;
+        }
+        .post-excerpt {
+            flex-grow: 1;
+            margin: 0 0 10px 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+        .post-link {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 0.9em;
+            margin-top: auto;
+            display: inline-block;
+        }
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+            color: #4CAF50;
+            font-size: 16px;
+            padding: 0;
+        }
+        .carousel-nav.prev {
+            left: 10px;
+        }
+        .carousel-nav.next {
+            right: 10px;
+        }
+        .carousel-nav:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+        }
+        .post-title {
+            margin: 0 0 6px 0;
+            color: #2c3e50;
+            font-size: 0.95em;
+            line-height: 1.2;
+        }
+        .post-excerpt {
+            color: #4a5568;
+            line-height: 1.3;
+            margin: 0 0 8px 0;
+            font-size: 0.85em;
+        }
+        .post-meta {
+            font-size: 0.75em;
+            color: #718096;
+            margin-bottom: 6px;
+        }
+        .post-link {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 0.8em;
+        }
+        .post-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Carousel Container Styles */
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none; /* Hide scrollbar for Firefox */
+            gap: 20px;
+            padding: 10px 0;
+            width: 100%;
+        }
+        
+        .carousel-container::-webkit-scrollbar {
+            display: none; /* Hide scrollbar for Chrome/Safari */
+        }
+        
+        .post-card {
+            flex: 0 0 auto;
+            width: 300px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .post-image {
+            width: 100%;
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .post-content {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .loading-posts {
+            text-align: center;
+            color: #718096;
+            padding: 20px;
+        }
+        .toggle-slider {
             background-color: #4CAF50;
-            color: white;
+            opacity: 0.7;
         }
-        .toggle-option:not(.active):hover {
-            background-color: #f0f0f0;
+        input:checked + .toggle-slider:before {
+            transform: translateX(30px);
+        }
+        input:focus + .toggle-slider {
+            box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
         }
     </style>
 </head>
 <body>
-    <div class="toolbar">
-        <div class="toolbar-left">
-            <div class="dropdown">
-                <button class="dropdown-toggle" id="indicatorDropdown">Select Indicator</button>
-                <div class="dropdown-menu" id="indicatorMenu">
-                    
-                    <a href="/sample/" class="active">Sample Map</a>
-                    
-                    <a href="/indicator-1/" >Ecosystem Connectivity</a>
-                    
-                    <a href="/indicator-2/" >Biodiversity Index</a>
-                    
-                </div>
+    <div class="two-column-section">
+      <!-- Left Column -->
+      <div class="column">
+        <div class="toolbar-top">
+          <div class="dropdown" id="indicatorDropdown">
+            <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              <span>Click to Choose Indicator</span>
+              <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 8px; transition: transform 0.2s ease;"></i>
+            </button>
+            <div class="dropdown-menu" id="indicatorMenu" role="menu" aria-labelledby="indicatorDropdown">
+              {% for indicator, data in indicators.all.items %}
+                <a href="{{ indicator }}.html" role="menuitem" tabindex="-1" {% if indicator == page_name %}class="active"{% endif %}>
+                  <i class="fas {{ data.icon }}" style="width: 20px; margin-right: 10px; color: #4CAF50;"></i>
+                  <span>{{ data.title }}</span>
+                </a>
+              {% endfor %}
             </div>
+          </div>
+
+          <div class="toggle-container">
+            <span id="exploreLabel" class="toggle-label active">Explore</span>
+            <label class="toggle-switch">
+              <input type="checkbox" id="viewToggle">
+              <span class="toggle-slider"></span>
+            </label>
+            <span id="analyzeLabel" class="toggle-label">Analyze</span>
+          </div>
         </div>
-        <div class="toolbar-right">
-            <div class="toggle-container">
-                <div id="exploreBtn" class="toggle-option active">Explore</div>
-                <div id="analyzeBtn" class="toggle-option">Analyze</div>
-            </div>
+
+        <div class="indicator-info">
+          <div class="indicator-icon">
+            <i class="fas {{ indicators.page_name.icon }}"></i>
+          </div>
+          <div class="text-content">
+            <h1 class="indicator-title">{{ indicators.page_name.title }}</h1>
+            <p class="indicator-description">{{ indicators.page_name.description }}</p>
+          </div>
         </div>
-    </div>
-    <div class="content-area">
-        <div class="content-wrapper">
-            <div class="text-content">
-                <h1 class="indicator-title">Sample Map</h1>
-                <p class="indicator-description">This is a sample map showing example data. Use this to explore the basic functionality of the map viewer.</p>
-            </div>
-            <div class="indicator-icon">
-                🌍
-            </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="column">
+        <div class="posts-container">
+          <div id="loadingPosts" class="loading-posts">Loading updates...</div>
+          <button class="carousel-nav prev" id="prevBtn" aria-label="Previous post">‹</button>
+          <div class="carousel-container" id="carousel">
+            <div id="postsList"></div>
+          </div>
+          <button class="carousel-nav next" id="nextBtn" aria-label="Next post">›</button>
         </div>
+      </div>
     </div>
     <div class="map-container">
-        <iframe id="map1" class="map-iframe active" src="https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&amp;legend=1&amp;cooperativeGestures=1&amp;link=1&amp;geolocation=0&amp;zoomControls=1&amp;scaleBar=1"></iframe>
-        <iframe id="map2" class="map-iframe" src="https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&amp;legend=1&amp;cooperativeGestures=0&amp;link=1&amp;geolocation=0&amp;zoomControls=1&amp;scaleBar=1"></iframe>
+        <iframe id="map1" class="map-iframe active" src="{{ map1_url }}"></iframe>
+        <iframe id="map2" class="map-iframe" src="{{ map2_url }}"></iframe>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Enhanced dropdown functionality
+            class Dropdown {
+                constructor(element) {
+                    this.element = element;
+                    this.toggle = element.querySelector('.dropdown-toggle');
+                    this.menu = element.querySelector('.dropdown-menu');
+                    this.chevron = this.toggle.querySelector('i');
+                    this.isOpen = false;
+                    this.menuItems = Array.from(this.menu.querySelectorAll('a'));
+                    this.focusedIndex = -1;
+                    
+                    this.initialize();
+                }
+                
+                initialize() {
+                    // Add ARIA attributes
+                    this.toggle.setAttribute('aria-haspopup', 'true');
+                    this.toggle.setAttribute('aria-expanded', 'false');
+                    
+                    // Toggle dropdown on click
+                    this.toggle.addEventListener('click', (e) => this.toggleDropdown(e));
+                    
+                    // Close when clicking outside
+                    document.addEventListener('click', (e) => this.handleOutsideClick(e));
+                    
+                    // Handle keyboard navigation
+                    this.toggle.addEventListener('keydown', (e) => this.handleToggleKeyDown(e));
+                    this.menu.addEventListener('keydown', (e) => this.handleMenuKeyDown(e));
+                    
+                    // Handle menu item interactions
+                    this.menuItems.forEach((item, index) => {
+                        item.addEventListener('click', () => this.close());
+                        item.addEventListener('focus', () => this.focusedIndex = index);
+                    });
+                }
+                
+                toggleDropdown(e) {
+                    e.stopPropagation();
+                    
+                    if (this.isOpen) {
+                        this.close();
+                    } else {
+                        this.open();
+                    }
+                }
+                
+                open() {
+                    if (this.isOpen) return;
+                    
+                    // Close other dropdowns first
+                    Dropdown.closeAll(this);
+                    
+                    // Open this dropdown
+                    this.element.classList.add('active');
+                    this.toggle.setAttribute('aria-expanded', 'true');
+                    this.chevron.style.transform = 'rotate(180deg)';
+                    this.isOpen = true;
+                    
+                    // Focus first item if available
+                    if (this.menuItems.length > 0) {
+                        this.focusedIndex = 0;
+                        this.menuItems[0].focus();
+                    }
+                }
+                
+                close() {
+                    if (!this.isOpen) return;
+                    
+                    this.element.classList.remove('active');
+                    this.toggle.setAttribute('aria-expanded', 'false');
+                    this.chevron.style.transform = '';
+                    this.isOpen = false;
+                    this.focusedIndex = -1;
+                    
+                    // Return focus to toggle
+                    this.toggle.focus();
+                }
+                
+                handleOutsideClick(e) {
+                    if (!this.element.contains(e.target)) {
+                        this.close();
+                    }
+                }
+                
+                handleToggleKeyDown(e) {
+                    const { key } = e;
+                    
+                    if (key === 'Enter' || key === ' ' || key === 'ArrowDown' || key === 'Down') {
+                        e.preventDefault();
+                        this.open();
+                    } else if (key === 'Escape') {
+                        this.close();
+                    } else if (key === 'ArrowUp' || key === 'Up') {
+                        e.preventDefault();
+                        this.open();
+                        if (this.menuItems.length > 0) {
+                            this.focusedIndex = this.menuItems.length - 1;
+                            this.menuItems[this.focusedIndex].focus();
+                        }
+                    }
+                }
+                
+                handleMenuKeyDown(e) {
+                    const { key } = e;
+                    
+                    switch (key) {
+                        case 'Escape':
+                            e.preventDefault();
+                            this.close();
+                            break;
+                            
+                        case 'ArrowDown':
+                        case 'Down':
+                            e.preventDefault();
+                            this.focusNextItem();
+                            break;
+                            
+                        case 'ArrowUp':
+                        case 'Up':
+                            e.preventDefault();
+                            this.focusPrevItem();
+                            break;
+                            
+                        case 'Home':
+                            e.preventDefault();
+                            this.focusItem(0);
+                            break;
+                            
+                        case 'End':
+                            e.preventDefault();
+                            this.focusItem(this.menuItems.length - 1);
+                            break;
+                            
+                        case 'Tab':
+                            if (!e.shiftKey && this.focusedIndex === this.menuItems.length - 1) {
+                                // Close dropdown when tabbing out of the last item
+                                this.close();
+                            } else if (e.shiftKey && this.focusedIndex <= 0) {
+                                // Close dropdown when shift+tabbing out of the first item
+                                e.preventDefault();
+                                this.close();
+                            }
+                            break;
+                    }
+                }
+                
+                focusNextItem() {
+                    this.focusedIndex = (this.focusedIndex + 1) % this.menuItems.length;
+                    this.menuItems[this.focusedIndex].focus();
+                }
+                
+                focusPrevItem() {
+                    this.focusedIndex = (this.focusedIndex - 1 + this.menuItems.length) % this.menuItems.length;
+                    this.menuItems[this.focusedIndex].focus();
+                }
+                
+                focusItem(index) {
+                    if (index >= 0 && index < this.menuItems.length) {
+                        this.focusedIndex = index;
+                        this.menuItems[index].focus();
+                    }
+                }
+                
+                static closeAll(exceptDropdown = null) {
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        const instance = dropdown._dropdownInstance;
+                        if (instance && instance !== exceptDropdown) {
+                            instance.close();
+                        }
+                    });
+                }
+            }
+            
+            // Initialize all dropdowns on the page
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown._dropdownInstance = new Dropdown(dropdown);
+            });
             const map1 = document.getElementById('map1');
             const map2 = document.getElementById('map2');
-            const exploreBtn = document.getElementById('exploreBtn');
-            const analyzeBtn = document.getElementById('analyzeBtn');
+            const toggleSwitch = document.getElementById('viewToggle');
+            const exploreLabel = document.getElementById('exploreLabel');
+            const analyzeLabel = document.getElementById('analyzeLabel');
             let currentView = 'explore';
 
             function switchView(view) {
                 if (view === 'explore') {
                     map1.classList.add('active');
                     map2.classList.remove('active');
-                    exploreBtn.classList.add('active');
-                    analyzeBtn.classList.remove('active');
+                    exploreLabel.classList.add('active');
+                    analyzeLabel.classList.remove('active');
+                    toggleSwitch.checked = false;
                     currentView = 'explore';
                 } else {
                     map1.classList.remove('active');
                     map2.classList.add('active');
-                    exploreBtn.classList.remove('active');
-                    analyzeBtn.classList.add('active');
+                    exploreLabel.classList.remove('active');
+                    analyzeLabel.classList.add('active');
+                    toggleSwitch.checked = true;
                     currentView = 'analyze';
                 }
             }
 
-            exploreBtn.addEventListener('click', function() {
+            toggleSwitch.addEventListener('change', function() {
+                if (this.checked) {
+                    switchView('analyze');
+                } else {
+                    switchView('explore');
+                }
+            });
+
+            // Also make the labels clickable
+            exploreLabel.addEventListener('click', function() {
                 if (currentView !== 'explore') {
                     switchView('explore');
                 }
             });
 
-            analyzeBtn.addEventListener('click', function() {
+            analyzeLabel.addEventListener('click', function() {
                 if (currentView !== 'analyze') {
                     switchView('analyze');
                 }
             });
+
+            // Fetch WordPress posts with tag 'indicator one'
+            const postsContainer = document.getElementById('postsList');
+            const loadingElement = document.getElementById('loadingPosts');
+            
+            // Debug function to log API responses
+            async function debugFetch(url) {
+                try {
+                    console.log('Fetching:', url);
+                    const response = await fetch(url);
+                    const data = await response.json();
+                    console.log('Response from', url, ':', data);
+                    return { response, data };
+                } catch (error) {
+                    console.error('Error in debugFetch:', error);
+                    throw error;
+                }
+            }
+            
+            // Function to format date
+            function formatDate(dateString) {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return new Date(dateString).toLocaleDateString(undefined, options);
+            }
+            
+            // Function to strip HTML tags and limit excerpt length
+            function stripHtml(html, maxLength = 100) {
+                const tmp = document.createElement('div');
+                tmp.innerHTML = html;
+                let text = tmp.textContent || tmp.innerText || '';
+                
+                // Trim and limit length
+                text = text.trim();
+                if (text.length > maxLength) {
+                    text = text.substring(0, maxLength).trim() + '...';
+                }
+                return text;
+            }
+
+            // Function to create a clean excerpt from content
+            function createExcerpt(html) {
+                if (!html) return '';
+                // Create temporary element to parse HTML
+                const tmp = document.createElement('div');
+                tmp.innerHTML = html;
+                // Get text content and clean it up
+                let text = tmp.textContent || tmp.innerText || '';
+                // Remove any 'Time to read' patterns
+                text = text.replace(/Time\s*to\s*read[^\w]*/gi, '');
+                // Clean up the text
+                return text
+                    .replace(/\s+/g, ' ')      // Replace multiple spaces
+                    .trim()                     // Trim whitespace
+                    .substring(0, 150)          // Limit length
+                    .replace(/\s+\S*$/, '')    // Cut at word boundary
+                    .replace(/[\-–—|:]+$/, '') // Remove trailing punctuation
+                    .trim() + '...';            // Add ellipsis
+            }
+
+            // Store carousel state to prevent memory leaks
+            let carouselState = {
+                resizeObserver: null,
+                resizeTimeout: null,
+                currentIndex: 0,
+                cardWidth: 0,
+                cards: []
+            };
+
+            // Clean up event listeners and observers
+            function cleanupCarousel() {
+                if (carouselState.resizeObserver) {
+                    carouselState.resizeObserver.disconnect();
+                }
+                window.removeEventListener('resize', handleResize);
+                clearTimeout(carouselState.resizeTimeout);
+            }
+
+            // Debounced resize handler
+            function handleResize() {
+                clearTimeout(carouselState.resizeTimeout);
+                carouselState.resizeTimeout = setTimeout(() => {
+                    updateCarouselSize();
+                    updateCarouselPosition();
+                }, 100);
+            }
+
+            // Update carousel size and card measurements
+            function updateCarouselSize() {
+                const carousel = document.getElementById('carousel');
+                if (!carousel || !carouselState.cards.length) return;
+                
+                const card = carouselState.cards[0];
+                const cardStyle = window.getComputedStyle(card);
+                carouselState.cardWidth = card.offsetWidth + 
+                    parseInt(cardStyle.marginLeft) + 
+                    parseInt(cardStyle.marginRight);
+                
+                updateCarouselPosition();
+            }
+
+            // Update carousel position
+            function updateCarouselPosition() {
+                const carousel = document.getElementById('carousel');
+                if (!carousel) return;
+                
+                carousel.scrollTo({
+                    left: carouselState.currentIndex * carouselState.cardWidth,
+                    behavior: 'smooth'
+                });
+                updateButtons();
+            }
+
+            // Update navigation buttons
+            function updateButtons() {
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                if (!prevBtn || !nextBtn) return;
+                
+                prevBtn.style.display = carouselState.currentIndex === 0 ? 'none' : 'flex';
+                nextBtn.style.display = carouselState.currentIndex >= carouselState.cards.length - 1 ? 'none' : 'flex';
+            }
+
+            // Initialize carousel
+            function initCarousel() {
+                cleanupCarousel();
+                
+                const carousel = document.getElementById('carousel');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                
+                if (!carousel || !prevBtn || !nextBtn) {
+                    console.warn('Carousel elements not found');
+                    return;
+                }
+                
+                carouselState.cards = Array.from(document.querySelectorAll('.post-card'));
+                if (!carouselState.cards.length) return;
+                
+                // Initial setup
+                updateCarouselSize();
+                updateButtons();
+                
+                // Event listeners
+                prevBtn.addEventListener('click', () => {
+                    if (carouselState.currentIndex > 0) {
+                        carouselState.currentIndex--;
+                        updateCarouselPosition();
+                    }
+                });
+                
+                nextBtn.addEventListener('click', () => {
+                    if (carouselState.currentIndex < carouselState.cards.length - 1) {
+                        carouselState.currentIndex++;
+                        updateCarouselPosition();
+                    }
+                });
+                
+                // Resize observer for better performance
+                carouselState.resizeObserver = new ResizeObserver(handleResize);
+                carouselState.resizeObserver.observe(document.body);
+                
+                // Initial position
+                updateCarouselPosition();
+            }
+
+            // Fetch posts from WordPress REST API with improved error handling
+            async function fetchWordPressPosts(indicator) {
+                const postsContainer = document.getElementById('posts-container');
+                const loadingElement = document.getElementById('loading-indicator');
+                
+                // Clean up previous carousel
+                cleanupCarousel();
+                
+                // Reset state
+                carouselState = {
+                    resizeObserver: null,
+                    resizeTimeout: null,
+                    currentIndex: 0,
+                    cardWidth: 0,
+                    cards: []
+                };
+                
+                // Show loading state
+                if (loadingElement) loadingElement.style.display = 'block';
+                if (postsContainer) {
+                    postsContainer.innerHTML = '';
+                    postsContainer.style.display = 'block';
+                }
+                
+                try {
+                    if (!indicator || !indicator.posts) {
+                        console.log('No posts filter defined for this indicator');
+                        if (postsContainer) postsContainer.innerHTML = '<p>No posts configuration found for this indicator.</p>';
+                        return;
+                    }
+
+                    // Convert the posts string to a slug format
+                    const tagSlug = indicator.posts.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+                    console.log('Searching for WordPress posts with tag slug:', tagSlug);
+                    
+                    // Add timeout for the fetch request
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+                    
+                    // First, get the tag ID for the indicator's posts
+                    const tagResponse = await fetch(
+                        `https://newdev.naturesquamish.ca/wp-json/wp/v2/tags?slug=${tagSlug}`,
+                        { signal: controller.signal }
+                    );
+                    clearTimeout(timeoutId);
+                    
+                    if (!tagResponse.ok) {
+                        throw new Error(`HTTP error! status: ${tagResponse.status}`);
+                    }
+                    
+                    const tags = await tagResponse.json();
+                    console.log('Found matching tags:', tags);
+                    
+                    if (!tags || tags.length === 0) {
+                        console.warn(`No matching tags found for: ${tagSlug}`);
+                        if (postsContainer) postsContainer.innerHTML = `<p>No posts found for: ${indicator.posts}</p>`;
+                        return;
+                    }
+                    
+                    const tagId = tags[0].id;
+                    console.log(`Found tag ID ${tagId} for "${tagSlug}"`);
+                    
+                    // Fetch posts with excerpts and featured image
+                    const postsResponse = await fetch(
+                        `https://newdev.naturesquamish.ca/wp-json/wp/v2/posts?tags=${tagId}` +
+                        `&_fields=id,title,link,date,excerpt,featured_media` +
+                        `&_embed=wp:featuredmedia` +
+                        `&per_page=3`,
+                        { signal: controller.signal }
+                    );
+                    
+                    if (!postsResponse.ok) {
+                        throw new Error(`Failed to fetch posts: ${postsResponse.statusText}`);
+                    }
+                    
+                    const posts = await postsResponse.json();
+                    console.log(`Fetched ${posts.length} posts for tag ID ${tagId}`);
+                    
+                    if (posts.length === 0) {
+                        if (postsContainer) postsContainer.innerHTML = '<p>No updates available at the moment.</p>';
+                        return;
+                    }
+                    
+                    // Generate HTML for each post
+                    const postsHtml = `
+                        <div class="carousel-container" id="carousel">
+                            ${posts.map(post => {
+                                const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || '';
+                                // Use WordPress excerpt directly and clean it up
+                                let excerpt = post.excerpt?.rendered ? stripHtml(post.excerpt.rendered) : 'No description available';
+                                // Add space after 'Time to read' if it exists
+                                excerpt = excerpt.replace(/(Time\s*to\s*read[^<]*)([^\s])/gi, '$1 $2');
+                                
+                                return `
+                                    <article class="post-card">
+                                        ${featuredImage ? `<div class="post-image" style="background-image: url('${featuredImage}')"></div>` : ''}
+                                        <div class="post-content">
+                                            <h3 class="post-title">${post.title.rendered}</h3>
+                                            <div class="post-meta">Posted on ${formatDate(post.date)}</div>
+                                            ${excerpt ? `<p class="post-excerpt">${excerpt}</p>` : ''}
+                                            <a href="${post.link}" class="post-link" target="_blank" rel="noopener noreferrer">Read more →</a>
+                                        </div>
+                                    </article>
+                                `;
+                            }).join('')}
+                        </div>
+                        <button id="prevBtn" class="carousel-nav prev" aria-label="Previous">❮</button>
+                        <button id="nextBtn" class="carousel-nav next" aria-label="Next">❯</button>
+                    `;
+            
+                    // Initialize carousel after posts are loaded
+                    if (postsContainer) {
+                        // Use requestAnimationFrame for smoother updates
+                        requestAnimationFrame(() => {
+                            postsContainer.innerHTML = postsHtml;
+                            
+                            // Initialize carousel on next frame
+                            requestAnimationFrame(() => {
+                                initCarousel();
+                                
+                                // Force a reflow to ensure styles are applied
+                                void postsContainer.offsetHeight;
+                                
+                                // Show the container
+                                postsContainer.style.opacity = '1';
+                            });
+                        });
+                    }
+                    
+                    
+                } catch (error) {
+                    console.error('Error fetching WordPress posts:', error);
+                    const errorMessage = error.name === 'AbortError' 
+                        ? 'Request timed out. Please check your connection and try again.'
+                        : 'Unable to load updates at this time. Please try again later.';
+                    
+                    if (postsContainer) {
+                        postsContainer.innerHTML = `
+                            <div class="error-message">
+                                <p>${errorMessage}</p>
+                                <button onclick="window.location.reload()" class="retry-button">
+                                    <i class="fas fa-sync-alt"></i> Retry
+                                </button>
+                            </div>
+                        `;
+                    }
+                } finally {
+                    if (loadingElement) loadingElement.style.display = 'none';
+                }
+            }
+            
+            // Fetch posts when the page loads with the current indicator's data
+            const currentIndicator = {
+                posts: '{{ indicators.page_name.posts|escapejs }}',
+                title: '{{ indicators.page_name.title|escapejs }}'
+            };
+            fetchWordPressPosts(currentIndicator);
         });
     </script>
 </body>
