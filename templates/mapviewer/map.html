@@ -288,7 +288,7 @@
             overflow-x: hidden;
         }
         .column-left {
-            flex: 5;
+            flex: 2;
             background: white;
             border-radius: 10px;
             padding: 15px;
@@ -296,16 +296,12 @@
             box-sizing: border-box;
         }
         .column-right {
-            flex: 1;
+            flex: 2;
             background: white;
             border-radius: 10px;
             padding: 15px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
             box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
         }
 
         .resources-container {
@@ -801,6 +797,38 @@
       <!-- Left Column -->
       <div class="column-left">
         <div class="toolbar-top">
+            <p><strong>Step 1:</strong> Choose a Theme: </p>
+          <div class="dropdown" id="indicatorDropdown">
+            <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+              <span>Click to Choose Indicator</span>
+              <i class="fas fa-chevron-down" style="font-size: 12px; margin-left: 8px; transition: transform 0.2s ease;"></i>
+            </button>
+            <div class="dropdown-menu" id="indicatorMenu" role="menu" aria-labelledby="indicatorDropdown">
+              {% for indicator, data in indicators.all.items %}
+                <a href="{{ indicator }}.html" role="menuitem" tabindex="-1" {% if indicator == page_name %}class="active"{% endif %}>
+                  <i class="fas {{ data.icon }}" style="width: 20px; margin-right: 10px; color: #4CAF50;"></i>
+                  <span>{{ data.title }}</span>
+                </a>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="indicator-info">
+          <div class="indicator-icon">
+            <i class="fas {{ indicators.page_name.icon }}"></i>
+          </div>
+          <div class="text-content">
+            <h1 class="indicator-title">{{ indicators.page_name.title }}</h1>
+            <p class="indicator-description">{{ indicators.page_name.description }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="column-right">
+        <div class="toolbar-top">
+            <p><strong>Step 2:</strong> Choose an Indicator: </p>
           <div class="dropdown" id="indicatorDropdown">
             <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
               <span>Click to Choose Indicator</span>
@@ -836,17 +864,7 @@
           </div>
         </div>
       </div>
-
-      <!-- Right Column -->
-      <div class="column-right">
-        <div class="resources-container" id="resourcesButton">
-          <div class="resource-icon">
-            <i class="fas fa-book-open"></i>
-          </div>
-          <h3 class="resource-title">Click to View Resources</h3>
-          <p class="resource-description">Access additional information and related materials</p>
-        </div>
-      </div>
+    </div>
       
       <script>
         document.addEventListener('DOMContentLoaded', function() {
