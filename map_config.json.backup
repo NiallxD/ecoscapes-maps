@@ -1,453 +1,639 @@
 {
-    "themes": [
+  "themes": [
+    {
+      "id": "ecological-communities",
+      "name": "1.0 Ecological Communities",
+      "description": "Description for Ecological Communities.",
+      "icon": "fa-seedling",
+      "subthemes": [
         {
-            "id": "ecosystems",
-            "name": "1.0 Ecosystems",
-            "subthemes": [
-                {
-                    "id": "values",
-                    "name": "1.0.1 Values",
-                    "indicators": [
-                        "ecosystem-health",
-                        "ecosystem-integrity",
-                        "ecosystem-services"
-                    ]
-                },
-                {
-                    "id": "threats",
-                    "name": "1.0.2 Threats",
-                    "indicators": [
-                        "human-footprint-threats",
-                        "natural-processes-threats"
-                    ]
-                },
-                {
-                    "id": "opportunities",
-                    "name": "1.0.3 Opportunities",
-                    "indicators": [
-                        "human-footprint-opportunities",
-                        "natural-processes-opportunities"
-                    ]
-                }
-            ]
+          "id": "tree-species",
+          "name": "1.0.1 Tree Species",
+          "indicators": [
+            "tree-species"
+          ]
         },
         {
-            "id": "habitats",
-            "name": "2.0 Habitats",
-            "subthemes": [
-                {
-                    "id": "mammals-habitats",
-                    "name": "2.0.1 Mammals",
-                    "indicators": [
-                        "grizzly-bear-habitat",
-                        "black-bear-habitat",
-                        "wolverine-habitat",
-                        "pacific-fisher-habitat",
-                        "lynx-habitat",
-                        "mountain-goat-habitat",
-                        "black-tailed-deer-habitat",
-                        "hoary-marmot-habitat",
-                        "douglass-squirrel-habitat",
-                        "yellow-pine-chipmunk-habitat"
-                    ]
-                },
-                {
-                    "id": "herptiles-habitats",
-                    "name": "2.0.2 Herptiles",
-                    "indicators": [
-                        "western-toad-habitat",
-                        "red-legged-frog-habitat",
-                        "pacific-tree-frog-habitat",
-                        "ensatina-habitat",
-                        "northwestern-salamander-habitat",
-                        "yellow-toed-salamander-habitat",
-                        "northern-alligator-lizard-habitat",
-                        "garter-snake-habitat"
-                    ]
-                }
-            ]
-        },
-        {
-            "id": "corridors",
-            "name": "3.0 Corridors",
-            "subthemes": [
-                {
-                    "id": "mammals-corridors",
-                    "name": "3.0.1 Mammals",
-                    "indicators": [
-                        "grizzly-bear-corridor",
-                        "black-bear-corridor",
-                        "wolverine-corridor",
-                        "pacific-fisher-corridor",
-                        "lynx-corridor",
-                        "mountain-goat-corridor",
-                        "black-tailed-deer-corridor",
-                        "hoary-marmot-corridor",
-                        "douglass-squirrel-corridor",
-                        "yellow-pine-chipmunk-corridor"
-                    ]
-                },
-                {
-                    "id": "herptiles-corridors",
-                    "name": "3.0.2 Herptiles",
-                    "indicators": [
-                        "western-toad-corridor",
-                        "red-legged-frog-corridor",
-                        "pacific-tree-frog-corridor",
-                        "ensatina-corridor",
-                        "northwestern-salamander-corridor",
-                        "yellow-toed-salamander-corridor",
-                        "northern-alligator-lizard-corridor",
-                        "garter-snake-corridor"
-                    ]
-                }
-            ]
+          "id": "understory-vegetation",
+          "name": "1.0.2 Understory Vegetation",
+          "indicators": [
+            "understory-vegetation"
+          ]
         }
-    ],
-    "indicators": {
-        "ecosystem-health": {
-            "title": "1.0.1.1 Ecosystem Health",
-            "posts": "ecosystem-health",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-heartbeat",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+      ]
+    },
+    {
+      "id": "ecosystems",
+      "name": "2.0 Ecosystems",
+      "description": "Description for Ecosystems.",
+      "icon": "fa-seedling",
+      "subthemes": [
+        {
+          "id": "ecosystem-threats",
+          "name": "2.0.1 Ecosystem Threats",
+          "indicators": [
+            "landscape-change",
+            "human-footprint",
+            "urbanization",
+            "agricultural-use",
+            "forest-harvest",
+            "forest-thinning",
+            "wildfire",
+            "temperature",
+            "precipitation"
+          ]
         },
-        "ecosystem-integrity": {
-            "title": "1.0.1.2 Ecosystem Integrity",
-            "posts": "ecosystem-integrity",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-shield-alt",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        {
+          "id": "habitat-losses",
+          "name": "2.0.2 Habitat Losses",
+          "indicators": [
+            "forest-cover",
+            "wetlands-and-riparian-areas",
+            "mesic-vegetation",
+            "xeric-vegetation"
+          ]
         },
-        "ecosystem-services": {
-            "title": "1.0.1.3 Ecosystem Services",
-            "posts": "ecosystem-services",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-leaf",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        {
+          "id": "opportunities",
+          "name": "2.0.3 Opportunities",
+          "indicators": [
+            "protected-areas",
+            "habitat-protection",
+            "habitat-restoration",
+            "climate-refugia",
+            "climate-pathways"
+          ]
         },
-        "human-footprint-threats": {
-            "title": "1.0.2.1 Human Footprint (Threats)",
-            "posts": "human-footprint-threats",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-footprint",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "natural-processes-threats": {
-            "title": "1.0.2.2 Natural Processes (Threats)",
-            "posts": "natural-processes-threats",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-wind",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "human-footprint-opportunities": {
-            "title": "1.0.3.1 Human Footprint (Opportunities)",
-            "posts": "human-footprint-opportunities",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-footprint",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "natural-processes-opportunities": {
-            "title": "1.0.3.2 Natural Processes (Opportunities)",
-            "posts": "natural-processes-opportunities",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-wind",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "grizzly-bear-habitat": {
-            "title": "2.0.1.1 Grizzly Bear",
-            "posts": "grizzly-bear-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "black-bear-habitat": {
-            "title": "2.0.1.2 Black Bear",
-            "posts": "black-bear-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "wolverine-habitat": {
-            "title": "2.0.1.3 Wolverine",
-            "posts": "wolverine-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "pacific-fisher-habitat": {
-            "title": "2.0.1.4 Pacific Fisher",
-            "posts": "pacific-fisher-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "lynx-habitat": {
-            "title": "2.0.1.5 Lynx",
-            "posts": "lynx-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "mountain-goat-habitat": {
-            "title": "2.0.1.6 Mountain Goat",
-            "posts": "mountain-goat-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "black-tailed-deer-habitat": {
-            "title": "2.0.1.7 Black-Tailed Deer",
-            "posts": "black-tailed-deer-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "hoary-marmot-habitat": {
-            "title": "2.0.1.8 Hoary Marmot",
-            "posts": "hoary-marmot-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "douglass-squirrel-habitat": {
-            "title": "2.0.1.9 Douglas's Squirrel",
-            "posts": "douglass-squirrel-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "yellow-pine-chipmunk-habitat": {
-            "title": "2.0.1.10 Yellow-Pine Chipmunk",
-            "posts": "yellow-pine-chipmunk-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "western-toad-habitat": {
-            "title": "2.0.2.1 Western Toad",
-            "posts": "western-toad-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "red-legged-frog-habitat": {
-            "title": "2.0.2.2 Red-Legged Frog",
-            "posts": "red-legged-frog-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "pacific-tree-frog-habitat": {
-            "title": "2.0.2.3 Pacific Tree Frog",
-            "posts": "pacific-tree-frog-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "ensatina-habitat": {
-            "title": "2.0.2.4 Ensatina",
-            "posts": "ensatina-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "northwestern-salamander-habitat": {
-            "title": "2.0.2.5 Northwestern Salamander",
-            "posts": "northwestern-salamander-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "yellow-toed-salamander-habitat": {
-            "title": "2.0.2.6 Yellow-Toed Salamander",
-            "posts": "yellow-toed-salamander-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "northern-alligator-lizard-habitat": {
-            "title": "2.0.2.7 Northern Alligator Lizard",
-            "posts": "northern-alligator-lizard-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "garter-snake-habitat": {
-            "title": "2.0.2.8 Garter Snake",
-            "posts": "garter-snake-habitat",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "grizzly-bear-corridor": {
-            "title": "3.0.1.1 Grizzly Bear",
-            "posts": "grizzly-bear-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "black-bear-corridor": {
-            "title": "3.0.1.2 Black Bear",
-            "posts": "black-bear-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "wolverine-corridor": {
-            "title": "3.0.1.3 Wolverine",
-            "posts": "wolverine-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "pacific-fisher-corridor": {
-            "title": "3.0.1.4 Pacific Fisher",
-            "posts": "pacific-fisher-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "lynx-corridor": {
-            "title": "3.0.1.5 Lynx",
-            "posts": "lynx-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "mountain-goat-corridor": {
-            "title": "3.0.1.6 Mountain Goat",
-            "posts": "mountain-goat-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "black-tailed-deer-corridor": {
-            "title": "3.0.1.7 Black-Tailed Deer",
-            "posts": "black-tailed-deer-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "hoary-marmot-corridor": {
-            "title": "3.0.1.8 Hoary Marmot",
-            "posts": "hoary-marmot-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "douglass-squirrel-corridor": {
-            "title": "3.0.1.9 Douglas's Squirrel",
-            "posts": "douglass-squirrel-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "yellow-pine-chipmunk-corridor": {
-            "title": "3.0.1.10 Yellow-Pine Chipmunk",
-            "posts": "yellow-pine-chipmunk-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-paw",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "western-toad-corridor": {
-            "title": "3.0.2.1 Western Toad",
-            "posts": "western-toad-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "red-legged-frog-corridor": {
-            "title": "3.0.2.2 Red-Legged Frog",
-            "posts": "red-legged-frog-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "pacific-tree-frog-corridor": {
-            "title": "3.0.2.3 Pacific Tree Frog",
-            "posts": "pacific-tree-frog-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "ensatina-corridor": {
-            "title": "3.0.2.4 Ensatina",
-            "posts": "ensatina-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "northwestern-salamander-corridor": {
-            "title": "3.0.2.5 Northwestern Salamander",
-            "posts": "northwestern-salamander-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "yellow-toed-salamander-corridor": {
-            "title": "3.0.2.6 Yellow-Toed Salamander",
-            "posts": "yellow-toed-salamander-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "northern-alligator-lizard-corridor": {
-            "title": "3.0.2.7 Northern Alligator Lizard",
-            "posts": "northern-alligator-lizard-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-        },
-        "garter-snake-corridor": {
-            "title": "3.0.2.8 Garter Snake",
-            "posts": "garter-snake-corridor",
-            "description": " This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.",
-            "icon": "fa-frog",
-            "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-            "map2_url": "https://felt.com/embed/map/Ecosystem-Integrity-hC9CK2ZxJSMufgFDhbOQsuA?loc=50.0873%2C-122.3916%2C8.72z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+        {
+          "id": "values",
+          "name": "2.0.4 Values",
+          "indicators": [
+            "ecosystem-health",
+            "ecosystem-resileince",
+            "habitat-suitability",
+            "habitat-connectivity",
+            "ecosystem-services"
+          ]
         }
+      ]
+    },
+    {
+      "id": "habitat-suitability",
+      "name": "3.0 Habitat Suitability",
+      "description": "Description for Habitat Suitability.",
+      "icon": "fa-seedling",
+      "subthemes": [
+        {
+          "id": "herptile-cores",
+          "name": "3.0.1 Herptile Cores",
+          "indicators": [
+            "western-toad",
+            "red-legged-frog",
+            "pacific-tree-frog",
+            "ensatina",
+            "northwestern-salamander",
+            "yellow-toed-salamander",
+            "northern-alligator-lizard",
+            "garter-snake"
+          ]
+        },
+        {
+          "id": "mammal-cores",
+          "name": "3.0.2 Mammal Cores",
+          "indicators": [
+            "grizzly-bear",
+            "wolverine",
+            "pacific-fisher",
+            "lynx",
+            "black-bear",
+            "mountain-goat",
+            "black-tailed-deer",
+            "hoary-marmot",
+            "douglass-squirrel",
+            "yellow-pine-chipmunk"
+          ]
+        },
+        {
+          "id": "multi-species-cores",
+          "name": "3.0.3 Multi-Species Cores",
+          "indicators": [
+            "multi-species-cores"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "individual-species",
+      "name": "4.0 Individual Species",
+      "description": "Description for Individual Species.",
+      "icon": "fa-seedling",
+      "subthemes": [
+        {
+          "id": "bryophytes",
+          "name": "4.0.1 Bryophytes",
+          "indicators": [
+            "bryophytes"
+          ]
+        },
+        {
+          "id": "herptiles",
+          "name": "4.0.2 Herptiles",
+          "indicators": [
+            "herptiles"
+          ]
+        },
+        {
+          "id": "mammals",
+          "name": "4.0.3 Mammals",
+          "indicators": [
+            "mammals"
+          ]
+        },
+        {
+          "id": "vascular-plants",
+          "name": "4.0.4 Vascular Plants",
+          "indicators": [
+            "vascular-plants"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "threats",
+      "name": "5.0 Threats",
+      "description": "Description for Threats.",
+      "icon": "fa-seedling",
+      "subthemes": [
+        {
+          "id": "barriers-to-movement",
+          "name": "5.0.1 Barriers to Movement",
+          "indicators": [
+            "barriers-to-movement"
+          ]
+        },
+        {
+          "id": "pinchpoints",
+          "name": "5.0.2 Pinchpoints",
+          "indicators": [
+            "pinchpoints"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wildlife-corridors",
+      "name": "6.0 Wildlife Corridors",
+      "description": "Description for Wildlife Corridors.",
+      "icon": "fa-seedling",
+      "subthemes": [
+        {
+          "id": "herptile-linkages",
+          "name": "6.0.1 Herptile Linkages",
+          "indicators": [
+            "western-toad",
+            "red-legged-frog",
+            "pacific-tree-frog",
+            "ensatina",
+            "northwestern-salamander",
+            "yellow-toed-salamander",
+            "northern-alligator-lizard",
+            "garter-snake"
+          ]
+        },
+        {
+          "id": "mammal-linkages",
+          "name": "6.0.2 Mammal Linkages",
+          "indicators": [
+            "grizzly-bear",
+            "black-bear",
+            "wolverine",
+            "pacific-fisher",
+            "lynx",
+            "mountain-goat",
+            "black-tailed-deer",
+            "hoary-marmot",
+            "douglass-squirrel",
+            "yellow-pine-chipmunk"
+          ]
+        },
+        {
+          "id": "multi-species-linkages",
+          "name": "6.0.3 Multi-Species Linkages",
+          "indicators": [
+            "multi-species-linkages"
+          ]
+        }
+      ]
     }
+  ],
+  "indicators": {
+    "tree-species": {
+      "title": "1.0.1.1 Tree Species",
+      "posts": "tree-species",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "understory-vegetation": {
+      "title": "1.0.2.1 Understory Vegetation",
+      "posts": "understory-vegetation",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "landscape-change": {
+      "title": "2.0.1.1 Landscape Change",
+      "posts": "landscape-change",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "human-footprint": {
+      "title": "2.0.1.2 Human Footprint",
+      "posts": "human-footprint",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "urbanization": {
+      "title": "2.0.1.3 Urbanization",
+      "posts": "urbanization",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "agricultural-use": {
+      "title": "2.0.1.4 Agricultural Use",
+      "posts": "agricultural-use",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "forest-harvest": {
+      "title": "2.0.1.5 Forest Harvest",
+      "posts": "forest-harvest",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "forest-thinning": {
+      "title": "2.0.1.6 Forest Thinning",
+      "posts": "forest-thinning",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "wildfire": {
+      "title": "2.0.1.7 Wildfire",
+      "posts": "wildfire",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "temperature": {
+      "title": "2.0.1.8 Temperature",
+      "posts": "temperature",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "precipitation": {
+      "title": "2.0.1.9 Precipitation",
+      "posts": "precipitation",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "forest-cover": {
+      "title": "2.0.2.1 Forest Cover",
+      "posts": "forest-cover",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "wetlands-and-riparian-areas": {
+      "title": "2.0.2.2 Wetlands & Riparian Areas",
+      "posts": "wetlands-and-riparian-areas",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "mesic-vegetation": {
+      "title": "2.0.2.3 Mesic Vegetation",
+      "posts": "mesic-vegetation",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "xeric-vegetation": {
+      "title": "2.0.2.4 Xeric Vegetation",
+      "posts": "xeric-vegetation",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "protected-areas": {
+      "title": "2.0.3.1 Protected Areas",
+      "posts": "protected-areas",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "habitat-protection": {
+      "title": "2.0.3.2 Habitat Protection",
+      "posts": "habitat-protection",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "habitat-restoration": {
+      "title": "2.0.3.3 Habitat Restoration",
+      "posts": "habitat-restoration",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "climate-refugia": {
+      "title": "2.0.3.4 Climate Refugia",
+      "posts": "climate-refugia",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "climate-pathways": {
+      "title": "2.0.3.5 Climate Pathways",
+      "posts": "climate-pathways",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "ecosystem-health": {
+      "title": "2.0.4.1 Ecosystem Health",
+      "posts": "ecosystem-health",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "ecosystem-resileince": {
+      "title": "2.0.4.2 Ecosystem Resileince",
+      "posts": "ecosystem-resileince",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "habitat-suitability": {
+      "title": "2.0.4.3 Habitat Suitability",
+      "posts": "habitat-suitability",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "habitat-connectivity": {
+      "title": "2.0.4.4 Habitat Connectivity",
+      "posts": "habitat-connectivity",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "ecosystem-services": {
+      "title": "2.0.4.5 Ecosystem Services",
+      "posts": "ecosystem-services",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "western-toad": {
+      "title": "3.0.1.1 Western Toad",
+      "posts": "western-toad",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "red-legged-frog": {
+      "title": "3.0.1.2 Red-Legged Frog",
+      "posts": "red-legged-frog",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "pacific-tree-frog": {
+      "title": "3.0.1.3 Pacific Tree Frog",
+      "posts": "pacific-tree-frog",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "ensatina": {
+      "title": "3.0.1.4 Ensatina",
+      "posts": "ensatina",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "northwestern-salamander": {
+      "title": "3.0.1.5 Northwestern Salamander",
+      "posts": "northwestern-salamander",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "yellow-toed-salamander": {
+      "title": "3.0.1.6 Yellow-Toed Salamander",
+      "posts": "yellow-toed-salamander",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "northern-alligator-lizard": {
+      "title": "3.0.1.7 Northern Alligator Lizard",
+      "posts": "northern-alligator-lizard",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "garter-snake": {
+      "title": "3.0.1.8 Garter Snake",
+      "posts": "garter-snake",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "grizzly-bear": {
+      "title": "3.0.2.1 Grizzly Bear",
+      "posts": "grizzly-bear",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "wolverine": {
+      "title": "3.0.2.2 Wolverine",
+      "posts": "wolverine",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "pacific-fisher": {
+      "title": "3.0.2.3 Pacific Fisher",
+      "posts": "pacific-fisher",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "lynx": {
+      "title": "3.0.2.4 Lynx",
+      "posts": "lynx",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "black-bear": {
+      "title": "3.0.2.5 Black Bear",
+      "posts": "black-bear",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "mountain-goat": {
+      "title": "3.0.2.6 Mountain Goat",
+      "posts": "mountain-goat",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "black-tailed-deer": {
+      "title": "3.0.2.7 Black-Tailed Deer",
+      "posts": "black-tailed-deer",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "hoary-marmot": {
+      "title": "3.0.2.8 Hoary Marmot",
+      "posts": "hoary-marmot",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "douglass-squirrel": {
+      "title": "3.0.2.9 Douglas\u2019s Squirrel",
+      "posts": "douglass-squirrel",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "yellow-pine-chipmunk": {
+      "title": "3.0.2.10 Yellow-Pine Chipmunk",
+      "posts": "yellow-pine-chipmunk",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "multi-species-cores": {
+      "title": "3.0.3.1 Multi-Species Cores",
+      "posts": "multi-species-cores",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "bryophytes": {
+      "title": "4.0.1.1 Bryophytes",
+      "posts": "bryophytes",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "herptiles": {
+      "title": "4.0.2.1 Herptiles",
+      "posts": "herptiles",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "mammals": {
+      "title": "4.0.3.1 Mammals",
+      "posts": "mammals",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "vascular-plants": {
+      "title": "4.0.4.1 Vascular Plants",
+      "posts": "vascular-plants",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "barriers-to-movement": {
+      "title": "5.0.1.1 Barriers to Movement",
+      "posts": "barriers-to-movement",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "pinchpoints": {
+      "title": "5.0.2.1 Pinchpoints",
+      "posts": "pinchpoints",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "multi-species-linkages": {
+      "title": "6.0.3.1 Multi-Species Linkages",
+      "posts": "multi-species-linkages",
+      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    }
+  }
 }

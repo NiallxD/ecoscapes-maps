@@ -45,14 +45,49 @@ class Command(BaseCommand):
             # Export the root URL (homepage) first
             self.export_page('', output_dir, self.config, 'index.html')
             
-            # Export each page from config
+            # Create theme group index pages
+            for group in self.config.get('themeGroups', []):
+                group_id = group['id']
+                group_dir = output_dir / group_id
+                group_dir.mkdir(exist_ok=True)
+                
+                # Create index.html for the theme group
+                self.export_page(
+                    '', 
+                    output_dir, 
+                    self.config, 
+                    theme_group=group_id,
+                    output_filename=f"{group_id}/index.html"
+                )
+            
+            # Export each page from config with theme groups
             for page_name in self.config.keys():
-                if page_name not in ['themes', 'indicators']:  # Skip special keys
+                if page_name not in ['themes', 'indicators', 'themeGroups']:  # Skip special keys
                     continue
+                
+                # Export the page with all themes
                 self.export_page(page_name, output_dir, self.config)
+                
+                # Export the page for each theme group
+                for group in self.config.get('themeGroups', []):
+                    group_id = group['id']
+                    group_dir = output_dir / group_id
+                    group_dir.mkdir(exist_ok=True)
+                    
+                    self.export_page(
+                        page_name, 
+                        output_dir, 
+                        self.config, 
+                        theme_group=group_id,
+                        output_filename=f"{group_id}/{page_name}.html"
+                    )
             
             # Export themes page
             self.export_page('themes', output_dir, self.config, 'themes.html')
+            
+            # Create a simple _redirects file for Netlify/Cloudflare Pages
+            with open(output_dir / '_redirects', 'w') as f:
+                f.write('/* /index.html 200\n')
             
             # Copy static files
             self.copy_static_files(static_dir)
@@ -156,17 +191,26 @@ class Command(BaseCommand):
         
         self.stdout.write(self.style.SUCCESS(f'Successfully copied static files to {static_dir}'))
     
-    def export_page(self, page_name, output_dir, config, output_filename=None):
+    def export_page(self, page_name, output_dir, config, output_filename=None, theme_group=None):
         """Export a single page to a static HTML file."""
         try:
             # Determine the URL and output path
             url = f'/{page_name}/' if page_name else '/'
             
-            # Always create .html files in the root directory for GitHub Pages
-            if page_name and not output_filename:
-                output_filename = f'{page_name}.html'
+            # Handle output filename based on theme group
+            if theme_group:
+                # Create a subdirectory for the theme group if it doesn't exist
+                theme_group_dir = output_dir / theme_group
+                theme_group_dir.mkdir(exist_ok=True)
+                
+                if not output_filename:
+                    output_filename = f"{theme_group}/index.html" if not page_name else f"{theme_group}/{page_name}.html"
             else:
-                output_filename = output_filename or 'index.html'
+                # Default behavior for no theme group
+                if page_name and not output_filename:
+                    output_filename = f'{page_name}.html'
+                else:
+                    output_filename = output_filename or 'index.html'
                 
             # Ensure we're always writing to the root of output_dir
             output_path = output_dir / output_filename
@@ -179,16 +223,28 @@ class Command(BaseCommand):
             # Get the page data from config
             page_data = config.get(page_name, {}) if (page_name and page_name in config) else {}
             
+            # Get themes based on theme group filter
+            themes = config.get('themes', [])
+            if theme_group:
+                # Find the theme group and filter themes
+                theme_group_data = next(
+                    (g for g in config.get('themeGroups', []) if g['id'] == theme_group),
+                    None
+                )
+                if theme_group_data:
+                    theme_ids = set(theme_group_data.get('themeIds', []))
+                    themes = [t for t in themes if t.get('id') in theme_ids]
+            
             # Prepare the context with themes and indicators
             context = {
                 'page_name': page_name or 'Home',
-                'themes': config.get('themes', []),  # Always include themes in context
+                'themes': themes,  # Filtered themes based on theme group
                 'indicators': {
                     'all': config.get('indicators', {}),
                     'page_name': page_data if isinstance(page_data, dict) else {}
                 },
                 'page_config': page_data if isinstance(page_data, dict) else {},
-                'STATIC_URL': './static/'  # Relative path for static files
+                'STATIC_URL': '../static/' if theme_group else './static/'  # Adjust static URL based on theme group
             }
             
             # Add map URLs if they exist
@@ -238,34 +294,38 @@ class Command(BaseCommand):
     def create_404_page(self, output_dir):
         """Create a simple 404 page."""
         try:
-            context = {
-                'title': 'Page Not Found',
-                'message': 'The page you are looking for does not exist.'
-            }
-            content = """
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <title>404 - Page Not Found</title>
-                <style>
-                    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-                    h1 { font-size: 50px; }
-                    p { font-size: 20px; }
-                </style>
-            </head>
-            <body>
-                <h1>404</h1>
-                <p>Page not found</p>
-                <p><a href="/">Return to Homepage</a></p>
-            </body>
-            </html>
-            """
-            
-            with open(output_dir / '404.html', 'w', encoding='utf-8') as f:
-                f.write(content)
-                
+            with open(output_dir / '404.html', 'w') as f:
+                f.write('''
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Page Not Found</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+                        h1 { font-size: 50px; }
+                        a { color: #4CAF50; text-decoration: none; }
+                        .container { max-width: 800px; margin: 0 auto; }
+                    </style>
+                    <script>
+                        // Redirect to the main page
+                        window.onload = function() {
+                            // If we're in a theme group directory, redirect to its index
+                            const pathParts = window.location.pathname.split('/').filter(Boolean);
+                            if (pathParts.length > 0 && ['ecological', 'species', 'planning'].includes(pathParts[0])) {
+                                window.location.href = `/${pathParts[0]}/`;
+                            } else {
+                                window.location.href = '/';
+                            }
+                        };
+                    </script>
+                </head>
+                <body>
+                    <div class="container">
+                        <h1>404</h1>
+                        <p>Page not found. Redirecting you to the <a href="/">homepage</a>...</p>
+                    </div>
+                </body>
+                </html>
+                ''')
         except Exception as e:
             self.stderr.write(f'Error creating 404 page: {str(e)}')
-                
-        except Exception as e:
-            self.stdout.write(self.style.ERROR(f'Error exporting {url}: {str(e)}'))

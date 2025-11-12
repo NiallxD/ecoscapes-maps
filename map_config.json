@@ -1,4 +1,18 @@
 {
+  "themeGroups": [
+    {
+      "id": "biodiversity",
+      "name": "Biodiversity",
+      "icon": "fa-leaf",
+      "themeIds": ["ecosystems", "ecological-communities", "individual-species"]
+    },
+    {
+      "id": "connectivity",
+      "name": "Species",
+      "icon": "fa-paw",
+      "themeIds": ["habitat-suitability", "wildlife-corridors", "threats"]
+    }
+  ],
   "themes": [
     {
       "id": "ecological-communities",

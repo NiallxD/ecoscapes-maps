@@ -28,9 +28,41 @@ def collect_static():
         </html>
         """)
         
-    # Create sample page
-    os.makedirs('docs/sample', exist_ok=True)
-    shutil.copy('templates/mapviewer/map.html', 'docs/sample/index.html')
+    # Load the map config to get theme groups
+    with open('map_config.json') as f:
+        config = json.load(f)
+    
+    # Create a version of the site for each theme group
+    theme_groups = config.get('themeGroups', [])
+    
+    # Create a version for each theme group
+    for group in theme_groups:
+        group_dir = os.path.join('docs', group['id'])
+        os.makedirs(group_dir, exist_ok=True)
+        
+        # Copy the template
+        shutil.copy('templates/mapviewer/map.html', os.path.join(group_dir, 'index.html'))
+        
+        # Update the JavaScript to set the default theme group
+        with open(os.path.join(group_dir, 'index.html'), 'r+') as f:
+            content = f.read()
+            # Add JavaScript to set the theme group
+            content = content.replace("<script>", f"""
+            <script>
+            // Set the theme group from the URL
+            if (!window.location.search.includes('theme_group=')) {{
+                const newUrl = new URL(window.location.href);
+                newUrl.searchParams.set('theme_group', '{group["id"]}');
+                window.history.replaceState({{}}, '', newUrl);
+            }}
+            """)
+            f.seek(0)
+            f.write(content)
+            f.truncate()
+    
+    # Also create a default version with all themes
+    os.makedirs('docs/all', exist_ok=True)
+    shutil.copy('templates/mapviewer/map.html', 'docs/all/index.html')
     
     # Copy map config
     shutil.copy('map_config.json', 'docs/map_config.json')
@@ -94,7 +126,11 @@ if __name__ == '__main__':
     print("\nTo test locally:")
     print("1. cd docs")
     print("2. python3 -m http.server 8000")
-    print("3. Open http://localhost:8000 in your browser\n")
+    print("3. Open one of these URLs in your browser:")
+    print("   - http://localhost:8000/all/ (All themes)")
+    for group in theme_groups:
+        print(f"   - http://localhost:8000/{group['id']}/ ({group['name']} theme group)")
+    print()
     
     deploy = input("Would you like to deploy to GitHub now? (y/n): ").lower()
     if deploy == 'y':

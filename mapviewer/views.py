@@ -30,17 +30,44 @@ def get_indicator_details(config, indicator_id):
         return config['indicators'][indicator_id]
     return config.get(indicator_id)  # For old config format
 
-def map_view(request, page_name):
+def map_view(request, page_name='default'):
     config = load_map_config()
+    
+    # Get theme group from query string if provided
+    theme_group_id = request.GET.get('theme_group')
+    theme_ids_to_include = None
+    
+    # If theme group is specified, get the list of theme IDs to include
+    if theme_group_id and 'themeGroups' in config:
+        for group in config['themeGroups']:
+            if group['id'] == theme_group_id:
+                theme_ids_to_include = set(group['themeIds'])
+                print(f"Theme group '{theme_group_id}' found. Including themes: {theme_ids_to_include}")
+                break
+        else:
+            print(f"Theme group '{theme_group_id}' not found in config")
     
     # Handle both old and new config formats
     if 'themes' in config:  # New format with themes
         indicators = config.get('indicators', {})
-        page_config = indicators.get(page_name)
+        
+        # If no specific page is requested, use the first available indicator
+        if page_name == 'default' and indicators:
+            first_indicator = next(iter(indicators.values()))
+            page_config = first_indicator
+        else:
+            page_config = indicators.get(page_name)
+            if not page_config:
+                raise Http404("Indicator not found")
         
         # Pre-process themes to include indicator data
         themes = []
         for theme in config.get('themes', []):
+            # Skip themes not in the selected theme group (if a group was specified)
+            if theme_ids_to_include is not None and theme['id'] not in theme_ids_to_include:
+                print(f"Skipping theme {theme['id']} as it's not in the selected group")
+                continue
+                
             theme_data = theme.copy()
             theme_data['subthemes'] = []
             

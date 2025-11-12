@@ -1,18 +1,32 @@
 
-            <!DOCTYPE html>
-            <html>
-            <head>
-                <title>404 - Page Not Found</title>
-                <style>
-                    body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-                    h1 { font-size: 50px; }
-                    p { font-size: 20px; }
-                </style>
-            </head>
-            <body>
-                <h1>404</h1>
-                <p>Page not found</p>
-                <p><a href="/">Return to Homepage</a></p>
-            </body>
-            </html>
-            
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Page Not Found</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+                        h1 { font-size: 50px; }
+                        a { color: #4CAF50; text-decoration: none; }
+                        .container { max-width: 800px; margin: 0 auto; }
+                    </style>
+                    <script>
+                        // Redirect to the main page
+                        window.onload = function() {
+                            // If we're in a theme group directory, redirect to its index
+                            const pathParts = window.location.pathname.split('/').filter(Boolean);
+                            if (pathParts.length > 0 && ['ecological', 'species', 'planning'].includes(pathParts[0])) {
+                                window.location.href = `/${pathParts[0]}/`;
+                            } else {
+                                window.location.href = '/';
+                            }
+                        };
+                    </script>
+                </head>
+                <body>
+                    <div class="container">
+                        <h1>404</h1>
+                        <p>Page not found. Redirecting you to the <a href="/">homepage</a>...</p>
+                    </div>
+                </body>
+                </html>
+                
