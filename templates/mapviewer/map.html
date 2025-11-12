@@ -1580,9 +1580,70 @@
             let currentTheme = null;
             let currentSubtheme = null;
             let currentIndicator = null;
+            
+            // Function to update URL with current state
+            function updateURL() {
+                const params = new URLSearchParams();
+                if (currentTheme) params.set('theme', currentTheme.id);
+                if (currentSubtheme) params.set('subtheme', currentSubtheme.id);
+                if (currentIndicator) params.set('indicator', currentIndicator.id);
+                
+                const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+                window.history.pushState({}, '', newUrl);
+            }
+            
+            // Function to find theme by ID
+            function findThemeById(themeId) {
+                return themesData.find(theme => theme.id === themeId);
+            }
+            
+            // Load state from URL parameters
+            function loadStateFromURL() {
+                const params = new URLSearchParams(window.location.search);
+                const themeId = params.get('theme');
+                const subthemeId = params.get('subtheme');
+                const indicatorId = params.get('indicator');
+                
+                if (themeId) {
+                    const theme = findThemeById(themeId);
+                    if (theme) {
+                        // Use setTimeout to ensure dropdowns are initialized
+                        setTimeout(() => {
+                            selectTheme(theme);
+                            
+                            if (subthemeId) {
+                                // Small delay to ensure theme is processed
+                                setTimeout(() => {
+                                    const subtheme = theme.subthemes.find(s => s.id === subthemeId);
+                                    if (subtheme) {
+                                        selectSubtheme(subtheme);
+                                        
+                                        if (indicatorId) {
+                                            // Small delay to ensure subtheme is processed
+                                            setTimeout(() => {
+                                                const indicator = subtheme.indicators.find(i => i.id === indicatorId);
+                                                if (indicator) {
+                                                    selectIndicator(indicator);
+                                                }
+                                            }, 100);
+                                        }
+                                    }
+                                }, 100);
+                            }
+                        }, 100);
+                    }
+                }
+            }
+            
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', () => {
+                loadStateFromURL();
+            });
 
-            // Initialize dropdowns
+            // Initialize dropdowns and load state from URL
             function initDropdowns() {
+                // Load state from URL after a short delay to ensure DOM is ready
+                setTimeout(loadStateFromURL, 100);
                 // Populate themes
                 themesData.forEach(theme => {
                     const item = createDropdownItem(theme.name, 'folder', () => {
