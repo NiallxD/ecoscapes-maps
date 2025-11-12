@@ -42,12 +42,17 @@ class Command(BaseCommand):
             # Load the map config
             self.load_config()
             
+            # Export the root URL (homepage) first
+            self.export_page('', output_dir, self.config, 'index.html')
+            
             # Export each page from config
             for page_name in self.config.keys():
+                if page_name not in ['themes', 'indicators']:  # Skip special keys
+                    continue
                 self.export_page(page_name, output_dir, self.config)
             
-            # Export the root URL (homepage)
-            self.export_page('', output_dir, self.config, 'index.html')
+            # Export themes page
+            self.export_page('themes', output_dir, self.config, 'themes.html')
             
             # Copy static files
             self.copy_static_files(static_dir)
@@ -172,20 +177,26 @@ class Command(BaseCommand):
             output_path.parent.mkdir(parents=True, exist_ok=True)
             
             # Get the page data from config
-            page_data = config.get(page_name, {}) if page_name else {}
+            page_data = config.get(page_name, {}) if (page_name and page_name in config) else {}
             
-            # Prepare the context
+            # Prepare the context with themes and indicators
             context = {
                 'page_name': page_name or 'Home',
-                'map1_url': page_data.get('map1_url', ''),
-                'map2_url': page_data.get('map2_url', ''),
+                'themes': config.get('themes', []),  # Always include themes in context
                 'indicators': {
-                    'all': config,
-                    'page_name': page_data
+                    'all': config.get('indicators', {}),
+                    'page_name': page_data if isinstance(page_data, dict) else {}
                 },
-                'page_config': page_data,
+                'page_config': page_data if isinstance(page_data, dict) else {},
                 'STATIC_URL': './static/'  # Relative path for static files
             }
+            
+            # Add map URLs if they exist
+            if isinstance(page_data, dict):
+                context.update({
+                    'map1_url': page_data.get('map1_url', ''),
+                    'map2_url': page_data.get('map2_url', '')
+                })
             
             # Render the template
             try:

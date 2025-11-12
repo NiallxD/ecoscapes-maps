@@ -1,10 +1,10 @@
-{% load dict_filters %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map Viewer - {{ page_name }}</title>
+    <title>Map Viewer - themes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body, html {
@@ -957,7 +957,7 @@
             flex-direction: row;
             align-items: flex-start;
             gap: 12px;
-{{ ... }}
+
             margin-top: 12px;
         }
         .indicator-icon {
@@ -1379,6 +1379,8 @@
             box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
         }
     </style>
+<base href="./">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="app-container">
@@ -1437,11 +1439,11 @@
       <div class="content-section">
         <div class="indicator-info">
           <div class="indicator-icon">
-            <i class="fas {{ indicators.page_name.icon }}"></i>
+            <i class="fas "></i>
           </div>
           <div class="text-content">
-            <h1 class="indicator-title">{{ indicators.page_name.title }}</h1>
-            <p class="indicator-description">{{ indicators.page_name.description }}</p>
+            <h1 class="indicator-title"></h1>
+            <p class="indicator-description"></p>
           </div>
         </div>
       </div>
@@ -1488,36 +1490,646 @@
 
             // Get all themes data from the template
             const themesData = [
-                {% for theme in themes %}
+                
                 {
-                    id: '{{ theme.id|escapejs }}',
-                    name: '{{ theme.name|escapejs }}',
+                    id: 'ecosystems',
+                    name: '1.0 Ecosystems',
                     subthemes: [
-                        {% for subtheme in theme.subthemes %}
+                        
                         {
-                            id: '{{ subtheme.id|escapejs }}',
-                            name: '{{ subtheme.name|escapejs }}',
+                            id: 'values',
+                            name: '1.0.1 Values',
                             indicators: [
-                                {% for indicator_name in subtheme.indicators %}
-                                {% with indicator=indicators.all|get_item:indicator_name %}
+                                
+                                
                                 {
-                                    id: '{{ indicator_name|escapejs }}',
-                                    title: '{{ indicator.title|escapejs }}',
-                                    icon: '{{ indicator.icon|default:'fa-map-marker-alt'|escapejs }}',
-                                    url: '{{ indicator_name }}.html',
-                                    description: '{{ indicator.description|default:''|escapejs }}',
-                                    map1_url: '{{ indicator.map1_url|default:''|escapejs }}',
-                                    map2_url: '{{ indicator.map2_url|default:''|escapejs }}',
-                                    posts: '{{ indicator.posts|default:''|escapejs }}'
-                                }{% if not forloop.last %},{% endif %}
-                                {% endwith %}
-                                {% endfor %}
+                                    id: 'ecosystem\u002Dhealth',
+                                    title: '1.0.1.1 Ecosystem Health',
+                                    icon: 'fa\u002Dheartbeat',
+                                    url: 'ecosystem-health.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'ecosystem\u002Dhealth'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'ecosystem\u002Dintegrity',
+                                    title: '1.0.1.2 Ecosystem Integrity',
+                                    icon: 'fa\u002Dshield\u002Dalt',
+                                    url: 'ecosystem-integrity.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'ecosystem\u002Dintegrity'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'ecosystem\u002Dservices',
+                                    title: '1.0.1.3 Ecosystem Services',
+                                    icon: 'fa\u002Dleaf',
+                                    url: 'ecosystem-services.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'ecosystem\u002Dservices'
+                                }
+                                
+                                
                             ]
-                        }{% if not forloop.last %},{% endif %}
-                        {% endfor %}
+                        },
+                        
+                        {
+                            id: 'threats',
+                            name: '1.0.2 Threats',
+                            indicators: [
+                                
+                                
+                                {
+                                    id: 'human\u002Dfootprint\u002Dthreats',
+                                    title: '1.0.2.1 Human Footprint (Threats)',
+                                    icon: 'fa\u002Dfootprint',
+                                    url: 'human-footprint-threats.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'human\u002Dfootprint\u002Dthreats'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'natural\u002Dprocesses\u002Dthreats',
+                                    title: '1.0.2.2 Natural Processes (Threats)',
+                                    icon: 'fa\u002Dwind',
+                                    url: 'natural-processes-threats.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'natural\u002Dprocesses\u002Dthreats'
+                                }
+                                
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'opportunities',
+                            name: '1.0.3 Opportunities',
+                            indicators: [
+                                
+                                
+                                {
+                                    id: 'human\u002Dfootprint\u002Dopportunities',
+                                    title: '1.0.3.1 Human Footprint (Opportunities)',
+                                    icon: 'fa\u002Dfootprint',
+                                    url: 'human-footprint-opportunities.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'human\u002Dfootprint\u002Dopportunities'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'natural\u002Dprocesses\u002Dopportunities',
+                                    title: '1.0.3.2 Natural Processes (Opportunities)',
+                                    icon: 'fa\u002Dwind',
+                                    url: 'natural-processes-opportunities.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'natural\u002Dprocesses\u002Dopportunities'
+                                }
+                                
+                                
+                            ]
+                        }
+                        
                     ]
-                }{% if not forloop.last %},{% endif %}
-                {% endfor %}
+                },
+                
+                {
+                    id: 'habitats',
+                    name: '2.0 Habitats',
+                    subthemes: [
+                        
+                        {
+                            id: 'mammals\u002Dhabitats',
+                            name: '2.0.1 Mammals',
+                            indicators: [
+                                
+                                
+                                {
+                                    id: 'grizzly\u002Dbear\u002Dhabitat',
+                                    title: '2.0.1.1 Grizzly Bear',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'grizzly-bear-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'grizzly\u002Dbear\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'black\u002Dbear\u002Dhabitat',
+                                    title: '2.0.1.2 Black Bear',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'black-bear-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'black\u002Dbear\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'wolverine\u002Dhabitat',
+                                    title: '2.0.1.3 Wolverine',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'wolverine-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'wolverine\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'pacific\u002Dfisher\u002Dhabitat',
+                                    title: '2.0.1.4 Pacific Fisher',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'pacific-fisher-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'pacific\u002Dfisher\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'lynx\u002Dhabitat',
+                                    title: '2.0.1.5 Lynx',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'lynx-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'lynx\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'mountain\u002Dgoat\u002Dhabitat',
+                                    title: '2.0.1.6 Mountain Goat',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'mountain-goat-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'mountain\u002Dgoat\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'black\u002Dtailed\u002Ddeer\u002Dhabitat',
+                                    title: '2.0.1.7 Black\u002DTailed Deer',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'black-tailed-deer-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'black\u002Dtailed\u002Ddeer\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'hoary\u002Dmarmot\u002Dhabitat',
+                                    title: '2.0.1.8 Hoary Marmot',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'hoary-marmot-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'hoary\u002Dmarmot\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'douglass\u002Dsquirrel\u002Dhabitat',
+                                    title: '2.0.1.9 Douglas\u0027s Squirrel',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'douglass-squirrel-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'douglass\u002Dsquirrel\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'yellow\u002Dpine\u002Dchipmunk\u002Dhabitat',
+                                    title: '2.0.1.10 Yellow\u002DPine Chipmunk',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'yellow-pine-chipmunk-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'yellow\u002Dpine\u002Dchipmunk\u002Dhabitat'
+                                }
+                                
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'herptiles\u002Dhabitats',
+                            name: '2.0.2 Herptiles',
+                            indicators: [
+                                
+                                
+                                {
+                                    id: 'western\u002Dtoad\u002Dhabitat',
+                                    title: '2.0.2.1 Western Toad',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'western-toad-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'western\u002Dtoad\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'red\u002Dlegged\u002Dfrog\u002Dhabitat',
+                                    title: '2.0.2.2 Red\u002DLegged Frog',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'red-legged-frog-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'red\u002Dlegged\u002Dfrog\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'pacific\u002Dtree\u002Dfrog\u002Dhabitat',
+                                    title: '2.0.2.3 Pacific Tree Frog',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'pacific-tree-frog-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'pacific\u002Dtree\u002Dfrog\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'ensatina\u002Dhabitat',
+                                    title: '2.0.2.4 Ensatina',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'ensatina-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'ensatina\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'northwestern\u002Dsalamander\u002Dhabitat',
+                                    title: '2.0.2.5 Northwestern Salamander',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'northwestern-salamander-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'northwestern\u002Dsalamander\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'yellow\u002Dtoed\u002Dsalamander\u002Dhabitat',
+                                    title: '2.0.2.6 Yellow\u002DToed Salamander',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'yellow-toed-salamander-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'yellow\u002Dtoed\u002Dsalamander\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'northern\u002Dalligator\u002Dlizard\u002Dhabitat',
+                                    title: '2.0.2.7 Northern Alligator Lizard',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'northern-alligator-lizard-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'northern\u002Dalligator\u002Dlizard\u002Dhabitat'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'garter\u002Dsnake\u002Dhabitat',
+                                    title: '2.0.2.8 Garter Snake',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'garter-snake-habitat.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'garter\u002Dsnake\u002Dhabitat'
+                                }
+                                
+                                
+                            ]
+                        }
+                        
+                    ]
+                },
+                
+                {
+                    id: 'corridors',
+                    name: '3.0 Corridors',
+                    subthemes: [
+                        
+                        {
+                            id: 'mammals\u002Dcorridors',
+                            name: '3.0.1 Mammals',
+                            indicators: [
+                                
+                                
+                                {
+                                    id: 'grizzly\u002Dbear\u002Dcorridor',
+                                    title: '3.0.1.1 Grizzly Bear',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'grizzly-bear-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'grizzly\u002Dbear\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'black\u002Dbear\u002Dcorridor',
+                                    title: '3.0.1.2 Black Bear',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'black-bear-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'black\u002Dbear\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'wolverine\u002Dcorridor',
+                                    title: '3.0.1.3 Wolverine',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'wolverine-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'wolverine\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'pacific\u002Dfisher\u002Dcorridor',
+                                    title: '3.0.1.4 Pacific Fisher',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'pacific-fisher-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'pacific\u002Dfisher\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'lynx\u002Dcorridor',
+                                    title: '3.0.1.5 Lynx',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'lynx-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'lynx\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'mountain\u002Dgoat\u002Dcorridor',
+                                    title: '3.0.1.6 Mountain Goat',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'mountain-goat-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'mountain\u002Dgoat\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'black\u002Dtailed\u002Ddeer\u002Dcorridor',
+                                    title: '3.0.1.7 Black\u002DTailed Deer',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'black-tailed-deer-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'black\u002Dtailed\u002Ddeer\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'hoary\u002Dmarmot\u002Dcorridor',
+                                    title: '3.0.1.8 Hoary Marmot',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'hoary-marmot-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'hoary\u002Dmarmot\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'douglass\u002Dsquirrel\u002Dcorridor',
+                                    title: '3.0.1.9 Douglas\u0027s Squirrel',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'douglass-squirrel-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'douglass\u002Dsquirrel\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'yellow\u002Dpine\u002Dchipmunk\u002Dcorridor',
+                                    title: '3.0.1.10 Yellow\u002DPine Chipmunk',
+                                    icon: 'fa\u002Dpaw',
+                                    url: 'yellow-pine-chipmunk-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'yellow\u002Dpine\u002Dchipmunk\u002Dcorridor'
+                                }
+                                
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'herptiles\u002Dcorridors',
+                            name: '3.0.2 Herptiles',
+                            indicators: [
+                                
+                                
+                                {
+                                    id: 'western\u002Dtoad\u002Dcorridor',
+                                    title: '3.0.2.1 Western Toad',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'western-toad-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'western\u002Dtoad\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'red\u002Dlegged\u002Dfrog\u002Dcorridor',
+                                    title: '3.0.2.2 Red\u002DLegged Frog',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'red-legged-frog-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'red\u002Dlegged\u002Dfrog\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'pacific\u002Dtree\u002Dfrog\u002Dcorridor',
+                                    title: '3.0.2.3 Pacific Tree Frog',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'pacific-tree-frog-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'pacific\u002Dtree\u002Dfrog\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'ensatina\u002Dcorridor',
+                                    title: '3.0.2.4 Ensatina',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'ensatina-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'ensatina\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'northwestern\u002Dsalamander\u002Dcorridor',
+                                    title: '3.0.2.5 Northwestern Salamander',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'northwestern-salamander-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'northwestern\u002Dsalamander\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'yellow\u002Dtoed\u002Dsalamander\u002Dcorridor',
+                                    title: '3.0.2.6 Yellow\u002DToed Salamander',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'yellow-toed-salamander-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'yellow\u002Dtoed\u002Dsalamander\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'northern\u002Dalligator\u002Dlizard\u002Dcorridor',
+                                    title: '3.0.2.7 Northern Alligator Lizard',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'northern-alligator-lizard-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'northern\u002Dalligator\u002Dlizard\u002Dcorridor'
+                                },
+                                
+                                
+                                
+                                {
+                                    id: 'garter\u002Dsnake\u002Dcorridor',
+                                    title: '3.0.2.8 Garter Snake',
+                                    icon: 'fa\u002Dfrog',
+                                    url: 'garter-snake-corridor.html',
+                                    description: '',
+                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                    posts: 'garter\u002Dsnake\u002Dcorridor'
+                                }
+                                
+                                
+                            ]
+                        }
+                        
+                    ]
+                }
+                
             ];
 
             // DOM Elements
@@ -1772,8 +2384,8 @@
       </script>
     </div>
     <div class="map-container">
-        <iframe id="map1" class="map-iframe active" src="{{ map1_url }}"></iframe>
-        <iframe id="map2" class="map-iframe" src="{{ map2_url }}"></iframe>
+        <iframe id="map1" class="map-iframe active" src=""></iframe>
+        <iframe id="map2" class="map-iframe" src=""></iframe>
     </div>
 
     <script>
@@ -2320,8 +2932,8 @@
             
             // Fetch posts when the page loads with the current indicator's data
             const currentIndicator = {
-                posts: '{{ indicators.page_name.posts|escapejs }}',
-                title: '{{ indicators.page_name.title|escapejs }}'
+                posts: '',
+                title: ''
             };
             fetchWordPressPosts(currentIndicator);
         });
