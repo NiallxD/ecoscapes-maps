@@ -110,8 +110,7 @@
             "black-tailed-deer",
             "hoary-marmot",
             "douglass-squirrel",
-            "yellow-pine-chipmunk",
-            "map-app-content"
+            "yellow-pine-chipmunk"
           ]
         },
         {
@@ -567,14 +566,6 @@
     "yellow-pine-chipmunk": {
       "title": "3.0.2.10 Yellow-Pine Chipmunk",
       "posts": "yellow-pine-chipmunk",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "map-app-content": {
-      "title": "3.0.2.11 Map-App Content",
-      "posts": "map-app-content",
       "description": "Placeholder description.",
       "icon": "fa-leaf",
       "map1_url": "",
