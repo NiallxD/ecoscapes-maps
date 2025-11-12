@@ -3,8 +3,6 @@
         {
             "id": "ecosystems",
             "name": "1.0 Ecosystems",
-            "description": "Ecosystems represent the complex web of interactions between living organisms and their physical environment. This theme focuses on understanding and preserving the health and integrity of natural systems.",
-            "icon": "fa-seedling",
             "subthemes": [
                 {
                     "id": "values",
@@ -36,8 +34,6 @@
         {
             "id": "habitats",
             "name": "2.0 Habitats",
-            "description": "Ecosystems represent the complex web of interactions between living organisms and their physical environment. This theme focuses on understanding and preserving the health and integrity of natural systems.",
-            "icon": "fa-heart",
             "subthemes": [
                 {
                     "id": "mammals-habitats",
@@ -74,8 +70,6 @@
         {
             "id": "corridors",
             "name": "3.0 Corridors",
-            "description": "Ecosystems represent the complex web of interactions between living organisms and their physical environment. This theme focuses on understanding and preserving the health and integrity of natural systems.",
-            "icon": "fa-route",
             "subthemes": [
                 {
                     "id": "mammals-corridors",

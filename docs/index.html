@@ -211,7 +211,6 @@
             gap: 15px;
             padding: 15px 20px;
             border-bottom: 1px solid #edf2f7;
-            margin-bottom: 20px;
             background-color: #f8fafc;
             border-radius: 20px;
         }
@@ -227,35 +226,77 @@
             background-color: #f8fafc;
             border-radius: 20px;
         }
-        .indicator-info {
+        /* ===== Info Box Components ===== */
+        /* Container Styles */
+        .indicator-info,
+        .theme-info {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             align-items: flex-start;
-            flex: 1;
-            overflow-y: auto;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            min-height: 2.5em;
         }
-        .indicator-icon {
-            font-size: 4em;
+
+        /* Icon Base Styles */
+        .indicator-icon,
+        .theme-icon {
+            font-size: 2.5em; /* Slightly reduced from 50px for better scaling */
             color: #4CAF50;
-            min-width: 80px;
-            text-align: center;
-            padding-top: 10px;
+            min-width: 1.5em;
+            height: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            opacity: 0.9;
+            flex-shrink: 0;
+            line-height: 1;
         }
+
+        /* Nested Icons */
+        .indicator-icon i,
+        .theme-icon i {
+            font-size: 1em;
+            line-height: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hover Effects */
+        .indicator-info:hover .indicator-icon,
+        .theme-info:hover .theme-icon {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        /* Text Content */
         .text-content {
             flex: 1;
+            padding: 0;
+            min-width: 0; /* Prevent flex item overflow */
         }
-        .indicator-title {
-            margin: 0 0 12px 0;
+
+        /* Title Styles */
+        .indicator-title,
+        .theme-title {
+            margin: 0 0 8px 0;
             color: #1a365d;
-            font-size: 1.8em;
+            font-size: 1.5em;
             font-weight: 600;
-            line-height: 1.2;
+            line-height: 1.3;
         }
-        .indicator-description {
+
+        /* Description Styles */
+        .indicator-description,
+        .theme-description {
             margin: 0;
             color: #4a5568;
             line-height: 1.6;
             font-size: 1em;
+            max-width: 100%;
         }
         .map-container {
             flex: 1;
@@ -400,21 +441,6 @@
             margin: 0 auto;
             gap: 30px;
         }
-        .indicator-title {
-            margin: 0 0 8px 0;
-            color: #1a365d;
-            font-size: 1.8em;
-            font-weight: 600;
-        }
-        .indicator-description {
-            margin: 0;
-            color: #4a5568;
-            line-height: 1.6;
-        }
-        .indicator-icon {
-            font-size: 4em;
-            color: #4CAF50;
-        }
         .map-container {
             position: relative;
             width: 100%;
@@ -500,7 +526,7 @@
         .indicator-info {
             display: flex;
             gap: 15px;
-            margin-top: 15px;
+            margin: 0;
         }
         .text-content {
             flex: 1;
@@ -663,36 +689,7 @@
             flex-direction: column;
             justify-content: center;
         }
-        .indicator-title {
-            margin: 0 0 8px 0;
-            color: #1a365d;
-            font-size: 1.8em;
-            font-weight: 600;
-            letter-spacing: -0.3px;
-        }
-        .indicator-description {
-            margin: 0;
-            color: #4a5568;
-            line-height: 1.6;
-            max-width: 100%;
-            font-size: 1.05em;
-            opacity: 0.9;
-        }
-        .indicator-icon {
-            font-size: 4em;
-            color: #4CAF50;
-            opacity: 0.9;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 100px;
-            height: 100%;
-        }
-        .indicator-icon:hover {
-            transform: scale(1.05);
-            opacity: 1;
-        }
+
         .title-container {
             display: flex;
             align-items: center;
@@ -957,17 +954,7 @@
             flex-direction: row;
             align-items: flex-start;
             gap: 12px;
-
             margin-top: 12px;
-        }
-        .indicator-icon {
-            font-size: 5em;
-            color: #4CAF50;
-            min-width: 60px;
-            text-align: center;
-            margin-top: 5px;
-            background: none;
-            padding: 5px;
         }
         .text-content {
             flex: 1;
@@ -1437,29 +1424,28 @@
 
         <div class="two-column-section">
             <div class="column-left">
-              <!-- Content Section -->
-                <div class="indicator-info">
-                  <div class="indicator-icon">
-                    <i class="fas "></i>
-                  </div>
-                  <div class="text-content">
-                    <h1 class="indicator-title"></h1>
-                    <p class="indicator-description"></p>
-                  </div>
+              <div class="theme-info">
+                <div class="theme-icon">
+                  <i class="fas fa-layer-group indicator-icon"></i>
                 </div>
-            </div>
-            <div class="column-right">
-              <!-- Content Section -->
-                <div class="indicator-info">
-                  <div class="indicator-icon">
-                    <i class="fas "></i>
-                  </div>
-                  <div class="text-content">
-                    <h1 class="indicator-title"></h1>
-                    <p class="indicator-description"></p>
-                  </div>
+                <div class="text-content">
+                  <h2 class="theme-title">Select a Theme</h2>
+                  <p class="theme-description">Choose a theme from the dropdown to view its details.</p>
                 </div>
               </div>
+            </div>
+            <div class="column-right">
+              <!-- Indicator Information -->
+              <div class="indicator-info">
+                <div class="indicator-icon">
+                  <i class="fas fa-chart-bar indicator-icon"></i>
+                </div>
+                <div class="text-content">
+                  <h2 class="indicator-title">Select an Indicator</h2>
+                  <p class="indicator-description">Choose a theme and sub-theme first, then select an indicator to view its details.</p>
+                </div>
+              </div>
+            </div>
         </div>
     </div>
 
@@ -1515,44 +1501,44 @@
                             name: '1.0.1 Values',
                             indicators: [
                                 
+                                    
+                                        {
+                                            id: 'ecosystem\u002Dhealth',
+                                            title: '1.0.1.1 Ecosystem Health',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dheartbeat',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'ecosystem\u002Dhealth',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'ecosystem\u002Dhealth',
-                                    title: '1.0.1.1 Ecosystem Health',
-                                    icon: 'fa\u002Dheartbeat',
-                                    url: 'ecosystem-health.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'ecosystem\u002Dhealth'
-                                },
+                                    
+                                        {
+                                            id: 'ecosystem\u002Dintegrity',
+                                            title: '1.0.1.2 Ecosystem Integrity',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dshield\u002Dalt',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'ecosystem\u002Dintegrity',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                
-                                
-                                {
-                                    id: 'ecosystem\u002Dintegrity',
-                                    title: '1.0.1.2 Ecosystem Integrity',
-                                    icon: 'fa\u002Dshield\u002Dalt',
-                                    url: 'ecosystem-integrity.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'ecosystem\u002Dintegrity'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'ecosystem\u002Dservices',
-                                    title: '1.0.1.3 Ecosystem Services',
-                                    icon: 'fa\u002Dleaf',
-                                    url: 'ecosystem-services.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'ecosystem\u002Dservices'
-                                }
-                                
+                                    
+                                        {
+                                            id: 'ecosystem\u002Dservices',
+                                            title: '1.0.1.3 Ecosystem Services',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'ecosystem\u002Dservices',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        }
+                                    
                                 
                             ]
                         },
@@ -1562,31 +1548,31 @@
                             name: '1.0.2 Threats',
                             indicators: [
                                 
+                                    
+                                        {
+                                            id: 'human\u002Dfootprint\u002Dthreats',
+                                            title: '1.0.2.1 Human Footprint (Threats)',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfootprint',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'human\u002Dfootprint\u002Dthreats',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'human\u002Dfootprint\u002Dthreats',
-                                    title: '1.0.2.1 Human Footprint (Threats)',
-                                    icon: 'fa\u002Dfootprint',
-                                    url: 'human-footprint-threats.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'human\u002Dfootprint\u002Dthreats'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'natural\u002Dprocesses\u002Dthreats',
-                                    title: '1.0.2.2 Natural Processes (Threats)',
-                                    icon: 'fa\u002Dwind',
-                                    url: 'natural-processes-threats.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'natural\u002Dprocesses\u002Dthreats'
-                                }
-                                
+                                    
+                                        {
+                                            id: 'natural\u002Dprocesses\u002Dthreats',
+                                            title: '1.0.2.2 Natural Processes (Threats)',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dwind',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'natural\u002Dprocesses\u002Dthreats',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        }
+                                    
                                 
                             ]
                         },
@@ -1596,36 +1582,39 @@
                             name: '1.0.3 Opportunities',
                             indicators: [
                                 
+                                    
+                                        {
+                                            id: 'human\u002Dfootprint\u002Dopportunities',
+                                            title: '1.0.3.1 Human Footprint (Opportunities)',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfootprint',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'human\u002Dfootprint\u002Dopportunities',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'human\u002Dfootprint\u002Dopportunities',
-                                    title: '1.0.3.1 Human Footprint (Opportunities)',
-                                    icon: 'fa\u002Dfootprint',
-                                    url: 'human-footprint-opportunities.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'human\u002Dfootprint\u002Dopportunities'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'natural\u002Dprocesses\u002Dopportunities',
-                                    title: '1.0.3.2 Natural Processes (Opportunities)',
-                                    icon: 'fa\u002Dwind',
-                                    url: 'natural-processes-opportunities.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'natural\u002Dprocesses\u002Dopportunities'
-                                }
-                                
+                                    
+                                        {
+                                            id: 'natural\u002Dprocesses\u002Dopportunities',
+                                            title: '1.0.3.2 Natural Processes (Opportunities)',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dwind',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'natural\u002Dprocesses\u002Dopportunities',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        }
+                                    
                                 
                             ]
                         }
                         
-                    ]
+                    ],
+                    description: 'Ecosystems represent the complex web of interactions between living organisms and their physical environment. This theme focuses on understanding and preserving the health and integrity of natural systems.',
+                    icon: 'fa\u002Dseedling'
+
                 },
                 
                 {
@@ -1638,135 +1627,135 @@
                             name: '2.0.1 Mammals',
                             indicators: [
                                 
+                                    
+                                        {
+                                            id: 'grizzly\u002Dbear\u002Dhabitat',
+                                            title: '2.0.1.1 Grizzly Bear',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'grizzly\u002Dbear\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'grizzly\u002Dbear\u002Dhabitat',
-                                    title: '2.0.1.1 Grizzly Bear',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'grizzly-bear-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'grizzly\u002Dbear\u002Dhabitat'
-                                },
+                                    
+                                        {
+                                            id: 'black\u002Dbear\u002Dhabitat',
+                                            title: '2.0.1.2 Black Bear',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'black\u002Dbear\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'wolverine\u002Dhabitat',
+                                            title: '2.0.1.3 Wolverine',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'wolverine\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'pacific\u002Dfisher\u002Dhabitat',
+                                            title: '2.0.1.4 Pacific Fisher',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'pacific\u002Dfisher\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'black\u002Dbear\u002Dhabitat',
-                                    title: '2.0.1.2 Black Bear',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'black-bear-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'black\u002Dbear\u002Dhabitat'
-                                },
+                                    
+                                        {
+                                            id: 'lynx\u002Dhabitat',
+                                            title: '2.0.1.5 Lynx',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'lynx\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'mountain\u002Dgoat\u002Dhabitat',
+                                            title: '2.0.1.6 Mountain Goat',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'mountain\u002Dgoat\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'black\u002Dtailed\u002Ddeer\u002Dhabitat',
+                                            title: '2.0.1.7 Black\u002DTailed Deer',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'black\u002Dtailed\u002Ddeer\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'wolverine\u002Dhabitat',
-                                    title: '2.0.1.3 Wolverine',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'wolverine-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'wolverine\u002Dhabitat'
-                                },
+                                    
+                                        {
+                                            id: 'hoary\u002Dmarmot\u002Dhabitat',
+                                            title: '2.0.1.8 Hoary Marmot',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'hoary\u002Dmarmot\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'douglass\u002Dsquirrel\u002Dhabitat',
+                                            title: '2.0.1.9 Douglas\u0027s Squirrel',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'douglass\u002Dsquirrel\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                
-                                {
-                                    id: 'pacific\u002Dfisher\u002Dhabitat',
-                                    title: '2.0.1.4 Pacific Fisher',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'pacific-fisher-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'pacific\u002Dfisher\u002Dhabitat'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'lynx\u002Dhabitat',
-                                    title: '2.0.1.5 Lynx',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'lynx-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'lynx\u002Dhabitat'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'mountain\u002Dgoat\u002Dhabitat',
-                                    title: '2.0.1.6 Mountain Goat',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'mountain-goat-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'mountain\u002Dgoat\u002Dhabitat'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'black\u002Dtailed\u002Ddeer\u002Dhabitat',
-                                    title: '2.0.1.7 Black\u002DTailed Deer',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'black-tailed-deer-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'black\u002Dtailed\u002Ddeer\u002Dhabitat'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'hoary\u002Dmarmot\u002Dhabitat',
-                                    title: '2.0.1.8 Hoary Marmot',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'hoary-marmot-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'hoary\u002Dmarmot\u002Dhabitat'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'douglass\u002Dsquirrel\u002Dhabitat',
-                                    title: '2.0.1.9 Douglas\u0027s Squirrel',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'douglass-squirrel-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'douglass\u002Dsquirrel\u002Dhabitat'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'yellow\u002Dpine\u002Dchipmunk\u002Dhabitat',
-                                    title: '2.0.1.10 Yellow\u002DPine Chipmunk',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'yellow-pine-chipmunk-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'yellow\u002Dpine\u002Dchipmunk\u002Dhabitat'
-                                }
-                                
+                                    
+                                        {
+                                            id: 'yellow\u002Dpine\u002Dchipmunk\u002Dhabitat',
+                                            title: '2.0.1.10 Yellow\u002DPine Chipmunk',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'yellow\u002Dpine\u002Dchipmunk\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        }
+                                    
                                 
                             ]
                         },
@@ -1776,114 +1765,117 @@
                             name: '2.0.2 Herptiles',
                             indicators: [
                                 
+                                    
+                                        {
+                                            id: 'western\u002Dtoad\u002Dhabitat',
+                                            title: '2.0.2.1 Western Toad',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'western\u002Dtoad\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'western\u002Dtoad\u002Dhabitat',
-                                    title: '2.0.2.1 Western Toad',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'western-toad-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'western\u002Dtoad\u002Dhabitat'
-                                },
+                                    
+                                        {
+                                            id: 'red\u002Dlegged\u002Dfrog\u002Dhabitat',
+                                            title: '2.0.2.2 Red\u002DLegged Frog',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'red\u002Dlegged\u002Dfrog\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'pacific\u002Dtree\u002Dfrog\u002Dhabitat',
+                                            title: '2.0.2.3 Pacific Tree Frog',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'pacific\u002Dtree\u002Dfrog\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'ensatina\u002Dhabitat',
+                                            title: '2.0.2.4 Ensatina',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'ensatina\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'red\u002Dlegged\u002Dfrog\u002Dhabitat',
-                                    title: '2.0.2.2 Red\u002DLegged Frog',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'red-legged-frog-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'red\u002Dlegged\u002Dfrog\u002Dhabitat'
-                                },
+                                    
+                                        {
+                                            id: 'northwestern\u002Dsalamander\u002Dhabitat',
+                                            title: '2.0.2.5 Northwestern Salamander',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'northwestern\u002Dsalamander\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'yellow\u002Dtoed\u002Dsalamander\u002Dhabitat',
+                                            title: '2.0.2.6 Yellow\u002DToed Salamander',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'yellow\u002Dtoed\u002Dsalamander\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'northern\u002Dalligator\u002Dlizard\u002Dhabitat',
+                                            title: '2.0.2.7 Northern Alligator Lizard',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'northern\u002Dalligator\u002Dlizard\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'pacific\u002Dtree\u002Dfrog\u002Dhabitat',
-                                    title: '2.0.2.3 Pacific Tree Frog',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'pacific-tree-frog-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'pacific\u002Dtree\u002Dfrog\u002Dhabitat'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'ensatina\u002Dhabitat',
-                                    title: '2.0.2.4 Ensatina',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'ensatina-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'ensatina\u002Dhabitat'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'northwestern\u002Dsalamander\u002Dhabitat',
-                                    title: '2.0.2.5 Northwestern Salamander',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'northwestern-salamander-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'northwestern\u002Dsalamander\u002Dhabitat'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'yellow\u002Dtoed\u002Dsalamander\u002Dhabitat',
-                                    title: '2.0.2.6 Yellow\u002DToed Salamander',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'yellow-toed-salamander-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'yellow\u002Dtoed\u002Dsalamander\u002Dhabitat'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'northern\u002Dalligator\u002Dlizard\u002Dhabitat',
-                                    title: '2.0.2.7 Northern Alligator Lizard',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'northern-alligator-lizard-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'northern\u002Dalligator\u002Dlizard\u002Dhabitat'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'garter\u002Dsnake\u002Dhabitat',
-                                    title: '2.0.2.8 Garter Snake',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'garter-snake-habitat.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'garter\u002Dsnake\u002Dhabitat'
-                                }
-                                
+                                    
+                                        {
+                                            id: 'garter\u002Dsnake\u002Dhabitat',
+                                            title: '2.0.2.8 Garter Snake',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'garter\u002Dsnake\u002Dhabitat',
+                                            theme: 'habitats'  // Add theme ID to each indicator
+                                        }
+                                    
                                 
                             ]
                         }
                         
-                    ]
+                    ],
+                    description: 'Ecosystems represent the complex web of interactions between living organisms and their physical environment. This theme focuses on understanding and preserving the health and integrity of natural systems.',
+                    icon: 'fa\u002Dheart'
+
                 },
                 
                 {
@@ -1896,135 +1888,135 @@
                             name: '3.0.1 Mammals',
                             indicators: [
                                 
+                                    
+                                        {
+                                            id: 'grizzly\u002Dbear\u002Dcorridor',
+                                            title: '3.0.1.1 Grizzly Bear',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'grizzly\u002Dbear\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'grizzly\u002Dbear\u002Dcorridor',
-                                    title: '3.0.1.1 Grizzly Bear',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'grizzly-bear-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'grizzly\u002Dbear\u002Dcorridor'
-                                },
+                                    
+                                        {
+                                            id: 'black\u002Dbear\u002Dcorridor',
+                                            title: '3.0.1.2 Black Bear',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'black\u002Dbear\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'wolverine\u002Dcorridor',
+                                            title: '3.0.1.3 Wolverine',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'wolverine\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'pacific\u002Dfisher\u002Dcorridor',
+                                            title: '3.0.1.4 Pacific Fisher',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'pacific\u002Dfisher\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'black\u002Dbear\u002Dcorridor',
-                                    title: '3.0.1.2 Black Bear',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'black-bear-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'black\u002Dbear\u002Dcorridor'
-                                },
+                                    
+                                        {
+                                            id: 'lynx\u002Dcorridor',
+                                            title: '3.0.1.5 Lynx',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'lynx\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'mountain\u002Dgoat\u002Dcorridor',
+                                            title: '3.0.1.6 Mountain Goat',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'mountain\u002Dgoat\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'black\u002Dtailed\u002Ddeer\u002Dcorridor',
+                                            title: '3.0.1.7 Black\u002DTailed Deer',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'black\u002Dtailed\u002Ddeer\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'wolverine\u002Dcorridor',
-                                    title: '3.0.1.3 Wolverine',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'wolverine-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'wolverine\u002Dcorridor'
-                                },
+                                    
+                                        {
+                                            id: 'hoary\u002Dmarmot\u002Dcorridor',
+                                            title: '3.0.1.8 Hoary Marmot',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'hoary\u002Dmarmot\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'douglass\u002Dsquirrel\u002Dcorridor',
+                                            title: '3.0.1.9 Douglas\u0027s Squirrel',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'douglass\u002Dsquirrel\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                
-                                {
-                                    id: 'pacific\u002Dfisher\u002Dcorridor',
-                                    title: '3.0.1.4 Pacific Fisher',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'pacific-fisher-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'pacific\u002Dfisher\u002Dcorridor'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'lynx\u002Dcorridor',
-                                    title: '3.0.1.5 Lynx',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'lynx-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'lynx\u002Dcorridor'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'mountain\u002Dgoat\u002Dcorridor',
-                                    title: '3.0.1.6 Mountain Goat',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'mountain-goat-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'mountain\u002Dgoat\u002Dcorridor'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'black\u002Dtailed\u002Ddeer\u002Dcorridor',
-                                    title: '3.0.1.7 Black\u002DTailed Deer',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'black-tailed-deer-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'black\u002Dtailed\u002Ddeer\u002Dcorridor'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'hoary\u002Dmarmot\u002Dcorridor',
-                                    title: '3.0.1.8 Hoary Marmot',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'hoary-marmot-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'hoary\u002Dmarmot\u002Dcorridor'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'douglass\u002Dsquirrel\u002Dcorridor',
-                                    title: '3.0.1.9 Douglas\u0027s Squirrel',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'douglass-squirrel-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'douglass\u002Dsquirrel\u002Dcorridor'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'yellow\u002Dpine\u002Dchipmunk\u002Dcorridor',
-                                    title: '3.0.1.10 Yellow\u002DPine Chipmunk',
-                                    icon: 'fa\u002Dpaw',
-                                    url: 'yellow-pine-chipmunk-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'yellow\u002Dpine\u002Dchipmunk\u002Dcorridor'
-                                }
-                                
+                                    
+                                        {
+                                            id: 'yellow\u002Dpine\u002Dchipmunk\u002Dcorridor',
+                                            title: '3.0.1.10 Yellow\u002DPine Chipmunk',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dpaw',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'yellow\u002Dpine\u002Dchipmunk\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        }
+                                    
                                 
                             ]
                         },
@@ -2034,114 +2026,117 @@
                             name: '3.0.2 Herptiles',
                             indicators: [
                                 
+                                    
+                                        {
+                                            id: 'western\u002Dtoad\u002Dcorridor',
+                                            title: '3.0.2.1 Western Toad',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'western\u002Dtoad\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'western\u002Dtoad\u002Dcorridor',
-                                    title: '3.0.2.1 Western Toad',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'western-toad-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'western\u002Dtoad\u002Dcorridor'
-                                },
+                                    
+                                        {
+                                            id: 'red\u002Dlegged\u002Dfrog\u002Dcorridor',
+                                            title: '3.0.2.2 Red\u002DLegged Frog',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'red\u002Dlegged\u002Dfrog\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'pacific\u002Dtree\u002Dfrog\u002Dcorridor',
+                                            title: '3.0.2.3 Pacific Tree Frog',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'pacific\u002Dtree\u002Dfrog\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'ensatina\u002Dcorridor',
+                                            title: '3.0.2.4 Ensatina',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'ensatina\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'red\u002Dlegged\u002Dfrog\u002Dcorridor',
-                                    title: '3.0.2.2 Red\u002DLegged Frog',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'red-legged-frog-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'red\u002Dlegged\u002Dfrog\u002Dcorridor'
-                                },
+                                    
+                                        {
+                                            id: 'northwestern\u002Dsalamander\u002Dcorridor',
+                                            title: '3.0.2.5 Northwestern Salamander',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'northwestern\u002Dsalamander\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'yellow\u002Dtoed\u002Dsalamander\u002Dcorridor',
+                                            title: '3.0.2.6 Yellow\u002DToed Salamander',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'yellow\u002Dtoed\u002Dsalamander\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
+                                    
+                                        {
+                                            id: 'northern\u002Dalligator\u002Dlizard\u002Dcorridor',
+                                            title: '3.0.2.7 Northern Alligator Lizard',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'northern\u002Dalligator\u002Dlizard\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        },
+                                    
                                 
-                                {
-                                    id: 'pacific\u002Dtree\u002Dfrog\u002Dcorridor',
-                                    title: '3.0.2.3 Pacific Tree Frog',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'pacific-tree-frog-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'pacific\u002Dtree\u002Dfrog\u002Dcorridor'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'ensatina\u002Dcorridor',
-                                    title: '3.0.2.4 Ensatina',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'ensatina-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'ensatina\u002Dcorridor'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'northwestern\u002Dsalamander\u002Dcorridor',
-                                    title: '3.0.2.5 Northwestern Salamander',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'northwestern-salamander-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'northwestern\u002Dsalamander\u002Dcorridor'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'yellow\u002Dtoed\u002Dsalamander\u002Dcorridor',
-                                    title: '3.0.2.6 Yellow\u002DToed Salamander',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'yellow-toed-salamander-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'yellow\u002Dtoed\u002Dsalamander\u002Dcorridor'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'northern\u002Dalligator\u002Dlizard\u002Dcorridor',
-                                    title: '3.0.2.7 Northern Alligator Lizard',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'northern-alligator-lizard-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'northern\u002Dalligator\u002Dlizard\u002Dcorridor'
-                                },
-                                
-                                
-                                
-                                {
-                                    id: 'garter\u002Dsnake\u002Dcorridor',
-                                    title: '3.0.2.8 Garter Snake',
-                                    icon: 'fa\u002Dfrog',
-                                    url: 'garter-snake-corridor.html',
-                                    description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
-                                    map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                    posts: 'garter\u002Dsnake\u002Dcorridor'
-                                }
-                                
+                                    
+                                        {
+                                            id: 'garter\u002Dsnake\u002Dcorridor',
+                                            title: '3.0.2.8 Garter Snake',
+                                            description: ' This is an indicator. There is information here about the indicator. The indicators all come with two maps, well most of them do. The maps show the indicator data on the map. You can toggle between the two maps using the toggle. Thanks for reading my placeholder description.',
+                                            icon: 'fa\u002Dfrog',
+                                            map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            posts: 'garter\u002Dsnake\u002Dcorridor',
+                                            theme: 'corridors'  // Add theme ID to each indicator
+                                        }
+                                    
                                 
                             ]
                         }
                         
-                    ]
+                    ],
+                    description: 'Ecosystems represent the complex web of interactions between living organisms and their physical environment. This theme focuses on understanding and preserving the health and integrity of natural systems.',
+                    icon: 'fa\u002Droute'
+
                 }
                 
             ];
@@ -2220,6 +2215,31 @@
                 Dropdown.closeAll();
             }
 
+            // Update theme info box
+            function updateThemeInfo(theme) {
+                const themeInfo = document.querySelector('.theme-info');
+                if (!theme) {
+                    themeInfo.innerHTML = `
+                        <div class="theme-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="text-content">
+                            <h2 class="theme-title">Map Viewer</h2>
+                            <p class="theme-description">Select a theme, subtheme, and indicator to view detailed information.</p>
+                        </div>`;
+                    return;
+                }
+                
+                themeInfo.innerHTML = `
+                    <div class="theme-icon">
+                        <i class="fas ${theme.icon}"></i>
+                    </div>
+                    <div class="text-content">
+                        <h2 class="theme-title">${theme.name}</h2>
+                        <p class="theme-description">${theme.description}</p>
+                    </div>`;
+            }
+
             // Theme selected
             function selectTheme(theme) {
                 currentTheme = theme;
@@ -2228,6 +2248,9 @@
                 
                 // Update theme button
                 updateButton(themeDropdown, theme.name, 'folder');
+                
+                // Update theme info box
+                updateThemeInfo(theme);
                 
                 // Reset subtheme dropdown
                 updateButton(subthemeDropdown, 'Select Subtheme', 'folder-open');
@@ -2300,6 +2323,16 @@
                 
                 // Close all dropdowns
                 closeAllDropdowns();
+                
+                // Ensure theme info is still showing the parent theme
+                if (currentTheme) {
+                    updateThemeInfo(currentTheme);
+                }
+            }
+
+            // Find theme by ID
+            function findThemeById(themeId) {
+                return themesData.find(theme => theme.id === themeId);
             }
 
             // Indicator selected
@@ -2309,10 +2342,30 @@
                 // Update indicator button
                 updateButton(indicatorDropdown, indicator.title, indicator.icon.replace('fa-', ''));
                 
-                // Update page content
-                indicatorTitle.textContent = indicator.title;
-                indicatorDescription.textContent = indicator.description;
-                indicatorIcon.className = `fas ${indicator.icon}`;
+                // Update indicator info box
+                const indicatorInfo = document.querySelector('.indicator-info');
+                indicatorInfo.innerHTML = `
+                    <div class="indicator-icon">
+                        <i class="fas ${indicator.icon} indicator-icon"></i>
+                    </div>
+                    <div class="text-content">
+                        <h2 class="indicator-title">${indicator.title}</h2>
+                        <p class="indicator-description">${indicator.description}</p>
+                    </div>`;
+                
+                // Find and update the current theme based on the indicator's theme ID
+                if (indicator.theme) {
+                    const theme = findThemeById(indicator.theme);
+                    if (theme) {
+                        currentTheme = theme;
+                        updateThemeInfo(theme);
+                        // Also update the theme dropdown to show the correct theme
+                        updateButton(themeDropdown, theme.name, 'folder');
+                    }
+                } else if (currentTheme) {
+                    // Fallback to current theme if no theme ID in indicator
+                    updateThemeInfo(currentTheme);
+                }
                 
                 // Get map elements
                 const map1 = document.getElementById('map1');

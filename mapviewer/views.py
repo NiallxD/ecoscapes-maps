@@ -67,11 +67,26 @@ def map_view(request, page_name):
     if not page_config:
         raise Http404("Indicator not found")
     
+    # Find the current theme for the indicator
+    current_theme = None
+    for theme in themes:
+        for subtheme in theme.get('subthemes', []):
+            if page_name in subtheme.get('indicators', []):
+                current_theme = theme
+                break
+        if current_theme:
+            break
+    
+    # Update page config with theme info
+    if current_theme:
+        page_config['theme'] = current_theme['id']
+    
     context = {
         'map1_url': page_config.get('map1_url', ''),
         'map2_url': page_config.get('map2_url', ''),
         'page_name': page_name,
         'themes': themes,
+        'current_theme': current_theme,  # Add current theme to context
         'indicators': {
             'all': indicators,  # All indicators for the dropdown (flattened)
             'page_name': page_config  # Current page configuration

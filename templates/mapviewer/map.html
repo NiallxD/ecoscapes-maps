@@ -211,7 +211,6 @@
             gap: 15px;
             padding: 15px 20px;
             border-bottom: 1px solid #edf2f7;
-            margin-bottom: 20px;
             background-color: #f8fafc;
             border-radius: 20px;
         }
@@ -227,35 +226,77 @@
             background-color: #f8fafc;
             border-radius: 20px;
         }
-        .indicator-info {
+        /* ===== Info Box Components ===== */
+        /* Container Styles */
+        .indicator-info,
+        .theme-info {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             align-items: flex-start;
-            flex: 1;
-            overflow-y: auto;
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            min-height: 2.5em;
         }
-        .indicator-icon {
-            font-size: 4em;
+
+        /* Icon Base Styles */
+        .indicator-icon,
+        .theme-icon {
+            font-size: 2.5em; /* Slightly reduced from 50px for better scaling */
             color: #4CAF50;
-            min-width: 80px;
-            text-align: center;
-            padding-top: 10px;
+            min-width: 1.5em;
+            height: 1.5em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            opacity: 0.9;
+            flex-shrink: 0;
+            line-height: 1;
         }
+
+        /* Nested Icons */
+        .indicator-icon i,
+        .theme-icon i {
+            font-size: 1em;
+            line-height: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Hover Effects */
+        .indicator-info:hover .indicator-icon,
+        .theme-info:hover .theme-icon {
+            opacity: 1;
+            transform: translateY(-1px);
+        }
+
+        /* Text Content */
         .text-content {
             flex: 1;
+            padding: 0;
+            min-width: 0; /* Prevent flex item overflow */
         }
-        .indicator-title {
-            margin: 0 0 12px 0;
+
+        /* Title Styles */
+        .indicator-title,
+        .theme-title {
+            margin: 0 0 8px 0;
             color: #1a365d;
-            font-size: 1.8em;
+            font-size: 1.5em;
             font-weight: 600;
-            line-height: 1.2;
+            line-height: 1.3;
         }
-        .indicator-description {
+
+        /* Description Styles */
+        .indicator-description,
+        .theme-description {
             margin: 0;
             color: #4a5568;
             line-height: 1.6;
             font-size: 1em;
+            max-width: 100%;
         }
         .map-container {
             flex: 1;
@@ -400,21 +441,6 @@
             margin: 0 auto;
             gap: 30px;
         }
-        .indicator-title {
-            margin: 0 0 8px 0;
-            color: #1a365d;
-            font-size: 1.8em;
-            font-weight: 600;
-        }
-        .indicator-description {
-            margin: 0;
-            color: #4a5568;
-            line-height: 1.6;
-        }
-        .indicator-icon {
-            font-size: 4em;
-            color: #4CAF50;
-        }
         .map-container {
             position: relative;
             width: 100%;
@@ -500,7 +526,7 @@
         .indicator-info {
             display: flex;
             gap: 15px;
-            margin-top: 15px;
+            margin: 0;
         }
         .text-content {
             flex: 1;
@@ -663,36 +689,7 @@
             flex-direction: column;
             justify-content: center;
         }
-        .indicator-title {
-            margin: 0 0 8px 0;
-            color: #1a365d;
-            font-size: 1.8em;
-            font-weight: 600;
-            letter-spacing: -0.3px;
-        }
-        .indicator-description {
-            margin: 0;
-            color: #4a5568;
-            line-height: 1.6;
-            max-width: 100%;
-            font-size: 1.05em;
-            opacity: 0.9;
-        }
-        .indicator-icon {
-            font-size: 4em;
-            color: #4CAF50;
-            opacity: 0.9;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-width: 100px;
-            height: 100%;
-        }
-        .indicator-icon:hover {
-            transform: scale(1.05);
-            opacity: 1;
-        }
+
         .title-container {
             display: flex;
             align-items: center;
@@ -957,17 +954,7 @@
             flex-direction: row;
             align-items: flex-start;
             gap: 12px;
-{{ ... }}
             margin-top: 12px;
-        }
-        .indicator-icon {
-            font-size: 5em;
-            color: #4CAF50;
-            min-width: 60px;
-            text-align: center;
-            margin-top: 5px;
-            background: none;
-            padding: 5px;
         }
         .text-content {
             flex: 1;
@@ -1435,29 +1422,28 @@
 
         <div class="two-column-section">
             <div class="column-left">
-              <!-- Content Section -->
-                <div class="indicator-info">
-                  <div class="indicator-icon">
-                    <i class="fas {{ indicators.page_name.icon }}"></i>
-                  </div>
-                  <div class="text-content">
-                    <h1 class="indicator-title">{{ indicators.page_name.title }}</h1>
-                    <p class="indicator-description">{{ indicators.page_name.description }}</p>
-                  </div>
+              <div class="theme-info">
+                <div class="theme-icon">
+                  <i class="fas fa-layer-group indicator-icon"></i>
                 </div>
-            </div>
-            <div class="column-right">
-              <!-- Content Section -->
-                <div class="indicator-info">
-                  <div class="indicator-icon">
-                    <i class="fas {{ indicators.page_name.icon }}"></i>
-                  </div>
-                  <div class="text-content">
-                    <h1 class="indicator-title">{{ indicators.page_name.title }}</h1>
-                    <p class="indicator-description">{{ indicators.page_name.description }}</p>
-                  </div>
+                <div class="text-content">
+                  <h2 class="theme-title">Select a Theme</h2>
+                  <p class="theme-description">Choose a theme from the dropdown to view its details.</p>
                 </div>
               </div>
+            </div>
+            <div class="column-right">
+              <!-- Indicator Information -->
+              <div class="indicator-info">
+                <div class="indicator-icon">
+                  <i class="fas fa-chart-bar indicator-icon"></i>
+                </div>
+                <div class="text-content">
+                  <h2 class="indicator-title">Select an Indicator</h2>
+                  <p class="indicator-description">Choose a theme and sub-theme first, then select an indicator to view its details.</p>
+                </div>
+              </div>
+            </div>
         </div>
     </div>
 
@@ -1512,24 +1498,27 @@
                             id: '{{ subtheme.id|escapejs }}',
                             name: '{{ subtheme.name|escapejs }}',
                             indicators: [
-                                {% for indicator_name in subtheme.indicators %}
-                                {% with indicator=indicators.all|get_item:indicator_name %}
-                                {
-                                    id: '{{ indicator_name|escapejs }}',
-                                    title: '{{ indicator.title|escapejs }}',
-                                    icon: '{{ indicator.icon|default:'fa-map-marker-alt'|escapejs }}',
-                                    url: '{{ indicator_name }}.html',
-                                    description: '{{ indicator.description|default:''|escapejs }}',
-                                    map1_url: '{{ indicator.map1_url|default:''|escapejs }}',
-                                    map2_url: '{{ indicator.map2_url|default:''|escapejs }}',
-                                    posts: '{{ indicator.posts|default:''|escapejs }}'
-                                }{% if not forloop.last %},{% endif %}
-                                {% endwith %}
+                                {% for indicator_id in subtheme.indicators %}
+                                    {% with indicator=indicators.all|get_item:indicator_id %}
+                                        {
+                                            id: '{{ indicator_id|escapejs }}',
+                                            title: '{{ indicator.title|escapejs }}',
+                                            description: '{{ indicator.description|escapejs }}',
+                                            icon: '{{ indicator.icon|escapejs }}',
+                                            map1_url: '{{ indicator.map1_url|default:''|escapejs }}',
+                                            map2_url: '{{ indicator.map2_url|default:''|escapejs }}',
+                                            posts: '{{ indicator.posts|default:''|escapejs }}',
+                                            theme: '{{ theme.id|escapejs }}'  // Add theme ID to each indicator
+                                        }{% if not forloop.last %},{% endif %}
+                                    {% endwith %}
                                 {% endfor %}
                             ]
                         }{% if not forloop.last %},{% endif %}
                         {% endfor %}
-                    ]
+                    ],
+                    description: '{{ theme.description|escapejs }}',
+                    icon: '{{ theme.icon|escapejs }}'
+{{ ... }}
                 }{% if not forloop.last %},{% endif %}
                 {% endfor %}
             ];
@@ -1608,6 +1597,31 @@
                 Dropdown.closeAll();
             }
 
+            // Update theme info box
+            function updateThemeInfo(theme) {
+                const themeInfo = document.querySelector('.theme-info');
+                if (!theme) {
+                    themeInfo.innerHTML = `
+                        <div class="theme-icon">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <div class="text-content">
+                            <h2 class="theme-title">Map Viewer</h2>
+                            <p class="theme-description">Select a theme, subtheme, and indicator to view detailed information.</p>
+                        </div>`;
+                    return;
+                }
+                
+                themeInfo.innerHTML = `
+                    <div class="theme-icon">
+                        <i class="fas ${theme.icon}"></i>
+                    </div>
+                    <div class="text-content">
+                        <h2 class="theme-title">${theme.name}</h2>
+                        <p class="theme-description">${theme.description}</p>
+                    </div>`;
+            }
+
             // Theme selected
             function selectTheme(theme) {
                 currentTheme = theme;
@@ -1616,6 +1630,9 @@
                 
                 // Update theme button
                 updateButton(themeDropdown, theme.name, 'folder');
+                
+                // Update theme info box
+                updateThemeInfo(theme);
                 
                 // Reset subtheme dropdown
                 updateButton(subthemeDropdown, 'Select Subtheme', 'folder-open');
@@ -1688,6 +1705,16 @@
                 
                 // Close all dropdowns
                 closeAllDropdowns();
+                
+                // Ensure theme info is still showing the parent theme
+                if (currentTheme) {
+                    updateThemeInfo(currentTheme);
+                }
+            }
+
+            // Find theme by ID
+            function findThemeById(themeId) {
+                return themesData.find(theme => theme.id === themeId);
             }
 
             // Indicator selected
@@ -1697,10 +1724,30 @@
                 // Update indicator button
                 updateButton(indicatorDropdown, indicator.title, indicator.icon.replace('fa-', ''));
                 
-                // Update page content
-                indicatorTitle.textContent = indicator.title;
-                indicatorDescription.textContent = indicator.description;
-                indicatorIcon.className = `fas ${indicator.icon}`;
+                // Update indicator info box
+                const indicatorInfo = document.querySelector('.indicator-info');
+                indicatorInfo.innerHTML = `
+                    <div class="indicator-icon">
+                        <i class="fas ${indicator.icon} indicator-icon"></i>
+                    </div>
+                    <div class="text-content">
+                        <h2 class="indicator-title">${indicator.title}</h2>
+                        <p class="indicator-description">${indicator.description}</p>
+                    </div>`;
+                
+                // Find and update the current theme based on the indicator's theme ID
+                if (indicator.theme) {
+                    const theme = findThemeById(indicator.theme);
+                    if (theme) {
+                        currentTheme = theme;
+                        updateThemeInfo(theme);
+                        // Also update the theme dropdown to show the correct theme
+                        updateButton(themeDropdown, theme.name, 'folder');
+                    }
+                } else if (currentTheme) {
+                    // Fallback to current theme if no theme ID in indicator
+                    updateThemeInfo(currentTheme);
+                }
                 
                 // Get map elements
                 const map1 = document.getElementById('map1');
