@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "custom-icons";
+    src: url("/static/fonts/custom-icons.woff2?7f0f03ec5f12d391b4afe28fda9d1865") format("woff2"),
+         url("/static/fonts/custom-icons.woff?7f0f03ec5f12d391b4afe28fda9d1865") format("woff");
+    font-display: block;
+}
+
+.icon:before {
+    font-family: custom-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon.icon-question:before {
+    content: "\f101";
+}
+.icon.icon-donut:before {
+    content: "\f102";
+}

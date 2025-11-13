@@ -59,6 +59,15 @@ class Command(BaseCommand):
                     theme_group=group_id,
                     output_filename=f"{group_id}/index.html"
                 )
+                
+                # Copy static files to the theme group directory
+                static_src = Path(settings.STATIC_ROOT or settings.STATICFILES_DIRS[0])
+                static_dest = group_dir / 'static'
+                if static_src.exists() and static_src.is_dir():
+                    if static_dest.exists():
+                        shutil.rmtree(static_dest)
+                    shutil.copytree(static_src, static_dest)
+                    self.stdout.write(self.style.SUCCESS(f'Copied static files to {static_dest}'))
             
             # Export each page from config with theme groups
             for page_name in self.config.keys():
@@ -81,6 +90,13 @@ class Command(BaseCommand):
                         theme_group=group_id,
                         output_filename=f"{group_id}/{page_name}.html"
                     )
+                    
+                    # Ensure static files are copied for each theme group page
+                    static_src = Path(settings.STATIC_ROOT or settings.STATICFILES_DIRS[0])
+                    static_dest = group_dir / 'static'
+                    if not static_dest.exists() and static_src.exists() and static_src.is_dir():
+                        shutil.copytree(static_src, static_dest)
+                        self.stdout.write(self.style.SUCCESS(f'Copied static files to {static_dest}'))
             
             # Export themes page
             self.export_page('themes', output_dir, self.config, 'themes.html')
