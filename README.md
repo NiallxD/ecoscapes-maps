@@ -40,6 +40,45 @@ Edit `map_config.json` to add or modify map views. Each entry should have:
 }
 ```
 
+## Icon Font System
+
+This project uses a custom icon font system for better performance and customization. The system is built using `fantasticon`.
+
+### Adding New Icons
+
+1. **Add SVG Icons**:
+   - Place your SVG icons in the `assets/icons` directory
+   - Each SVG file should be named with the icon name you want to use (e.g., `home.svg`, `settings.svg`)
+   - Icons should be square and ideally 24x24 or 32x32 pixels
+
+2. **Generate the Icon Font**:
+   ```bash
+   npm run build:icons
+   ```
+   This will:
+   - Create font files in `static/fonts/`
+   - Generate CSS and SCSS files with the icon classes
+   - Create a preview HTML file
+
+3. **Using Icons in HTML**:
+   ```html
+   <i class="icon icon-home"></i>
+   <i class="icon icon-settings"></i>
+   ```
+
+4. **Using Icons in CSS/SCSS**:
+   ```scss
+   .my-element::before {
+     @extend %icon-home; // Using the icon as a mixin
+   }
+   ```
+
+5. **Include the CSS**:
+   Add this to your base template:
+   ```html
+   <link rel="stylesheet" href="{% static 'fonts/custom-icons.css' %}">
+   ```
+
 ## Deployment to GitHub Pages
 
 1. Run the deployment script:

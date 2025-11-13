@@ -1,0 +1,11 @@
+{
+  "name": "ecoscapes-map-app",
+  "version": "1.0.0",
+  "description": "EcoScapes Map Application",
+  "scripts": {
+    "build:icons": "fantasticon --config fantasticon-config.js"
+  },
+  "devDependencies": {
+    "fantasticon": "^3.0.0"
+  }
+}

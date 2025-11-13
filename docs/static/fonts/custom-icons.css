@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "custom-icons";
+    src: url("./custom-icons.woff2?dedf3547c51c168ac92262c3e50d5a96") format("woff2"),
+         url("./custom-icons.woff?dedf3547c51c168ac92262c3e50d5a96") format("woff");
+}
+
+.icon:before {
+    font-family: custom-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon.icon-donut:before {
+    content: "\f101";
+}
