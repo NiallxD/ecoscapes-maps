@@ -1796,11 +1796,38 @@
                 currentSubtheme = null;
                 currentIndicator = null;
                 
+                // Get map elements
+                const map1 = document.getElementById('map1');
+                const map2 = document.getElementById('map2');
+                const mapPlaceholder = document.getElementById('mapPlaceholder');
+                
+                // Reset map display to show placeholder and hide maps
+                if (mapPlaceholder && map1 && map2) {
+                    mapPlaceholder.style.display = 'flex';
+                    map1.style.display = 'none';
+                    map2.style.display = 'none';
+                    
+                    // Clear map sources
+                    map1.src = '';
+                    map2.src = '';
+                }
+                
                 // Update theme button
                 updateButton(themeDropdown, theme.name, 'folder');
                 
-                // Update theme info box
-                updateThemeInfo(theme);
+                // Reset theme info to default
+                const themeInfo = document.querySelector('.theme-info');
+                if (themeInfo) {
+                    themeInfo.innerHTML = `
+                        <div class="info-box-title">Theme Information</div>
+                        <div class="theme-icon">
+                            <i class="fas ${theme.icon || 'fa-map-marked-alt'}"></i>
+                        </div>
+                        <div class="text-content">
+                            <h2 class="theme-title">${theme.name}</h2>
+                            <p class="theme-description">${theme.description}</p>
+                        </div>`;
+                }
                 
                 // Reset subtheme dropdown
                 updateButton(subthemeDropdown, 'Select Subtheme', 'folder-open');
@@ -1820,6 +1847,20 @@
                 // Reset and hide indicator dropdown
                 updateButton(indicatorDropdown, 'Select Indicator', 'chart-bar');
                 indicatorDropdown.style.display = 'none';
+                
+                // Reset indicator info box to default state
+                const indicatorInfo = document.querySelector('.indicator-info');
+                if (indicatorInfo) {
+                    indicatorInfo.innerHTML = `
+                        <div class="info-box-title">Indicator Information</div>
+                        <div class="indicator-icon">
+                            <i class="icon icon-question"></i>
+                        </div>
+                        <div class="text-content">
+                            <h2 class="indicator-title">Select an Indicator</h2>
+                            <p class="indicator-description">Choose a sub-theme first, then select an indicator to view its details.</p>
+                        </div>`;
+                }
                 
                 closeAllDropdowns();
             }
@@ -1852,10 +1893,19 @@
                 // Reset and update indicator button
                 updateButton(indicatorDropdown, 'Select Indicator', 'chart-bar');
                 
-                // Reset indicator info
-                indicatorTitle.textContent = 'Select an Indicator';
-                indicatorDescription.textContent = 'Choose an indicator from the dropdown above to view its details and map.';
-                indicatorIcon.className = 'icon icon-question';
+                // Reset indicator info box to default state
+                const indicatorInfo = document.querySelector('.indicator-info');
+                if (indicatorInfo) {
+                    indicatorInfo.innerHTML = `
+                        <div class="info-box-title">Indicator Information</div>
+                        <div class="indicator-icon">
+                            <i class="icon icon-question"></i>
+                        </div>
+                        <div class="text-content">
+                            <h2 class="indicator-title">Select an Indicator</h2>
+                            <p class="indicator-description">Choose an indicator from the dropdown above to view its details and map.</p>
+                        </div>`;
+                }
                 
                 // Show indicator dropdown
                 indicatorDropdown.style.display = 'block';
