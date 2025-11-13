@@ -140,10 +140,6 @@
             align-items: center;
             margin-left: auto;
             gap: 4px;
-            padding: 12px 20px;
-            background-color: white;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
             margin-right: 20px;
             box-sizing: border-box;
         }
@@ -288,6 +284,19 @@
             padding: 0;
             margin: 0;
             min-height: 2.5em;
+            position: relative;
+            padding-top: 15px;
+        }
+        
+        .info-box-title {
+            position: absolute;
+            top: -5px;
+            left: 0px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Icon Base Styles */
@@ -748,6 +757,7 @@
         <div class="two-column-section">
             <div class="column-left">
               <div class="theme-info">
+                <div class="info-box-title">Theme Information</div>
                 <div class="theme-icon">
                   <i class="icon icon-question"></i>
                 </div>
@@ -760,6 +770,7 @@
             <div class="column-right">
               <!-- Indicator Information -->
               <div class="indicator-info">
+                <div class="info-box-title">Indicator Information</div>
                 <div class="indicator-icon">
                   <i class="icon icon-question"></i>
                 </div>
@@ -1181,6 +1192,7 @@
                 const themeInfo = document.querySelector('.theme-info');
                 if (!theme) {
                     themeInfo.innerHTML = `
+                        <div class="info-box-title">Theme Information</div>
                         <div class="theme-icon">
                             <i class="fas fa-map-marked-alt"></i>
                         </div>
@@ -1192,6 +1204,7 @@
                 }
                 
                 themeInfo.innerHTML = `
+                    <div class="info-box-title">Theme Information</div>
                     <div class="theme-icon">
                         <i class="fas ${theme.icon}"></i>
                     </div>
@@ -1327,6 +1340,7 @@
                 // Update indicator info box
                 const indicatorInfo = document.querySelector('.indicator-info');
                 indicatorInfo.innerHTML = `
+                    <div class="info-box-title">Indicator Information</div>
                     <div class="indicator-icon">
                         <i class="fas ${indicator.icon} indicator-icon"></i>
                     </div>

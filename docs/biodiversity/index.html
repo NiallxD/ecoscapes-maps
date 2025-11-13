@@ -140,10 +140,6 @@
             align-items: center;
             margin-left: auto;
             gap: 4px;
-            padding: 12px 20px;
-            background-color: white;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
             margin-right: 20px;
             box-sizing: border-box;
         }
@@ -288,6 +284,19 @@
             padding: 0;
             margin: 0;
             min-height: 2.5em;
+            position: relative;
+            padding-top: 15px;
+        }
+        
+        .info-box-title {
+            position: absolute;
+            top: -5px;
+            left: 0px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Icon Base Styles */
@@ -347,7 +356,7 @@
             margin: 0;
             color: #4a5568;
             line-height: 1.6;
-            font-size: 1em;
+            font-size: 0.9em;
             max-width: 100%;
         }
         .map-container {
@@ -750,6 +759,7 @@
         <div class="two-column-section">
             <div class="column-left">
               <div class="theme-info">
+                <div class="info-box-title">Theme Information</div>
                 <div class="theme-icon">
                   <i class="icon icon-question"></i>
                 </div>
@@ -762,6 +772,7 @@
             <div class="column-right">
               <!-- Indicator Information -->
               <div class="indicator-info">
+                <div class="info-box-title">Indicator Information</div>
                 <div class="indicator-icon">
                   <i class="icon icon-question"></i>
                 </div>
@@ -1007,10 +1018,10 @@
                                         {
                                             id: 'ecosystem\u002Dhealth',
                                             title: '1.1.1 Ecosystem Health',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'icon icon\u002Ddonut',
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://felt.com/embed/map/Ecosystem\u002DIntegrity\u002DhC9CK2ZxJSMufgFDhbOQsuA?loc\u003D50.0873%2C\u002D122.3916%2C8.72z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: ' https://hsbr.staging.dashboard.terradapt.org/?zoom\u003D9.652476959093528\u0026lng\u003D\u002D123.2666647171363\u0026lat\u003D49.79968472988696\u0026baseLayer\u003D%22google_road%22\u0026minTimestamp\u003D%222000\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222022\u002D07\u002D01T00%3A00%3A00%22\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222022\u002D07\u002D01T00%3A00%3A00%22¤tTimestamp\u003D%222010\u002D07\u002D01T00%3A00%3A00%22',
                                             posts: 'ecosystem\u002Dhealth',
                                             theme: 'ecosystems'  // Add theme ID to each indicator
                                         },
@@ -1020,7 +1031,7 @@
                                         {
                                             id: 'ecosystem\u002Dresileince',
                                             title: '1.1.2 Ecosystem Resileince',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1033,7 +1044,7 @@
                                         {
                                             id: 'habitat\u002Dsuitability',
                                             title: '1.1.2 Habitat Suitability',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1046,7 +1057,7 @@
                                         {
                                             id: 'habitat\u002Dconnectivity',
                                             title: '1.1.4 Habitat Connectivity',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1059,7 +1070,7 @@
                                         {
                                             id: 'ecosystem\u002Dservices',
                                             title: '1.1.5 Ecosystem Services',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1080,7 +1091,7 @@
                                         {
                                             id: 'landscape\u002Dchange',
                                             title: '1.2.1 Landscape Change',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1093,7 +1104,7 @@
                                         {
                                             id: 'human\u002Dfootprint',
                                             title: '1.2.2 Human Footprint',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1106,7 +1117,7 @@
                                         {
                                             id: 'urbanization',
                                             title: '1.2.3 Urbanization',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1119,7 +1130,7 @@
                                         {
                                             id: 'agricultural\u002Duse',
                                             title: '1.2.4 Agricultural Use',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1132,7 +1143,7 @@
                                         {
                                             id: 'forest\u002Dharvest',
                                             title: '1.2.5 Forest Harvest',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1145,7 +1156,7 @@
                                         {
                                             id: 'forest\u002Dthinning',
                                             title: '1.2.6 Forest Thinning',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1158,7 +1169,7 @@
                                         {
                                             id: 'wildfire',
                                             title: '1.2.7 Wildfire',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1171,7 +1182,7 @@
                                         {
                                             id: 'temperature',
                                             title: '1.2.8 Temperature',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1184,7 +1195,7 @@
                                         {
                                             id: 'precipitation',
                                             title: '1.2.9 Precipitation',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1205,7 +1216,7 @@
                                         {
                                             id: 'forest\u002Dcover',
                                             title: '1.3.1 Forest Cover',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1218,7 +1229,7 @@
                                         {
                                             id: 'wetlands\u002Dand\u002Driparian\u002Dareas',
                                             title: '1.3.2 Wetlands \u0026 Riparian Areas',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1231,7 +1242,7 @@
                                         {
                                             id: 'mesic\u002Dvegetation',
                                             title: '1.3.3 Mesic Vegetation',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1244,7 +1255,7 @@
                                         {
                                             id: 'xeric\u002Dvegetation',
                                             title: '1.3.4 Xeric Vegetation',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1265,7 +1276,7 @@
                                         {
                                             id: 'protected\u002Dareas',
                                             title: '1.4.1 Protected Areas',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1278,7 +1289,7 @@
                                         {
                                             id: 'habitat\u002Dprotection',
                                             title: '1.4.2 Habitat Protection',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1291,7 +1302,7 @@
                                         {
                                             id: 'habitat\u002Drestoration',
                                             title: '1.4.3 Habitat Restoration',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1304,7 +1315,7 @@
                                         {
                                             id: 'climate\u002Drefugia',
                                             title: '1.4.4 Climate Refugia',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1317,7 +1328,7 @@
                                         {
                                             id: 'climate\u002Dpathways',
                                             title: '1.4.5 Climate Pathways',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1330,7 +1341,7 @@
                         }
                         
                     ],
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                     icon: 'fa\u002Dseedling'
 
                 },
@@ -1349,7 +1360,7 @@
                                         {
                                             id: 'tree\u002Dspecies',
                                             title: '2.1.1 Tree Species',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1370,7 +1381,7 @@
                                         {
                                             id: 'understory\u002Dvegetation',
                                             title: '2.2.1 Understory Vegetation',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1383,7 +1394,7 @@
                         }
                         
                     ],
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
                     icon: 'fa\u002Dseedling'
 
                 },
@@ -1402,7 +1413,7 @@
                                         {
                                             id: 'mammals',
                                             title: '3.1.1 Mammals',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1423,7 +1434,7 @@
                                         {
                                             id: 'herptiles',
                                             title: '3.1.2 Herptiles',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1444,7 +1455,7 @@
                                         {
                                             id: 'vascular\u002Dplants',
                                             title: '3.1.3 Vascular Plants',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1465,7 +1476,7 @@
                                         {
                                             id: 'bryophytes',
                                             title: '3.1.4 Bryophytes',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1478,7 +1489,7 @@
                         }
                         
                     ],
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                     icon: 'fa\u002Dseedling'
 
                 }
@@ -1641,6 +1652,7 @@
                 const themeInfo = document.querySelector('.theme-info');
                 if (!theme) {
                     themeInfo.innerHTML = `
+                        <div class="info-box-title">Theme Information</div>
                         <div class="theme-icon">
                             <i class="fas fa-map-marked-alt"></i>
                         </div>
@@ -1652,6 +1664,7 @@
                 }
                 
                 themeInfo.innerHTML = `
+                    <div class="info-box-title">Theme Information</div>
                     <div class="theme-icon">
                         <i class="fas ${theme.icon}"></i>
                     </div>
@@ -1787,6 +1800,7 @@
                 // Update indicator info box
                 const indicatorInfo = document.querySelector('.indicator-info');
                 indicatorInfo.innerHTML = `
+                    <div class="info-box-title">Indicator Information</div>
                     <div class="indicator-icon">
                         <i class="fas ${indicator.icon} indicator-icon"></i>
                     </div>

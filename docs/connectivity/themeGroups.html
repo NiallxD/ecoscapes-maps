@@ -140,10 +140,6 @@
             align-items: center;
             margin-left: auto;
             gap: 4px;
-            padding: 12px 20px;
-            background-color: white;
-            border-radius: 8px;
-            border: 1px solid #e2e8f0;
             margin-right: 20px;
             box-sizing: border-box;
         }
@@ -288,6 +284,19 @@
             padding: 0;
             margin: 0;
             min-height: 2.5em;
+            position: relative;
+            padding-top: 15px;
+        }
+        
+        .info-box-title {
+            position: absolute;
+            top: -5px;
+            left: 0px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #6b7280;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         /* Icon Base Styles */
@@ -347,7 +356,7 @@
             margin: 0;
             color: #4a5568;
             line-height: 1.6;
-            font-size: 1em;
+            font-size: 0.9em;
             max-width: 100%;
         }
         .map-container {
@@ -750,6 +759,7 @@
         <div class="two-column-section">
             <div class="column-left">
               <div class="theme-info">
+                <div class="info-box-title">Theme Information</div>
                 <div class="theme-icon">
                   <i class="icon icon-question"></i>
                 </div>
@@ -762,6 +772,7 @@
             <div class="column-right">
               <!-- Indicator Information -->
               <div class="indicator-info">
+                <div class="info-box-title">Indicator Information</div>
                 <div class="indicator-icon">
                   <i class="icon icon-question"></i>
                 </div>
@@ -1007,7 +1018,7 @@
                                         {
                                             id: 'multi\u002Dspecies\u002Dcores',
                                             title: '4.1.1 Multi\u002DSpecies Cores',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1028,7 +1039,7 @@
                                         {
                                             id: 'grizzly\u002Dbear\u002Dcore',
                                             title: '4.2.1 Grizzly Bear',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1041,7 +1052,7 @@
                                         {
                                             id: 'black\u002Dbear\u002Dcore',
                                             title: '4.2.2 Black Bear',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1054,7 +1065,7 @@
                                         {
                                             id: 'wolverine\u002Dcore',
                                             title: '4.2.3 Wolverine',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1067,7 +1078,7 @@
                                         {
                                             id: 'pacific\u002Dfisher\u002Dcore',
                                             title: '4.2.4 Pacific Fisher',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1080,7 +1091,7 @@
                                         {
                                             id: 'lynx\u002Dcore',
                                             title: '4.2.5 Lynx',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1093,7 +1104,7 @@
                                         {
                                             id: 'mountain\u002Dgoat\u002Dcore',
                                             title: '4.2.6 Mountain Goat',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1106,7 +1117,7 @@
                                         {
                                             id: 'black\u002Dtailed\u002Ddeer\u002Dcore',
                                             title: '4.2.7 Black\u002DTailed Deer',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1119,7 +1130,7 @@
                                         {
                                             id: 'hoary\u002Dmarmot\u002Dcore',
                                             title: '4.2.8 Hoary Marmot',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1132,7 +1143,7 @@
                                         {
                                             id: 'douglass\u002Dsquirrel\u002Dcore',
                                             title: '4.2.9 Douglas\u0027s Squirrel',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1145,7 +1156,7 @@
                                         {
                                             id: 'yellow\u002Dpine\u002Dchipmunk\u002Dcore',
                                             title: '4.2.10 Yellow\u002DPine Chipmunk',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1166,7 +1177,7 @@
                                         {
                                             id: 'western\u002Dtoad\u002Dcore',
                                             title: '4.3.1 Western Toad',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1179,7 +1190,7 @@
                                         {
                                             id: 'red\u002Dlegged\u002Dfrog\u002Dcore',
                                             title: '4.3.2 Red\u002DLegged Frog',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1192,7 +1203,7 @@
                                         {
                                             id: 'pacific\u002Dtree\u002Dfrog\u002Dcore',
                                             title: '4.3.3 Pacific Tree Frog',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1205,7 +1216,7 @@
                                         {
                                             id: 'ensatina\u002Dcore',
                                             title: '4.3.4 Ensatina',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1218,7 +1229,7 @@
                                         {
                                             id: 'northwestern\u002Dsalamander\u002Dcore',
                                             title: '4.3.5 Northwestern Salamander',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1231,7 +1242,7 @@
                                         {
                                             id: 'yellow\u002Dtoed\u002Dsalamander\u002Dcore',
                                             title: '4.3.6 Yellow\u002DToed Salamander',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1244,7 +1255,7 @@
                                         {
                                             id: 'northern\u002Dalligator\u002Dlizard\u002Dcore',
                                             title: '4.3.7 Northern Alligator Lizard',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1257,7 +1268,7 @@
                                         {
                                             id: 'garter\u002Dsnake\u002Dcore',
                                             title: '4.3.8 Garter Snake',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1270,7 +1281,7 @@
                         }
                         
                     ],
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                     icon: 'fa\u002Dseedling'
 
                 },
@@ -1289,7 +1300,7 @@
                                         {
                                             id: 'multi\u002Dspecies\u002Dlinkages',
                                             title: '5.1.1 Multi\u002DSpecies Linkages',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1310,7 +1321,7 @@
                                         {
                                             id: 'grizzly\u002Dbear\u002Dlinkage',
                                             title: '5.2.1 Grizzly Bear',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1323,7 +1334,7 @@
                                         {
                                             id: 'black\u002Dbear\u002Dlinkage',
                                             title: '5.2.2 Black Bear',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1336,7 +1347,7 @@
                                         {
                                             id: 'wolverine\u002Dlinkage',
                                             title: '5.2.3 Wolverine',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1349,7 +1360,7 @@
                                         {
                                             id: 'pacific\u002Dfisher\u002Dlinkage',
                                             title: '5.2.4 Pacific Fisher',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1362,7 +1373,7 @@
                                         {
                                             id: 'lynx\u002Dlinkage',
                                             title: '5.2.5 Lynx',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1375,7 +1386,7 @@
                                         {
                                             id: 'mountain\u002Dgoat\u002Dlinkage',
                                             title: '5.2.6 Mountain Goat',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1388,7 +1399,7 @@
                                         {
                                             id: 'black\u002Dtailed\u002Ddeer\u002Dlinkage',
                                             title: '5.2.7 Black\u002DTailed Deer',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1401,7 +1412,7 @@
                                         {
                                             id: 'hoary\u002Dmarmot\u002Dlinkage',
                                             title: '5.2.8 Hoary Marmot',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1414,7 +1425,7 @@
                                         {
                                             id: 'douglass\u002Dsquirrel\u002Dlinkage',
                                             title: '5.2.9 Douglas\u0027s Squirrel',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1427,7 +1438,7 @@
                                         {
                                             id: 'yellow\u002Dpine\u002Dchipmunk\u002Dlinkage',
                                             title: '5.2.10 Yellow\u002DPine Chipmunk',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1448,7 +1459,7 @@
                                         {
                                             id: 'western\u002Dtoad\u002Dlinkage',
                                             title: '5.3.1 Western Toad',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1461,7 +1472,7 @@
                                         {
                                             id: 'red\u002Dlegged\u002Dfrog\u002Dlinkage',
                                             title: '5.3.2 Red\u002DLegged Frog',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1474,7 +1485,7 @@
                                         {
                                             id: 'pacific\u002Dtree\u002Dfrog\u002Dlinkage',
                                             title: '5.3.3 Pacific Tree Frog',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1487,7 +1498,7 @@
                                         {
                                             id: 'ensatina\u002Dlinkage',
                                             title: '5.3.4 Ensatina',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1500,7 +1511,7 @@
                                         {
                                             id: 'northwestern\u002Dsalamander\u002Dlinkage',
                                             title: '5.3.5 Northwestern Salamander',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1513,7 +1524,7 @@
                                         {
                                             id: 'yellow\u002Dtoed\u002Dsalamander\u002Dlinkage',
                                             title: '5.3.6 Yellow\u002DToed Salamander',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1526,7 +1537,7 @@
                                         {
                                             id: 'northern\u002Dalligator\u002Dlizard\u002Dlinkage',
                                             title: '5.3.7 Northern Alligator Lizard',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1539,7 +1550,7 @@
                                         {
                                             id: 'garter\u002Dsnake\u002Dlinkage',
                                             title: '5.3.8 Garter Snake',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1552,7 +1563,7 @@
                         }
                         
                     ],
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                     icon: 'fa\u002Dseedling'
 
                 },
@@ -1571,7 +1582,7 @@
                                         {
                                             id: 'barriers\u002Dto\u002Dmovement',
                                             title: '5.4.1 Barriers to Movement',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1592,7 +1603,7 @@
                                         {
                                             id: 'pinchpoints',
                                             title: '5.5.1 Pinchpoints',
-                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                                            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
@@ -1605,7 +1616,7 @@
                         }
                         
                     ],
-                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+                    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
                     icon: 'fa\u002Dseedling'
 
                 }
@@ -1768,6 +1779,7 @@
                 const themeInfo = document.querySelector('.theme-info');
                 if (!theme) {
                     themeInfo.innerHTML = `
+                        <div class="info-box-title">Theme Information</div>
                         <div class="theme-icon">
                             <i class="fas fa-map-marked-alt"></i>
                         </div>
@@ -1779,6 +1791,7 @@
                 }
                 
                 themeInfo.innerHTML = `
+                    <div class="info-box-title">Theme Information</div>
                     <div class="theme-icon">
                         <i class="fas ${theme.icon}"></i>
                     </div>
@@ -1914,6 +1927,7 @@
                 // Update indicator info box
                 const indicatorInfo = document.querySelector('.indicator-info');
                 indicatorInfo.innerHTML = `
+                    <div class="info-box-title">Indicator Information</div>
                     <div class="indicator-icon">
                         <i class="fas ${indicator.icon} indicator-icon"></i>
                     </div>
