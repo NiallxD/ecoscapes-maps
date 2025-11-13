@@ -1532,19 +1532,361 @@
             const themesData = [
                 
                 {
+                    id: 'ecosystems',
+                    name: '1.0 Ecosystems',
+                    subthemes: [
+                        
+                        {
+                            id: 'values',
+                            name: '1.1 Values',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'ecosystem\u002Dhealth',
+                                            title: '1.1.1 Ecosystem Health',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'ecosystem\u002Dhealth',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'ecosystem\u002Dresileince',
+                                            title: '1.1.2 Ecosystem Resileince',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'ecosystem\u002Dresileince',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'habitat\u002Dsuitability',
+                                            title: '1.1.2 Habitat Suitability',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'habitat\u002Dsuitability',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'habitat\u002Dconnectivity',
+                                            title: '1.1.4 Habitat Connectivity',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'habitat\u002Dconnectivity',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'ecosystem\u002Dservices',
+                                            title: '1.1.5 Ecosystem Services',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'ecosystem\u002Dservices',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'ecosystem\u002Dthreats',
+                            name: '1.2 Ecosystem Threats',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'landscape\u002Dchange',
+                                            title: '1.2.1 Landscape Change',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'landscape\u002Dchange',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'human\u002Dfootprint',
+                                            title: '1.2.2 Human Footprint',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'human\u002Dfootprint',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'urbanization',
+                                            title: '1.2.3 Urbanization',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'urbanization',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'agricultural\u002Duse',
+                                            title: '1.2.4 Agricultural Use',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'agricultural\u002Duse',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'forest\u002Dharvest',
+                                            title: '1.2.5 Forest Harvest',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'forest\u002Dharvest',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'forest\u002Dthinning',
+                                            title: '1.2.6 Forest Thinning',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'forest\u002Dthinning',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'wildfire',
+                                            title: '1.2.7 Wildfire',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'wildfire',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'temperature',
+                                            title: '1.2.8 Temperature',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'temperature',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'precipitation',
+                                            title: '1.2.9 Precipitation',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'precipitation',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'habitat\u002Dlosses',
+                            name: '1.3 Habitat Losses',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'forest\u002Dcover',
+                                            title: '1.3.1 Forest Cover',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'forest\u002Dcover',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'wetlands\u002Dand\u002Driparian\u002Dareas',
+                                            title: '1.3.2 Wetlands \u0026 Riparian Areas',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'wetlands\u002Dand\u002Driparian\u002Dareas',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'mesic\u002Dvegetation',
+                                            title: '1.3.3 Mesic Vegetation',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'mesic\u002Dvegetation',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'xeric\u002Dvegetation',
+                                            title: '1.3.4 Xeric Vegetation',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'xeric\u002Dvegetation',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'opportunities',
+                            name: '1.4 Opportunities',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'protected\u002Dareas',
+                                            title: '1.4.1 Protected Areas',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'protected\u002Dareas',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'habitat\u002Dprotection',
+                                            title: '1.4.2 Habitat Protection',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'habitat\u002Dprotection',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'habitat\u002Drestoration',
+                                            title: '1.4.3 Habitat Restoration',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'habitat\u002Drestoration',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'climate\u002Drefugia',
+                                            title: '1.4.4 Climate Refugia',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'climate\u002Drefugia',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'climate\u002Dpathways',
+                                            title: '1.4.5 Climate Pathways',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'climate\u002Dpathways',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        }
+                        
+                    ],
+                    description: 'Description for Ecosystems.',
+                    icon: 'fa\u002Dseedling'
+
+                },
+                
+                {
                     id: 'ecological\u002Dcommunities',
-                    name: '1.0 Ecological Communities',
+                    name: '2.0 Ecological Communities',
                     subthemes: [
                         
                         {
                             id: 'tree\u002Dspecies',
-                            name: '1.0.1 Tree Species',
+                            name: '2.1 Tree Species',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'tree\u002Dspecies',
-                                            title: '1.0.1.1 Tree Species',
+                                            title: '2.1.1 Tree Species',
                                             description: 'Placeholder description.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
@@ -1559,13 +1901,13 @@
                         
                         {
                             id: 'understory\u002Dvegetation',
-                            name: '1.0.2 Understory Vegetation',
+                            name: '2.2 Understory Vegetation',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'understory\u002Dvegetation',
-                                            title: '1.0.2.1 Understory Vegetation',
+                                            title: '2.2.1 Understory Vegetation',
                                             description: 'Placeholder description.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
@@ -1585,403 +1927,19 @@
                 },
                 
                 {
-                    id: 'ecosystems',
-                    name: '2.0 Ecosystems',
-                    subthemes: [
-                        
-                        {
-                            id: 'ecosystem\u002Dthreats',
-                            name: '2.0.1 Ecosystem Threats',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'landscape\u002Dchange',
-                                            title: '2.0.1.1 Landscape Change',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'landscape\u002Dchange',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'human\u002Dfootprint',
-                                            title: '2.0.1.2 Human Footprint',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'human\u002Dfootprint',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'urbanization',
-                                            title: '2.0.1.3 Urbanization',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'urbanization',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'agricultural\u002Duse',
-                                            title: '2.0.1.4 Agricultural Use',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'agricultural\u002Duse',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'forest\u002Dharvest',
-                                            title: '2.0.1.5 Forest Harvest',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'forest\u002Dharvest',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'forest\u002Dthinning',
-                                            title: '2.0.1.6 Forest Thinning',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'forest\u002Dthinning',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'wildfire',
-                                            title: '2.0.1.7 Wildfire',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'wildfire',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'temperature',
-                                            title: '2.0.1.8 Temperature',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'temperature',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'precipitation',
-                                            title: '2.0.1.9 Precipitation',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'precipitation',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'habitat\u002Dlosses',
-                            name: '2.0.2 Habitat Losses',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'forest\u002Dcover',
-                                            title: '2.0.2.1 Forest Cover',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'forest\u002Dcover',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'wetlands\u002Dand\u002Driparian\u002Dareas',
-                                            title: '2.0.2.2 Wetlands \u0026 Riparian Areas',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'wetlands\u002Dand\u002Driparian\u002Dareas',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'mesic\u002Dvegetation',
-                                            title: '2.0.2.3 Mesic Vegetation',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'mesic\u002Dvegetation',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'xeric\u002Dvegetation',
-                                            title: '2.0.2.4 Xeric Vegetation',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'xeric\u002Dvegetation',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'opportunities',
-                            name: '2.0.3 Opportunities',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'protected\u002Dareas',
-                                            title: '2.0.3.1 Protected Areas',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'protected\u002Dareas',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'habitat\u002Dprotection',
-                                            title: '2.0.3.2 Habitat Protection',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'habitat\u002Dprotection',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'habitat\u002Drestoration',
-                                            title: '2.0.3.3 Habitat Restoration',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'habitat\u002Drestoration',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'climate\u002Drefugia',
-                                            title: '2.0.3.4 Climate Refugia',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'climate\u002Drefugia',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'climate\u002Dpathways',
-                                            title: '2.0.3.5 Climate Pathways',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'climate\u002Dpathways',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'values',
-                            name: '2.0.4 Values',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'ecosystem\u002Dhealth',
-                                            title: '2.0.4.1 Ecosystem Health',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'ecosystem\u002Dhealth',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'ecosystem\u002Dresileince',
-                                            title: '2.0.4.2 Ecosystem Resileince',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'ecosystem\u002Dresileince',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'habitat\u002Dsuitability',
-                                            title: '2.0.4.3 Habitat Suitability',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'habitat\u002Dsuitability',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'habitat\u002Dconnectivity',
-                                            title: '2.0.4.4 Habitat Connectivity',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'habitat\u002Dconnectivity',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'ecosystem\u002Dservices',
-                                            title: '2.0.4.5 Ecosystem Services',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'ecosystem\u002Dservices',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        }
-                        
-                    ],
-                    description: 'Description for Ecosystems.',
-                    icon: 'fa\u002Dseedling'
-
-                },
-                
-                {
                     id: 'individual\u002Dspecies',
-                    name: '4.0 Individual Species',
+                    name: '3.0 Individual Species',
                     subthemes: [
-                        
-                        {
-                            id: 'bryophytes',
-                            name: '4.0.1 Bryophytes',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'bryophytes',
-                                            title: '4.0.1.1 Bryophytes',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'bryophytes',
-                                            theme: 'individual\u002Dspecies'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'herptiles',
-                            name: '4.0.2 Herptiles',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'herptiles',
-                                            title: '4.0.2.1 Herptiles',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'herptiles',
-                                            theme: 'individual\u002Dspecies'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
                         
                         {
                             id: 'mammals',
-                            name: '4.0.3 Mammals',
+                            name: '3.1 Mammals',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'mammals',
-                                            title: '4.0.3.1 Mammals',
+                                            title: '3.1.1 Mammals',
                                             description: 'Placeholder description.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
@@ -1995,19 +1953,61 @@
                         },
                         
                         {
+                            id: 'herptiles',
+                            name: '3.2 Herptiles',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'herptiles',
+                                            title: '3.1.2 Herptiles',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'herptiles',
+                                            theme: 'individual\u002Dspecies'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
                             id: 'vascular\u002Dplants',
-                            name: '4.0.4 Vascular Plants',
+                            name: '3.3 Vascular Plants',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'vascular\u002Dplants',
-                                            title: '4.0.4.1 Vascular Plants',
+                                            title: '3.1.3 Vascular Plants',
                                             description: 'Placeholder description.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
                                             posts: 'vascular\u002Dplants',
+                                            theme: 'individual\u002Dspecies'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'bryophytes',
+                            name: '3.4 Bryophytes',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'bryophytes',
+                                            title: '3.1.4 Bryophytes',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'bryophytes',
                                             theme: 'individual\u002Dspecies'  // Add theme ID to each indicator
                                         }
                                     

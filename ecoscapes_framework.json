@@ -1,36 +1,25 @@
 {
   "themes": [
     {
-      "id": "ecological-communities",
-      "name": "1.0 Ecological Communities",
-      "description": "Description for Ecological Communities.",
-      "icon": "fa-seedling",
-      "subthemes": [
-        {
-          "id": "tree-species",
-          "name": "1.0.1 Tree Species",
-          "indicators": [
-            "tree-species"
-          ]
-        },
-        {
-          "id": "understory-vegetation",
-          "name": "1.0.2 Understory Vegetation",
-          "indicators": [
-            "understory-vegetation"
-          ]
-        }
-      ]
-    },
-    {
       "id": "ecosystems",
-      "name": "2.0 Ecosystems",
+      "name": "1.0 Ecosystems",
       "description": "Description for Ecosystems.",
       "icon": "fa-seedling",
       "subthemes": [
         {
+          "id": "values",
+          "name": "1.1 Values",
+          "indicators": [
+            "ecosystem-health",
+            "ecosystem-resileince",
+            "habitat-suitability",
+            "habitat-connectivity",
+            "ecosystem-services"
+          ]
+        },
+        {
           "id": "ecosystem-threats",
-          "name": "2.0.1 Ecosystem Threats",
+          "name": "1.2 Ecosystem Threats",
           "indicators": [
             "landscape-change",
             "human-footprint",
@@ -45,7 +34,7 @@
         },
         {
           "id": "habitat-losses",
-          "name": "2.0.2 Habitat Losses",
+          "name": "1.3 Habitat Losses",
           "indicators": [
             "forest-cover",
             "wetlands-and-riparian-areas",
@@ -55,7 +44,7 @@
         },
         {
           "id": "opportunities",
-          "name": "2.0.3 Opportunities",
+          "name": "1.4 Opportunities",
           "indicators": [
             "protected-areas",
             "habitat-protection",
@@ -63,574 +52,729 @@
             "climate-refugia",
             "climate-pathways"
           ]
-        },
-        {
-          "id": "values",
-          "name": "2.0.4 Values",
-          "indicators": [
-            "ecosystem-health",
-            "ecosystem-resileince",
-            "habitat-suitability",
-            "habitat-connectivity",
-            "ecosystem-services"
-          ]
         }
       ]
     },
     {
-      "id": "habitat-suitability",
-      "name": "3.0 Habitat Suitability",
-      "description": "Description for Habitat Suitability.",
+      "id": "ecological-communities",
+      "name": "2.0 Ecological Communities",
+      "description": "Description for Ecological Communities.",
       "icon": "fa-seedling",
       "subthemes": [
         {
-          "id": "herptile-cores",
-          "name": "3.0.1 Herptile Cores",
+          "id": "tree-species",
+          "name": "2.1 Tree Species",
           "indicators": [
-            "western-toad",
-            "red-legged-frog",
-            "pacific-tree-frog",
-            "ensatina",
-            "northwestern-salamander",
-            "yellow-toed-salamander",
-            "northern-alligator-lizard",
-            "garter-snake"
+            "tree-species"
           ]
         },
         {
-          "id": "mammal-cores",
-          "name": "3.0.2 Mammal Cores",
+          "id": "understory-vegetation",
+          "name": "2.2 Understory Vegetation",
           "indicators": [
-            "grizzly-bear",
-            "wolverine",
-            "pacific-fisher",
-            "lynx",
-            "black-bear",
-            "mountain-goat",
-            "black-tailed-deer",
-            "hoary-marmot",
-            "douglass-squirrel",
-            "yellow-pine-chipmunk"
-          ]
-        },
-        {
-          "id": "multi-species-cores",
-          "name": "3.0.3 Multi-Species Cores",
-          "indicators": [
-            "multi-species-cores"
+            "understory-vegetation"
           ]
         }
       ]
     },
     {
       "id": "individual-species",
-      "name": "4.0 Individual Species",
+      "name": "3.0 Individual Species",
       "description": "Description for Individual Species.",
       "icon": "fa-seedling",
       "subthemes": [
         {
-          "id": "bryophytes",
-          "name": "4.0.1 Bryophytes",
-          "indicators": [
-            "bryophytes"
-          ]
-        },
-        {
-          "id": "herptiles",
-          "name": "4.0.2 Herptiles",
-          "indicators": [
-            "herptiles"
-          ]
-        },
-        {
           "id": "mammals",
-          "name": "4.0.3 Mammals",
+          "name": "3.1 Mammals",
           "indicators": [
             "mammals"
           ]
         },
         {
+          "id": "herptiles",
+          "name": "3.2 Herptiles",
+          "indicators": [
+            "herptiles"
+          ]
+        },
+        {
           "id": "vascular-plants",
-          "name": "4.0.4 Vascular Plants",
+          "name": "3.3 Vascular Plants",
           "indicators": [
             "vascular-plants"
+          ]
+        },
+        {
+          "id": "bryophytes",
+          "name": "3.4 Bryophytes",
+          "indicators": [
+            "bryophytes"
           ]
         }
       ]
     },
     {
-      "id": "threats",
-      "name": "5.0 Threats",
-      "description": "Description for Threats.",
+      "id": "habitat-suitability",
+      "name": "4.0 Habitat Suitability",
+      "description": "Description for Habitat Suitability.",
       "icon": "fa-seedling",
       "subthemes": [
         {
-          "id": "barriers-to-movement",
-          "name": "5.0.1 Barriers to Movement",
+          "id": "multi-species-cores",
+          "name": "4.1 Multi-Species Cores",
           "indicators": [
-            "barriers-to-movement"
+            "multi-species-cores"
           ]
         },
         {
-          "id": "pinchpoints",
-          "name": "5.0.2 Pinchpoints",
+          "id": "mammal-cores",
+          "name": "4.2 Mammal Cores",
           "indicators": [
-            "pinchpoints"
+            "grizzly-bear-core",
+            "black-bear-core",
+            "wolverine-core",
+            "pacific-fisher-core",
+            "lynx-core",
+            "mountain-goat-core",
+            "black-tailed-deer-core",
+            "hoary-marmot-core",
+            "douglass-squirrel-core",
+            "yellow-pine-chipmunk-core"
+          ]
+        },
+        {
+          "id": "herptile-cores",
+          "name": "4.3 Herptile Cores",
+          "indicators": [
+            "western-toad-core",
+            "red-legged-frog-core",
+            "pacific-tree-frog-core",
+            "ensatina-core",
+            "northwestern-salamander-core",
+            "yellow-toed-salamander-core",
+            "northern-alligator-lizard-core",
+            "garter-snake-core"
           ]
         }
       ]
     },
     {
       "id": "wildlife-corridors",
-      "name": "6.0 Wildlife Corridors",
+      "name": "5.0 Wildlife Corridors",
       "description": "Description for Wildlife Corridors.",
       "icon": "fa-seedling",
       "subthemes": [
         {
-          "id": "herptile-linkages",
-          "name": "6.0.1 Herptile Linkages",
+          "id": "multi-species-linkages",
+          "name": "5.1 Multi-Species Linkages",
           "indicators": [
-            "western-toad",
-            "red-legged-frog",
-            "pacific-tree-frog",
-            "ensatina",
-            "northwestern-salamander",
-            "yellow-toed-salamander",
-            "northern-alligator-lizard",
-            "garter-snake"
+            "multi-species-linkages"
           ]
         },
         {
           "id": "mammal-linkages",
-          "name": "6.0.2 Mammal Linkages",
+          "name": "5.2 Mammal Linkages",
           "indicators": [
-            "grizzly-bear",
-            "black-bear",
-            "wolverine",
-            "pacific-fisher",
-            "lynx",
-            "mountain-goat",
-            "black-tailed-deer",
-            "hoary-marmot",
-            "douglass-squirrel",
-            "yellow-pine-chipmunk"
+            "grizzly-bear-linkage",
+            "black-bear-linkage",
+            "wolverine-linkage",
+            "pacific-fisher-linkage",
+            "lynx-linkage",
+            "mountain-goat-linkage",
+            "black-tailed-deer-linkage",
+            "hoary-marmot-linkage",
+            "douglass-squirrel-linkage",
+            "yellow-pine-chipmunk-linkage"
           ]
         },
         {
-          "id": "multi-species-linkages",
-          "name": "6.0.3 Multi-Species Linkages",
+          "id": "herptile-linkages",
+          "name": "5.3 Herptile Linkages",
           "indicators": [
-            "multi-species-linkages"
+            "western-toad-linkage",
+            "red-legged-frog-linkage",
+            "pacific-tree-frog-linkage",
+            "ensatina-linkage",
+            "northwestern-salamander-linkage",
+            "yellow-toed-salamander-linkage",
+            "northern-alligator-lizard-linkage",
+            "garter-snake-linkage"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "threats",
+      "name": "6.0 Threats",
+      "description": "Description for Threats.",
+      "icon": "fa-seedling",
+      "subthemes": [
+        {
+          "id": "barriers-to-movement",
+          "name": "6.1 Barriers to Movement",
+          "indicators": [
+            "barriers-to-movement"
+          ]
+        },
+        {
+          "id": "pinchpoints",
+          "name": "6.2 Pinchpoints",
+          "indicators": [
+            "pinchpoints"
           ]
         }
       ]
     }
   ],
   "indicators": {
-    "tree-species": {
-      "title": "1.0.1.1 Tree Species",
-      "posts": "tree-species",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "understory-vegetation": {
-      "title": "1.0.2.1 Understory Vegetation",
-      "posts": "understory-vegetation",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "landscape-change": {
-      "title": "2.0.1.1 Landscape Change",
-      "posts": "landscape-change",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "human-footprint": {
-      "title": "2.0.1.2 Human Footprint",
-      "posts": "human-footprint",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "urbanization": {
-      "title": "2.0.1.3 Urbanization",
-      "posts": "urbanization",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "agricultural-use": {
-      "title": "2.0.1.4 Agricultural Use",
-      "posts": "agricultural-use",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "forest-harvest": {
-      "title": "2.0.1.5 Forest Harvest",
-      "posts": "forest-harvest",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "forest-thinning": {
-      "title": "2.0.1.6 Forest Thinning",
-      "posts": "forest-thinning",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "wildfire": {
-      "title": "2.0.1.7 Wildfire",
-      "posts": "wildfire",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "temperature": {
-      "title": "2.0.1.8 Temperature",
-      "posts": "temperature",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "precipitation": {
-      "title": "2.0.1.9 Precipitation",
-      "posts": "precipitation",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "forest-cover": {
-      "title": "2.0.2.1 Forest Cover",
-      "posts": "forest-cover",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "wetlands-and-riparian-areas": {
-      "title": "2.0.2.2 Wetlands & Riparian Areas",
-      "posts": "wetlands-and-riparian-areas",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "mesic-vegetation": {
-      "title": "2.0.2.3 Mesic Vegetation",
-      "posts": "mesic-vegetation",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "xeric-vegetation": {
-      "title": "2.0.2.4 Xeric Vegetation",
-      "posts": "xeric-vegetation",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "protected-areas": {
-      "title": "2.0.3.1 Protected Areas",
-      "posts": "protected-areas",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "habitat-protection": {
-      "title": "2.0.3.2 Habitat Protection",
-      "posts": "habitat-protection",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "habitat-restoration": {
-      "title": "2.0.3.3 Habitat Restoration",
-      "posts": "habitat-restoration",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "climate-refugia": {
-      "title": "2.0.3.4 Climate Refugia",
-      "posts": "climate-refugia",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "climate-pathways": {
-      "title": "2.0.3.5 Climate Pathways",
-      "posts": "climate-pathways",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
     "ecosystem-health": {
-      "title": "2.0.4.1 Ecosystem Health",
+      "title": "1.1.1 Ecosystem Health",
+      "description": "ecosystem-health",
       "posts": "ecosystem-health",
-      "description": "Placeholder description.",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
     "ecosystem-resileince": {
-      "title": "2.0.4.2 Ecosystem Resileince",
+      "title": "1.1.2 Ecosystem Resilience",
+      "description": "ecosystem-resileince",
       "posts": "ecosystem-resileince",
-      "description": "Placeholder description.",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
     "habitat-suitability": {
-      "title": "2.0.4.3 Habitat Suitability",
+      "title": "1.1.3 Habitat Suitability",
+      "description": "habitat-suitability",
       "posts": "habitat-suitability",
-      "description": "Placeholder description.",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
     "habitat-connectivity": {
-      "title": "2.0.4.4 Habitat Connectivity",
+      "title": "1.1.4 Habitat Connectivity",
+      "description": "habitat-connectivity",
       "posts": "habitat-connectivity",
-      "description": "Placeholder description.",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
     "ecosystem-services": {
-      "title": "2.0.4.5 Ecosystem Services",
+      "title": "1.1.5 Ecosystem Services",
+      "description": "ecosystem-services",
       "posts": "ecosystem-services",
-      "description": "Placeholder description.",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "western-toad": {
-      "title": "3.0.1.1 Western Toad",
-      "posts": "western-toad",
-      "description": "Placeholder description.",
+    "landscape-change": {
+      "title": "1.2.1 Landscape Change",
+      "description": "landscape-change",
+      "posts": "landscape-change",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "red-legged-frog": {
-      "title": "3.0.1.2 Red-Legged Frog",
-      "posts": "red-legged-frog",
-      "description": "Placeholder description.",
+    "human-footprint": {
+      "title": "1.2.2 Human Footprint",
+      "description": "human-footprint",
+      "posts": "human-footprint",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "pacific-tree-frog": {
-      "title": "3.0.1.3 Pacific Tree Frog",
-      "posts": "pacific-tree-frog",
-      "description": "Placeholder description.",
+    "urbanization": {
+      "title": "1.2.3 Urbanization",
+      "description": "urbanization",
+      "posts": "urbanization",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "ensatina": {
-      "title": "3.0.1.4 Ensatina",
-      "posts": "ensatina",
-      "description": "Placeholder description.",
+    "agricultural-use": {
+      "title": "1.2.4 Agricultural Use",
+      "description": "agricultural-use",
+      "posts": "agricultural-use",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "northwestern-salamander": {
-      "title": "3.0.1.5 Northwestern Salamander",
-      "posts": "northwestern-salamander",
-      "description": "Placeholder description.",
+    "forest-harvest": {
+      "title": "1.2.5 Forest Harvest",
+      "description": "forest-harvest",
+      "posts": "forest-harvest",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "yellow-toed-salamander": {
-      "title": "3.0.1.6 Yellow-Toed Salamander",
-      "posts": "yellow-toed-salamander",
-      "description": "Placeholder description.",
+    "forest-thinning": {
+      "title": "1.2.6 Forest Thinning",
+      "description": "forest-thinning",
+      "posts": "forest-thinning",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "northern-alligator-lizard": {
-      "title": "3.0.1.7 Northern Alligator Lizard",
-      "posts": "northern-alligator-lizard",
-      "description": "Placeholder description.",
+    "wildfire": {
+      "title": "1.2.7 Wildfire",
+      "description": "wildfire",
+      "posts": "wildfire",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "garter-snake": {
-      "title": "3.0.1.8 Garter Snake",
-      "posts": "garter-snake",
-      "description": "Placeholder description.",
+    "temperature": {
+      "title": "1.2.8 Temperature",
+      "description": "temperature",
+      "posts": "temperature",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "grizzly-bear": {
-      "title": "3.0.2.1 Grizzly Bear",
-      "posts": "grizzly-bear",
-      "description": "Placeholder description.",
+    "precipitation": {
+      "title": "1.2.9 Precipitation",
+      "description": "precipitation",
+      "posts": "precipitation",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "wolverine": {
-      "title": "3.0.2.2 Wolverine",
-      "posts": "wolverine",
-      "description": "Placeholder description.",
+    "forest-cover": {
+      "title": "1.3.1 Forest Cover",
+      "description": "forest-cover",
+      "posts": "forest-cover",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "pacific-fisher": {
-      "title": "3.0.2.3 Pacific Fisher",
-      "posts": "pacific-fisher",
-      "description": "Placeholder description.",
+    "wetlands-and-riparian-areas": {
+      "title": "1.3.2 Wetlands & Riparian Areas",
+      "description": "wetlands-and-riparian-areas",
+      "posts": "wetlands-and-riparian-areas",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "lynx": {
-      "title": "3.0.2.4 Lynx",
-      "posts": "lynx",
-      "description": "Placeholder description.",
+    "mesic-vegetation": {
+      "title": "1.3.3 Mesic Vegetation",
+      "description": "mesic-vegetation",
+      "posts": "mesic-vegetation",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "black-bear": {
-      "title": "3.0.2.5 Black Bear",
-      "posts": "black-bear",
-      "description": "Placeholder description.",
+    "xeric-vegetation": {
+      "title": "1.3.4 Xeric Vegetation",
+      "description": "xeric-vegetation",
+      "posts": "xeric-vegetation",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "mountain-goat": {
-      "title": "3.0.2.6 Mountain Goat",
-      "posts": "mountain-goat",
-      "description": "Placeholder description.",
+    "protected-areas": {
+      "title": "1.4.1 Protected Areas",
+      "description": "protected-areas",
+      "posts": "protected-areas",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "black-tailed-deer": {
-      "title": "3.0.2.7 Black-Tailed Deer",
-      "posts": "black-tailed-deer",
-      "description": "Placeholder description.",
+    "habitat-protection": {
+      "title": "1.4.2 Habitat Protection",
+      "description": "habitat-protection",
+      "posts": "habitat-protection",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "hoary-marmot": {
-      "title": "3.0.2.8 Hoary Marmot",
-      "posts": "hoary-marmot",
-      "description": "Placeholder description.",
+    "habitat-restoration": {
+      "title": "1.4.3 Habitat Restoration",
+      "description": "habitat-restoration",
+      "posts": "habitat-restoration",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "douglass-squirrel": {
-      "title": "3.0.2.9 Douglas\u2019s Squirrel",
-      "posts": "douglass-squirrel",
-      "description": "Placeholder description.",
+    "climate-refugia": {
+      "title": "1.4.4 Climate Refugia",
+      "description": "climate-refugia",
+      "posts": "climate-refugia",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "yellow-pine-chipmunk": {
-      "title": "3.0.2.10 Yellow-Pine Chipmunk",
-      "posts": "yellow-pine-chipmunk",
-      "description": "Placeholder description.",
+    "climate-pathways": {
+      "title": "1.4.5 Climate Pathways",
+      "description": "climate-pathways",
+      "posts": "climate-pathways",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "multi-species-cores": {
-      "title": "3.0.3.1 Multi-Species Cores",
-      "posts": "multi-species-cores",
-      "description": "Placeholder description.",
+    "tree-species": {
+      "title": "2.1.1 Tree Species",
+      "description": "tree-species",
+      "posts": "tree-species",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "bryophytes": {
-      "title": "4.0.1.1 Bryophytes",
-      "posts": "bryophytes",
-      "description": "Placeholder description.",
-      "icon": "fa-leaf",
-      "map1_url": "",
-      "map2_url": ""
-    },
-    "herptiles": {
-      "title": "4.0.2.1 Herptiles",
-      "posts": "herptiles",
-      "description": "Placeholder description.",
+    "understory-vegetation": {
+      "title": "2.2.1 Understory Vegetation",
+      "description": "understory-vegetation",
+      "posts": "understory-vegetation",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
     "mammals": {
-      "title": "4.0.3.1 Mammals",
+      "title": "3.1.1 Mammals",
+      "description": "mammals",
       "posts": "mammals",
-      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "herptiles": {
+      "title": "3.2.1 Herptiles",
+      "description": "herptiles",
+      "posts": "herptiles",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
     "vascular-plants": {
-      "title": "4.0.4.1 Vascular Plants",
+      "title": "3.3.1 Vascular Plants",
+      "description": "vascular-plants",
       "posts": "vascular-plants",
-      "description": "Placeholder description.",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "barriers-to-movement": {
-      "title": "5.0.1.1 Barriers to Movement",
-      "posts": "barriers-to-movement",
-      "description": "Placeholder description.",
+    "bryophytes": {
+      "title": "3.4.1 Bryophytes",
+      "description": "bryophytes",
+      "posts": "bryophytes",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
-    "pinchpoints": {
-      "title": "5.0.2.1 Pinchpoints",
-      "posts": "pinchpoints",
-      "description": "Placeholder description.",
+    "multi-species-cores": {
+      "title": "4.1.1 Multi-Species Cores",
+      "description": "multi-species-cores",
+      "posts": "multi-species-cores",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "grizzly-bear-core": {
+      "title": "4.2.1 Grizzly Bear",
+      "description": "grizzly-bear",
+      "posts": "grizzly-bear-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "black-bear-core": {
+      "title": "4.2.2 Wolverine",
+      "description": "black-bear",
+      "posts": "black-bear-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "wolverine-core": {
+      "title": "4.2.3 Pacific Fisher",
+      "description": "wolverine",
+      "posts": "wolverine-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "pacific-fisher-core": {
+      "title": "4.2.4 Lynx",
+      "description": "pacific-fisher",
+      "posts": "pacific-fisher-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "lynx-core": {
+      "title": "4.2.5 Black Bear",
+      "description": "lynx",
+      "posts": "lynx-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "mountain-goat-core": {
+      "title": "4.2.6 Mountain Goat",
+      "description": "mountain-goat",
+      "posts": "mountain-goat-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "black-tailed-deer-core": {
+      "title": "4.2.7 Black-Tailed Deer",
+      "description": "black-tailed-deer",
+      "posts": "black-tailed-deer-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "hoary-marmot-core": {
+      "title": "4.2.8 Hoary Marmot",
+      "description": "hoary-marmot",
+      "posts": "hoary-marmot-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "douglass-squirrel-core": {
+      "title": "4.2.9 Douglas\u2019s Squirrel",
+      "description": "douglass-squirrel",
+      "posts": "douglass-squirrel-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "yellow-pine-chipmunk-core": {
+      "title": "4.2.10 Yellow-Pine Chipmunk",
+      "description": "yellow-pine-chipmunk",
+      "posts": "yellow-pine-chipmunk-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "western-toad-core": {
+      "title": "4.3.1 Western Toad",
+      "description": "western-toad",
+      "posts": "western-toad-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "red-legged-frog-core": {
+      "title": "4.3.2 Red-Legged Frog",
+      "description": "red-legged-frog",
+      "posts": "red-legged-frog-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "pacific-tree-frog-core": {
+      "title": "4.3.3 Pacific Tree Frog",
+      "description": "pacific-tree-frog",
+      "posts": "pacific-tree-frog-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "ensatina-core": {
+      "title": "4.3.4 Ensatina",
+      "description": "ensatina",
+      "posts": "ensatina-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "northwestern-salamander-core": {
+      "title": "4.3.5 Northwestern Salamander",
+      "description": "northwestern-salamander",
+      "posts": "northwestern-salamander-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "yellow-toed-salamander-core": {
+      "title": "4.3.6 Yellow-Toed Salamander",
+      "description": "yellow-toed-salamander",
+      "posts": "yellow-toed-salamander-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "northern-alligator-lizard-core": {
+      "title": "4.3.7 Northern Alligator Lizard",
+      "description": "northern-alligator-lizard",
+      "posts": "northern-alligator-lizard-core",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "garter-snake-core": {
+      "title": "4.3.8 Garter Snake",
+      "description": "garter-snake",
+      "posts": "garter-snake-core",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""
     },
     "multi-species-linkages": {
-      "title": "6.0.3.1 Multi-Species Linkages",
+      "title": "5.1.1 Multi-Species Linkages",
+      "description": "multi-species-linkages",
       "posts": "multi-species-linkages",
-      "description": "Placeholder description.",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "grizzly-bear-linkage": {
+      "title": "5.2.1 Grizzly Bear",
+      "description": "grizzly-bear",
+      "posts": "grizzly-bear-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "black-bear-linkage": {
+      "title": "5.2.2 Black Bear",
+      "description": "black-bear",
+      "posts": "black-bear-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "wolverine-linkage": {
+      "title": "5.2.3 Wolverine",
+      "description": "wolverine",
+      "posts": "wolverine-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "pacific-fisher-linkage": {
+      "title": "5.2.4 Pacific Fisher",
+      "description": "pacific-fisher",
+      "posts": "pacific-fisher-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "lynx-linkage": {
+      "title": "5.2.5 Lynx",
+      "description": "lynx",
+      "posts": "lynx-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "mountain-goat-linkage": {
+      "title": "5.2.6 Mountain Goat",
+      "description": "mountain-goat",
+      "posts": "mountain-goat-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "black-tailed-deer-linkage": {
+      "title": "5.2.7 Black-Tailed Deer",
+      "description": "black-tailed-deer",
+      "posts": "black-tailed-deer-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "hoary-marmot-linkage": {
+      "title": "5.2.8 Hoary Marmot",
+      "description": "hoary-marmot",
+      "posts": "hoary-marmot-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "douglass-squirrel-linkage": {
+      "title": "5.2.9 Douglas\u2019s Squirrel",
+      "description": "douglass-squirrel",
+      "posts": "douglass-squirrel-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "yellow-pine-chipmunk-linkage": {
+      "title": "5.2.10 Yellow-Pine Chipmunk",
+      "description": "yellow-pine-chipmunk",
+      "posts": "yellow-pine-chipmunk-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "western-toad-linkage": {
+      "title": "5.3.1 Western Toad",
+      "description": "western-toad",
+      "posts": "western-toad-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "red-legged-frog-linkage": {
+      "title": "5.3.2 Red-Legged Frog",
+      "description": "red-legged-frog",
+      "posts": "red-legged-frog-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "pacific-tree-frog-linkage": {
+      "title": "5.3.3 Pacific Tree Frog",
+      "description": "pacific-tree-frog",
+      "posts": "pacific-tree-frog-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "ensatina-linkage": {
+      "title": "5.3.4 Ensatina",
+      "description": "ensatina",
+      "posts": "ensatina-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "northwestern-salamander-linkage": {
+      "title": "5.3.5 Northwestern Salamander",
+      "description": "northwestern-salamander",
+      "posts": "northwestern-salamander-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "yellow-toed-salamander-linkage": {
+      "title": "5.3.6 Yellow-Toed Salamander",
+      "description": "yellow-toed-salamander",
+      "posts": "yellow-toed-salamander-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "northern-alligator-lizard-linkage": {
+      "title": "5.3.7 Northern Alligator Lizard",
+      "description": "northern-alligator-lizard",
+      "posts": "northern-alligator-lizard-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "garter-snake-linkage": {
+      "title": "5.3.8 Garter Snake",
+      "description": "garter-snake",
+      "posts": "garter-snake-linkage",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "barriers-to-movement": {
+      "title": "6.1.1 Barriers to Movement",
+      "description": "barriers-to-movement",
+      "posts": "barriers-to-movement",
+      "icon": "fa-leaf",
+      "map1_url": "",
+      "map2_url": ""
+    },
+    "pinchpoints": {
+      "title": "6.2.1 Pinchpoints",
+      "description": "pinchpoints",
+      "posts": "pinchpoints",
       "icon": "fa-leaf",
       "map1_url": "",
       "map2_url": ""

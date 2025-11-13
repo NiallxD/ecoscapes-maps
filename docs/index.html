@@ -1532,19 +1532,361 @@
             const themesData = [
                 
                 {
+                    id: 'ecosystems',
+                    name: '1.0 Ecosystems',
+                    subthemes: [
+                        
+                        {
+                            id: 'values',
+                            name: '1.1 Values',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'ecosystem\u002Dhealth',
+                                            title: '1.1.1 Ecosystem Health',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'ecosystem\u002Dhealth',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'ecosystem\u002Dresileince',
+                                            title: '1.1.2 Ecosystem Resileince',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'ecosystem\u002Dresileince',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'habitat\u002Dsuitability',
+                                            title: '1.1.2 Habitat Suitability',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'habitat\u002Dsuitability',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'habitat\u002Dconnectivity',
+                                            title: '1.1.4 Habitat Connectivity',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'habitat\u002Dconnectivity',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'ecosystem\u002Dservices',
+                                            title: '1.1.5 Ecosystem Services',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'ecosystem\u002Dservices',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'ecosystem\u002Dthreats',
+                            name: '1.2 Ecosystem Threats',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'landscape\u002Dchange',
+                                            title: '1.2.1 Landscape Change',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'landscape\u002Dchange',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'human\u002Dfootprint',
+                                            title: '1.2.2 Human Footprint',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'human\u002Dfootprint',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'urbanization',
+                                            title: '1.2.3 Urbanization',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'urbanization',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'agricultural\u002Duse',
+                                            title: '1.2.4 Agricultural Use',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'agricultural\u002Duse',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'forest\u002Dharvest',
+                                            title: '1.2.5 Forest Harvest',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'forest\u002Dharvest',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'forest\u002Dthinning',
+                                            title: '1.2.6 Forest Thinning',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'forest\u002Dthinning',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'wildfire',
+                                            title: '1.2.7 Wildfire',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'wildfire',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'temperature',
+                                            title: '1.2.8 Temperature',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'temperature',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'precipitation',
+                                            title: '1.2.9 Precipitation',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'precipitation',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'habitat\u002Dlosses',
+                            name: '1.3 Habitat Losses',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'forest\u002Dcover',
+                                            title: '1.3.1 Forest Cover',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'forest\u002Dcover',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'wetlands\u002Dand\u002Driparian\u002Dareas',
+                                            title: '1.3.2 Wetlands \u0026 Riparian Areas',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'wetlands\u002Dand\u002Driparian\u002Dareas',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'mesic\u002Dvegetation',
+                                            title: '1.3.3 Mesic Vegetation',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'mesic\u002Dvegetation',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'xeric\u002Dvegetation',
+                                            title: '1.3.4 Xeric Vegetation',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'xeric\u002Dvegetation',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'opportunities',
+                            name: '1.4 Opportunities',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'protected\u002Dareas',
+                                            title: '1.4.1 Protected Areas',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'protected\u002Dareas',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'habitat\u002Dprotection',
+                                            title: '1.4.2 Habitat Protection',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'habitat\u002Dprotection',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'habitat\u002Drestoration',
+                                            title: '1.4.3 Habitat Restoration',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'habitat\u002Drestoration',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'climate\u002Drefugia',
+                                            title: '1.4.4 Climate Refugia',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'climate\u002Drefugia',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'climate\u002Dpathways',
+                                            title: '1.4.5 Climate Pathways',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'climate\u002Dpathways',
+                                            theme: 'ecosystems'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        }
+                        
+                    ],
+                    description: 'Description for Ecosystems.',
+                    icon: 'fa\u002Dseedling'
+
+                },
+                
+                {
                     id: 'ecological\u002Dcommunities',
-                    name: '1.0 Ecological Communities',
+                    name: '2.0 Ecological Communities',
                     subthemes: [
                         
                         {
                             id: 'tree\u002Dspecies',
-                            name: '1.0.1 Tree Species',
+                            name: '2.1 Tree Species',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'tree\u002Dspecies',
-                                            title: '1.0.1.1 Tree Species',
+                                            title: '2.1.1 Tree Species',
                                             description: 'Placeholder description.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
@@ -1559,13 +1901,13 @@
                         
                         {
                             id: 'understory\u002Dvegetation',
-                            name: '1.0.2 Understory Vegetation',
+                            name: '2.2 Understory Vegetation',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'understory\u002Dvegetation',
-                                            title: '1.0.2.1 Understory Vegetation',
+                                            title: '2.2.1 Understory Vegetation',
                                             description: 'Placeholder description.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
@@ -1585,685 +1927,19 @@
                 },
                 
                 {
-                    id: 'ecosystems',
-                    name: '2.0 Ecosystems',
-                    subthemes: [
-                        
-                        {
-                            id: 'ecosystem\u002Dthreats',
-                            name: '2.0.1 Ecosystem Threats',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'landscape\u002Dchange',
-                                            title: '2.0.1.1 Landscape Change',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'landscape\u002Dchange',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'human\u002Dfootprint',
-                                            title: '2.0.1.2 Human Footprint',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'human\u002Dfootprint',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'urbanization',
-                                            title: '2.0.1.3 Urbanization',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'urbanization',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'agricultural\u002Duse',
-                                            title: '2.0.1.4 Agricultural Use',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'agricultural\u002Duse',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'forest\u002Dharvest',
-                                            title: '2.0.1.5 Forest Harvest',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'forest\u002Dharvest',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'forest\u002Dthinning',
-                                            title: '2.0.1.6 Forest Thinning',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'forest\u002Dthinning',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'wildfire',
-                                            title: '2.0.1.7 Wildfire',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'wildfire',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'temperature',
-                                            title: '2.0.1.8 Temperature',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'temperature',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'precipitation',
-                                            title: '2.0.1.9 Precipitation',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'precipitation',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'habitat\u002Dlosses',
-                            name: '2.0.2 Habitat Losses',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'forest\u002Dcover',
-                                            title: '2.0.2.1 Forest Cover',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'forest\u002Dcover',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'wetlands\u002Dand\u002Driparian\u002Dareas',
-                                            title: '2.0.2.2 Wetlands \u0026 Riparian Areas',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'wetlands\u002Dand\u002Driparian\u002Dareas',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'mesic\u002Dvegetation',
-                                            title: '2.0.2.3 Mesic Vegetation',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'mesic\u002Dvegetation',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'xeric\u002Dvegetation',
-                                            title: '2.0.2.4 Xeric Vegetation',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'xeric\u002Dvegetation',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'opportunities',
-                            name: '2.0.3 Opportunities',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'protected\u002Dareas',
-                                            title: '2.0.3.1 Protected Areas',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'protected\u002Dareas',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'habitat\u002Dprotection',
-                                            title: '2.0.3.2 Habitat Protection',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'habitat\u002Dprotection',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'habitat\u002Drestoration',
-                                            title: '2.0.3.3 Habitat Restoration',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'habitat\u002Drestoration',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'climate\u002Drefugia',
-                                            title: '2.0.3.4 Climate Refugia',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'climate\u002Drefugia',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'climate\u002Dpathways',
-                                            title: '2.0.3.5 Climate Pathways',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'climate\u002Dpathways',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'values',
-                            name: '2.0.4 Values',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'ecosystem\u002Dhealth',
-                                            title: '2.0.4.1 Ecosystem Health',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'ecosystem\u002Dhealth',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'ecosystem\u002Dresileince',
-                                            title: '2.0.4.2 Ecosystem Resileince',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'ecosystem\u002Dresileince',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'habitat\u002Dsuitability',
-                                            title: '2.0.4.3 Habitat Suitability',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'habitat\u002Dsuitability',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'habitat\u002Dconnectivity',
-                                            title: '2.0.4.4 Habitat Connectivity',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'habitat\u002Dconnectivity',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'ecosystem\u002Dservices',
-                                            title: '2.0.4.5 Ecosystem Services',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'ecosystem\u002Dservices',
-                                            theme: 'ecosystems'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        }
-                        
-                    ],
-                    description: 'Description for Ecosystems.',
-                    icon: 'fa\u002Dseedling'
-
-                },
-                
-                {
-                    id: 'habitat\u002Dsuitability',
-                    name: '3.0 Habitat Suitability',
-                    subthemes: [
-                        
-                        {
-                            id: 'herptile\u002Dcores',
-                            name: '3.0.1 Herptile Cores',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'western\u002Dtoad',
-                                            title: '3.0.1.1 Western Toad',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'western\u002Dtoad',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'red\u002Dlegged\u002Dfrog',
-                                            title: '3.0.1.2 Red\u002DLegged Frog',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'red\u002Dlegged\u002Dfrog',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'pacific\u002Dtree\u002Dfrog',
-                                            title: '3.0.1.3 Pacific Tree Frog',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'pacific\u002Dtree\u002Dfrog',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'ensatina',
-                                            title: '3.0.1.4 Ensatina',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'ensatina',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'northwestern\u002Dsalamander',
-                                            title: '3.0.1.5 Northwestern Salamander',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'northwestern\u002Dsalamander',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'yellow\u002Dtoed\u002Dsalamander',
-                                            title: '3.0.1.6 Yellow\u002DToed Salamander',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'yellow\u002Dtoed\u002Dsalamander',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'northern\u002Dalligator\u002Dlizard',
-                                            title: '3.0.1.7 Northern Alligator Lizard',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'northern\u002Dalligator\u002Dlizard',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'garter\u002Dsnake',
-                                            title: '3.0.1.8 Garter Snake',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'garter\u002Dsnake',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'mammal\u002Dcores',
-                            name: '3.0.2 Mammal Cores',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'grizzly\u002Dbear',
-                                            title: '3.0.2.1 Grizzly Bear',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'grizzly\u002Dbear',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'wolverine',
-                                            title: '3.0.2.2 Wolverine',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'wolverine',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'pacific\u002Dfisher',
-                                            title: '3.0.2.3 Pacific Fisher',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'pacific\u002Dfisher',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'lynx',
-                                            title: '3.0.2.4 Lynx',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'lynx',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'black\u002Dbear',
-                                            title: '3.0.2.5 Black Bear',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'black\u002Dbear',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'mountain\u002Dgoat',
-                                            title: '3.0.2.6 Mountain Goat',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'mountain\u002Dgoat',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'black\u002Dtailed\u002Ddeer',
-                                            title: '3.0.2.7 Black\u002DTailed Deer',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'black\u002Dtailed\u002Ddeer',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'hoary\u002Dmarmot',
-                                            title: '3.0.2.8 Hoary Marmot',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'hoary\u002Dmarmot',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'douglass\u002Dsquirrel',
-                                            title: '3.0.2.9 Douglas’s Squirrel',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'douglass\u002Dsquirrel',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'yellow\u002Dpine\u002Dchipmunk',
-                                            title: '3.0.2.10 Yellow\u002DPine Chipmunk',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'yellow\u002Dpine\u002Dchipmunk',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'multi\u002Dspecies\u002Dcores',
-                            name: '3.0.3 Multi\u002DSpecies Cores',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'multi\u002Dspecies\u002Dcores',
-                                            title: '3.0.3.1 Multi\u002DSpecies Cores',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'multi\u002Dspecies\u002Dcores',
-                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        }
-                        
-                    ],
-                    description: 'Description for Habitat Suitability.',
-                    icon: 'fa\u002Dseedling'
-
-                },
-                
-                {
                     id: 'individual\u002Dspecies',
-                    name: '4.0 Individual Species',
+                    name: '3.0 Individual Species',
                     subthemes: [
-                        
-                        {
-                            id: 'bryophytes',
-                            name: '4.0.1 Bryophytes',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'bryophytes',
-                                            title: '4.0.1.1 Bryophytes',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'bryophytes',
-                                            theme: 'individual\u002Dspecies'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'herptiles',
-                            name: '4.0.2 Herptiles',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'herptiles',
-                                            title: '4.0.2.1 Herptiles',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'herptiles',
-                                            theme: 'individual\u002Dspecies'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
                         
                         {
                             id: 'mammals',
-                            name: '4.0.3 Mammals',
+                            name: '3.1 Mammals',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'mammals',
-                                            title: '4.0.3.1 Mammals',
+                                            title: '3.1.1 Mammals',
                                             description: 'Placeholder description.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
@@ -2277,19 +1953,61 @@
                         },
                         
                         {
+                            id: 'herptiles',
+                            name: '3.2 Herptiles',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'herptiles',
+                                            title: '3.1.2 Herptiles',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'herptiles',
+                                            theme: 'individual\u002Dspecies'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
                             id: 'vascular\u002Dplants',
-                            name: '4.0.4 Vascular Plants',
+                            name: '3.3 Vascular Plants',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'vascular\u002Dplants',
-                                            title: '4.0.4.1 Vascular Plants',
+                                            title: '3.1.3 Vascular Plants',
                                             description: 'Placeholder description.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
                                             map2_url: '',
                                             posts: 'vascular\u002Dplants',
+                                            theme: 'individual\u002Dspecies'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'bryophytes',
+                            name: '3.4 Bryophytes',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'bryophytes',
+                                            title: '3.1.4 Bryophytes',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'bryophytes',
                                             theme: 'individual\u002Dspecies'  // Add theme ID to each indicator
                                         }
                                     
@@ -2304,19 +2022,583 @@
                 },
                 
                 {
+                    id: 'habitat\u002Dsuitability',
+                    name: '4.0 Habitat Suitability',
+                    subthemes: [
+                        
+                        {
+                            id: 'multi\u002Dspecies\u002Dcores',
+                            name: '4.1 Multi\u002DSpecies Cores',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'multi\u002Dspecies\u002Dcores',
+                                            title: '4.1.1 Multi\u002DSpecies Cores',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'multi\u002Dspecies\u002Dcores',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'mammal\u002Dcores',
+                            name: '4.2 Mammal Cores',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'grizzly\u002Dbear\u002Dcore',
+                                            title: '4.2.1 Grizzly Bear',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'grizzly\u002Dbear',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'black\u002Dbear\u002Dcore',
+                                            title: '4.2.2 Black Bear',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'black\u002Dbear',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'wolverine\u002Dcore',
+                                            title: '4.2.3 Wolverine',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'wolverine',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'pacific\u002Dfisher\u002Dcore',
+                                            title: '4.2.4 Pacific Fisher',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'pacific\u002Dfisher',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'lynx\u002Dcore',
+                                            title: '4.2.5 Lynx',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'lynx',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'mountain\u002Dgoat\u002Dcore',
+                                            title: '4.2.6 Mountain Goat',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'mountain\u002Dgoat',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'black\u002Dtailed\u002Ddeer\u002Dcore',
+                                            title: '4.2.7 Black\u002DTailed Deer',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'black\u002Dtailed\u002Ddeer',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'hoary\u002Dmarmot\u002Dcore',
+                                            title: '4.2.8 Hoary Marmot',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'hoary\u002Dmarmot',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'douglass\u002Dsquirrel\u002Dcore',
+                                            title: '4.2.9 Douglas\u0027s Squirrel',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'douglass\u002Dsquirrel',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'yellow\u002Dpine\u002Dchipmunk\u002Dcore',
+                                            title: '4.2.10 Yellow\u002DPine Chipmunk',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'yellow\u002Dpine\u002Dchipmunk',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'herptile\u002Dcores',
+                            name: '4.3 Herptile Cores',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'western\u002Dtoad\u002Dcore',
+                                            title: '4.3.1 Western Toad',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'western\u002Dtoad',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'red\u002Dlegged\u002Dfrog\u002Dcore',
+                                            title: '4.3.2 Red\u002DLegged Frog',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'red\u002Dlegged\u002Dfrog',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'pacific\u002Dtree\u002Dfrog\u002Dcore',
+                                            title: '4.3.3 Pacific Tree Frog',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'pacific\u002Dtree\u002Dfrog',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'ensatina\u002Dcore',
+                                            title: '4.3.4 Ensatina',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'ensatina',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'northwestern\u002Dsalamander\u002Dcore',
+                                            title: '4.3.5 Northwestern Salamander',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'northwestern\u002Dsalamander',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'yellow\u002Dtoed\u002Dsalamander\u002Dcore',
+                                            title: '4.3.6 Yellow\u002DToed Salamander',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'yellow\u002Dtoed\u002Dsalamander',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'northern\u002Dalligator\u002Dlizard\u002Dcore',
+                                            title: '4.3.7 Northern Alligator Lizard',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'northern\u002Dalligator\u002Dlizard',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'garter\u002Dsnake\u002Dcore',
+                                            title: '4.3.8 Garter Snake',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'garter\u002Dsnake',
+                                            theme: 'habitat\u002Dsuitability'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        }
+                        
+                    ],
+                    description: 'Description for Habitat Suitability.',
+                    icon: 'fa\u002Dseedling'
+
+                },
+                
+                {
+                    id: 'wildlife\u002Dcorridors',
+                    name: '5.0 Wildlife Corridors',
+                    subthemes: [
+                        
+                        {
+                            id: 'multi\u002Dspecies\u002Dlinkages',
+                            name: '5.1 Multi\u002DSpecies Linkages',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'multi\u002Dspecies\u002Dlinkages',
+                                            title: '5.1.1 Multi\u002DSpecies Linkages',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'multi\u002Dspecies\u002Dlinkages',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'mammal\u002Dlinkages',
+                            name: '5.2 Mammal Linkages',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'grizzly\u002Dbear\u002Dlinkage',
+                                            title: '5.2.1 Grizzly Bear',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'grizzly\u002Dbear',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'black\u002Dbear\u002Dlinkage',
+                                            title: '5.2.2 Black Bear',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'black\u002Dbear',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'wolverine\u002Dlinkage',
+                                            title: '5.2.3 Wolverine',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'wolverine',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'pacific\u002Dfisher\u002Dlinkage',
+                                            title: '5.2.4 Pacific Fisher',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'pacific\u002Dfisher',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'lynx\u002Dlinkage',
+                                            title: '5.2.5 Lynx',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'lynx',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'mountain\u002Dgoat\u002Dlinkage',
+                                            title: '5.2.6 Mountain Goat',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'mountain\u002Dgoat',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'black\u002Dtailed\u002Ddeer\u002Dlinkage',
+                                            title: '5.2.7 Black\u002DTailed Deer',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'black\u002Dtailed\u002Ddeer',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'hoary\u002Dmarmot\u002Dlinkage',
+                                            title: '5.2.8 Hoary Marmot',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'hoary\u002Dmarmot',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'douglass\u002Dsquirrel\u002Dlinkage',
+                                            title: '5.2.9 Douglas\u0027s Squirrel',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'douglass\u002Dsquirrel',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'yellow\u002Dpine\u002Dchipmunk\u002Dlinkage',
+                                            title: '5.2.10 Yellow\u002DPine Chipmunk',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'yellow\u002Dpine\u002Dchipmunk',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        },
+                        
+                        {
+                            id: 'herptile\u002Dlinkages',
+                            name: '5.3 Herptile Linkages',
+                            indicators: [
+                                
+                                    
+                                        {
+                                            id: 'western\u002Dtoad\u002Dlinkage',
+                                            title: '5.3.1 Western Toad',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'western\u002Dtoad',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'red\u002Dlegged\u002Dfrog\u002Dlinkage',
+                                            title: '5.3.2 Red\u002DLegged Frog',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'red\u002Dlegged\u002Dfrog',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'pacific\u002Dtree\u002Dfrog\u002Dlinkage',
+                                            title: '5.3.3 Pacific Tree Frog',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'pacific\u002Dtree\u002Dfrog',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'ensatina\u002Dlinkage',
+                                            title: '5.3.4 Ensatina',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'ensatina',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'northwestern\u002Dsalamander\u002Dlinkage',
+                                            title: '5.3.5 Northwestern Salamander',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'northwestern\u002Dsalamander',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'yellow\u002Dtoed\u002Dsalamander\u002Dlinkage',
+                                            title: '5.3.6 Yellow\u002DToed Salamander',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'yellow\u002Dtoed\u002Dsalamander',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'northern\u002Dalligator\u002Dlizard\u002Dlinkage',
+                                            title: '5.3.7 Northern Alligator Lizard',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'northern\u002Dalligator\u002Dlizard',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        },
+                                    
+                                
+                                    
+                                        {
+                                            id: 'garter\u002Dsnake\u002Dlinkage',
+                                            title: '5.3.8 Garter Snake',
+                                            description: 'Placeholder description.',
+                                            icon: 'fa\u002Dleaf',
+                                            map1_url: '',
+                                            map2_url: '',
+                                            posts: 'garter\u002Dsnake',
+                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                        }
+                                    
+                                
+                            ]
+                        }
+                        
+                    ],
+                    description: 'Description for Wildlife Corridors.',
+                    icon: 'fa\u002Dseedling'
+
+                },
+                
+                {
                     id: 'threats',
-                    name: '5.0 Threats',
+                    name: '6.0 Threats',
                     subthemes: [
                         
                         {
                             id: 'barriers\u002Dto\u002Dmovement',
-                            name: '5.0.1 Barriers to Movement',
+                            name: '6.1 Barriers to Movement',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'barriers\u002Dto\u002Dmovement',
-                                            title: '5.0.1.1 Barriers to Movement',
+                                            title: '5.4.1 Barriers to Movement',
                                             description: 'Placeholder description.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
@@ -2331,13 +2613,13 @@
                         
                         {
                             id: 'pinchpoints',
-                            name: '5.0.2 Pinchpoints',
+                            name: '6.2 Pinchpoints',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'pinchpoints',
-                                            title: '5.0.2.1 Pinchpoints',
+                                            title: '5.5.1 Pinchpoints',
                                             description: 'Placeholder description.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: '',
@@ -2352,288 +2634,6 @@
                         
                     ],
                     description: 'Description for Threats.',
-                    icon: 'fa\u002Dseedling'
-
-                },
-                
-                {
-                    id: 'wildlife\u002Dcorridors',
-                    name: '6.0 Wildlife Corridors',
-                    subthemes: [
-                        
-                        {
-                            id: 'herptile\u002Dlinkages',
-                            name: '6.0.1 Herptile Linkages',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'western\u002Dtoad',
-                                            title: '3.0.1.1 Western Toad',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'western\u002Dtoad',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'red\u002Dlegged\u002Dfrog',
-                                            title: '3.0.1.2 Red\u002DLegged Frog',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'red\u002Dlegged\u002Dfrog',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'pacific\u002Dtree\u002Dfrog',
-                                            title: '3.0.1.3 Pacific Tree Frog',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'pacific\u002Dtree\u002Dfrog',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'ensatina',
-                                            title: '3.0.1.4 Ensatina',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'ensatina',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'northwestern\u002Dsalamander',
-                                            title: '3.0.1.5 Northwestern Salamander',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'northwestern\u002Dsalamander',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'yellow\u002Dtoed\u002Dsalamander',
-                                            title: '3.0.1.6 Yellow\u002DToed Salamander',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'yellow\u002Dtoed\u002Dsalamander',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'northern\u002Dalligator\u002Dlizard',
-                                            title: '3.0.1.7 Northern Alligator Lizard',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'northern\u002Dalligator\u002Dlizard',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'garter\u002Dsnake',
-                                            title: '3.0.1.8 Garter Snake',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'garter\u002Dsnake',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'mammal\u002Dlinkages',
-                            name: '6.0.2 Mammal Linkages',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'grizzly\u002Dbear',
-                                            title: '3.0.2.1 Grizzly Bear',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'grizzly\u002Dbear',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'black\u002Dbear',
-                                            title: '3.0.2.5 Black Bear',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'black\u002Dbear',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'wolverine',
-                                            title: '3.0.2.2 Wolverine',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'wolverine',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'pacific\u002Dfisher',
-                                            title: '3.0.2.3 Pacific Fisher',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'pacific\u002Dfisher',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'lynx',
-                                            title: '3.0.2.4 Lynx',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'lynx',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'mountain\u002Dgoat',
-                                            title: '3.0.2.6 Mountain Goat',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'mountain\u002Dgoat',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'black\u002Dtailed\u002Ddeer',
-                                            title: '3.0.2.7 Black\u002DTailed Deer',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'black\u002Dtailed\u002Ddeer',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'hoary\u002Dmarmot',
-                                            title: '3.0.2.8 Hoary Marmot',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'hoary\u002Dmarmot',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'douglass\u002Dsquirrel',
-                                            title: '3.0.2.9 Douglas’s Squirrel',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'douglass\u002Dsquirrel',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'yellow\u002Dpine\u002Dchipmunk',
-                                            title: '3.0.2.10 Yellow\u002DPine Chipmunk',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'yellow\u002Dpine\u002Dchipmunk',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'multi\u002Dspecies\u002Dlinkages',
-                            name: '6.0.3 Multi\u002DSpecies Linkages',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'multi\u002Dspecies\u002Dlinkages',
-                                            title: '6.0.3.1 Multi\u002DSpecies Linkages',
-                                            description: 'Placeholder description.',
-                                            icon: 'fa\u002Dleaf',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: 'multi\u002Dspecies\u002Dlinkages',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        }
-                        
-                    ],
-                    description: 'Description for Wildlife Corridors.',
                     icon: 'fa\u002Dseedling'
 
                 }
