@@ -210,8 +210,10 @@
             flex-wrap: wrap;
             gap: 15px;
             padding: 15px 20px;
-            border-bottom: 1px solid #edf2f7;
-            background-color: #f8fafc;
+            margin-right: 20px;
+            margin-left: 20px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            background-color: #ffffff;
             border-radius: 20px;
         }
         
@@ -301,8 +303,9 @@
         .map-container {
             flex: 1;
             position: relative;
-            background: #f8f9fa;
-            border-radius: 12px;
+            background: #ffffff;
+            border-radius: 20px;
+            margin: 15px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
             display: flex;
@@ -481,11 +484,6 @@
             margin: 0 auto;
             gap: 30px;
         }
-        .map-container {
-            position: relative;
-            width: 100%;
-            height: calc(100vh - 200px);
-        }
         .map-iframe {
             width: 100%;
             height: 100%;
@@ -552,14 +550,14 @@
         .two-column-section {
             display: flex;
             width: 100%;
-            padding: 15px;
+            margin: 15px;
             gap: 15px;
             box-sizing: border-box;
         }
         .column-left, .column-right {
             flex: 1;
             background: white;
-            border-radius: 10px;
+            border-radius: 20px;
             padding: 20px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
         }
@@ -734,11 +732,6 @@
             display: flex;
             align-items: center;
             margin-bottom: 8px;
-        }
-        .map-container {
-            position: relative;
-            width: 100%;
-            height: calc(100% - 120px); /* Adjust for toolbar and content height */
         }
         .map-iframe {
             width: 100%;
@@ -963,15 +956,6 @@
         .resources-button:active {
             transform: translateY(0);
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .toolbar-top {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            padding: 15px 20px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #e2e8f0;
-            gap: 15px;
         }
         
         .dropdown {
