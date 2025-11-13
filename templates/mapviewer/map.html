@@ -549,17 +549,27 @@
         }
         .two-column-section {
             display: flex;
-            width: 100%;
-            margin: 15px;
+            align-items: stretch; /* Makes columns stretch to match height */
+            margin-left: 20px;
+            margin-right: 20px;
+            margin-top: 20px;
             gap: 15px;
-            box-sizing: border-box;
+            background-color: #ffffff;
+            border-radius: 20px;
+            min-height: 0; /* Allows flex items to shrink below their content size */
+            height: auto;
         }
         .column-left, .column-right {
             flex: 1;
+            min-width: 0; /* Prevents flex items from overflowing */
+            min-height: 100%; /* Ensures minimum height matches parent */
+            display: flex;
+            flex-direction: column;
             background: white;
-            border-radius: 20px;
-            padding: 20px;
+            border-radius: 10px;
+            padding: 15px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            box-sizing: border-box;
         }
         .indicator-info {
             display: flex;
@@ -880,22 +890,7 @@
             padding: 0;
             overflow-x: hidden;
         }
-        .column-left {
-            flex: 2;
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-            box-sizing: border-box;
-        }
-        .column-right {
-            flex: 2;
-            background: white;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-            box-sizing: border-box;
-        }
+
 
         .resources-container {
             padding: 20px;
