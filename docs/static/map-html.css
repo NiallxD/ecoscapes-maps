@@ -12,6 +12,7 @@ body, html {
     flex-direction: column;
     margin-right: 15px;
     min-width: 200px;
+    align-items: flex-start;
 }
 
 .dropdown p {
@@ -574,7 +575,7 @@ body, html {
 }
 
 .dropdown-submenu:hover > .dropdown-submenu-content {
-    display: block
+    display: block;
 }
 
 .dropdown-item i {

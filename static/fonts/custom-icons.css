@@ -1,7 +1,7 @@
 @font-face {
     font-family: "custom-icons";
-    src: url("./custom-icons.woff2?dedf3547c51c168ac92262c3e50d5a96") format("woff2"),
-         url("./custom-icons.woff?dedf3547c51c168ac92262c3e50d5a96") format("woff");
+    src: url("/static/fonts/custom-icons.woff2?7f0f03ec5f12d391b4afe28fda9d1865") format("woff2"),
+url("/static/fonts/custom-icons.woff?7f0f03ec5f12d391b4afe28fda9d1865") format("woff");
 }
 
 .icon:before {
@@ -15,6 +15,9 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon.icon-donut:before {
+.icon.icon-question:before {
     content: "\f101";
+}
+.icon.icon-donut:before {
+    content: "\f102";
 }

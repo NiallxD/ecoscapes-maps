@@ -246,12 +246,44 @@
         }
 
         /* ===== Info Box Components ===== */
+
+        /* Two Column Section Styling */
+        .two-column-section {
+            display: flex;
+            align-items: stretch;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            gap: 15px;
+            border-radius: 20px;
+            min-height: 0;
+            height: auto;
+        }
+        .column-left, .column-right {
+            flex: 1;
+            min-width: 0;
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-radius: 20px;
+            padding: 15px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+        }
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
         /* Container Styles */
         .indicator-info,
         .theme-info {
             display: flex;
-            gap: 15px;
-            align-items: flex-start;
+            gap: 10px;
+            align-items: center;
             width: 100%;
             padding: 0;
             margin: 0;
@@ -261,10 +293,9 @@
         /* Icon Base Styles */
         .indicator-icon,
         .theme-icon {
-            font-size: 2.5em; /* Slightly reduced from 50px for better scaling */
+            font-size: 3.5em;
             color: #4CAF50;
-            min-width: 1.5em;
-            height: 1.5em;
+            margin: 5px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -294,20 +325,22 @@
         /* Text Content */
         .text-content {
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             padding: 0;
-            min-width: 0; /* Prevent flex item overflow */
+            min-width: 0;
         }
 
         /* Title Styles */
         .indicator-title,
         .theme-title {
-            margin: 0 0 8px 0;
+            margin: 0; /* needed to override the h2 styles */
             color: #1a365d;
             font-size: 1.5em;
             font-weight: 600;
             line-height: 1.3;
         }
-
         /* Description Styles */
         .indicator-description,
         .theme-description {
@@ -324,7 +357,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            min-height: 400px; /* Ensure minimum height for the container */
+            min-height: 400px;
             width: 100%;
             height: 100%;
         }
@@ -379,7 +412,8 @@
             overflow: hidden;
             font-family: Arial, sans-serif;
         }
-        /* Remove duplicate dropdown styles */
+
+        /* Dropdown Styling */
         .dropdown-toggle {
             background-color: #ffffff;
             color: #2c3e50;
@@ -427,6 +461,8 @@
         .dropdown.active .dropdown-menu {
             display: block;
         }
+
+        /* iFrame Styling */
         .map-iframe {
             width: 100%;
             height: 100%;
@@ -436,43 +472,8 @@
         .map-iframe.active {
             display: block;
         }
-        .two-column-section {
-            display: flex;
-            align-items: stretch; /* Makes columns stretch to match height */
-            margin-top: 20px;
-            margin-bottom: 20px;
-            gap: 15px;
-            border-radius: 20px;
-            min-height: 0; /* Allows flex items to shrink below their content size */
-            height: auto;
-        }
-        .column-left, .column-right {
-            flex: 1;
-            min-width: 0; /* Prevents flex items from overflowing */
-            min-height: 100%; /* Ensures minimum height matches parent */
-            display: flex;
-            flex-direction: column;
-            background: white;
-            border-radius: 20px;
-            padding: 15px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-            box-sizing: border-box;
-        }
-        .indicator-info {
-            display: flex;
-            gap: 15px;
-            margin: 0;
-        }
-        .text-content {
-            flex: 1;
-        }
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-        }
+
+
         /* Remove duplicate dropdown styles */
         .dropdown-toggle {
             background-color: #ffffff;
@@ -546,12 +547,6 @@
             transition: all 0.15s ease;
             font-size: 14px;
         }
-        .text-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
         .map-iframe {
             width: 100%;
             height: 100%;
@@ -618,23 +613,6 @@
             white-space: nowrap;
             font-size: 14px;
             color: #4a5568;
-        }
-        .indicator-info {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 12px;
-            margin-top: 12px;
-        }
-        .text-content {
-            flex: 1;
-        }
-        .indicator-title {
-            margin: 0 0 6px 0;
-            color: #1a365d;
-            font-size: 1.4em;
-            font-weight: 600;
-            line-height: 1.2;
         }
         .dropdown-toggle {
             background: white;
@@ -773,7 +751,7 @@
             <div class="column-left">
               <div class="theme-info">
                 <div class="theme-icon">
-                  <i class="fas fa-layer-group indicator-icon"></i>
+                  <i class="icon icon-question"></i>
                 </div>
                 <div class="text-content">
                   <h2 class="theme-title">Select a Theme</h2>
@@ -785,7 +763,7 @@
               <!-- Indicator Information -->
               <div class="indicator-info">
                 <div class="indicator-icon">
-                  <i class="fas fa-chart-bar indicator-icon"></i>
+                  <i class="icon icon-question"></i>
                 </div>
                 <div class="text-content">
                   <h2 class="indicator-title">Select an Indicator</h2>
@@ -2365,7 +2343,7 @@
                 // Reset indicator info
                 indicatorTitle.textContent = 'Select an Indicator';
                 indicatorDescription.textContent = 'Choose an indicator from the dropdown above to view its details and map.';
-                indicatorIcon.className = 'fas fa-chart-bar';
+                indicatorIcon.className = 'icon icon-question';
                 
                 // Show indicator dropdown
                 indicatorDropdown.style.display = 'block';
