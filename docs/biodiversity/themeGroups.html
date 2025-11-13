@@ -1504,7 +1504,185 @@
     </div>
       
       <script>
+        // Define Dropdown class first
+        class Dropdown {
+            constructor(element) {
+                this.element = element;
+                this.toggle = element.querySelector('.dropdown-toggle');
+                this.menu = element.querySelector('.dropdown-menu');
+                this.chevron = this.toggle.querySelector('i');
+                this.isOpen = false;
+                this.menuItems = Array.from(this.menu.querySelectorAll('a'));
+                this.focusedIndex = -1;
+                
+                this.initialize();
+            }
+            
+            initialize() {
+                // Add ARIA attributes
+                this.toggle.setAttribute('aria-haspopup', 'true');
+                this.toggle.setAttribute('aria-expanded', 'false');
+                
+                // Toggle dropdown on click
+                this.toggle.addEventListener('click', (e) => this.toggleDropdown(e));
+                
+                // Close when clicking outside
+                document.addEventListener('click', (e) => this.handleOutsideClick(e));
+                
+                // Handle keyboard navigation
+                this.toggle.addEventListener('keydown', (e) => this.handleToggleKeyDown(e));
+                this.menu.addEventListener('keydown', (e) => this.handleMenuKeyDown(e));
+                
+                // Handle menu item interactions
+                this.menuItems.forEach((item, index) => {
+                    item.addEventListener('click', () => this.close());
+                    item.addEventListener('focus', () => this.focusedIndex = index);
+                });
+            }
+            
+            toggleDropdown(e) {
+                e.stopPropagation();
+                
+                if (this.isOpen) {
+                    this.close();
+                } else {
+                    this.open();
+                }
+            }
+            
+            open() {
+                if (this.isOpen) return;
+                
+                // Close other dropdowns first
+                Dropdown.closeAll(this);
+                
+                // Open this dropdown
+                this.element.classList.add('active');
+                this.toggle.setAttribute('aria-expanded', 'true');
+                this.chevron.style.transform = 'rotate(180deg)';
+                this.isOpen = true;
+                
+                // Focus first item if available
+                if (this.menuItems.length > 0) {
+                    this.focusedIndex = 0;
+                    this.menuItems[0].focus();
+                }
+            }
+            
+            close() {
+                if (!this.isOpen) return;
+                
+                this.element.classList.remove('active');
+                this.toggle.setAttribute('aria-expanded', 'false');
+                this.chevron.style.transform = '';
+                this.isOpen = false;
+                this.focusedIndex = -1;
+                
+                // Return focus to toggle
+                this.toggle.focus();
+            }
+            
+            handleOutsideClick(e) {
+                if (!this.element.contains(e.target)) {
+                    this.close();
+                }
+            }
+            
+            handleToggleKeyDown(e) {
+                const { key } = e;
+                
+                if (key === 'Enter' || key === ' ' || key === 'ArrowDown' || key === 'Down') {
+                    e.preventDefault();
+                    this.open();
+                } else if (key === 'Escape') {
+                    this.close();
+                } else if (key === 'ArrowUp' || key === 'Up') {
+                    e.preventDefault();
+                    this.open();
+                    if (this.menuItems.length > 0) {
+                        this.focusedIndex = this.menuItems.length - 1;
+                        this.menuItems[this.focusedIndex].focus();
+                    }
+                }
+            }
+            
+            handleMenuKeyDown(e) {
+                const { key } = e;
+                
+                switch (key) {
+                    case 'Escape':
+                        e.preventDefault();
+                        this.close();
+                        break;
+                        
+                    case 'ArrowDown':
+                    case 'Down':
+                        e.preventDefault();
+                        this.focusNextItem();
+                        break;
+                        
+                    case 'ArrowUp':
+                    case 'Up':
+                        e.preventDefault();
+                        this.focusPrevItem();
+                        break;
+                        
+                    case 'Home':
+                        e.preventDefault();
+                        this.focusItem(0);
+                        break;
+                        
+                    case 'End':
+                        e.preventDefault();
+                        this.focusItem(this.menuItems.length - 1);
+                        break;
+                        
+                    case 'Tab':
+                        if (!e.shiftKey && this.focusedIndex === this.menuItems.length - 1) {
+                            // Close dropdown when tabbing out of the last item
+                            this.close();
+                        } else if (e.shiftKey && this.focusedIndex <= 0) {
+                            // Close dropdown when shift+tabbing out of the first item
+                            e.preventDefault();
+                            this.close();
+                        }
+                        break;
+                }
+            }
+            
+            focusNextItem() {
+                this.focusedIndex = (this.focusedIndex + 1) % this.menuItems.length;
+                this.menuItems[this.focusedIndex].focus();
+            }
+            
+            focusPrevItem() {
+                this.focusedIndex = (this.focusedIndex - 1 + this.menuItems.length) % this.menuItems.length;
+                this.menuItems[this.focusedIndex].focus();
+            }
+            
+            focusItem(index) {
+                if (index >= 0 && index < this.menuItems.length) {
+                    this.focusedIndex = index;
+                    this.menuItems[index].focus();
+                }
+            }
+            
+            static closeAll(exceptDropdown = null) {
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    const instance = dropdown._dropdownInstance;
+                    if (instance && instance !== exceptDropdown) {
+                        instance.close();
+                    }
+                });
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize dropdowns
+            document.querySelectorAll('.dropdown').forEach(dropdown => {
+                dropdown._dropdownInstance = new Dropdown(dropdown);
+            });
+            
             // Handle map toggle functionality
             const viewToggle = document.getElementById('viewToggle');
             const map1 = document.getElementById('map1');
@@ -2155,7 +2333,18 @@
 
             // Close all dropdowns
             function closeAllDropdowns() {
-                Dropdown.closeAll();
+                if (typeof Dropdown !== 'undefined' && typeof Dropdown.closeAll === 'function') {
+                    Dropdown.closeAll();
+                } else {
+                    // Fallback for when Dropdown class is not available yet
+                    document.querySelectorAll('.dropdown').forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                        const toggle = dropdown.querySelector('.dropdown-toggle');
+                        const chevron = toggle?.querySelector('i.fa-chevron-down');
+                        if (toggle) toggle.setAttribute('aria-expanded', 'false');
+                        if (chevron) chevron.style.transform = '';
+                    });
+                }
             }
 
             // Update theme info box
@@ -2264,8 +2453,12 @@
                     indicatorMenu.appendChild(item);
                 });
                 
-                // Close all dropdowns
-                closeAllDropdowns();
+                // Close all dropdowns using the Dropdown class if available
+                if (window.Dropdown) {
+                    Dropdown.closeAll();
+                } else {
+                    closeAllDropdowns();
+                }
                 
                 // Ensure theme info is still showing the parent theme
                 if (currentTheme) {
@@ -2344,7 +2537,12 @@
                 // Update URL without page reload
                 window.history.pushState({}, '', indicator.url);
                 
-                closeAllDropdowns();
+                // Close all dropdowns
+                if (window.Dropdown) {
+                    Dropdown.closeAll();
+                } else {
+                    closeAllDropdowns();
+                }
             }
 
             // Update dropdown button content
