@@ -574,7 +574,9 @@ body, html {
 }
 
 .dropdown-submenu:hover > .dropdown-submenu-content {
-    display: block;
+    display: block
+}
+
 .dropdown-item i {
     width: 20px;
     margin-right: 10px;
@@ -708,17 +710,4 @@ body {
 .map-iframe.active {
     opacity: 1;
     pointer-events: auto;
-}
-
-/* Icon Styles */
-.logo-container {
-    display: flex;
-    align-items: center;
-    margin-right: 20px;
-    padding: 0 15px;
-}
-.icon {
-    font-size: 24px;
-    margin-right: 8px;
-    color: #1a73e8;
 }
