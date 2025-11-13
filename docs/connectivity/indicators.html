@@ -413,17 +413,43 @@
             max-width: 100%;
         }
         .map-container {
-            flex: 1;
             position: relative;
-            background: #ffffff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            min-height: 400px;
             width: 100%;
             height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-
+        
+        .loading-spinner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            border-radius: 8px;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         .map-placeholder {
             display: flex;
             flex-direction: column;
@@ -850,6 +876,10 @@
               <h3>Select a Sub-theme and Indicator</h3>
               <p>Please choose a sub-theme from the dropdown menu above, then select an indicator to view the map.</p>
             </div>
+          </div>
+          <div id="loadingSpinner" class="loading-spinner">
+            <div class="spinner"></div>
+            <p style="text-align: center; color: #4CAF50; font-weight: 500; margin-top: 15px;">Loading map data...</p>
           </div>
           <iframe id="map1" class="map-iframe" src="" style="display: none;"></iframe>
           <iframe id="map2" class="map-iframe" src="" style="display: none;"></iframe>
@@ -2042,13 +2072,39 @@
                 const mapPlaceholder = document.getElementById('mapPlaceholder');
                 
                 if (indicator && indicator.map1_url) {
-                    // Hide placeholder and show map1
+                    // Get the loading spinner
+                    const loadingSpinner = document.getElementById('loadingSpinner');
+                    
+                    // Hide the placeholder and show the loading spinner
                     mapPlaceholder.style.display = 'none';
-                    map1.src = indicator.map1_url;
-                    map1.style.display = 'block';
+                    loadingSpinner.style.display = 'flex';
+                    
+                    // Hide any previously shown map
+                    map1.style.display = 'none';
+                    
+                    // Set up map1 with load event to hide spinner and show map
+                    map1.onload = function() {
+                        loadingSpinner.style.display = 'none';
+                        map1.style.display = 'block';
+                    };
+                    
+                    // Set up error handling
+                    map1.onerror = function() {
+                        loadingSpinner.style.display = 'none';
+                        mapPlaceholder.style.display = 'flex';
+                        console.error('Failed to load map');
+                    };
+                    
+                    // Start loading the map after a small delay to ensure spinner is visible
+                    setTimeout(() => {
+                        map1.src = indicator.map1_url;
+                    }, 50);
                     
                     // Set up map2 if URL exists
                     if (indicator.map2_url) {
+                        map2.onload = function() {
+                            // Additional map2 loaded logic if needed
+                        };
                         map2.src = indicator.map2_url;
                         map2.style.display = 'none'; // Will be shown when toggled
                     } else {
@@ -2123,10 +2179,7 @@
         });
       </script>
     </div>
-    <div class="map-container">
-        <iframe id="map1" class="map-iframe active" src=""></iframe>
-        <iframe id="map2" class="map-iframe" src=""></iframe>
-    </div>
+
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
