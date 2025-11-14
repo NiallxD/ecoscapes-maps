@@ -247,7 +247,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
       "icon": "icon icon-donut",
       "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": " https://hsbr.staging.dashboard.terradapt.org/?zoom=9.652476959093528&lng=-123.2666647171363&lat=49.79968472988696&baseLayer=%22google_road%22&minTimestamp=%222000-07-01T00%3A00%3A00%22&maxTimestamp=%222022-07-01T00%3A00%3A00%22&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222022-07-01T00%3A00%3A00%22¤tTimestamp=%222010-07-01T00%3A00%3A00%22"
+      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
     },
     "ecosystem-resileince": {
       "title": "1.1.2 Ecosystem Resileince",
