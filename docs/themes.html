@@ -42,7 +42,7 @@
         }
         
         /* Two column section with transition */
-        .two-column-section {
+        .three-column-section {
           transition: all 0.3s ease;
           position: relative;
           z-index: 1;
@@ -50,7 +50,7 @@
           overflow: visible;
         }
         
-        .two-column-section.hidden {
+        .three-column-section.hidden {
           height: 0;
           opacity: 0;
           visibility: hidden;
@@ -66,7 +66,7 @@
           z-index: 2;
         }
         
-        .two-column-section:not(.hidden) + .map-container {
+        .three-column-section:not(.hidden) + .map-container {
           margin-top: 20px;
         }
         /* ===== Dropdown Styles ===== */
@@ -298,7 +298,7 @@
         /* ===== Info Box Components ===== */
 
         /* Two Column Section Styling */
-        .two-column-section {
+        .three-column-section {
             display: flex;
             align-items: stretch;
             margin-bottom: 20px;
@@ -307,7 +307,7 @@
             min-height: 0;
             height: auto;
         }
-        .column-left, .column-right {
+        .column-left, .column-middle, .column-right {
             flex: 1;
             min-width: 0;
             min-height: 100%;
@@ -329,7 +329,8 @@
 
         /* Container Styles */
         .indicator-info,
-        .theme-info {
+        .theme-info,
+        .subtheme-info {
             display: flex;
             gap: 10px;
             align-items: center;
@@ -352,9 +353,27 @@
             letter-spacing: 0.5px;
         }
 
+        .indicator-meta-head {
+          margin-top: 10px; /* needed to override the h2 styles */
+          font-size: 11px;
+          font-weight: 600;
+          color: #6b7280;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .indicator-meta-body {
+          margin-top: 10px; /* needed to override the h2 styles */
+          font-size: 11px;
+          color: #6b7280;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
         /* Icon Base Styles */
         .indicator-icon,
-        .theme-icon {
+        .theme-icon,
+        .subtheme-icon {
             font-size: 3.5em;
             color: #4CAF50;
             margin: 5px;
@@ -396,7 +415,8 @@
 
         /* Title Styles */
         .indicator-title,
-        .theme-title {
+        .theme-title,
+        .subtheme-title {
             margin: 0; /* needed to override the h2 styles */
             color: #1a365d;
             font-size: 1.5em;
@@ -405,7 +425,8 @@
         }
         /* Description Styles */
         .indicator-description,
-        .theme-description {
+        .theme-description,
+        .subtheme-description {
             margin: 0;
             color: #4a5568;
             line-height: 1.6;
@@ -673,16 +694,6 @@
             font-size: 12px;
             color: #a0aec0;
         }
-        .two-column-section {
-            display: flex;
-            width: 100%;
-            /* padding: 15px 15px;
-            background-color: #f8f9fa; */
-            padding-bottom: 15px;
-            gap: 15px;
-            margin: 0;
-            box-sizing: border-box;
-        }
         body {
             margin: 0;
             padding: 0;
@@ -839,7 +850,7 @@
         </button>
       </div>
 
-        <div class="two-column-section">
+        <div class="three-column-section">
             <div class="column-left">
               <div class="theme-info">
                 <div class="info-box-title">Theme Information</div>
@@ -852,8 +863,19 @@
                 </div>
               </div>
             </div>
+            <div class="column-middle">
+              <div class="subtheme-info">
+                <div class="info-box-title">Sub-theme Information</div>
+                <div class="subtheme-icon">
+                  <i class="icon icon-question"></i>
+                </div>
+                <div class="text-content">
+                  <h2 class="subtheme-title">Select a Sub-theme</h2>
+                  <p class="subtheme-description">Choose a sub-theme from the dropdown to view its details.</p>
+                </div>
+              </div>
+            </div>
             <div class="column-right">
-              <!-- Indicator Information -->
               <div class="indicator-info">
                 <div class="info-box-title">Indicator Information</div>
                 <div class="indicator-icon">
@@ -889,7 +911,7 @@
         // Toggle info box functionality
         document.addEventListener('DOMContentLoaded', function() {
           const toggleBtn = document.getElementById('toggleInfoBox');
-          const infoBox = document.querySelector('.two-column-section');
+          const infoBox = document.querySelector('.three-column-section');
           
           // Load saved preference or default to visible
           const isInfoVisible = localStorage.getItem('infoBoxVisible') !== 'false';
@@ -1128,6 +1150,7 @@
                         {
                             id: 'ecosystem\u002Dintegrity',
                             name: '1.1 Ecosystem Integrity',
+                            description: 'Terrestrial ecosystems are \u003Cstrong\u003Edynamic and constantly changing\u003C/strong\u003E. Natural habitats disrupted by human activity and/or altered by changing environmental conditions will recover, depending on the \u003Cstrong\u003Eintensity and frequency of landscape disturbances\u003C/strong\u003E. Terrestrial ecosystems that become \u003Cstrong\u003Ehighly fragmented\u003C/strong\u003E and/or sustain \u003Cstrong\u003Eongoing environmental degradation\u003C/strong\u003E can collapse in areas where \u003Cstrong\u003Eadaptive capacity to respond and recover is exceeded\u003C/strong\u003E. Assessment criteria include \u003Cstrong\u003Elevels of habitat connectivity\u003C/strong\u003E (i.e., lack of fragmentation) and \u003Cstrong\u003Erelative degrees of habitat suitability\u003C/strong\u003E (i.e., biotic value) for representative terrestrial ecosystems at a given location.',
                             indicators: [
                                 
                                     
@@ -1139,6 +1162,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'ecosystem\u002Dintegrity',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dresileince'  // Add theme ID to each indicator
                                         }
                                     
@@ -1149,6 +1174,7 @@
                         {
                             id: 'human\u002Dfootprint',
                             name: '1.2 Human Footprint',
+                            description: 'The extent and degree to which human impacts reduce or damage ecosystem health and fragment natural wildland habitats. This includes both the permanent loss of wildland habitat for urban expansion (e.g., environment, roads, energy pipelines, and utility corridors) and shorter\u002Dterm landscape disturbances caused by agriculture, timber harvesting, and mining. The cumulative impact of increased human activities in these areas results in biodiversity loss and disrupts natural patterns of ecological connectivity.',
                             indicators: [
                                 
                                     
@@ -1160,6 +1186,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'human\u002Dfootprint',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dresileince'  // Add theme ID to each indicator
                                         }
                                     
@@ -1170,6 +1198,7 @@
                         {
                             id: 'climate\u002Drefugia',
                             name: '1.3 Climate Refugia',
+                            description: 'Areas of the landscape that remain \u003Cstrong\u003Ebuffered from the most severe effects of climate change\u003C/strong\u003E, enabling \u003Cstrong\u003Esensitive species to survive locally\u003C/strong\u003E. They are characterized by \u003Cstrong\u003Estable microclimates, unique hydrological features, or protective topography\u003C/strong\u003E that provides sanctuary. In the context of biodiversity and landscape ecology, refugia are \u003Cstrong\u003Evital for species survival\u003C/strong\u003E, acting as \u003Cstrong\u003E\u0022arks\u0022 that safeguard genetic diversity\u003C/strong\u003E and ecological communities. They serve as \u003Cstrong\u003Esource populations for future re\u002Dcolonization\u003C/strong\u003E of the surrounding landscape, thereby supporting \u003Cstrong\u003Eecosystem resilience and function\u003C/strong\u003E.',
                             indicators: [
                                 
                                     
@@ -1181,6 +1210,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'climate\u002Drefugia',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dresileince'  // Add theme ID to each indicator
                                         }
                                     
@@ -1191,17 +1222,20 @@
                         {
                             id: 'biodiversity\u002Dconservation',
                             name: '1.4 Biodiversity Conservation',
+                            description: 'Actions focused on establishing, improving, or maintaining ecosystem health and connectivity for the natural environment and for the benefit of present and future generations. Actions are focused on protecting and restoring disturbed wildland habitats to reduce the cumulative impacts of ongoing landscape disturbances and climate change. Through coordination across geographic scales and jurisdictional boundaries, these actions can help to decrease or halt current trends in biodiversity loss and disruptions to ecological connectivity. ',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'habitat\u002Dprotection',
                                             title: '1.4.1 Habitat Protection',
-                                            description: 'The act of safeguarding existing natural environments from harm to maintain existing levels of ecosystem health and connectivity. It is a proactive approach, emphasized in the Global Biodiversity Frameworks Target 3, which calls for protecting at least 30% of land and seas by 2030 to prevent the loss of biodiversity and ecosystem services. Actions that can be taken at local and regional scales include the formal designation of protected areas managed through legislation or Indigenous law, and the designation of Other Effective Conservation Measures (OECMs). ',
+                                            description: 'The act of \u003Cstrong\u003Esafeguarding existing natural environments\u003C/strong\u003E from harm to maintain existing levels of \u003Cstrong\u003Eecosystem health and connectivity\u003C/strong\u003E. It is a \u003Cstrong\u003Eproactive approach\u003C/strong\u003E, emphasized in the \u003Cstrong\u003EGlobal Biodiversity Frameworks Target 3\u003C/strong\u003E, which calls for \u003Cstrong\u003Eprotecting at least 30% of land and seas by 2030\u003C/strong\u003E to prevent the \u003Cstrong\u003Eloss of biodiversity and ecosystem services\u003C/strong\u003E. Actions that can be taken at local and regional scales include the \u003Cstrong\u003Eformal designation of protected areas\u003C/strong\u003E managed through legislation or Indigenous law, and the designation of \u003Cstrong\u003EOther Effective Conservation Measures (OECMs)\u003C/strong\u003E.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'habitat\u002Dprotection',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dresileince'  // Add theme ID to each indicator
                                         },
                                     
@@ -1210,11 +1244,13 @@
                                         {
                                             id: 'habitat\u002Drestoration',
                                             title: '1.4.2 Habitat Restoration',
-                                            description: 'Habitat restoration is the purposeful process of assisting the recovery of degraded, damaged, or destroyed wildland habitats to improve ecosystem health and connectivity and enhance in\u002Dsitu biodiversity. It is a reactive approach, highlighted by the UN Decade on Ecosystem Restoration (2021\u002D2030), that aims to reverse damage and rebuild resilient landscapes that provide functional ecosystem services. Actions that can be taken at local and regional scales include reforestation of native trees and understory vegetation, eradicating invasive species, and reintroducing native plants and animals. ',
+                                            description: '\u003Cstrong\u003EHabitat restoration\u003C/strong\u003E is the \u003Cstrong\u003Epurposeful process\u003C/strong\u003E of assisting the \u003Cstrong\u003Erecovery of degraded, damaged, or destroyed wildland habitats\u003C/strong\u003E to improve \u003Cstrong\u003Eecosystem health and connectivity\u003C/strong\u003E and enhance \u003Cstrong\u003Ein\u002Dsitu biodiversity\u003C/strong\u003E. It is a \u003Cstrong\u003Ereactive approach\u003C/strong\u003E, highlighted by the \u003Cstrong\u003EUN Decade on Ecosystem Restoration (2021\u002D2030)\u003C/strong\u003E, that aims to \u003Cstrong\u003Ereverse damage\u003C/strong\u003E and \u003Cstrong\u003Erebuild resilient landscapes\u003C/strong\u003E that provide \u003Cstrong\u003Efunctional ecosystem services\u003C/strong\u003E. Actions that can be taken at local and regional scales include \u003Cstrong\u003Ereforestation of native trees and understory vegetation\u003C/strong\u003E, \u003Cstrong\u003Eeradicating invasive species\u003C/strong\u003E, and \u003Cstrong\u003Ereintroducing native plants and animals\u003C/strong\u003E.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'habitat\u002Drestoration',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dresileince'  // Add theme ID to each indicator
                                         }
                                     
@@ -1223,7 +1259,7 @@
                         }
                         
                     ],
-                    description: 'The ability of an ecosystem to respond to a disturbance, whether natural or human\u002Dmade, by resisting damage and recovering without losing its core functions and structure. A key characteristic of a resilient ecosystem is high biodiversity, which allows it to better adapt to change. Monitoring changes in ecosystem resilience helps identify and prioritize areas in need of habitat protection and restoration.',
+                    description: 'The ability of an ecosystem to \u003Cstrong\u003Erespond to a disturbance\u003C/strong\u003E, whether natural or human\u002Dmade, by \u003Cstrong\u003Eresisting damage and recovering\u003C/strong\u003E without losing its \u003Cstrong\u003Ecore functions and structure\u003C/strong\u003E. A key characteristic of a resilient ecosystem is \u003Cstrong\u003Ehigh biodiversity\u003C/strong\u003E, which allows it to better \u003Cstrong\u003Eadapt to change\u003C/strong\u003E. Monitoring changes in ecosystem resilience helps \u003Cstrong\u003Eidentify and prioritize areas\u003C/strong\u003E in need of \u003Cstrong\u003Ehabitat protection and restoration\u003C/strong\u003E.',
                     icon: 'fa\u002Dseedling'
 
                 },
@@ -1236,17 +1272,20 @@
                         {
                             id: 'values',
                             name: '2.1 Values',
+                            description: 'The \u003Cstrong\u003Eintrinsic health of terrestrial and freshwater habitats\u003C/strong\u003E and the \u003Cstrong\u003Ebenefits they provide through ecosystem services\u003C/strong\u003E, such as \u003Cstrong\u003Eclean air, water filtration, pollination, carbon storage, and climate regulation\u003C/strong\u003E. Ecosystem values are used to \u003Cstrong\u003Emonitor the relative impacts of landscape changes\u003C/strong\u003E associated with human activities over time, and to help \u003Cstrong\u003Eidentify and prioritize conservation efforts\u003C/strong\u003E that protect \u003Cstrong\u003Evulnerable wildlife habitat\u003C/strong\u003E for the broadest possible range of native species.',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'land\u002Dcover',
                                             title: '2.1.1 Land Cover',
-                                            description: 'Visible terrestrial components of the Earths surface, which include forests, grasslands, wetlands, alpine areas and various land uses associated with human settlement, such as urban and agricultural areas and linear infrastructure. The spatial arrangement and distribution of these components serve as indicators for monitoring landscape patterns and understanding their effects on ecosystem health and integrity over time.',
+                                            description: '\u003Cstrong\u003EVisible terrestrial components\u003C/strong\u003E of the Earth\u0027s surface, which include \u003Cstrong\u003Eforests, grasslands, wetlands, alpine areas\u003C/strong\u003E and various \u003Cstrong\u003Eland uses\u003C/strong\u003E associated with human settlement, such as \u003Cstrong\u003Eurban and agricultural areas\u003C/strong\u003E and \u003Cstrong\u003Elinear infrastructure\u003C/strong\u003E. The \u003Cstrong\u003Espatial arrangement and distribution\u003C/strong\u003E of these components serve as indicators for \u003Cstrong\u003Emonitoring landscape patterns\u003C/strong\u003E and understanding their effects on \u003Cstrong\u003Eecosystem health and integrity\u003C/strong\u003E over time.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'land\u002Dcover',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1255,11 +1294,13 @@
                                         {
                                             id: 'ecosystem\u002Dservices',
                                             title: '2.1.2 Ecosystem Services',
-                                            description: 'A subjective evaluation of the benefits that current and future generations receive from physical, chemical, and biological processes supporting the functional health and long\u002Dterm resilience of a natural ecosystem. These include provisioning (food and water), regulating (climate control and disease mitigation), supporting (nutrient cycles and pollination), and cultural services (spiritual and aesthetic value). Valuing these services involves economic methods to assign subjective worth to natural processes. However, most Indigenous worldviews view nature as kin with inherent rights, not as a commodity valued solely for human utility.',
+                                            description: 'A \u003Cstrong\u003Esubjective evaluation\u003C/strong\u003E of the benefits that \u003Cstrong\u003Ecurrent and future generations\u003C/strong\u003E receive from \u003Cstrong\u003Ephysical, chemical, and biological processes\u003C/strong\u003E supporting the \u003Cstrong\u003Efunctional health and long\u002Dterm resilience\u003C/strong\u003E of a natural ecosystem. These include \u003Cstrong\u003Eprovisioning\u003C/strong\u003E (food and water), \u003Cstrong\u003Eregulating\u003C/strong\u003E (climate control and disease mitigation), \u003Cstrong\u003Esupporting\u003C/strong\u003E (nutrient cycles and pollination), and \u003Cstrong\u003Ecultural services\u003C/strong\u003E (spiritual and aesthetic value). Valuing these services involves \u003Cstrong\u003Eeconomic methods\u003C/strong\u003E to assign subjective worth to natural processes. However, most \u003Cstrong\u003EIndigenous worldviews\u003C/strong\u003E view nature as \u003Cstrong\u003Ekin with inherent rights\u003C/strong\u003E, not as a commodity valued solely for human utility.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'ecosystem\u002Dservices',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1268,11 +1309,13 @@
                                         {
                                             id: 'habitat\u002Dsuitability',
                                             title: '2.1.3 Habitat Suitability',
-                                            description: 'The capacity of terrestrial and freshwater ecosystems to provide essential life\u002Dcycle resources (food, water, shelter, breeding sites) and suitable living conditions for a species to survive and reproduce. The suitability of a given wildlife habitat is determined by site\u002Dspecific environmental variables that influence the occurrence and distribution of wildlife species. These include a wide range of biotic and abiotic variables, including the structure and composition of ecological communities within a given biogeoclimatic zone, soil moisture and nutrient levels, topographic position, temperature, slope aspect and solar insolation. ',
+                                            description: 'The \u003Cstrong\u003Ecapacity of terrestrial and freshwater ecosystems\u003C/strong\u003E to provide \u003Cstrong\u003Eessential life\u002Dcycle resources\u003C/strong\u003E (food, water, shelter, breeding sites) and \u003Cstrong\u003Esuitable living conditions\u003C/strong\u003E for a species to survive and reproduce. The \u003Cstrong\u003Esuitability\u003C/strong\u003E of a given wildlife habitat is determined by \u003Cstrong\u003Esite\u002Dspecific environmental variables\u003C/strong\u003E that influence the \u003Cstrong\u003Eoccurrence and distribution of wildlife species\u003C/strong\u003E. These include a wide range of \u003Cstrong\u003Ebiotic and abiotic variables\u003C/strong\u003E, including the \u003Cstrong\u003Estructure and composition of ecological communities\u003C/strong\u003E within a given biogeoclimatic zone, \u003Cstrong\u003Esoil moisture and nutrient levels\u003C/strong\u003E, \u003Cstrong\u003Etopographic position\u003C/strong\u003E, \u003Cstrong\u003Etemperature\u003C/strong\u003E, \u003Cstrong\u003Eslope aspect\u003C/strong\u003E and \u003Cstrong\u003Esolar insolation\u003C/strong\u003E.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'habitat\u002Dsuitability',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1281,11 +1324,13 @@
                                         {
                                             id: 'structural\u002Dconnectivity',
                                             title: '2.1.4 Structural Connectivity',
-                                            description: 'The physical arrangement and connectivity of habitat patches and natural landscape features (e.g., forests, water bodies) across a landscape, regardless of species\u002Dspecific behaviour. Structural connectivity is crucial for biodiversity conservation because it offers essential physical pathways that allow wildlife to move freely to access food, shelter, and breeding sites. This movement supports genetic exchange, enhances ecosystem resilience to disturbances, enables species to adjust their ranges in response to climate change, and diminishes the negative effects of habitat fragmentation.',
+                                            description: '\u003Cstrong\u003EThe physical arrangement and connectivity of habitat patches and natural landscape features\u003C/strong\u003E (e.g., forests, water bodies) across a landscape, regardless of species\u002Dspecific behaviour. \u003Cstrong\u003EStructural connectivity is crucial for biodiversity conservation\u003C/strong\u003E because it offers \u003Cstrong\u003Eessential physical pathways\u003C/strong\u003E that allow wildlife to \u003Cstrong\u003Emove freely\u003C/strong\u003E to access \u003Cstrong\u003Efood, shelter, and breeding sites\u003C/strong\u003E. This movement supports \u003Cstrong\u003Egenetic exchange\u003C/strong\u003E, enhances \u003Cstrong\u003Eecosystem resilience to disturbances\u003C/strong\u003E, enables species to \u003Cstrong\u003Eadjust their ranges in response to climate change\u003C/strong\u003E, and diminishes the \u003Cstrong\u003Enegative effects of habitat fragmentation\u003C/strong\u003E.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'structural\u002Dconnectivity',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         }
                                     
@@ -1296,17 +1341,20 @@
                         {
                             id: 'threats',
                             name: '2.2 Threats',
+                            description: '\u003Cstrong\u003EFactors or conditions\u003C/strong\u003E that can cause harm and \u003Cstrong\u003Enegatively impact the health and resilience\u003C/strong\u003E of terrestrial and freshwater habitats. These include \u003Cstrong\u003Ehuman activities\u003C/strong\u003E that directly disturb the landscape (e.g., urbanization, infrastructure development, agricultural land use, and resource extraction), as well as \u003Cstrong\u003Enatural hazard events\u003C/strong\u003E like floods and wildfires. The \u003Cstrong\u003Ecumulative effects\u003C/strong\u003E of these processes lead to \u003Cstrong\u003Ehabitat loss and fragmentation\u003C/strong\u003E, decreasing the natural ability of ecosystems and wildlife species to \u003Cstrong\u003Ecope with and adapt to changes\u003C/strong\u003E over time.',
                             indicators: [
                                 
                                     
                                         {
                                             id: 'landscape\u002Dchange',
                                             title: '2.2.1 Landscape Change',
-                                            description: 'Continuous and often nonlinear spatial and temporal shifts in ecosystem patterns and processes that are driven by natural events, as well as the cumulative impacts of human activities and climate change. The assessment of these dynamic landscape changes relies on remote sensing methods of earth observation, which track land use patterns at specific locations over time. Understanding these changes is essential for identifying the underlying causes of biodiversity loss and developing practical solutions to reduce these threats and improve ecosystem health and connectivity.',
+                                            description: '\u003Cstrong\u003EContinuous and often nonlinear\u003C/strong\u003E spatial and temporal shifts in \u003Cstrong\u003Eecosystem patterns and processes\u003C/strong\u003E that are driven by \u003Cstrong\u003Enatural events\u003C/strong\u003E, as well as the \u003Cstrong\u003Ecumulative impacts of human activities and climate change\u003C/strong\u003E. The assessment of these \u003Cstrong\u003Edynamic landscape changes\u003C/strong\u003E relies on \u003Cstrong\u003Eremote sensing methods\u003C/strong\u003E of earth observation, which track \u003Cstrong\u003Eland use patterns\u003C/strong\u003E at specific locations over time. Understanding these changes is essential for \u003Cstrong\u003Eidentifying the underlying causes of biodiversity loss\u003C/strong\u003E and developing \u003Cstrong\u003Epractical solutions\u003C/strong\u003E to reduce these threats and improve \u003Cstrong\u003Eecosystem health and connectivity\u003C/strong\u003E.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'landscape\u002Dchange',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1315,11 +1363,13 @@
                                         {
                                             id: 'urbanization',
                                             title: '2.2.2 Urbanization',
-                                            description: 'The conversion of natural wildland habitats into built environments to accommodate population growth and development. Examples include clearing land for residential neighbourhoods and businesses, agricultural use, resource extraction activities, and associated linear infrastructure such as roads, pipelines, and utility corridors. Direct physical consequences include the loss and fragmentation of wildland habitats and the disruption of natural ecological connectivity pathways. Indirect effects involve altered hydrology (e.g., stormwater runoff) and increased vulnerability to the spread of invasive species and biodiversity loss.',
+                                            description: 'The \u003Cstrong\u003Econversion of natural wildland habitats\u003C/strong\u003E into \u003Cstrong\u003Ebuilt environments\u003C/strong\u003E to accommodate \u003Cstrong\u003Epopulation growth and development\u003C/strong\u003E. Examples include \u003Cstrong\u003Eclearing land\u003C/strong\u003E for residential neighbourhoods and businesses, \u003Cstrong\u003Eagricultural use\u003C/strong\u003E, \u003Cstrong\u003Eresource extraction activities\u003C/strong\u003E, and associated \u003Cstrong\u003Elinear infrastructure\u003C/strong\u003E such as roads, pipelines, and utility corridors. \u003Cstrong\u003EDirect physical consequences\u003C/strong\u003E include the \u003Cstrong\u003Eloss and fragmentation of wildland habitats\u003C/strong\u003E and the \u003Cstrong\u003Edisruption of natural ecological connectivity pathways\u003C/strong\u003E. \u003Cstrong\u003EIndirect effects\u003C/strong\u003E involve \u003Cstrong\u003Ealtered hydrology\u003C/strong\u003E (e.g., stormwater runoff) and \u003Cstrong\u003Eincreased vulnerability\u003C/strong\u003E to the spread of \u003Cstrong\u003Einvasive species\u003C/strong\u003E and \u003Cstrong\u003Ebiodiversity loss\u003C/strong\u003E.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'urbanization',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1333,6 +1383,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'linear\u002Dinfrastructure',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1346,6 +1398,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'agricultural\u002Duse',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1359,6 +1413,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'forest\u002Dharvest',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1372,6 +1428,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'forest\u002Dthinning',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1385,6 +1443,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'wildfire',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1398,6 +1458,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'temperature',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1411,6 +1473,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'precipitation',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         }
                                     
@@ -1421,6 +1485,7 @@
                         {
                             id: 'habitat\u002Dloss\u002Dand\u002Dfragmentation',
                             name: '2.3 Habitat Loss and Fragmentation',
+                            description: '\u003Cstrong\u003EHabitat loss and fragmentation\u003C/strong\u003E are two related but distinct concepts in ecology that describe changes in the natural environment caused by the \u003Cstrong\u003Ecumulative effects of landscape disturbance and climate change\u003C/strong\u003E. Habitat loss refers to the \u003Cstrong\u003Epermanent destruction, removal, or temporary degradation\u003C/strong\u003E of terrestrial and freshwater ecosystems. Habitat fragmentation, however, involves \u003Cstrong\u003Ebreaking larger continuous habitats into smaller, isolated patches\u003C/strong\u003E. Both processes \u003Cstrong\u003Edisrupt natural patterns of ecological connectivity\u003C/strong\u003E and are the \u003Cstrong\u003Emain causes of biodiversity loss\u003C/strong\u003E.',
                             indicators: [
                                 
                                     
@@ -1432,6 +1497,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'forest\u002Dcover',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1445,6 +1512,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'wetlands\u002Dand\u002Driparian\u002Dareas',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1453,11 +1522,13 @@
                                         {
                                             id: 'mesic\u002Dvegetation',
                                             title: '2.3.3 Mesic Vegetation',
-                                            description: 'Plant communities that thrive in soils with higher moisture and nutrient content in areas of groundwater discharge. These include herbs and shrubs that occur in non\u002Dforested areas at mid\u002D and lower\u002Dslope elevations and along valley bottoms. Fragmentation and loss of these habitats may lead to instability in the flow and provision of ecosystem functions (e.g., pollination, food provisioning), which are essential to a wide range of terrestrial species. It may also weaken an ecosystems ability to cope with and adapt to disturbances caused by human activity and climate change.',
+                                            description: '\u003Cstrong\u003EPlant communities\u003C/strong\u003E that thrive in \u003Cstrong\u003Esoils with higher moisture and nutrient content\u003C/strong\u003E in areas of \u003Cstrong\u003Egroundwater discharge\u003C/strong\u003E. These include \u003Cstrong\u003Eherbs and shrubs\u003C/strong\u003E that occur in \u003Cstrong\u003Enon\u002Dforested areas\u003C/strong\u003E at mid\u002D and lower\u002Dslope elevations and along \u003Cstrong\u003Evalley bottoms\u003C/strong\u003E. \u003Cstrong\u003EFragmentation and loss\u003C/strong\u003E of these habitats may lead to \u003Cstrong\u003Einstability\u003C/strong\u003E in the flow and provision of \u003Cstrong\u003Eecosystem functions\u003C/strong\u003E (e.g., pollination, food provisioning), which are \u003Cstrong\u003Eessential to a wide range of terrestrial species\u003C/strong\u003E. It may also weaken an ecosystem\u0027s ability to \u003Cstrong\u003Ecope with and adapt to disturbances\u003C/strong\u003E caused by \u003Cstrong\u003Ehuman activity and climate change\u003C/strong\u003E.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'mesic\u002Dvegetation',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
@@ -1466,11 +1537,13 @@
                                         {
                                             id: 'xeric\u002Dvegetation',
                                             title: '2.3.4 Xeric Vegetation',
-                                            description: 'Plant communities that thrive in soils with lower moisture and nutrient levels. These include shrublands in non\u002Dforested areas exposed to more sunlight and in drier biogeoclimatic zones of the eastern Coast Mountains. These habitats support species that are uniquely adapted to extreme climatic conditions. Fragmentation and loss of these habitats may cause severe disruption of ecosystem functions, desertification, and reduce the capacity to cope with and adapt to disturbances caused by human activity and climate change.',
+                                            description: '\u003Cstrong\u003EPlant communities\u003C/strong\u003E that thrive in \u003Cstrong\u003Esoils with lower moisture and nutrient levels\u003C/strong\u003E. These include \u003Cstrong\u003Eshrublands\u003C/strong\u003E in \u003Cstrong\u003Enon\u002Dforested areas\u003C/strong\u003E exposed to \u003Cstrong\u003Emore sunlight\u003C/strong\u003E and in \u003Cstrong\u003Edrier biogeoclimatic zones\u003C/strong\u003E of the eastern Coast Mountains. These habitats support \u003Cstrong\u003Especies uniquely adapted to extreme climatic conditions\u003C/strong\u003E. \u003Cstrong\u003EFragmentation and loss\u003C/strong\u003E of these habitats may cause \u003Cstrong\u003Esevere disruption of ecosystem functions\u003C/strong\u003E, \u003Cstrong\u003Edesertification\u003C/strong\u003E, and \u003Cstrong\u003Ereduced capacity\u003C/strong\u003E to cope with and adapt to \u003Cstrong\u003Edisturbances\u003C/strong\u003E caused by \u003Cstrong\u003Ehuman activity and climate change\u003C/strong\u003E.',
                                             icon: 'fa\u002Dleaf',
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'xeric\u002Dvegetation',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
                                         }
                                     
@@ -1479,7 +1552,7 @@
                         }
                         
                     ],
-                    description: 'An ecosystem\u0027s overall condition of health in relation to a natural or relatively undisturbed reference state. It is a measure of the ecosystem\u0027s capacity to maintain its biodiversity, ecological functions, and to cope with and adapt to environmental stressors over time. Losses in ecosystem health help identify areas in need of restoration. Gains in ecosystem health over time help identify areas that contribute to biodiversity and require protection.',
+                    description: 'An ecosystem\u0027s overall \u003Cstrong\u003Econdition of health\u003C/strong\u003E in relation to a natural or relatively undisturbed reference state. It is a measure of the ecosystem\u0027s capacity to \u003Cstrong\u003Emaintain biodiversity, ecological functions\u003C/strong\u003E, and to \u003Cstrong\u003Ecope with and adapt to environmental stressors\u003C/strong\u003E over time. \u003Cstrong\u003ELosses in ecosystem health\u003C/strong\u003E help identify areas in need of \u003Cstrong\u003Erestoration\u003C/strong\u003E. \u003Cstrong\u003EGains in ecosystem health\u003C/strong\u003E over time help identify areas that \u003Cstrong\u003Econtribute to biodiversity\u003C/strong\u003E and require \u003Cstrong\u003Eprotection\u003C/strong\u003E.',
                     icon: 'fa\u002Dseedling'
 
                 },
@@ -1492,6 +1565,7 @@
                         {
                             id: 'regional\u002Dzones',
                             name: '3.1 Regional Zones',
+                            description: 'The \u003Cstrong\u003ERegional Zone component\u003C/strong\u003E of BC\u0027s Biogeoclimatic Ecosystem Classification (BEC) is a \u003Cstrong\u003Elarge geographic area\u003C/strong\u003E defined by a unique combination of \u003Cstrong\u003Eclimate and physiographic factors\u003C/strong\u003E, and the \u003Cstrong\u003Edominant plant species\u003C/strong\u003E of its old\u002Dgrowth forests (e.g., Coastal Western Hemlock Zone). It provides the \u003Cstrong\u003E\u0022big picture\u0022 framework\u003C/strong\u003E for understanding how \u003Cstrong\u003Eclimate influences ecosystem development and species distribution\u003C/strong\u003E, and allows for the development of \u003Cstrong\u003Elarge\u002Dscale conservation strategies\u003C/strong\u003E, such as identifying \u003Cstrong\u003Erepresentative ecosystems for protection\u003C/strong\u003E and modelling the \u003Cstrong\u003Epotential impacts of climate change\u003C/strong\u003E on vegetation patterns.',
                             indicators: [
                                 
                                     
@@ -1503,6 +1577,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'regional\u002Dzones',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'biogeoclimatic\u002Dzones'  // Add theme ID to each indicator
                                         }
                                     
@@ -1513,6 +1589,7 @@
                         {
                             id: 'site\u002Dlevel\u002Dvegetation',
                             name: '3.2 Site Level Vegetation',
+                            description: 'The \u003Cstrong\u003ESite Level component\u003C/strong\u003E of BC\u0027s Biogeoclimatic Ecosystem Classification (BEC) is defined by \u003Cstrong\u003Eunique combinations\u003C/strong\u003E of understory vegetation, \u003Cstrong\u003Esoil characteristics\u003C/strong\u003E (e.g., moisture and nutrient content), and \u003Cstrong\u003Ephysiographic features\u003C/strong\u003E that influence the \u003Cstrong\u003Estructure and composition of ecological communities\u003C/strong\u003E during successional growth stages following episodes of landscape disturbance. Identifying and mapping the distribution of \u003Cstrong\u003Esite\u002Dlevel vegetation\u003C/strong\u003E is vital for \u003Cstrong\u003Epractical conservation planning\u003C/strong\u003E, as most \u003Cstrong\u003Eon\u002Dthe\u002Dground management decisions\u003C/strong\u003E, like tree species selection for reforestation or defining specific habitat management strategies, happen at this level.',
                             indicators: [
                                 
                                     
@@ -1524,6 +1601,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'site\u002Dlevel\u002Dvegetation',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'biogeoclimatic\u002Dzones'  // Add theme ID to each indicator
                                         }
                                     
@@ -1532,7 +1611,7 @@
                         }
                         
                     ],
-                    description: 'BC’s Biogeoclimatic Ecosystem Classification (BEC) classifies broad forested landscapes and site\u002Dlevel vegetated areas based on similarities in climate, geography, and dominant plant and animal communities. Each regional zone reflects long\u002Dterm interactions between climate and biology that shape the development of distinct habitats, ecological niches, and unique assemblages of plants and animals.  In landscape ecology, they help organize the landscape into manageable areas for conservation planning and for understanding how climate change may shift ecosystems at both regional and global scales.',
+                    description: '\u003Cstrong\u003EBC\u0027s Biogeoclimatic Ecosystem Classification (BEC)\u003C/strong\u003E classifies broad forested landscapes and site\u002Dlevel vegetated areas based on similarities in \u003Cstrong\u003Eclimate, geography, and dominant plant and animal communities\u003C/strong\u003E. Each regional zone reflects \u003Cstrong\u003Elong\u002Dterm interactions\u003C/strong\u003E between climate and biology that shape the development of \u003Cstrong\u003Edistinct habitats, ecological niches, and unique species assemblages\u003C/strong\u003E. In landscape ecology, they help \u003Cstrong\u003Eorganize the landscape\u003C/strong\u003E into manageable areas for \u003Cstrong\u003Econservation planning\u003C/strong\u003E and for understanding how \u003Cstrong\u003Eclimate change may shift ecosystems\u003C/strong\u003E at both regional and global scales.',
                     icon: 'fa\u002Dseedling'
 
                 },
@@ -1545,6 +1624,7 @@
                         {
                             id: 'mammals',
                             name: '4.1 Mammals',
+                            description: '\u003Cstrong\u003EVertebrate animals\u003C/strong\u003E of the class Mammalia are distinguished by having \u003Cstrong\u003Emilk\u002Dproducing mammary glands\u003C/strong\u003E to nourish their young, a \u003Cstrong\u003Elarge neocortex region\u003C/strong\u003E in the brain, \u003Cstrong\u003Ebody fur or hair\u003C/strong\u003E for insulation, and \u003Cstrong\u003Ethree middle ear bones\u003C/strong\u003E that amplify sound and greatly enhance hearing sensitivity. They are \u003Cstrong\u003Eendothermic (warm\u002Dblooded)\u003C/strong\u003E, breathe air, and are \u003Cstrong\u003Equadrupedal\u003C/strong\u003E, with most mammals using four limbs for land movement. More than \u003Cstrong\u003E80 unique species\u003C/strong\u003E are known to inhabit the southwest Coast Mountains, ranging in size from \u003Cstrong\u003Esmall ground squirrels to large\u002Dranging grizzly bears\u003C/strong\u003E.',
                             indicators: [
                                 
                                     
@@ -1556,6 +1636,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'mammals',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'species\u002Doccurrences'  // Add theme ID to each indicator
                                         }
                                     
@@ -1566,6 +1648,7 @@
                         {
                             id: 'herptiles',
                             name: '4.2 Herptiles',
+                            description: '\u003Cstrong\u003EHerptiles\u003C/strong\u003E are an informal group of vertebrates that includes both \u003Cstrong\u003Eamphibians and reptiles\u003C/strong\u003E found in both \u003Cstrong\u003Eterrestrial and freshwater environments\u003C/strong\u003E. Amphibians (Class Amphibia) are commonly characterized by a \u003Cstrong\u003Elife cycle\u003C/strong\u003E that features an \u003Cstrong\u003Eaquatic larval stage with gills\u003C/strong\u003E and a \u003Cstrong\u003Eterrestrial adult stage with lungs\u003C/strong\u003E. Reptiles (Class Reptilia) are \u003Cstrong\u003Eair\u002Dbreathing, ectothermic (cold\u002Dblooded) vertebrates\u003C/strong\u003E with \u003Cstrong\u003Escaly skin\u003C/strong\u003E, most of which \u003Cstrong\u003Elay eggs on land\u003C/strong\u003E. Over \u003Cstrong\u003E25 distinct species\u003C/strong\u003E are documented in the southwest Coast Mountains, including various \u003Cstrong\u003Etoads, frogs, salamanders, turtles, lizards, and snakes\u003C/strong\u003E.',
                             indicators: [
                                 
                                     
@@ -1577,6 +1660,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'herptiles',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'species\u002Doccurrences'  // Add theme ID to each indicator
                                         }
                                     
@@ -1587,6 +1672,7 @@
                         {
                             id: 'vascular\u002Dplants',
                             name: '4.3 Vascular Plants',
+                            description: '\u003Cstrong\u003EVascular plants (Tracheophyta)\u003C/strong\u003E have \u003Cstrong\u003Especialized vascular tissues (xylem and phloem)\u003C/strong\u003E for transporting water and nutrients, allowing them to \u003Cstrong\u003Egrow taller and more complex\u003C/strong\u003E than non\u002Dvascular plants. They possess \u003Cstrong\u003Etrue roots, stems, and leaves\u003C/strong\u003E. Types include \u003Cstrong\u003Etrees, shrubs, grasses, flowering plants (angiosperms), and ferns\u003C/strong\u003E, many of which produce seeds. Their ability to \u003Cstrong\u003Egrow larger and access resources\u003C/strong\u003E (sunlight, water, nutrients) gives them a \u003Cstrong\u003Ecompetitive advantage\u003C/strong\u003E, making them the \u003Cstrong\u003Edominant group in most terrestrial ecosystems\u003C/strong\u003E. There are \u003Cstrong\u003E60 distinct vascular plant species\u003C/strong\u003E documented in the southwest Coast Mountains.',
                             indicators: [
                                 
                                     
@@ -1598,6 +1684,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'vascular\u002Dplants',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'species\u002Doccurrences'  // Add theme ID to each indicator
                                         }
                                     
@@ -1608,6 +1696,7 @@
                         {
                             id: 'non\u002Dvascular\u002Dplants',
                             name: '4.4 Non\u002DVascular Plants',
+                            description: '\u003Cstrong\u003ENon\u002Dvascular plants\u003C/strong\u003E, known informally as \u003Cstrong\u003Ebryophytes\u003C/strong\u003E, include various \u003Cstrong\u003Emosses, liverworts, and hornworts\u003C/strong\u003E. They \u003Cstrong\u003Elack true vascular tissue, roots, stems, and leaves\u003C/strong\u003E, and instead use \u003Cstrong\u003Ehair\u002Dlike rhizoids\u003C/strong\u003E for anchoring and accessing water and nutrients. Bryophytes grow \u003Cstrong\u003Eclose to the ground\u003C/strong\u003E, are typically found in \u003Cstrong\u003Emoist environments\u003C/strong\u003E, and \u003Cstrong\u003Ereproduce through spores\u003C/strong\u003E. They play a \u003Cstrong\u003Ecrucial role in ecological communities\u003C/strong\u003E, acting as \u003Cstrong\u003Epioneer species\u003C/strong\u003E that \u003Cstrong\u003Epromote soil formation\u003C/strong\u003E and \u003Cstrong\u003Eregulate water and nutrient cycles\u003C/strong\u003E. Over \u003Cstrong\u003E280 unique bryophyte species\u003C/strong\u003E have been documented in the southwest Coast Mountains.',
                             indicators: [
                                 
                                     
@@ -1619,6 +1708,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'non\u002Dvascular\u002Dplants',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'species\u002Doccurrences'  // Add theme ID to each indicator
                                         }
                                     
@@ -1627,7 +1718,7 @@
                         }
                         
                     ],
-                    description: 'Field\u002Dbased observations help identify groups of interacting populations of different species living in the same area, as well as the overall characteristics of an ecological community. These include species richness (number of species), species abundance (population sizes), trophic structure (food web relationships), and interactions such as competition and predation. In the context of biodiversity and landscape ecology, communities are vital because they form the functional units of ecosystems and play a key role in nutrient cycling, energy flow, and maintaining ecosystem stability.',
+                    description: '\u003Cstrong\u003EField\u002Dbased observations\u003C/strong\u003E help identify groups of \u003Cstrong\u003Einteracting populations\u003C/strong\u003E of different species living in the same area, as well as the overall characteristics of an \u003Cstrong\u003Eecological community\u003C/strong\u003E. These include \u003Cstrong\u003Especies richness\u003C/strong\u003E (number of species), \u003Cstrong\u003Especies abundance\u003C/strong\u003E (population sizes), \u003Cstrong\u003Etrophic structure\u003C/strong\u003E (food web relationships), and \u003Cstrong\u003Especies interactions\u003C/strong\u003E such as competition and predation. Communities are vital because they form the \u003Cstrong\u003Efunctional units of ecosystems\u003C/strong\u003E and play a key role in \u003Cstrong\u003Enutrient cycling, energy flow, and maintaining ecosystem stability\u003C/strong\u003E.',
                     icon: 'fa\u002Dseedling'
 
                 },
@@ -1640,6 +1731,7 @@
                         {
                             id: 'macrorefugia',
                             name: '5.1 MacroRefugia',
+                            description: '\u003Cstrong\u003EMacrorefugia\u003C/strong\u003E are \u003Cstrong\u003Elarge geographical regions\u003C/strong\u003E, such as entire mountain ranges or vast forest systems, that serve as \u003Cstrong\u003Elong\u002Dterm sanctuaries\u003C/strong\u003E and offer a \u003Cstrong\u003Ebroad spectrum of buffered environmental conditions\u003C/strong\u003E across the landscape. Their main function is to \u003Cstrong\u003Emaintain large, viable populations\u003C/strong\u003E and support \u003Cstrong\u003Eecosystem\u002Dlevel processes\u003C/strong\u003E, enabling \u003Cstrong\u003Eadaptation through genetic diversity\u003C/strong\u003E and \u003Cstrong\u003Especies migration over time\u003C/strong\u003E. In the southern Coast Mountains, these include \u003Cstrong\u003Ehigher elevation slopes and mountain ranges, large intact watersheds, riparian corridors and associated wetlands, and extensive old\u002Dgrowth forests\u003C/strong\u003E.',
                             indicators: [
                                 
                                     
@@ -1651,6 +1743,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'macrorefugia',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'climate\u002Dchange\u002Drefugia'  // Add theme ID to each indicator
                                         }
                                     
@@ -1661,6 +1755,7 @@
                         {
                             id: 'microrefugia',
                             name: '5.2 MicroRefugia',
+                            description: '\u003Cstrong\u003EMicrorefugia\u003C/strong\u003E are much smaller, \u003Cstrong\u003Elocalized \u0022safe spots,\u0022\u003C/strong\u003E potentially just a cool, moist slope or a shaded canyon bottom, defined by \u003Cstrong\u003Ehighly localized variations in topography or hydrology\u003C/strong\u003E. They enable the \u003Cstrong\u003Eshort\u002Dterm persistence of sensitive species\u003C/strong\u003E by providing \u003Cstrong\u003Eimmediate shelter from extreme conditions\u003C/strong\u003E and serving as \u003Cstrong\u003Ecritical stepping stones for survival\u003C/strong\u003E across otherwise inhospitable areas. In the southern Coast Mountains, these include \u003Cstrong\u003Enorth\u002Dfacing slopes and shaded ravines, groundwater\u002Dfed springs and perennial streams, and topographic depressions\u003C/strong\u003E where dense cool air flows downslope, creating \u003Cstrong\u003Ecooler pockets of buffered habitat\u003C/strong\u003E.',
                             indicators: [
                                 
                                     
@@ -1672,6 +1767,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'microrefugia',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'climate\u002Dchange\u002Drefugia'  // Add theme ID to each indicator
                                         }
                                     
@@ -1680,7 +1777,7 @@
                         }
                         
                     ],
-                    description: 'Areas of the landscape that remain buffered from the most severe effects of climate change, enabling sensitive species to survive locally. They are characterized by stable microclimates, unique hydrological features, or protective topography that provides sanctuary. In the context of biodiversity and landscape ecology, refugia are vital for species survival, acting as \u0022arks\u0022 that safeguard genetic diversity and ecological communities. They serve as source populations for future re\u002Dcolonization of the surrounding landscape, thereby supporting ecosystem functions and building resilience.',
+                    description: '\u003Cstrong\u003EClimate change refugia\u003C/strong\u003E are areas of the landscape that remain \u003Cstrong\u003Ebuffered from the most severe effects of climate change\u003C/strong\u003E, enabling \u003Cstrong\u003Esensitive species to survive locally\u003C/strong\u003E. They are characterized by \u003Cstrong\u003Estable microclimates, unique hydrological features, or protective topography\u003C/strong\u003E that provides sanctuary. These refugia act as \u003Cstrong\u003E\u0022arks\u0022 that safeguard genetic diversity\u003C/strong\u003E and ecological communities. They serve as \u003Cstrong\u003Esource populations\u003C/strong\u003E for future re\u002Dcolonization, thereby supporting \u003Cstrong\u003Eecosystem functions and building resilience\u003C/strong\u003E.',
                     icon: 'fa\u002Dseedling'
 
                 },
@@ -1693,6 +1790,7 @@
                         {
                             id: 'priority\u002Dlinkages',
                             name: '6.1 Priority Linkages',
+                            description: '\u003Cstrong\u003EModelled pathways\u003C/strong\u003E of ecological connectivity that provide the \u003Cstrong\u003Emost efficient movement corridors\u003C/strong\u003E for wildlife and \u003Cstrong\u003Egene flow across the widest range of species\u003C/strong\u003E. These pathways identify \u003Cstrong\u003Eareas of least resistance\u003C/strong\u003E for animals and plants to move between \u003Cstrong\u003Eprotected areas and other high\u002Dvalue habitats\u003C/strong\u003E, including \u003Cstrong\u003Ecore and stepping\u002Dstone patches\u003C/strong\u003E found in fragmented landscapes at lower elevations and in valley bottoms. Mapping these \u003Cstrong\u003Emovement corridors\u003C/strong\u003E helps guide the development of \u003Cstrong\u003Epractical conservation solutions\u003C/strong\u003E that deliver the \u003Cstrong\u003Egreatest benefits for vulnerable plants and animals\u003C/strong\u003E.',
                             indicators: [
                                 
                                     
@@ -1704,6 +1802,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'priority\u002Dlinkages',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'connectivity\u002Dnetwork'  // Add theme ID to each indicator
                                         }
                                     
@@ -1714,6 +1814,7 @@
                         {
                             id: 'human\u002Dfootprint',
                             name: '6.2 Human Footprint',
+                            description: 'The extent and degree to which human impacts reduce or damage ecosystem health and fragment natural wildland habitats. This includes both the permanent loss of wildland habitat for urban expansion (e.g., environment, roads, energy pipelines, and utility corridors) and shorter\u002Dterm landscape disturbances caused by agriculture, timber harvesting, and mining. The cumulative impact of increased human activities in these areas results in biodiversity loss and disrupts natural patterns of ecological connectivity.',
                             indicators: [
                                 
                                     
@@ -1725,6 +1826,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'human\u002Dfootprint',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'connectivity\u002Dnetwork'  // Add theme ID to each indicator
                                         }
                                     
@@ -1735,6 +1838,7 @@
                         {
                             id: 'climate\u002Dcorridors',
                             name: '6.3 Climate Corridors',
+                            description: '\u003Cstrong\u003EDefined geographical areas\u003C/strong\u003E of natural habitat, \u003Cstrong\u003Eriparian zones\u003C/strong\u003E (areas along rivers or streams), or \u003Cstrong\u003Emountain ranges\u003C/strong\u003E, that connect larger patches of \u003Cstrong\u003Esuitable wildland habitat\u003C/strong\u003E. They are used to develop \u003Cstrong\u003Econservation strategies\u003C/strong\u003E to mitigate the \u003Cstrong\u003Eeffects of a warming climate\u003C/strong\u003E by providing \u003Cstrong\u003Ephysical routes for plants and animals\u003C/strong\u003E to migrate to \u003Cstrong\u003Emore suitable, cooler environments\u003C/strong\u003E (e.g., higher latitudes or elevations). They are a \u003Cstrong\u003Epractical, on\u002Dthe\u002Dground approach\u003C/strong\u003E to \u003Cstrong\u003Ereducing habitat fragmentation\u003C/strong\u003E and \u003Cstrong\u003Eencouraging species dispersal\u003C/strong\u003E, aiming to build \u003Cstrong\u003Elandscape resilience\u003C/strong\u003E in the southern Coast Mountains.',
                             indicators: [
                                 
                                     
@@ -1746,6 +1850,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'climate\u002Dcorridors',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'connectivity\u002Dnetwork'  // Add theme ID to each indicator
                                         }
                                     
@@ -1756,6 +1862,7 @@
                         {
                             id: 'connectivity\u002Dconservation',
                             name: '6.4 Connectivity Conservation',
+                            description: 'Actions focused on establishing, improving, or maintaining ecosystem health and connectivity for the natural environment and for the benefit of present and future generations. Actions are focused on protecting and restoring disturbed wildland habitats to reduce the cumulative impacts of ongoing landscape disturbances and climate change. Through coordination across geographic scales and jurisdictional boundaries, these actions can help to decrease or halt current trends in biodiversity loss and disruptions to ecological connectivity. ',
                             indicators: [
                                 
                                     
@@ -1767,6 +1874,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'connectivity\u002Doverlay',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'connectivity\u002Dnetwork'  // Add theme ID to each indicator
                                         },
                                     
@@ -1780,6 +1889,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'effective\u002Dmeans',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'connectivity\u002Dnetwork'  // Add theme ID to each indicator
                                         }
                                     
@@ -1788,7 +1899,7 @@
                         }
                         
                     ],
-                    description: 'An integrated system of core habitats (protected areas and other undisturbed natural regions) connected by wildlife corridors that are established through coordinated land\u002Duse policies to enable the unimpeded movement of species and the flow of natural processes. They are essential for maintaining and restoring ecological functions, halting current trends in biodiversity loss, and assisting species in adapting to changing environmental conditions in fragmented wildland habitats affected by landscape disturbance and climate change. ',
+                    description: 'An \u003Cstrong\u003Eintegrated system of core habitats\u003C/strong\u003E (protected areas and other undisturbed natural regions) connected by \u003Cstrong\u003Ewildlife corridors\u003C/strong\u003E established through \u003Cstrong\u003Ecoordinated land\u002Duse policies\u003C/strong\u003E to enable the \u003Cstrong\u003Eunimpeded movement of species\u003C/strong\u003E and the \u003Cstrong\u003Eflow of natural processes\u003C/strong\u003E. These networks are essential for \u003Cstrong\u003Emaintaining and restoring ecological functions, halting biodiversity loss, and assisting species adaptation\u003C/strong\u003E to changing environmental conditions in \u003Cstrong\u003Efragmented wildland habitats\u003C/strong\u003E affected by landscape disturbance and climate change.',
                     icon: 'fa\u002Dseedling'
 
                 },
@@ -1801,6 +1912,7 @@
                         {
                             id: 'large\u002Drange\u002Dspecies',
                             name: '7.1 Large\u002DRange Species',
+                            description: 'Habitat cores for large\u002Dranging focal species reflect access to food, water, and shelter\u003B reproduction\u003B social structures (i.e., solitary or group behaviour)\u003B environmental stability\u003B and the ability to move freely within a given home range.  For carnivore species in this grouping, habitat cores are characterized by mean home\u002Drange sizes of 30 square kilometres, minimum stepping\u002Dstone patch sizes of 13,000 hectares, and dispersal distances of 60 kilometres.',
                             indicators: [
                                 
                                     
@@ -1812,6 +1924,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'grizzly\u002Dbear',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -1825,6 +1939,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'wolverine',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -1838,6 +1954,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'pacific\u002Dfisher',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -1851,6 +1969,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'canada\u002Dlynx',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         }
                                     
@@ -1861,6 +1981,7 @@
                         {
                             id: 'medium\u002Drange\u002Dspecies',
                             name: '7.2 Medium\u002DRange Species',
+                            description: 'Habitat cores for large\u002Dranging focal species reflect access to food, water, and shelter\u003B reproduction\u003B social structures (i.e., solitary or group behaviour)\u003B environmental stability\u003B and the ability to move freely within a given home range.  For carnivore species in this grouping, habitat cores are characterized by mean home\u002Drange sizes of 30 square kilometres, minimum stepping\u002Dstone patch sizes of 13,000 hectares, and dispersal distances of 60 kilometres.',
                             indicators: [
                                 
                                     
@@ -1872,6 +1993,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'black\u002Dbear',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -1885,6 +2008,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'mountain\u002Dgoat',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -1898,6 +2023,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'black\u002Dtailed\u002Ddeer',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         }
                                     
@@ -1908,6 +2035,7 @@
                         {
                             id: 'small\u002Drange\u002Dspecies',
                             name: '7.3 Small\u002DRange Species',
+                            description: '\u003Cstrong\u003EHabitat cores\u003C/strong\u003E for small\u002Dranging focal species address \u003Cstrong\u003Elife\u002Dcycle needs\u003C/strong\u003E including access to \u003Cstrong\u003Efood, water, and shelter\u003C/strong\u003E\u003B \u003Cstrong\u003Ereproduction\u003C/strong\u003E\u003B \u003Cstrong\u003Esocial structures\u003C/strong\u003E (solitary or group behavior)\u003B \u003Cstrong\u003Eenvironmental stability\u003C/strong\u003E\u003B and \u003Cstrong\u003Efreedom of movement\u003C/strong\u003E within home ranges. These cores are characterized by \u003Cstrong\u003Ecompact home ranges\u003C/strong\u003E (under 1 km²), \u003Cstrong\u003Esmaller patch requirements\u003C/strong\u003E (minimum 350 ha), and \u003Cstrong\u003Elimited dispersal\u003C/strong\u003E (up to 6 km), reflecting the \u003Cstrong\u003Eecological requirements\u003C/strong\u003E of smaller, less mobile species.',
                             indicators: [
                                 
                                     
@@ -1919,6 +2047,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'hoary\u002Dmarmot',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -1932,6 +2062,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'douglas’s\u002Dsquirrel',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -1945,6 +2077,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'yellow\u002Dpine\u002Dchipmunk',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -1958,6 +2092,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'garter\u002Dsnake',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -1971,6 +2107,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'pacific\u002Dtree\u002Dfrog',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         }
                                     
@@ -1981,6 +2119,7 @@
                         {
                             id: 'micro\u002Drange\u002Dspecies',
                             name: '7.4 Micro\u002DRange Species',
+                            description: '\u003Cstrong\u003EHabitat cores\u003C/strong\u003E for micro\u002Drange species support \u003Cstrong\u003Eessential life\u002Dcycle requirements\u003C/strong\u003E including access to \u003Cstrong\u003Efood, water, and shelter\u003C/strong\u003E\u003B \u003Cstrong\u003Ereproduction\u003C/strong\u003E\u003B \u003Cstrong\u003Esocial structures\u003C/strong\u003E (solitary or group behavior)\u003B \u003Cstrong\u003Eenvironmental stability\u003C/strong\u003E\u003B and \u003Cstrong\u003Eunrestricted movement\u003C/strong\u003E within home ranges. These specialized cores are characterized by \u003Cstrong\u003Every small patch sizes (2\u002D5 hectares)\u003C/strong\u003E and \u003Cstrong\u003Eminimal dispersal distances\u003C/strong\u003E (up to 1 km), catering to species with \u003Cstrong\u003Ehighly localized habitat needs\u003C/strong\u003E and \u003Cstrong\u003Elimited mobility\u003C/strong\u003E.',
                             indicators: [
                                 
                                     
@@ -1992,6 +2131,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'western\u002Dtoad',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -2005,6 +2146,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'red\u002Dlegged\u002Dfrog',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -2018,6 +2161,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'ensatina',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -2031,6 +2176,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'northwestern\u002Dsalamander',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -2044,6 +2191,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'long\u002Dtoed\u002Dsalamander',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
@@ -2057,6 +2206,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'northern\u002Dalligator\u002Dlizard',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
                                         }
                                     
@@ -2065,7 +2216,7 @@
                         }
                         
                     ],
-                    description: 'Protected areas and other relatively undisturbed wildland habitats are defined by stable environmental conditions and healthy terrestrial ecosystem functions that sustain the life\u002Dcycle needs of diverse animal and plant communities. Wildlife habitat cores range from large home\u002Drange areas to smaller stepping\u002Dstone patches within fragmented landscapes. They serve as resource hubs within broader networks of ecological connectivity, offering refuge for larger animals migrating along movement pathways between areas of higher habitat suitability, as well as for resident populations of smaller animals. ',
+                    description: '\u003Cstrong\u003EHabitat cores\u003C/strong\u003E are \u003Cstrong\u003Eprotected areas\u003C/strong\u003E and other relatively \u003Cstrong\u003Eundisturbed wildland habitats\u003C/strong\u003E with \u003Cstrong\u003Estable environmental conditions\u003C/strong\u003E that sustain the \u003Cstrong\u003Elife\u002Dcycle needs of diverse species\u003C/strong\u003E. Ranging from \u003Cstrong\u003Elarge home\u002Drange areas\u003C/strong\u003E to smaller \u003Cstrong\u003Estepping\u002Dstone patches\u003C/strong\u003E in fragmented landscapes, these cores serve as \u003Cstrong\u003Eresource hubs\u003C/strong\u003E within \u003Cstrong\u003Eecological networks\u003C/strong\u003E. They provide \u003Cstrong\u003Ecritical refuge\u003C/strong\u003E for both \u003Cstrong\u003Emigrating and resident wildlife populations\u003C/strong\u003E, supporting \u003Cstrong\u003Ebiodiversity conservation\u003C/strong\u003E and \u003Cstrong\u003Eecosystem resilience\u003C/strong\u003E.',
                     icon: 'fa\u002Dseedling'
 
                 },
@@ -2078,6 +2229,7 @@
                         {
                             id: 'large\u002Drange\u002Dlinkages',
                             name: '8.1 Large\u002DRange Linkages',
+                            description: '\u003Cstrong\u003ECorridors for large\u002Dranging mammals\u003C/strong\u003E (e.g., grizzly bears, wolves, elk, lynx) are typically \u003Cstrong\u003Eextensive, landscape\u002Dscale or transboundary\u003C/strong\u003E natural pathways that \u003Cstrong\u003Elink large core habitats\u003C/strong\u003E. These corridors must be \u003Cstrong\u003Ewide enough to support normal behavior\u003C/strong\u003E, providing \u003Cstrong\u003Eadequate food, water, and cover\u003C/strong\u003E to \u003Cstrong\u003Ereduce human\u002Dwildlife conflict\u003C/strong\u003E and \u003Cstrong\u003Efacilitate genetic exchange\u003C/strong\u003E over broad areas. At local and regional levels, they help guide the placement of \u003Cstrong\u003Ecrossing structures\u003C/strong\u003E, such as highway overpasses and underpasses, to ensure \u003Cstrong\u003Esafe passage across human\u002Dmade barriers\u003C/strong\u003E.',
                             indicators: [
                                 
                                     
@@ -2089,6 +2241,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'grizzly\u002Dbear',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2102,6 +2256,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'wolverine',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2115,6 +2271,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'pacific\u002Dfisher',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2128,6 +2286,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'canada\u002Dlynx',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         }
                                     
@@ -2138,6 +2298,7 @@
                         {
                             id: 'medium\u002Drange\u002Dlinkages',
                             name: '8.2 Medium\u002DRange Linkages',
+                            description: '\u003Cstrong\u003ECorridors for medium\u002Dranging mammals\u003C/strong\u003E (e.g., bobcats, coyotes, foxes, deer) connect \u003Cstrong\u003Esmaller, more numerous core habitat patches\u003C/strong\u003E. These can be \u003Cstrong\u003Enatural features\u003C/strong\u003E, such as riparian buffers or hedgerows, and must be \u003Cstrong\u003Eprotected from intense edge effects\u003C/strong\u003E including invasive species, human activity, and high predation risk. These \u003Cstrong\u003Emedium\u002Drange corridors\u003C/strong\u003E help identify \u003Cstrong\u003Ebottlenecks (pinch points)\u003C/strong\u003E and guide \u003Cstrong\u003Eland management solutions\u003C/strong\u003E to improve passage (e.g., fencing or vegetation restoration). Locally, they support \u003Cstrong\u003Econnections between green spaces\u003C/strong\u003E in settled areas and \u003Cstrong\u003Eregional connectivity corridors\u003C/strong\u003E.',
                             indicators: [
                                 
                                     
@@ -2149,6 +2310,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'black\u002Dbear',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2162,6 +2325,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'mountain\u002Dgoat',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2175,6 +2340,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'black\u002Dtailed\u002Ddeer',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         }
                                     
@@ -2185,6 +2352,7 @@
                         {
                             id: 'small\u002Drange\u002Dlinkages',
                             name: '8.3 Small\u002DRange Linkages',
+                            description: '\u003Cstrong\u003ECorridors for small\u002Dranging species\u003C/strong\u003E (e.g., shrews, some rodents and herptiles) operate on a \u003Cstrong\u003Emuch finer scale\u003C/strong\u003E, often consisting of \u003Cstrong\u003Emaintained vegetation strips, brush piles, or simple culverts\u003C/strong\u003E that enable movement between adjacent micro\u002Dhabitats. Their design prioritizes \u003Cstrong\u003Esafe passage over short distances\u003C/strong\u003E to mitigate local threats like roads, trails, or developed areas. These corridors can be \u003Cstrong\u003Eseamlessly integrated into urban design\u003C/strong\u003E and land use policies at the local level, while at the regional scale they contribute to \u003Cstrong\u003Eenhanced ecosystem resilience\u003C/strong\u003E against microclimatic changes.',
                             indicators: [
                                 
                                     
@@ -2196,6 +2364,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'hoary\u002Dmarmot',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2209,6 +2379,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'douglas’s\u002Dsquirrel',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2222,6 +2394,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'yellow\u002Dpine\u002Dchipmunk',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2235,6 +2409,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'garter\u002Dsnake',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2248,6 +2424,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'pacific\u002Dtree\u002Dfrog',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2261,6 +2439,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'western\u002Dtoad',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2274,6 +2454,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'red\u002Dlegged\u002Dfrog',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2287,6 +2469,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'ensatina',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2300,6 +2484,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'northwestern\u002Dsalamander',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2313,6 +2499,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'long\u002Dtoed\u002Dsalamander',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
@@ -2326,6 +2514,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'northern\u002Dalligator\u002Dlizard',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         }
                                     
@@ -2336,6 +2526,7 @@
                         {
                             id: 'barriers',
                             name: '8.4 Barriers',
+                            description: '\u003Cstrong\u003EBarriers\u003C/strong\u003E are landscape features that \u003Cstrong\u003Eprevent or severely restrict movement\u003C/strong\u003E, \u003Cstrong\u003Efragmenting habitats\u003C/strong\u003E and \u003Cstrong\u003Eisolating populations\u003C/strong\u003E. These can be \u003Cstrong\u003Enatural\u003C/strong\u003E (e.g., large rivers, mountain ranges) but are often \u003Cstrong\u003Ehuman\u002Dmade structures\u003C/strong\u003E, such as major roads, clusters of buildings, fences, and agricultural clearings. Modelled as \u003Cstrong\u003Eareas of high resistance to movement\u003C/strong\u003E, they identify where \u003Cstrong\u003Econnectivity linkages are broken\u003C/strong\u003E. Mitigation strategies include \u003Cstrong\u003Ewildlife crossings\u003C/strong\u003E (overpasses/underpasses), \u003Cstrong\u003Efence removal\u003C/strong\u003E, and \u003Cstrong\u003Ehabitat restoration\u003C/strong\u003E in narrow corridor sections.',
                             indicators: [
                                 
                                     
@@ -2347,6 +2538,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'barriers',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         }
                                     
@@ -2357,6 +2550,7 @@
                         {
                             id: 'pinchpoints',
                             name: '8.5 Pinchpoints',
+                            description: '\u003Cstrong\u003EPinch points\u003C/strong\u003E are \u003Cstrong\u003Enarrow landscape features\u003C/strong\u003E that \u003Cstrong\u003Erestrict wildlife movement\u003C/strong\u003E within ecological networks. \u003Cstrong\u003ENatural pinch points\u003C/strong\u003E include \u003Cstrong\u003Esteep ravines\u003C/strong\u003E or \u003Cstrong\u003Echannelized creeks\u003C/strong\u003E, while \u003Cstrong\u003Ehuman\u002Dmade pinch points\u003C/strong\u003E involve \u003Cstrong\u003Efencing\u003C/strong\u003E that channels larger mammals and \u003Cstrong\u003Ecrossing structures\u003C/strong\u003E (e.g., culverts, underpasses) that guide smaller species across infrastructure. Addressing these \u003Cstrong\u003Emovement bottlenecks\u003C/strong\u003E requires \u003Cstrong\u003Ecoordinated land\u002Duse policies\u003C/strong\u003E across jurisdictions to maintain \u003Cstrong\u003Eecological connectivity\u003C/strong\u003E and \u003Cstrong\u003Emitigate habitat fragmentation\u003C/strong\u003E.',
                             indicators: [
                                 
                                     
@@ -2368,6 +2562,8 @@
                                             map1_url: 'https://felt.com/embed/map/S2S\u002DConnectivityModel\u002Dv0p1\u002Dcopy\u002Dmr4RufF9AQM9B5KvTx1IczZC?loc\u003D50.1164%2C\u002D123.0674%2C8.51z\u0026legend\u003D1\u0026cooperativeGestures\u003D1\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
                                             map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: 'pinchpoints',
+                                            source: '\u003Ca target\u003D\u0027_blank\u0027 href\u003D\u0027https://newdev.naturesquamish.ca\u0027\u003ESource\u003C/a\u003E',
+                                            unit_of_measure: 'kg/m^2',
                                             theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         }
                                     
@@ -2376,7 +2572,7 @@
                         }
                         
                     ],
-                    description: 'A clearly defined geographical space where governance, management, and stewardship over the long term sustain or restore effective ecological connectivity while honouring Indigenous stewardship values. Also known as Ecological Corridors in wildland settings or Green Infrastructure Networks in settled areas, these movement pathways link protected and conserved regions and/or unprotected natural habitats. They complement Other effective area\u002Dbased conservation measures (OECMs) and, together, form ecological networks that conserve biodiversity and promote long\u002Dterm ecosystem resilience.',
+                    description: '\u003Cstrong\u003EWildlife corridors\u003C/strong\u003E are \u003Cstrong\u003Eclearly defined geographical spaces\u003C/strong\u003E where \u003Cstrong\u003Elong\u002Dterm governance and stewardship\u003C/strong\u003E sustain \u003Cstrong\u003Eecological connectivity\u003C/strong\u003E while honoring \u003Cstrong\u003EIndigenous values\u003C/strong\u003E. Also called \u003Cstrong\u003EEcological Corridors\u003C/strong\u003E (in wildlands) or \u003Cstrong\u003EGreen Infrastructure Networks\u003C/strong\u003E (in settled areas), these \u003Cstrong\u003Emovement pathways\u003C/strong\u003E connect \u003Cstrong\u003Eprotected areas and natural habitats\u003C/strong\u003E. They work alongside \u003Cstrong\u003EOther effective area\u002Dbased conservation measures (OECMs)\u003C/strong\u003E to form \u003Cstrong\u003Eecological networks\u003C/strong\u003E that \u003Cstrong\u003Econserve biodiversity\u003C/strong\u003E and promote \u003Cstrong\u003Elong\u002Dterm ecosystem resilience\u003C/strong\u003E.',
                     icon: 'fa\u002Dseedling'
 
                 }
@@ -2664,14 +2860,32 @@
                 // Reset and update indicator button
                 updateButton(indicatorDropdown, 'Select Indicator', 'chart-bar');
                 
+                // Update subtheme info box
+                const subthemeInfo = document.querySelector('.subtheme-info');
+                if (subthemeInfo) {
+                    subthemeInfo.innerHTML = `
+                        <div class="info-box-title">Sub-theme Information</div>
+                        <div class="subtheme-icon">
+                            <i class="fas fa-folder-open"></i>
+                        </div>
+                        <div class="text-content">
+                            <h2 class="subtheme-title">${subtheme.name}</h2>
+                            <p class="subtheme-description">${subtheme.description || 'No description available.'}</p>
+                        </div>`;
+                }
+                
                 // Reset indicator info box to default state
                 const indicatorInfo = document.querySelector('.indicator-info');
                 if (indicatorInfo) {
-                    updateInfoBox(indicatorInfo, {
-                        title: 'Indicator Information',
-                        type: 'indicator',
-                        description: 'Choose an indicator from the dropdown above to view its details and map.'
-                    });
+                    indicatorInfo.innerHTML = `
+                        <div class="info-box-title">Indicator Information</div>
+                        <div class="indicator-icon">
+                            <i class="icon icon-question"></i>
+                        </div>
+                        <div class="text-content">
+                            <h2 class="indicator-title">Select an Indicator</h2>
+                            <p class="indicator-description">Choose an indicator from the dropdown above to view its details and map.</p>
+                        </div>`;
                 }
                 
                 // Show indicator dropdown
@@ -2732,13 +2946,26 @@
                 
                 // Update indicator info box
                 const indicatorInfo = document.querySelector('.indicator-info');
-                updateInfoBox(indicatorInfo, {
-                    title: 'Indicator Information',
-                    icon: `${indicator.icon} indicator-icon`,
-                    name: indicator.title,
-                    description: indicator.description,
-                    type: 'indicator'
-                });
+                let unitsHtml = indicator.unit_of_measure ? `<span class="indicator-meta-head"><strong>Units:</strong></span><span class="indicator-meta-body"> ${indicator.unit_of_measure}  |  </span>` : '';
+                let sourceHtml = indicator.source ? `<span class="indicator-meta-head"><strong>Source:</strong></span><span class="indicator-meta-body"> ${indicator.source}</span>` : '';
+                let metaHtml = '';
+                
+                if (indicator.source || indicator.unit_of_measure) {
+                    metaHtml = `<div class="indicator-meta-container">${unitsHtml}${sourceHtml}</div>`;
+                }
+                
+                indicatorInfo.innerHTML = `
+                    <div class="info-box-header">
+                        <div class="info-box-title">Indicator Information</div>
+                        <div class="indicator-icon">
+                            <i class="fas ${indicator.icon} indicator-icon"></i>
+                        </div>
+                    </div>
+                    <div class="text-content">
+                        <h2 class="indicator-title">${indicator.title}</h2>
+                        <p class="indicator-description">${indicator.description}</p>
+                        <div class="meta-info">${metaHtml}</div>
+                    </div>`;
                 
                 // Find and update the current theme based on the indicator's theme ID
                 if (indicator.theme) {

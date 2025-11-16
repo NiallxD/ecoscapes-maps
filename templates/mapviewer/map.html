@@ -42,7 +42,7 @@
         }
         
         /* Two column section with transition */
-        .two-column-section {
+        .three-column-section {
           transition: all 0.3s ease;
           position: relative;
           z-index: 1;
@@ -50,7 +50,7 @@
           overflow: visible;
         }
         
-        .two-column-section.hidden {
+        .three-column-section.hidden {
           height: 0;
           opacity: 0;
           visibility: hidden;
@@ -66,7 +66,7 @@
           z-index: 2;
         }
         
-        .two-column-section:not(.hidden) + .map-container {
+        .three-column-section:not(.hidden) + .map-container {
           margin-top: 20px;
         }
         /* ===== Dropdown Styles ===== */
@@ -298,7 +298,7 @@
         /* ===== Info Box Components ===== */
 
         /* Two Column Section Styling */
-        .two-column-section {
+        .three-column-section {
             display: flex;
             align-items: stretch;
             margin-bottom: 20px;
@@ -307,7 +307,7 @@
             min-height: 0;
             height: auto;
         }
-        .column-left, .column-right {
+        .column-left, .column-middle, .column-right {
             flex: 1;
             min-width: 0;
             min-height: 100%;
@@ -329,7 +329,8 @@
 
         /* Container Styles */
         .indicator-info,
-        .theme-info {
+        .theme-info,
+        .subtheme-info {
             display: flex;
             gap: 10px;
             align-items: center;
@@ -371,7 +372,8 @@
 
         /* Icon Base Styles */
         .indicator-icon,
-        .theme-icon {
+        .theme-icon,
+        .subtheme-icon {
             font-size: 3.5em;
             color: #4CAF50;
             margin: 5px;
@@ -413,7 +415,8 @@
 
         /* Title Styles */
         .indicator-title,
-        .theme-title {
+        .theme-title,
+        .subtheme-title {
             margin: 0; /* needed to override the h2 styles */
             color: #1a365d;
             font-size: 1.5em;
@@ -422,7 +425,8 @@
         }
         /* Description Styles */
         .indicator-description,
-        .theme-description {
+        .theme-description,
+        .subtheme-description {
             margin: 0;
             color: #4a5568;
             line-height: 1.6;
@@ -690,16 +694,6 @@
             font-size: 12px;
             color: #a0aec0;
         }
-        .two-column-section {
-            display: flex;
-            width: 100%;
-            /* padding: 15px 15px;
-            background-color: #f8f9fa; */
-            padding-bottom: 15px;
-            gap: 15px;
-            margin: 0;
-            box-sizing: border-box;
-        }
         body {
             margin: 0;
             padding: 0;
@@ -854,7 +848,7 @@
         </button>
       </div>
 
-        <div class="two-column-section">
+        <div class="three-column-section">
             <div class="column-left">
               <div class="theme-info">
                 <div class="info-box-title">Theme Information</div>
@@ -867,8 +861,19 @@
                 </div>
               </div>
             </div>
+            <div class="column-middle">
+              <div class="subtheme-info">
+                <div class="info-box-title">Sub-theme Information</div>
+                <div class="subtheme-icon">
+                  <i class="icon icon-question"></i>
+                </div>
+                <div class="text-content">
+                  <h2 class="subtheme-title">Select a Sub-theme</h2>
+                  <p class="subtheme-description">Choose a sub-theme from the dropdown to view its details.</p>
+                </div>
+              </div>
+            </div>
             <div class="column-right">
-              <!-- Indicator Information -->
               <div class="indicator-info">
                 <div class="info-box-title">Indicator Information</div>
                 <div class="indicator-icon">
@@ -904,7 +909,7 @@
         // Toggle info box functionality
         document.addEventListener('DOMContentLoaded', function() {
           const toggleBtn = document.getElementById('toggleInfoBox');
-          const infoBox = document.querySelector('.two-column-section');
+          const infoBox = document.querySelector('.three-column-section');
           
           // Load saved preference or default to visible
           const isInfoVisible = localStorage.getItem('infoBoxVisible') !== 'false';
@@ -1143,6 +1148,7 @@
                         {
                             id: '{{ subtheme.id|escapejs }}',
                             name: '{{ subtheme.name|escapejs }}',
+                            description: '{{ subtheme.description|default:''|escapejs }}',
                             indicators: [
                                 {% for indicator_id in subtheme.indicators %}
                                     {% with indicator=indicators.all|get_item:indicator_id %}
@@ -1451,6 +1457,20 @@
                 
                 // Reset and update indicator button
                 updateButton(indicatorDropdown, 'Select Indicator', 'chart-bar');
+                
+                // Update subtheme info box
+                const subthemeInfo = document.querySelector('.subtheme-info');
+                if (subthemeInfo) {
+                    subthemeInfo.innerHTML = `
+                        <div class="info-box-title">Sub-theme Information</div>
+                        <div class="subtheme-icon">
+                            <i class="fas fa-folder-open"></i>
+                        </div>
+                        <div class="text-content">
+                            <h2 class="subtheme-title">${subtheme.name}</h2>
+                            <p class="subtheme-description">${subtheme.description || 'No description available.'}</p>
+                        </div>`;
+                }
                 
                 // Reset indicator info box to default state
                 const indicatorInfo = document.querySelector('.indicator-info');

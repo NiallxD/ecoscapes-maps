@@ -107,6 +107,30 @@ body, html {
     z-index: 1001;
 }
 
+.three-column-section {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+.three-column-section > div {
+    flex: 1;
+    min-width: 0; /* Prevents flex items from overflowing */
+}
+
+.column-left,
+.column-middle,
+.column-right {
+    background: white;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
 .dropdown-submenu:hover > .dropdown-submenu-content {
     display: block;
 }
@@ -241,7 +265,8 @@ body, html {
 
 /* ===== Info Box Components ===== */
 /* Container Styles */
-.indicator-info {
+.indicator-info,
+.subtheme-info {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -249,7 +274,8 @@ body, html {
     position: relative;
 }
 
-.indicator-info .text-content {
+.indicator-info .text-content,
+.subtheme-info .text-content {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -269,7 +295,8 @@ body, html {
 
 /* Icon Base Styles */
 .indicator-icon,
-.theme-icon {
+.theme-icon,
+.subtheme-icon {
     font-size: 2.5em; /* Slightly reduced from 50px for better scaling */
     color: #4CAF50;
     min-width: 1.5em;
@@ -285,7 +312,8 @@ body, html {
 
 /* Nested Icons */
 .indicator-icon i,
-.theme-icon i {
+.theme-icon i,
+.subtheme-icon i {
     font-size: 1em;
     line-height: inherit;
     display: flex;
@@ -293,8 +321,26 @@ body, html {
     justify-content: center;
 }
 
+/* Subtheme Info Box */
+.subtheme-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    position: relative;
+}
+
+.subtheme-info .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    position: relative;
+}
+
 /* Hover Effects */
-.indicator-info:hover .indicator-icon {
+.indicator-info:hover .indicator-icon,
+.subtheme-info:hover .subtheme-icon {
     opacity: 1;
     transform: translateY(-1px);
 }
