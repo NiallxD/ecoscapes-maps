@@ -17,13 +17,13 @@
     {
       "id": "ecosystem-resileince",
       "name": "1.0 Ecosystem Resileince",
-      "description": "The ability of an ecosystem to <strong>respond to a disturbance</strong>, whether natural or human-made, by <strong>resisting damage and recovering</strong> without losing its <strong>core functions and structure</strong>. A key characteristic of a resilient ecosystem is <strong>high biodiversity</strong>, which allows it to better <strong>adapt to change</strong>. Monitoring changes in ecosystem resilience helps <strong>identify and prioritize areas</strong> in need of <strong>habitat protection and restoration</strong>.",
+      "description": "The ability of an ecosystem to respond to a disturbance, whether natural or human-made, by resisting damage and recovering without losing its core functions and structure. A key characteristic of a resilient ecosystem is high biodiversity, which allows it to better adapt to change. Monitoring changes in ecosystem resilience helps identify and prioritize areas in need of habitat protection and restoration.",
       "icon": "fa-seedling",
       "subthemes": [
         {
           "id": "ecosystem-integrity",
           "name": "1.1 Ecosystem Integrity",
-          "description": "Terrestrial ecosystems are <strong>dynamic and constantly changing</strong>. Natural habitats disrupted by human activity and/or altered by changing environmental conditions will recover, depending on the <strong>intensity and frequency of landscape disturbances</strong>. Terrestrial ecosystems that become <strong>highly fragmented</strong> and/or sustain <strong>ongoing environmental degradation</strong> can collapse in areas where <strong>adaptive capacity to respond and recover is exceeded</strong>. Assessment criteria include <strong>levels of habitat connectivity</strong> (i.e., lack of fragmentation) and <strong>relative degrees of habitat suitability</strong> (i.e., biotic value) for representative terrestrial ecosystems at a given location.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "ecosystem-integrity"
@@ -32,7 +32,7 @@
         {
           "id": "human-footprint",
           "name": "1.2 Human Footprint",
-          "description": "The extent and degree to which human impacts reduce or damage ecosystem health and fragment natural wildland habitats. This includes both the permanent loss of wildland habitat for urban expansion (e.g., environment, roads, energy pipelines, and utility corridors) and shorter-term landscape disturbances caused by agriculture, timber harvesting, and mining. The cumulative impact of increased human activities in these areas results in biodiversity loss and disrupts natural patterns of ecological connectivity.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "human-footprint"
@@ -41,7 +41,7 @@
         {
           "id": "climate-refugia",
           "name": "1.3 Climate Refugia",
-          "description": "Areas of the landscape that remain <strong>buffered from the most severe effects of climate change</strong>, enabling <strong>sensitive species to survive locally</strong>. They are characterized by <strong>stable microclimates, unique hydrological features, or protective topography</strong> that provides sanctuary. In the context of biodiversity and landscape ecology, refugia are <strong>vital for species survival</strong>, acting as <strong>\"arks\" that safeguard genetic diversity</strong> and ecological communities. They serve as <strong>source populations for future re-colonization</strong> of the surrounding landscape, thereby supporting <strong>ecosystem resilience and function</strong>.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "climate-refugia"
@@ -62,13 +62,13 @@
     {
       "id": "ecosystem-health",
       "name": "2.0 Ecosystem Health",
-      "description": "An ecosystem's overall <strong>condition of health</strong> in relation to a natural or relatively undisturbed reference state. It is a measure of the ecosystem's capacity to <strong>maintain biodiversity, ecological functions</strong>, and to <strong>cope with and adapt to environmental stressors</strong> over time. <strong>Losses in ecosystem health</strong> help identify areas in need of <strong>restoration</strong>. <strong>Gains in ecosystem health</strong> over time help identify areas that <strong>contribute to biodiversity</strong> and require <strong>protection</strong>.",
+      "description": "An ecosystem's overall condition of health in relation to a natural or relatively undisturbed reference state. It is a measure of the ecosystem's capacity to maintain its biodiversity, ecological functions, and to cope with and adapt to environmental stressors over time. Losses in ecosystem health help identify areas in need of restoration. Gains in ecosystem health over time help identify areas that contribute to biodiversity and require protection.",
       "icon": "fa-seedling",
       "subthemes": [
         {
           "id": "values",
           "name": "2.1 Values",
-          "description": "The <strong>intrinsic health of terrestrial and freshwater habitats</strong> and the <strong>benefits they provide through ecosystem services</strong>, such as <strong>clean air, water filtration, pollination, carbon storage, and climate regulation</strong>. Ecosystem values are used to <strong>monitor the relative impacts of landscape changes</strong> associated with human activities over time, and to help <strong>identify and prioritize conservation efforts</strong> that protect <strong>vulnerable wildlife habitat</strong> for the broadest possible range of native species.",
+          "description": "The intrinsic health of terrestrial and freshwater habitats and the benefits they provide through ecosystem services, such as clean air, water filtration, pollination, carbon storage, and the regulation of natural hazard processes related to climate change. Ecosystem values are used to monitor the relative impacts of landscape changes associated with human activities over time, and to help identify and prioritize conservation efforts that protect vulnerable wildlife habitat for the broadest possible range of native species.",
           "icon": "fa-leaf",
           "indicators": [
             "land-cover",
@@ -80,7 +80,7 @@
         {
           "id": "threats",
           "name": "2.2 Threats",
-          "description": "<strong>Factors or conditions</strong> that can cause harm and <strong>negatively impact the health and resilience</strong> of terrestrial and freshwater habitats. These include <strong>human activities</strong> that directly disturb the landscape (e.g., urbanization, infrastructure development, agricultural land use, and resource extraction), as well as <strong>natural hazard events</strong> like floods and wildfires. The <strong>cumulative effects</strong> of these processes lead to <strong>habitat loss and fragmentation</strong>, decreasing the natural ability of ecosystems and wildlife species to <strong>cope with and adapt to changes</strong> over time.",
+          "description": "Factors or conditions that can cause harm and negatively impact the health and resilience of terrestrial and freshwater habitats. These include human activities that directly disturb the landscape (e.g., urbanization, infrastructure development, agricultural land use, and resource extraction), as well as natural hazard events like floods and wildfires. The cumulative effects of these processes lead to habitat loss and fragmentation, decreasing the natural ability of ecosystems and wildlife species to cope with and adapt to changes over time.",
           "icon": "fa-leaf",
           "indicators": [
             "landscape-change",
@@ -97,7 +97,7 @@
         {
           "id": "habitat-loss-and-fragmentation",
           "name": "2.3 Habitat Loss and Fragmentation",
-          "description": "<strong>Habitat loss and fragmentation</strong> are two related but distinct concepts in ecology that describe changes in the natural environment caused by the <strong>cumulative effects of landscape disturbance and climate change</strong>. Habitat loss refers to the <strong>permanent destruction, removal, or temporary degradation</strong> of terrestrial and freshwater ecosystems. Habitat fragmentation, however, involves <strong>breaking larger continuous habitats into smaller, isolated patches</strong>. Both processes <strong>disrupt natural patterns of ecological connectivity</strong> and are the <strong>main causes of biodiversity loss</strong>.",
+          "description": "Habitat loss and fragmentation are two related but distinct concepts in ecology that describe changes in the natural environment caused by the cumulative effects of landscape disturbance and climate change. Habitat loss refers to the permanent destruction, removal, or temporary degradation of terrestrial and freshwater ecosystems. Habitat fragmentation, however, involves breaking larger continuous habitats into smaller, isolated patches. Both habitat loss and fragmentation disrupt natural patterns of ecological connectivity and are the main causes of biodiversity loss. ",
           "icon": "fa-leaf",
           "indicators": [
             "forest-cover",
@@ -111,13 +111,13 @@
     {
       "id": "biogeoclimatic-zones",
       "name": "3.0 Biogeoclimatic Zones",
-      "description": "<strong>BC's Biogeoclimatic Ecosystem Classification (BEC)</strong> classifies broad forested landscapes and site-level vegetated areas based on similarities in <strong>climate, geography, and dominant plant and animal communities</strong>. Each regional zone reflects <strong>long-term interactions</strong> between climate and biology that shape the development of <strong>distinct habitats, ecological niches, and unique species assemblages</strong>. In landscape ecology, they help <strong>organize the landscape</strong> into manageable areas for <strong>conservation planning</strong> and for understanding how <strong>climate change may shift ecosystems</strong> at both regional and global scales.",
+      "description": "BC’s Biogeoclimatic Ecosystem Classification (BEC) classifies broad forested landscapes and site-level vegetated areas based on similarities in climate, geography, and dominant plant and animal communities. Each regional zone reflects long-term interactions between climate and biology that shape the development of distinct habitats, ecological niches, and unique assemblages of plants and animals.  In landscape ecology, they help organize the landscape into manageable areas for conservation planning and for understanding how climate change may shift ecosystems at both regional and global scales.",
       "icon": "fa-seedling",
       "subthemes": [
         {
           "id": "regional-zones",
           "name": "3.1 Regional Zones",
-          "description": "The <strong>Regional Zone component</strong> of BC's Biogeoclimatic Ecosystem Classification (BEC) is a <strong>large geographic area</strong> defined by a unique combination of <strong>climate and physiographic factors</strong>, and the <strong>dominant plant species</strong> of its old-growth forests (e.g., Coastal Western Hemlock Zone). It provides the <strong>\"big picture\" framework</strong> for understanding how <strong>climate influences ecosystem development and species distribution</strong>, and allows for the development of <strong>large-scale conservation strategies</strong>, such as identifying <strong>representative ecosystems for protection</strong> and modelling the <strong>potential impacts of climate change</strong> on vegetation patterns.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "regional-zones"
@@ -126,7 +126,7 @@
         {
           "id": "site-level-vegetation",
           "name": "3.2 Site Level Vegetation",
-          "description": "The <strong>Site Level component</strong> of BC's Biogeoclimatic Ecosystem Classification (BEC) is defined by <strong>unique combinations</strong> of understory vegetation, <strong>soil characteristics</strong> (e.g., moisture and nutrient content), and <strong>physiographic features</strong> that influence the <strong>structure and composition of ecological communities</strong> during successional growth stages following episodes of landscape disturbance. Identifying and mapping the distribution of <strong>site-level vegetation</strong> is vital for <strong>practical conservation planning</strong>, as most <strong>on-the-ground management decisions</strong>, like tree species selection for reforestation or defining specific habitat management strategies, happen at this level.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "site-level-vegetation"
@@ -137,13 +137,13 @@
     {
       "id": "species-occurrences",
       "name": "4.0 Species Occurrences",
-      "description": "<strong>Field-based observations</strong> help identify groups of <strong>interacting populations</strong> of different species living in the same area, as well as the overall characteristics of an <strong>ecological community</strong>. These include <strong>species richness</strong> (number of species), <strong>species abundance</strong> (population sizes), <strong>trophic structure</strong> (food web relationships), and <strong>species interactions</strong> such as competition and predation. Communities are vital because they form the <strong>functional units of ecosystems</strong> and play a key role in <strong>nutrient cycling, energy flow, and maintaining ecosystem stability</strong>.",
+      "description": "Field-based observations help identify groups of interacting populations of different species living in the same area, as well as the overall characteristics of an ecological community. These include species richness (number of species), species abundance (population sizes), trophic structure (food web relationships), and interactions such as competition and predation. In the context of biodiversity and landscape ecology, communities are vital because they form the functional units of ecosystems and play a key role in nutrient cycling, energy flow, and maintaining ecosystem stability.",
       "icon": "fa-seedling",
       "subthemes": [
         {
           "id": "mammals",
           "name": "4.1 Mammals",
-          "description": "<strong>Vertebrate animals</strong> of the class Mammalia are distinguished by having <strong>milk-producing mammary glands</strong> to nourish their young, a <strong>large neocortex region</strong> in the brain, <strong>body fur or hair</strong> for insulation, and <strong>three middle ear bones</strong> that amplify sound and greatly enhance hearing sensitivity. They are <strong>endothermic (warm-blooded)</strong>, breathe air, and are <strong>quadrupedal</strong>, with most mammals using four limbs for land movement. More than <strong>80 unique species</strong> are known to inhabit the southwest Coast Mountains, ranging in size from <strong>small ground squirrels to large-ranging grizzly bears</strong>.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "mammals"
@@ -152,7 +152,7 @@
         {
           "id": "herptiles",
           "name": "4.2 Herptiles",
-          "description": "<strong>Herptiles</strong> are an informal group of vertebrates that includes both <strong>amphibians and reptiles</strong> found in both <strong>terrestrial and freshwater environments</strong>. Amphibians (Class Amphibia) are commonly characterized by a <strong>life cycle</strong> that features an <strong>aquatic larval stage with gills</strong> and a <strong>terrestrial adult stage with lungs</strong>. Reptiles (Class Reptilia) are <strong>air-breathing, ectothermic (cold-blooded) vertebrates</strong> with <strong>scaly skin</strong>, most of which <strong>lay eggs on land</strong>. Over <strong>25 distinct species</strong> are documented in the southwest Coast Mountains, including various <strong>toads, frogs, salamanders, turtles, lizards, and snakes</strong>.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "herptiles"
@@ -161,7 +161,7 @@
         {
           "id": "vascular-plants",
           "name": "4.3 Vascular Plants",
-          "description": "<strong>Vascular plants (Tracheophyta)</strong> have <strong>specialized vascular tissues (xylem and phloem)</strong> for transporting water and nutrients, allowing them to <strong>grow taller and more complex</strong> than non-vascular plants. They possess <strong>true roots, stems, and leaves</strong>. Types include <strong>trees, shrubs, grasses, flowering plants (angiosperms), and ferns</strong>, many of which produce seeds. Their ability to <strong>grow larger and access resources</strong> (sunlight, water, nutrients) gives them a <strong>competitive advantage</strong>, making them the <strong>dominant group in most terrestrial ecosystems</strong>. There are <strong>60 distinct vascular plant species</strong> documented in the southwest Coast Mountains.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "vascular-plants"
@@ -170,7 +170,7 @@
         {
           "id": "non-vascular-plants",
           "name": "4.4 Non-Vascular Plants",
-          "description": "<strong>Non-vascular plants</strong>, known informally as <strong>bryophytes</strong>, include various <strong>mosses, liverworts, and hornworts</strong>. They <strong>lack true vascular tissue, roots, stems, and leaves</strong>, and instead use <strong>hair-like rhizoids</strong> for anchoring and accessing water and nutrients. Bryophytes grow <strong>close to the ground</strong>, are typically found in <strong>moist environments</strong>, and <strong>reproduce through spores</strong>. They play a <strong>crucial role in ecological communities</strong>, acting as <strong>pioneer species</strong> that <strong>promote soil formation</strong> and <strong>regulate water and nutrient cycles</strong>. Over <strong>280 unique bryophyte species</strong> have been documented in the southwest Coast Mountains.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "non-vascular-plants"
@@ -181,13 +181,13 @@
     {
       "id": "climate-change-refugia",
       "name": "5.0 Climate Change Refugia",
-      "description": "<strong>Climate change refugia</strong> are areas of the landscape that remain <strong>buffered from the most severe effects of climate change</strong>, enabling <strong>sensitive species to survive locally</strong>. They are characterized by <strong>stable microclimates, unique hydrological features, or protective topography</strong> that provides sanctuary. These refugia act as <strong>\"arks\" that safeguard genetic diversity</strong> and ecological communities. They serve as <strong>source populations</strong> for future re-colonization, thereby supporting <strong>ecosystem functions and building resilience</strong>.",
+      "description": "Areas of the landscape that remain buffered from the most severe effects of climate change, enabling sensitive species to survive locally. They are characterized by stable microclimates, unique hydrological features, or protective topography that provides sanctuary. In the context of biodiversity and landscape ecology, refugia are vital for species survival, acting as \"arks\" that safeguard genetic diversity and ecological communities. They serve as source populations for future re-colonization of the surrounding landscape, thereby supporting ecosystem functions and building resilience.",
       "icon": "fa-seedling",
       "subthemes": [
         {
           "id": "macrorefugia",
           "name": "5.1 MacroRefugia",
-          "description": "<strong>Macrorefugia</strong> are <strong>large geographical regions</strong>, such as entire mountain ranges or vast forest systems, that serve as <strong>long-term sanctuaries</strong> and offer a <strong>broad spectrum of buffered environmental conditions</strong> across the landscape. Their main function is to <strong>maintain large, viable populations</strong> and support <strong>ecosystem-level processes</strong>, enabling <strong>adaptation through genetic diversity</strong> and <strong>species migration over time</strong>. In the southern Coast Mountains, these include <strong>higher elevation slopes and mountain ranges, large intact watersheds, riparian corridors and associated wetlands, and extensive old-growth forests</strong>.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "macrorefugia"
@@ -196,7 +196,7 @@
         {
           "id": "microrefugia",
           "name": "5.2 MicroRefugia",
-          "description": "<strong>Microrefugia</strong> are much smaller, <strong>localized \"safe spots,\"</strong> potentially just a cool, moist slope or a shaded canyon bottom, defined by <strong>highly localized variations in topography or hydrology</strong>. They enable the <strong>short-term persistence of sensitive species</strong> by providing <strong>immediate shelter from extreme conditions</strong> and serving as <strong>critical stepping stones for survival</strong> across otherwise inhospitable areas. In the southern Coast Mountains, these include <strong>north-facing slopes and shaded ravines, groundwater-fed springs and perennial streams, and topographic depressions</strong> where dense cool air flows downslope, creating <strong>cooler pockets of buffered habitat</strong>.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "microrefugia"
@@ -207,13 +207,13 @@
     {
       "id": "connectivity-network",
       "name": "6.0 Connectivity Network",
-      "description": "An <strong>integrated system of core habitats</strong> (protected areas and other undisturbed natural regions) connected by <strong>wildlife corridors</strong> established through <strong>coordinated land-use policies</strong> to enable the <strong>unimpeded movement of species</strong> and the <strong>flow of natural processes</strong>. These networks are essential for <strong>maintaining and restoring ecological functions, halting biodiversity loss, and assisting species adaptation</strong> to changing environmental conditions in <strong>fragmented wildland habitats</strong> affected by landscape disturbance and climate change.",
+      "description": "An integrated system of core habitats (protected areas and other undisturbed natural regions) connected by wildlife corridors that are established through coordinated land-use policies to enable the unimpeded movement of species and the flow of natural processes. They are essential for maintaining and restoring ecological functions, halting current trends in biodiversity loss, and assisting species in adapting to changing environmental conditions in fragmented wildland habitats affected by landscape disturbance and climate change. ",
       "icon": "fa-seedling",
       "subthemes": [
         {
           "id": "priority-linkages",
           "name": "6.1 Priority Linkages",
-          "description": "<strong>Modelled pathways</strong> of ecological connectivity that provide the <strong>most efficient movement corridors</strong> for wildlife and <strong>gene flow across the widest range of species</strong>. These pathways identify <strong>areas of least resistance</strong> for animals and plants to move between <strong>protected areas and other high-value habitats</strong>, including <strong>core and stepping-stone patches</strong> found in fragmented landscapes at lower elevations and in valley bottoms. Mapping these <strong>movement corridors</strong> helps guide the development of <strong>practical conservation solutions</strong> that deliver the <strong>greatest benefits for vulnerable plants and animals</strong>.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "priority-linkages"
@@ -222,7 +222,7 @@
         {
           "id": "human-footprint",
           "name": "6.2 Human Footprint",
-          "description": "The extent and degree to which human impacts reduce or damage ecosystem health and fragment natural wildland habitats. This includes both the permanent loss of wildland habitat for urban expansion (e.g., environment, roads, energy pipelines, and utility corridors) and shorter-term landscape disturbances caused by agriculture, timber harvesting, and mining. The cumulative impact of increased human activities in these areas results in biodiversity loss and disrupts natural patterns of ecological connectivity.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "human-footprint"
@@ -231,7 +231,7 @@
         {
           "id": "climate-corridors",
           "name": "6.3 Climate Corridors",
-          "description": "<strong>Defined geographical areas</strong> of natural habitat, <strong>riparian zones</strong> (areas along rivers or streams), or <strong>mountain ranges</strong>, that connect larger patches of <strong>suitable wildland habitat</strong>. They are used to develop <strong>conservation strategies</strong> to mitigate the <strong>effects of a warming climate</strong> by providing <strong>physical routes for plants and animals</strong> to migrate to <strong>more suitable, cooler environments</strong> (e.g., higher latitudes or elevations). They are a <strong>practical, on-the-ground approach</strong> to <strong>reducing habitat fragmentation</strong> and <strong>encouraging species dispersal</strong>, aiming to build <strong>landscape resilience</strong> in the southern Coast Mountains.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "climate-corridors"
@@ -252,7 +252,7 @@
     {
       "id": "habitat-cores",
       "name": "7.0 Habitat Cores",
-      "description": "<strong>Habitat cores</strong> are <strong>protected areas</strong> and other relatively <strong>undisturbed wildland habitats</strong> with <strong>stable environmental conditions</strong> that sustain the <strong>life-cycle needs of diverse species</strong>. Ranging from <strong>large home-range areas</strong> to smaller <strong>stepping-stone patches</strong> in fragmented landscapes, these cores serve as <strong>resource hubs</strong> within <strong>ecological networks</strong>. They provide <strong>critical refuge</strong> for both <strong>migrating and resident wildlife populations</strong>, supporting <strong>biodiversity conservation</strong> and <strong>ecosystem resilience</strong>.",
+      "description": "Protected areas and other relatively undisturbed wildland habitats are defined by stable environmental conditions and healthy terrestrial ecosystem functions that sustain the life-cycle needs of diverse animal and plant communities. Wildlife habitat cores range from large home-range areas to smaller stepping-stone patches within fragmented landscapes. They serve as resource hubs within broader networks of ecological connectivity, offering refuge for larger animals migrating along movement pathways between areas of higher habitat suitability, as well as for resident populations of smaller animals. ",
       "icon": "fa-seedling",
       "subthemes": [
         {
@@ -281,7 +281,7 @@
         {
           "id": "small-range-species",
           "name": "7.3 Small-Range Species",
-          "description": "<strong>Habitat cores</strong> for small-ranging focal species address <strong>life-cycle needs</strong> including access to <strong>food, water, and shelter</strong>; <strong>reproduction</strong>; <strong>social structures</strong> (solitary or group behavior); <strong>environmental stability</strong>; and <strong>freedom of movement</strong> within home ranges. These cores are characterized by <strong>compact home ranges</strong> (under 1 km²), <strong>smaller patch requirements</strong> (minimum 350 ha), and <strong>limited dispersal</strong> (up to 6 km), reflecting the <strong>ecological requirements</strong> of smaller, less mobile species.",
+          "description": "Habitat cores for small-ranging focal species reflect life-cycle needs such as access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range.  For species in this grouping, habitat cores are characterized by mean home-range sizes of less than 1 square kilometre, minimum stepping-stone patch sizes of 350 hectares, and dispersal distances of 6 kilometres.",
           "icon": "fa-leaf",
           "indicators": [
             "hoary-marmot",
@@ -294,7 +294,7 @@
         {
           "id": "micro-range-species",
           "name": "7.4 Micro-Range Species",
-          "description": "<strong>Habitat cores</strong> for micro-range species support <strong>essential life-cycle requirements</strong> including access to <strong>food, water, and shelter</strong>; <strong>reproduction</strong>; <strong>social structures</strong> (solitary or group behavior); <strong>environmental stability</strong>; and <strong>unrestricted movement</strong> within home ranges. These specialized cores are characterized by <strong>very small patch sizes (2-5 hectares)</strong> and <strong>minimal dispersal distances</strong> (up to 1 km), catering to species with <strong>highly localized habitat needs</strong> and <strong>limited mobility</strong>.",
+          "description": "Habitat cores for small-ranging focal species reflect life-cycle needs such as access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range.  For species in this grouping, habitat cores are characterized by patch sizes of 2 -5 hectares and mean dispersal distances of up to 1 kilometre.",
           "icon": "fa-leaf",
           "indicators": [
             "western-toad",
@@ -310,13 +310,13 @@
     {
       "id": "wildlife-corridors",
       "name": "8.0 Wildlife Corridors",
-      "description": "<strong>Wildlife corridors</strong> are <strong>clearly defined geographical spaces</strong> where <strong>long-term governance and stewardship</strong> sustain <strong>ecological connectivity</strong> while honoring <strong>Indigenous values</strong>. Also called <strong>Ecological Corridors</strong> (in wildlands) or <strong>Green Infrastructure Networks</strong> (in settled areas), these <strong>movement pathways</strong> connect <strong>protected areas and natural habitats</strong>. They work alongside <strong>Other effective area-based conservation measures (OECMs)</strong> to form <strong>ecological networks</strong> that <strong>conserve biodiversity</strong> and promote <strong>long-term ecosystem resilience</strong>.",
+      "description": "A clearly defined geographical space where governance, management, and stewardship over the long term sustain or restore effective ecological connectivity while honouring Indigenous stewardship values. Also known as Ecological Corridors in wildland settings or Green Infrastructure Networks in settled areas, these movement pathways link protected and conserved regions and/or unprotected natural habitats. They complement Other effective area-based conservation measures (OECMs) and, together, form ecological networks that conserve biodiversity and promote long-term ecosystem resilience.",
       "icon": "fa-seedling",
       "subthemes": [
         {
           "id": "large-range-linkages",
           "name": "8.1 Large-Range Linkages",
-          "description": "<strong>Corridors for large-ranging mammals</strong> (e.g., grizzly bears, wolves, elk, lynx) are typically <strong>extensive, landscape-scale or transboundary</strong> natural pathways that <strong>link large core habitats</strong>. These corridors must be <strong>wide enough to support normal behavior</strong>, providing <strong>adequate food, water, and cover</strong> to <strong>reduce human-wildlife conflict</strong> and <strong>facilitate genetic exchange</strong> over broad areas. At local and regional levels, they help guide the placement of <strong>crossing structures</strong>, such as highway overpasses and underpasses, to ensure <strong>safe passage across human-made barriers</strong>.",
+          "description": "Corridors for large-ranging mammals (e.g., grizzly bears, wolves, elk, lynx) are usually extensive, often spanning landscape-scale or transboundary natural pathways that link large core habitats. These corridors must be wide enough to support not only movement but also normal behaviour, providing adequate food, water, and cover to reduce human-wildlife conflict and facilitate genetic exchange over broad areas. At local and regional levels, they help guide the placement of crossing structures, such as highway overpasses and underpasses, to ensure safe passage across human-made barriers. ",
           "icon": "fa-leaf",
           "indicators": [
             "grizzly-bear",
@@ -328,7 +328,7 @@
         {
           "id": "medium-range-linkages",
           "name": "8.2 Medium-Range Linkages",
-          "description": "<strong>Corridors for medium-ranging mammals</strong> (e.g., bobcats, coyotes, foxes, deer) connect <strong>smaller, more numerous core habitat patches</strong>. These can be <strong>natural features</strong>, such as riparian buffers or hedgerows, and must be <strong>protected from intense edge effects</strong> including invasive species, human activity, and high predation risk. These <strong>medium-range corridors</strong> help identify <strong>bottlenecks (pinch points)</strong> and guide <strong>land management solutions</strong> to improve passage (e.g., fencing or vegetation restoration). Locally, they support <strong>connections between green spaces</strong> in settled areas and <strong>regional connectivity corridors</strong>.",
+          "description": "Corridors for medium-ranging mammals (e.g., bobcats, coyotes, foxes, deer) connect smaller, more numerous core habitat patches. They can be natural features, such as riparian buffers or hedgerows, and must be protected from intense edge effects including invasive species, human activity, and high predation risk. These medium-range corridors help identify bottlenecks (pinch points) and guide land management solutions to improve passage (e.g., fencing or vegetation restoration). Locally, they support connections between green spaces in settled areas and regional connectivity corridors.",
           "icon": "fa-leaf",
           "indicators": [
             "black-bear",
@@ -339,7 +339,7 @@
         {
           "id": "small-range-linkages",
           "name": "8.3 Small-Range Linkages",
-          "description": "<strong>Corridors for small-ranging species</strong> (e.g., shrews, some rodents and herptiles) operate on a <strong>much finer scale</strong>, often consisting of <strong>maintained vegetation strips, brush piles, or simple culverts</strong> that enable movement between adjacent micro-habitats. Their design prioritizes <strong>safe passage over short distances</strong> to mitigate local threats like roads, trails, or developed areas. These corridors can be <strong>seamlessly integrated into urban design</strong> and land use policies at the local level, while at the regional scale they contribute to <strong>enhanced ecosystem resilience</strong> against microclimatic changes.",
+          "description": "Corridors for small-ranging species (e.g., shrews, some rodents and herptiles) are on a much finer scale, often consisting of maintained strips of vegetation, brush piles, or even simple culverts that allow movement between adjacent micro-habitats. Their design focuses on safe passage over very short distances to avoid local threats such as roads, trails or developed lots. At the local level, they can be integrated into urban design and land use policies. At the regional scale, they help enhance ecosystem resilience to microclimatic changes.",
           "icon": "fa-leaf",
           "indicators": [
             "hoary-marmot",
@@ -358,7 +358,7 @@
         {
           "id": "barriers",
           "name": "8.4 Barriers",
-          "description": "<strong>Barriers</strong> are landscape features that <strong>prevent or severely restrict movement</strong>, <strong>fragmenting habitats</strong> and <strong>isolating populations</strong>. These can be <strong>natural</strong> (e.g., large rivers, mountain ranges) but are often <strong>human-made structures</strong>, such as major roads, clusters of buildings, fences, and agricultural clearings. Modelled as <strong>areas of high resistance to movement</strong>, they identify where <strong>connectivity linkages are broken</strong>. Mitigation strategies include <strong>wildlife crossings</strong> (overpasses/underpasses), <strong>fence removal</strong>, and <strong>habitat restoration</strong> in narrow corridor sections.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "barriers"
@@ -367,7 +367,7 @@
         {
           "id": "pinchpoints",
           "name": "8.5 Pinchpoints",
-          "description": "<strong>Pinch points</strong> are <strong>narrow landscape features</strong> that <strong>restrict wildlife movement</strong> within ecological networks. <strong>Natural pinch points</strong> include <strong>steep ravines</strong> or <strong>channelized creeks</strong>, while <strong>human-made pinch points</strong> involve <strong>fencing</strong> that channels larger mammals and <strong>crossing structures</strong> (e.g., culverts, underpasses) that guide smaller species across infrastructure. Addressing these <strong>movement bottlenecks</strong> requires <strong>coordinated land-use policies</strong> across jurisdictions to maintain <strong>ecological connectivity</strong> and <strong>mitigate habitat fragmentation</strong>.",
+          "description": "See Indicator Information ->",
           "icon": "fa-leaf",
           "indicators": [
             "pinchpoints"
@@ -379,7 +379,7 @@
   "indicators": {
     "ecosystem-integrity": {
       "title": "1.1.1 Ecosystem Integrity",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "Terrestrial ecosystems are dynamic and constantly changing. Natural habitats disrupted by human activity and/or altered by changing environmental conditions will recover, depending on the intensity and frequency of landscape disturbances. Terrestrial ecosystems that become highly fragmented and/or sustain ongoing environmental degradation can collapse in areas where adaptive capacity to respond and recover is exceeded. Assessment criteria include levels of habitat connectivity (i.e., lack of fragmentation) and relative degrees of habitat suitability (i.e., biotic value) for representative terrestrial ecosystems at a given location. ",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "ecosystem-integrity",
@@ -389,7 +389,7 @@
     },
     "human-footprint": {
       "title": "1.2.1 Human Footprint",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "The extent and degree to which human impacts reduce or damage ecosystem health and fragment natural wildland habitats. This includes both the permanent loss of wildland habitat for urban expansion (e.g., environment, roads, energy pipelines, and utility corridors) and shorter-term landscape disturbances caused by agriculture, timber harvesting, and mining. The cumulative impact of increased human activities in these areas results in biodiversity loss and disrupts natural patterns of ecological connectivity.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "human-footprint",
@@ -399,7 +399,7 @@
     },
     "climate-refugia": {
       "title": "1.3.1 Climate Refugia",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "Areas of the landscape that remain buffered from the most severe effects of climate change, enabling sensitive species to survive locally. They are characterized by stable microclimates, unique hydrological features, or protective topography that provides sanctuary. In the context of biodiversity and landscape ecology, refugia are vital for species survival, acting as \"arks\" that safeguard genetic diversity and ecological communities. They serve as source populations for future re-colonization of the surrounding landscape, thereby supporting ecosystem resilience and function.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "climate-refugia",
@@ -409,7 +409,7 @@
     },
     "habitat-protection": {
       "title": "1.4.1 Habitat Protection",
-      "description": "The act of <strong>safeguarding existing natural environments</strong> from harm to maintain existing levels of <strong>ecosystem health and connectivity</strong>. It is a <strong>proactive approach</strong>, emphasized in the <strong>Global Biodiversity Frameworks Target 3</strong>, which calls for <strong>protecting at least 30% of land and seas by 2030</strong> to prevent the <strong>loss of biodiversity and ecosystem services</strong>. Actions that can be taken at local and regional scales include the <strong>formal designation of protected areas</strong> managed through legislation or Indigenous law, and the designation of <strong>Other Effective Conservation Measures (OECMs)</strong>.",
+      "description": "The act of safeguarding existing natural environments from harm to maintain existing levels of ecosystem health and connectivity. It is a proactive approach, emphasized in the Global Biodiversity Frameworks Target 3, which calls for protecting at least 30% of land and seas by 2030 to prevent the loss of biodiversity and ecosystem services. Actions that can be taken at local and regional scales include the formal designation of protected areas managed through legislation or Indigenous law, and the designation of Other Effective Conservation Measures (OECMs). ",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "habitat-protection",
@@ -419,7 +419,7 @@
     },
     "habitat-restoration": {
       "title": "1.4.2 Habitat Restoration",
-      "description": "<strong>Habitat restoration</strong> is the <strong>purposeful process</strong> of assisting the <strong>recovery of degraded, damaged, or destroyed wildland habitats</strong> to improve <strong>ecosystem health and connectivity</strong> and enhance <strong>in-situ biodiversity</strong>. It is a <strong>reactive approach</strong>, highlighted by the <strong>UN Decade on Ecosystem Restoration (2021-2030)</strong>, that aims to <strong>reverse damage</strong> and <strong>rebuild resilient landscapes</strong> that provide <strong>functional ecosystem services</strong>. Actions that can be taken at local and regional scales include <strong>reforestation of native trees and understory vegetation</strong>, <strong>eradicating invasive species</strong>, and <strong>reintroducing native plants and animals</strong>.",
+      "description": "Habitat restoration is the purposeful process of assisting the recovery of degraded, damaged, or destroyed wildland habitats to improve ecosystem health and connectivity and enhance in-situ biodiversity. It is a reactive approach, highlighted by the UN Decade on Ecosystem Restoration (2021-2030), that aims to reverse damage and rebuild resilient landscapes that provide functional ecosystem services. Actions that can be taken at local and regional scales include reforestation of native trees and understory vegetation, eradicating invasive species, and reintroducing native plants and animals. ",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "habitat-restoration",
@@ -429,7 +429,7 @@
     },
     "land-cover": {
       "title": "2.1.1 Land Cover",
-      "description": "<strong>Visible terrestrial components</strong> of the Earth's surface, which include <strong>forests, grasslands, wetlands, alpine areas</strong> and various <strong>land uses</strong> associated with human settlement, such as <strong>urban and agricultural areas</strong> and <strong>linear infrastructure</strong>. The <strong>spatial arrangement and distribution</strong> of these components serve as indicators for <strong>monitoring landscape patterns</strong> and understanding their effects on <strong>ecosystem health and integrity</strong> over time.",
+      "description": "Visible terrestrial components of the Earths surface, which include forests, grasslands, wetlands, alpine areas and various land uses associated with human settlement, such as urban and agricultural areas and linear infrastructure. The spatial arrangement and distribution of these components serve as indicators for monitoring landscape patterns and understanding their effects on ecosystem health and integrity over time.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "land-cover",
@@ -439,7 +439,7 @@
     },
     "ecosystem-services": {
       "title": "2.1.2 Ecosystem Services",
-      "description": "A <strong>subjective evaluation</strong> of the benefits that <strong>current and future generations</strong> receive from <strong>physical, chemical, and biological processes</strong> supporting the <strong>functional health and long-term resilience</strong> of a natural ecosystem. These include <strong>provisioning</strong> (food and water), <strong>regulating</strong> (climate control and disease mitigation), <strong>supporting</strong> (nutrient cycles and pollination), and <strong>cultural services</strong> (spiritual and aesthetic value). Valuing these services involves <strong>economic methods</strong> to assign subjective worth to natural processes. However, most <strong>Indigenous worldviews</strong> view nature as <strong>kin with inherent rights</strong>, not as a commodity valued solely for human utility.",
+      "description": "A subjective evaluation of the benefits that current and future generations receive from physical, chemical, and biological processes supporting the functional health and long-term resilience of a natural ecosystem. These include provisioning (food and water), regulating (climate control and disease mitigation), supporting (nutrient cycles and pollination), and cultural services (spiritual and aesthetic value). Valuing these services involves economic methods to assign subjective worth to natural processes. However, most Indigenous worldviews view nature as kin with inherent rights, not as a commodity valued solely for human utility.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "ecosystem-services",
@@ -449,7 +449,7 @@
     },
     "habitat-suitability": {
       "title": "2.1.3 Habitat Suitability",
-      "description": "The <strong>capacity of terrestrial and freshwater ecosystems</strong> to provide <strong>essential life-cycle resources</strong> (food, water, shelter, breeding sites) and <strong>suitable living conditions</strong> for a species to survive and reproduce. The <strong>suitability</strong> of a given wildlife habitat is determined by <strong>site-specific environmental variables</strong> that influence the <strong>occurrence and distribution of wildlife species</strong>. These include a wide range of <strong>biotic and abiotic variables</strong>, including the <strong>structure and composition of ecological communities</strong> within a given biogeoclimatic zone, <strong>soil moisture and nutrient levels</strong>, <strong>topographic position</strong>, <strong>temperature</strong>, <strong>slope aspect</strong> and <strong>solar insolation</strong>.",
+      "description": "The capacity of terrestrial and freshwater ecosystems to provide essential life-cycle resources (food, water, shelter, breeding sites) and suitable living conditions for a species to survive and reproduce. The suitability of a given wildlife habitat is determined by site-specific environmental variables that influence the occurrence and distribution of wildlife species. These include a wide range of biotic and abiotic variables, including the structure and composition of ecological communities within a given biogeoclimatic zone, soil moisture and nutrient levels, topographic position, temperature, slope aspect and solar insolation. ",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "habitat-suitability",
@@ -459,7 +459,7 @@
     },
     "structural-connectivity": {
       "title": "2.1.4 Structural Connectivity",
-      "description": "<strong>The physical arrangement and connectivity of habitat patches and natural landscape features</strong> (e.g., forests, water bodies) across a landscape, regardless of species-specific behaviour. <strong>Structural connectivity is crucial for biodiversity conservation</strong> because it offers <strong>essential physical pathways</strong> that allow wildlife to <strong>move freely</strong> to access <strong>food, shelter, and breeding sites</strong>. This movement supports <strong>genetic exchange</strong>, enhances <strong>ecosystem resilience to disturbances</strong>, enables species to <strong>adjust their ranges in response to climate change</strong>, and diminishes the <strong>negative effects of habitat fragmentation</strong>.",
+      "description": "The physical arrangement and connectivity of habitat patches and natural landscape features (e.g., forests, water bodies) across a landscape, regardless of species-specific behaviour. Structural connectivity is crucial for biodiversity conservation because it offers essential physical pathways that allow wildlife to move freely to access food, shelter, and breeding sites. This movement supports genetic exchange, enhances ecosystem resilience to disturbances, enables species to adjust their ranges in response to climate change, and diminishes the negative effects of habitat fragmentation.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "structural-connectivity",
@@ -469,7 +469,7 @@
     },
     "landscape-change": {
       "title": "2.2.1 Landscape Change",
-      "description": "<strong>Continuous and often nonlinear</strong> spatial and temporal shifts in <strong>ecosystem patterns and processes</strong> that are driven by <strong>natural events</strong>, as well as the <strong>cumulative impacts of human activities and climate change</strong>. The assessment of these <strong>dynamic landscape changes</strong> relies on <strong>remote sensing methods</strong> of earth observation, which track <strong>land use patterns</strong> at specific locations over time. Understanding these changes is essential for <strong>identifying the underlying causes of biodiversity loss</strong> and developing <strong>practical solutions</strong> to reduce these threats and improve <strong>ecosystem health and connectivity</strong>.",
+      "description": "Continuous and often nonlinear spatial and temporal shifts in ecosystem patterns and processes that are driven by natural events, as well as the cumulative impacts of human activities and climate change. The assessment of these dynamic landscape changes relies on remote sensing methods of earth observation, which track land use patterns at specific locations over time. Understanding these changes is essential for identifying the underlying causes of biodiversity loss and developing practical solutions to reduce these threats and improve ecosystem health and connectivity.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "landscape-change",
@@ -479,7 +479,7 @@
     },
     "urbanization": {
       "title": "2.2.2 Urbanization",
-      "description": "The <strong>conversion of natural wildland habitats</strong> into <strong>built environments</strong> to accommodate <strong>population growth and development</strong>. Examples include <strong>clearing land</strong> for residential neighbourhoods and businesses, <strong>agricultural use</strong>, <strong>resource extraction activities</strong>, and associated <strong>linear infrastructure</strong> such as roads, pipelines, and utility corridors. <strong>Direct physical consequences</strong> include the <strong>loss and fragmentation of wildland habitats</strong> and the <strong>disruption of natural ecological connectivity pathways</strong>. <strong>Indirect effects</strong> involve <strong>altered hydrology</strong> (e.g., stormwater runoff) and <strong>increased vulnerability</strong> to the spread of <strong>invasive species</strong> and <strong>biodiversity loss</strong>.",
+      "description": "The conversion of natural wildland habitats into built environments to accommodate population growth and development. Examples include clearing land for residential neighbourhoods and businesses, agricultural use, resource extraction activities, and associated linear infrastructure such as roads, pipelines, and utility corridors. Direct physical consequences include the loss and fragmentation of wildland habitats and the disruption of natural ecological connectivity pathways. Indirect effects involve altered hydrology (e.g., stormwater runoff) and increased vulnerability to the spread of invasive species and biodiversity loss.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "urbanization",
@@ -579,7 +579,7 @@
     },
     "mesic-vegetation": {
       "title": "2.3.3 Mesic Vegetation",
-      "description": "<strong>Plant communities</strong> that thrive in <strong>soils with higher moisture and nutrient content</strong> in areas of <strong>groundwater discharge</strong>. These include <strong>herbs and shrubs</strong> that occur in <strong>non-forested areas</strong> at mid- and lower-slope elevations and along <strong>valley bottoms</strong>. <strong>Fragmentation and loss</strong> of these habitats may lead to <strong>instability</strong> in the flow and provision of <strong>ecosystem functions</strong> (e.g., pollination, food provisioning), which are <strong>essential to a wide range of terrestrial species</strong>. It may also weaken an ecosystem's ability to <strong>cope with and adapt to disturbances</strong> caused by <strong>human activity and climate change</strong>.",
+      "description": "Plant communities that thrive in soils with higher moisture and nutrient content in areas of groundwater discharge. These include herbs and shrubs that occur in non-forested areas at mid- and lower-slope elevations and along valley bottoms. Fragmentation and loss of these habitats may lead to instability in the flow and provision of ecosystem functions (e.g., pollination, food provisioning), which are essential to a wide range of terrestrial species. It may also weaken an ecosystems ability to cope with and adapt to disturbances caused by human activity and climate change.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "mesic-vegetation",
@@ -589,7 +589,7 @@
     },
     "xeric-vegetation": {
       "title": "2.3.4 Xeric Vegetation",
-      "description": "<strong>Plant communities</strong> that thrive in <strong>soils with lower moisture and nutrient levels</strong>. These include <strong>shrublands</strong> in <strong>non-forested areas</strong> exposed to <strong>more sunlight</strong> and in <strong>drier biogeoclimatic zones</strong> of the eastern Coast Mountains. These habitats support <strong>species uniquely adapted to extreme climatic conditions</strong>. <strong>Fragmentation and loss</strong> of these habitats may cause <strong>severe disruption of ecosystem functions</strong>, <strong>desertification</strong>, and <strong>reduced capacity</strong> to cope with and adapt to <strong>disturbances</strong> caused by <strong>human activity and climate change</strong>.",
+      "description": "Plant communities that thrive in soils with lower moisture and nutrient levels. These include shrublands in non-forested areas exposed to more sunlight and in drier biogeoclimatic zones of the eastern Coast Mountains. These habitats support species that are uniquely adapted to extreme climatic conditions. Fragmentation and loss of these habitats may cause severe disruption of ecosystem functions, desertification, and reduce the capacity to cope with and adapt to disturbances caused by human activity and climate change.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "xeric-vegetation",
@@ -599,7 +599,7 @@
     },
     "regional-zones": {
       "title": "3.1.1 Regional Zones",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "The Regional Zone component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is a large geographic area defined by a unique combination of climate and physiographic factors, and the dominant plant species of its old-growth forests (e.g., Coastal Western Hemlock Zone). It provides the \"big picture\" framework for understanding how climate influences ecosystem development and species distribution, and allows for the development of large-scale conservation strategies, such as identifying representative ecosystems for protection and modelling the potential impacts of climate change on vegetation patterns. ",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "regional-zones",
@@ -609,7 +609,7 @@
     },
     "site-level-vegetation": {
       "title": "3.2.1 Site Level Vegetation",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "The Site Level component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is defined by unique combinations of understory vegetation, soil characteristics (e.g., moisture and nutrient content), and physiographic features that influence the structure and composition of ecological communities during successional growth stages following episodes of landscape disturbance.  Identifying and mapping the distribution of site-level vegetation is vital for practical conservation planning, as most on-the-ground management decisions, like tree species selection for reforestation or defining specific habitat management strategies, happen at this level. ",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "site-level-vegetation",
@@ -619,7 +619,7 @@
     },
     "mammals": {
       "title": "4.1.1 Mammals",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "Vertebrate animals of the class Mammalia are distinguished by having milk-producing mammary glands to nourish their young, a large neocortex region in the brain, body fur or hair for insulation, and three middle ear bones that amplify sound and greatly enhance hearing sensitivity. They are endothermic (warm-blooded), breathe air, and are quadrupedal, with most mammals using four limbs for land movement. More than 80 unique species are known to inhabit the southwest Coast Mountains, ranging in size from small ground squirrels to large-ranging grizzly bears.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "mammals",
@@ -629,7 +629,7 @@
     },
     "herptiles": {
       "title": "4.2.1 Herptiles",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "Herptiles are an informal group of vertebrates that includes both amphibians and reptiles found in both terrestrial and freshwater environments. Amphibians (Class Amphibia) are commonly characterized by a life cycle that features an aquatic larval stage with gills and a terrestrial adult stage with lungs. Reptiles (Class Reptilia) are air-breathing, ectothermic (cold-blooded) vertebrates with scaly skin, most of which lay eggs on land. Over 25 distinct species are documented in the southwest Coast Mountains, including various toads, frogs, salamanders, turtles, lizards, and snakes.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "herptiles",
@@ -639,7 +639,7 @@
     },
     "vascular-plants": {
       "title": "4.3.1 Vascular Plants",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "Vascular plants (Tracheophyta) have specialized vascular tissues (xylem and phloem) for transporting water and nutrients, allowing them to grow taller and more complex than non-vascular plants. They possess true roots, stems, and leaves. Types include trees, shrubs, grasses, flowering plants (angiosperms), and ferns, many of which produce seeds. Their ability to grow larger and access resources (sunlight, water, nutrients) gives them a competitive advantage, making them the dominant group in most terrestrial ecosystems. There are 60 distinct vascular plant species documented in the southwest Coast Mountains.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "vascular-plants",
@@ -649,7 +649,7 @@
     },
     "non-vascular-plants": {
       "title": "4.4.1 Non-Vascular Plants",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "Non-vascular plants, known informally as bryophytes, include various mosses, liverworts, and hornworts. They lack true vascular tissue, roots, stems, and leaves, and instead use hair-like rhizoids for anchoring and accessing water and nutrients. Bryophytes grow close to the ground, are typically found in moist environments, and reproduce through spores. They play a crucial role in ecological communities, acting as pioneer species that promote soil formation and regulate water and nutrient cycles. Over 280 unique bryophyte species have been documented in the southwest Coast Mountains.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "non-vascular-plants",
@@ -659,7 +659,7 @@
     },
     "macrorefugia": {
       "title": "5.1.1 MacroRefugia",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "Macrorefugia are large geographical regions, such as entire mountain ranges or vast forest systems, that serve as long-term sanctuaries and offer a broad spectrum of buffered environmental conditions across the landscape. Their main function is to maintain large, viable populations and support ecosystem-level processes, enabling adaptation through genetic diversity and species migration over time. In the southern Coast Mountains, these include higher elevation slopes and mountain ranges, large intact watersheds, riparian corridors and associated wetlands, and extensive old-growth forests.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "macrorefugia",
@@ -669,7 +669,7 @@
     },
     "microrefugia": {
       "title": "5.2.1 MicroRefugia",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "Microrefugia are much smaller, localized \"safe spots,\" potentially just a cool, moist slope or a shaded canyon bottom, defined by highly localized variations in topography or hydrology. They enable the short-term persistence of sensitive species by providing immediate shelter from extreme conditions and serving as critical stepping stones for survival across otherwise inhospitable areas. In the southern Coast Mountains, these include north-facing slopes and shaded ravines, groundwater-fed springs and perennial streams, and topographic depressions where dense cool air flows downslope, creating cooler pockets of buffered habitat.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "microrefugia",
@@ -679,7 +679,7 @@
     },
     "priority-linkages": {
       "title": "6.1.1 Priority Linkages",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "Modelled pathways of ecological connectivity that provide the most efficient movement corridors for wildlife and gene flow across the widest range of species. These pathways identify areas of least resistance for animals and plants to move between protected areas and other high-value habitats, including core and stepping-stone patches found in fragmented landscapes at lower elevations and in valley bottoms. Mapping these movement corridors helps guide the development of practical conservation solutions that deliver the greatest benefits for vulnerable plants and animals.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "priority-linkages",
@@ -689,7 +689,7 @@
     },
     "climate-corridors": {
       "title": "6.3.1 Climate Corridors",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "Defined geographical areas of natural habitat, riparian zones (areas along rivers or streams), or mountain ranges, that connect larger patches of suitable wildland habitat. They are used to develop conservation strategies to mitigate the effects of a warming climate by providing physical routes for plants and animals to migrate to more suitable, cooler environments (e.g., higher latitudes or elevations). They are a practical, on-the-ground approach to reducing habitat fragmentation and encouraging species dispersal, aiming to build landscape resilience in the southern Coast Mountains.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "climate-corridors",
@@ -899,7 +899,7 @@
     },
     "barriers": {
       "title": "8.4.1 Barriers",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "Landscape features that prevent or severely restrict movement, fragmenting habitats and isolating populations. These can be natural (e.g., large rivers, mountain ranges) but are often human-made structures, such as major roads, clusters of buildings, fences, and agricultural clearings. Barriers are modelled as areas of high resistance to movement within a landscape resistance surface, effectively identifying where connectivity linkages are broken or severely compromised. Specific interventions can include installing wildlife crossings (overpasses and underpasses) on roads, removing unnecessary fences, and restoring habitat within narrow corridor sections.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "barriers",
@@ -909,7 +909,7 @@
     },
     "pinchpoints": {
       "title": "8.5.1 Pinchpoints",
-      "description": "Sub-theme used as indicator. Waiting description.",
+      "description": "Narrow landscape features that restrict or hinder wildlife movement within an otherwise continuous ecological network. Natural pinch points include sudden topographic changes, such as steep ravines or channelized creeks. Human-made pinch points include fencing that physically guides larger mammals into narrow movement paths, and crossing structures, such as culverts and underpasses, that direct the movement of smaller mammals and herptiles across roads and other linear infrastructure features.  Mitigating the adverse effects of these pinch points requires harmonizing land-use policies across jurisdictional boundaries.",
       "source": "<a target='_blank' href='https://newdev.naturesquamish.ca'>Source</a>",
       "unit_of_measure": "kg/m^2",
       "posts": "pinchpoints",
@@ -918,4 +918,7 @@
       "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
     }
   }
- }
+}
+
+
+      
