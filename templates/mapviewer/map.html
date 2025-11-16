@@ -352,6 +352,23 @@
             letter-spacing: 0.5px;
         }
 
+        .indicator-meta-head {
+          margin-top: 10px; /* needed to override the h2 styles */
+          font-size: 11px;
+          font-weight: 600;
+          color: #6b7280;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .indicator-meta-body {
+          margin-top: 10px; /* needed to override the h2 styles */
+          font-size: 11px;
+          color: #6b7280;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
         /* Icon Base Styles */
         .indicator-icon,
         .theme-icon {
@@ -1137,6 +1154,8 @@
                                             map1_url: '{{ indicator.map1_url|default:''|escapejs }}',
                                             map2_url: '{{ indicator.map2_url|default:''|escapejs }}',
                                             posts: '{{ indicator.posts|default:''|escapejs }}',
+                                            source: '{{ indicator.source|default:''|escapejs }}',
+                                            unit_of_measure: '{{ indicator.unit_of_measure|default:''|escapejs }}',
                                             theme: '{{ theme.id|escapejs }}'  // Add theme ID to each indicator
                                         }{% if not forloop.last %},{% endif %}
                                     {% endwith %}
@@ -1505,14 +1524,25 @@
                 
                 // Update indicator info box
                 const indicatorInfo = document.querySelector('.indicator-info');
+                let unitsHtml = indicator.unit_of_measure ? `<span class="indicator-meta-head"><strong>Units:</strong></span><span class="indicator-meta-body"> ${indicator.unit_of_measure}  |  </span>` : '';
+                let sourceHtml = indicator.source ? `<span class="indicator-meta-head"><strong>Source:</strong></span><span class="indicator-meta-body"> ${indicator.source}</span>` : '';
+                let metaHtml = '';
+                
+                if (indicator.source || indicator.unit_of_measure) {
+                    metaHtml = `<div class="indicator-meta-container">${unitsHtml}${sourceHtml}</div>`;
+                }
+                
                 indicatorInfo.innerHTML = `
-                    <div class="info-box-title">Indicator Information</div>
-                    <div class="indicator-icon">
-                        <i class="fas ${indicator.icon} indicator-icon"></i>
+                    <div class="info-box-header">
+                        <div class="info-box-title">Indicator Information</div>
+                        <div class="indicator-icon">
+                            <i class="fas ${indicator.icon} indicator-icon"></i>
+                        </div>
                     </div>
                     <div class="text-content">
                         <h2 class="indicator-title">${indicator.title}</h2>
                         <p class="indicator-description">${indicator.description}</p>
+                        <div class="meta-info">${metaHtml}</div>
                     </div>`;
                 
                 // Find and update the current theme based on the indicator's theme ID
