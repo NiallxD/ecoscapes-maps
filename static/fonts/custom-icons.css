@@ -1,7 +1,7 @@
 @font-face {
     font-family: "custom-icons";
-    src: url("/static/fonts/custom-icons.woff2?d36cae848cb97bba6d1bd5ef879d22ac") format("woff2"),
-url("/static/fonts/custom-icons.woff?d36cae848cb97bba6d1bd5ef879d22ac") format("woff");
+    src: url("/static/fonts/custom-icons.woff2?9d6fcf708c890170097d8bddb23f014c") format("woff2"),
+url("/static/fonts/custom-icons.woff?9d6fcf708c890170097d8bddb23f014c") format("woff");
 }
 
 .icon:before {

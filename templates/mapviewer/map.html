@@ -297,7 +297,7 @@
 
         /* ===== Info Box Components ===== */
 
-        /* Two Column Section Styling */
+        /* Three Column Section Styling */
         .three-column-section {
             display: flex;
             align-items: stretch;
@@ -307,6 +307,7 @@
             min-height: 0;
             height: auto;
         }
+
         .column-left, .column-middle, .column-right {
             flex: 1;
             min-width: 0;
@@ -328,29 +329,30 @@
         }
 
         /* Container Styles */
-        .indicator-info,
-        .theme-info,
-        .subtheme-info {
+        .indicator-info, .theme-info, .subtheme-info {
             display: flex;
-            gap: 10px;
-            align-items: center;
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 20px;
             width: 100%;
-            padding: 0;
+            padding: 25px 20px 15px;
             margin: 0;
-            min-height: 2.5em;
+            min-height: 120px;
             position: relative;
-            padding-top: 15px;
+            text-align: left;
         }
         
         .info-box-title {
             position: absolute;
-            top: -5px;
-            left: 0px;
+            top: 5px;
+            left: 0;
+            right: 0;
             font-size: 11px;
             font-weight: 600;
             color: #6b7280;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            padding: 0 5px;
         }
 
         .indicator-meta-head {
@@ -370,31 +372,41 @@
           letter-spacing: 0.5px;
         }
 
-        /* Icon Base Styles */
-        .indicator-icon,
-        .theme-icon,
-        .subtheme-icon {
-            font-size: 3.5em;
-            color: #4CAF50;
-            margin: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-            opacity: 0.9;
-            flex-shrink: 0;
-            line-height: 1;
-        }
+            /* Icon Base Styles */
+            .indicator-icon,
+            .theme-icon,
+            .subtheme-icon {
+              font-size: 100px;       /* controls size */
+              color: #4CAF50;
+              margin: 0;
+              display: inline-block;  /* or inline-flex if needed */
+              line-height: 1;         /* keep line box stable */
+              vertical-align: middle; /* keeps it aligned with text */
+              transition: all 0.2s ease;
+              opacity: 0.9;
+              flex-shrink: 0;
+              min-width: 60px;
+            }
 
-        /* Nested Icons */
-        .indicator-icon i,
-        .theme-icon i {
-            font-size: 1em;
-            line-height: inherit;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+
+            /* Nested Icons */
+            .indicator-icon i,
+            .theme-icon i,
+            .subtheme-icon i {
+                font-size: 1em;
+                line-height: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .subtheme-icon i::before {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: 100%;
+            }
 
         /* Hover Effects */
         .indicator-info:hover .indicator-icon,
@@ -411,12 +423,11 @@
             justify-content: center;
             padding: 0;
             min-width: 0;
+            text-align: left;
         }
 
         /* Title Styles */
-        .indicator-title,
-        .theme-title,
-        .subtheme-title {
+        .indicator-title, .theme-title, .subtheme-title {
             margin: 0; /* needed to override the h2 styles */
             color: #1a365d;
             font-size: 1.5em;
@@ -424,9 +435,7 @@
             line-height: 1.3;
         }
         /* Description Styles */
-        .indicator-description,
-        .theme-description,
-        .subtheme-description {
+        .indicator-description, .theme-description, .subtheme-description {
             margin: 0;
             color: #4a5568;
             line-height: 1.6;
