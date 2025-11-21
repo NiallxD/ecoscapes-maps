@@ -41,7 +41,28 @@ class Command(BaseCommand):
             self.stdout.write(f'Copying static files from {static_files_dir} to {static_dir}...')
             if os.path.exists(static_dir):
                 shutil.rmtree(static_dir)
-            shutil.copytree(static_files_dir, static_dir, dirs_exist_ok=True)
+            
+            # Copy all files except the fonts directory first
+            for item in os.listdir(static_files_dir):
+                if item != 'fonts':
+                    src = os.path.join(static_files_dir, item)
+                    dst = os.path.join(static_dir, item)
+                    if os.path.isdir(src):
+                        shutil.copytree(src, dst, dirs_exist_ok=True)
+                    else:
+                        shutil.copy2(src, dst)
+            
+            # Copy fonts directory with all its contents
+            fonts_src = os.path.join(static_files_dir, 'fonts')
+            if os.path.exists(fonts_src):
+                fonts_dest = os.path.join(static_dir, 'fonts')
+                os.makedirs(fonts_dest, exist_ok=True)
+                for font_file in os.listdir(fonts_src):
+                    shutil.copy2(
+                        os.path.join(fonts_src, font_file),
+                        os.path.join(fonts_dest, font_file)
+                    )
+                self.stdout.write(self.style.SUCCESS('Copied font files'))
         
         # Create a request factory
         self.factory = RequestFactory()
