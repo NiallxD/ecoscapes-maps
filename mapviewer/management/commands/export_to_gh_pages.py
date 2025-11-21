@@ -35,6 +35,14 @@ class Command(BaseCommand):
         output_dir.mkdir(parents=True, exist_ok=True)
         static_dir.mkdir(parents=True, exist_ok=True)
         
+        # Copy static files including fonts
+        static_files_dir = settings.STATIC_ROOT if hasattr(settings, 'STATIC_ROOT') else settings.BASE_DIR / 'static'
+        if os.path.exists(static_files_dir):
+            self.stdout.write(f'Copying static files from {static_files_dir} to {static_dir}...')
+            if os.path.exists(static_dir):
+                shutil.rmtree(static_dir)
+            shutil.copytree(static_files_dir, static_dir, dirs_exist_ok=True)
+        
         # Create a request factory
         self.factory = RequestFactory()
         

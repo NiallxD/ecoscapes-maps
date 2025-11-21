@@ -47,10 +47,18 @@ jobs:
         mkdir -p static
         touch static/.gitkeep
     
-    - name: Run export script
+    - name: Collect static files
       run: |
         python manage.py collectstatic --noinput
+        
+    - name: Export to GitHub Pages
+      run: |
         python manage.py export_to_gh_pages
+        
+        # Ensure static files are in the correct location
+        mkdir -p docs/static
+        cp -r staticfiles/* docs/static/ 2>/dev/null || true
+        cp -r static/* docs/static/ 2>/dev/null || true
     
     - name: Create .nojekyll file
       run: touch docs/.nojekyll

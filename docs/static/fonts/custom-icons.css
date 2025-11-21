@@ -1,7 +1,7 @@
 @font-face {
     font-family: "custom-icons";
-    src: url("custom-icons.woff2?7f0f03ec5f12d391b4afe28fda9d1865") format("woff2"),
-url("custom-icons.woff?7f0f03ec5f12d391b4afe28fda9d1865") format("woff");
+    src: url("/static/fonts/custom-icons.woff2?9d6fcf708c890170097d8bddb23f014c") format("woff2"),
+url("/static/fonts/custom-icons.woff?9d6fcf708c890170097d8bddb23f014c") format("woff");
 }
 
 .icon:before {
@@ -15,9 +15,267 @@ url("custom-icons.woff?7f0f03ec5f12d391b4afe28fda9d1865") format("woff");
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon.icon-question:before {
+.icon.icon-yellow-pine-chipmunk:before {
     content: "\f101";
 }
-.icon.icon-donut:before {
+.icon.icon-xeric-vegetation:before {
     content: "\f102";
+}
+.icon.icon-wolverine:before {
+    content: "\f103";
+}
+.icon.icon-wildlife-corridors:before {
+    content: "\f104";
+}
+.icon.icon-wildfire:before {
+    content: "\f105";
+}
+.icon.icon-who-we-are:before {
+    content: "\f106";
+}
+.icon.icon-what-we-do:before {
+    content: "\f107";
+}
+.icon.icon-wetland-riparian:before {
+    content: "\f108";
+}
+.icon.icon-western-toad:before {
+    content: "\f109";
+}
+.icon.icon-vascular-plants:before {
+    content: "\f10a";
+}
+.icon.icon-urbanization:before {
+    content: "\f10b";
+}
+.icon.icon-story-telling:before {
+    content: "\f10c";
+}
+.icon.icon-stewardship-guide:before {
+    content: "\f10d";
+}
+.icon.icon-species-occurrences:before {
+    content: "\f10e";
+}
+.icon.icon-small-range-species:before {
+    content: "\f10f";
+}
+.icon.icon-small-range-corridors:before {
+    content: "\f110";
+}
+.icon.icon-site-level-vegetation:before {
+    content: "\f111";
+}
+.icon.icon-resistance-to-movement:before {
+    content: "\f112";
+}
+.icon.icon-red-legged-frog:before {
+    content: "\f113";
+}
+.icon.icon-question:before {
+    content: "\f114";
+}
+.icon.icon-priority-linkages:before {
+    content: "\f115";
+}
+.icon.icon-planning-guide:before {
+    content: "\f116";
+}
+.icon.icon-pinchpoints:before {
+    content: "\f117";
+}
+.icon.icon-pacific-tree-frog:before {
+    content: "\f118";
+}
+.icon.icon-pacific-fisher:before {
+    content: "\f119";
+}
+.icon.icon-open-data-portal:before {
+    content: "\f11a";
+}
+.icon.icon-northwest-salamander:before {
+    content: "\f11b";
+}
+.icon.icon-mountain-goat:before {
+    content: "\f11c";
+}
+.icon.icon-moderate-range-species:before {
+    content: "\f11d";
+}
+.icon.icon-moderate-range-corridors:before {
+    content: "\f11e";
+}
+.icon.icon-mission:before {
+    content: "\f11f";
+}
+.icon.icon-micro-refugia:before {
+    content: "\f120";
+}
+.icon.icon-mammals:before {
+    content: "\f121";
+}
+.icon.icon-macro-refugia:before {
+    content: "\f122";
+}
+.icon.icon-long-toed-salamander:before {
+    content: "\f123";
+}
+.icon.icon-local-knowledge:before {
+    content: "\f124";
+}
+.icon.icon-linear-infrastructure:before {
+    content: "\f125";
+}
+.icon.icon-learning-resources:before {
+    content: "\f126";
+}
+.icon.icon-large-range-species:before {
+    content: "\f127";
+}
+.icon.icon-large-range-corridors:before {
+    content: "\f128";
+}
+.icon.icon-land-cover:before {
+    content: "\f129";
+}
+.icon.icon-invasive-species:before {
+    content: "\f12a";
+}
+.icon.icon-human-footprint:before {
+    content: "\f12b";
+}
+.icon.icon-how-to-contribute:before {
+    content: "\f12c";
+}
+.icon.icon-hoary-marmot:before {
+    content: "\f12d";
+}
+.icon.icon-herptiles:before {
+    content: "\f12e";
+}
+.icon.icon-habitat-threats:before {
+    content: "\f12f";
+}
+.icon.icon-habitat-suitability:before {
+    content: "\f130";
+}
+.icon.icon-habitat-restoration:before {
+    content: "\f131";
+}
+.icon.icon-habitat-protection:before {
+    content: "\f132";
+}
+.icon.icon-habitat-losses:before {
+    content: "\f133";
+}
+.icon.icon-habitat-connectivity:before {
+    content: "\f134";
+}
+.icon.icon-grizzly-bear:before {
+    content: "\f135";
+}
+.icon.icon-garter-snake:before {
+    content: "\f136";
+}
+.icon.icon-forest-types:before {
+    content: "\f137";
+}
+.icon.icon-forest-thinning:before {
+    content: "\f138";
+}
+.icon.icon-fores-harvest:before {
+    content: "\f139";
+}
+.icon.icon-ensatina-salamander:before {
+    content: "\f13a";
+}
+.icon.icon-emvironmental-education:before {
+    content: "\f13b";
+}
+.icon.icon-effective-means:before {
+    content: "\f13c";
+}
+.icon.icon-ecosystem-services:before {
+    content: "\f13d";
+}
+.icon.icon-ecosystem-resilience:before {
+    content: "\f13e";
+}
+.icon.icon-ecosystem-integrity:before {
+    content: "\f13f";
+}
+.icon.icon-ecosystem-health:before {
+    content: "\f140";
+}
+.icon.icon-ecological-connectivity:before {
+    content: "\f141";
+}
+.icon.icon-douglass-squirell:before {
+    content: "\f142";
+}
+.icon.icon-consequences:before {
+    content: "\f143";
+}
+.icon.icon-connectivity-overlay:before {
+    content: "\f144";
+}
+.icon.icon-connectivity-network:before {
+    content: "\f145";
+}
+.icon.icon-connectivity-conservation:before {
+    content: "\f146";
+}
+.icon.icon-community-mapping:before {
+    content: "\f147";
+}
+.icon.icon-climate-corridors:before {
+    content: "\f148";
+}
+.icon.icon-climate-change:before {
+    content: "\f149";
+}
+.icon.icon-climate-change-refugia:before {
+    content: "\f14a";
+}
+.icon.icon-citizen-science:before {
+    content: "\f14b";
+}
+.icon.icon-canada-lynx:before {
+    content: "\f14c";
+}
+.icon.icon-bryophytes:before {
+    content: "\f14d";
+}
+.icon.icon-black-tailed-deer:before {
+    content: "\f14e";
+}
+.icon.icon-black-bear:before {
+    content: "\f14f";
+}
+.icon.icon-biogeoclimatic-realms:before {
+    content: "\f150";
+}
+.icon.icon-biodiversity:before {
+    content: "\f151";
+}
+.icon.icon-biodiversity-conservation:before {
+    content: "\f152";
+}
+.icon.icon-barriers:before {
+    content: "\f153";
+}
+.icon.icon-aligator-lizard:before {
+    content: "\f154";
+}
+.icon.icon-agricultural-use:before {
+    content: "\f155";
+}
+.icon.icon-actionable-solutions:before {
+    content: "\f156";
+}
+.icon.icon-about:before {
+    content: "\f157";
+}
+.icon.icon-EcoScapes:before {
+    content: "\f158";
 }

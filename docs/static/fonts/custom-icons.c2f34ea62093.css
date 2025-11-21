@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "custom-icons";
+    src: url("custom-icons.6b019ea8fa3c.woff2?7f0f03ec5f12d391b4afe28fda9d1865") format("woff2"),
+         url("custom-icons.837e87886ecf.woff?7f0f03ec5f12d391b4afe28fda9d1865") format("woff");
+    font-display: block;
+}
+
+.icon:before {
+    font-family: custom-icons !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon.icon-question:before {
+    content: "\f101";
+}
+.icon.icon-donut:before {
+    content: "\f102";
+}
