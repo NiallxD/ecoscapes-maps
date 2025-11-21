@@ -1428,6 +1428,20 @@
                         </div>`;
                 }
                 
+                // Reset subtheme info box to default state
+                const subthemeInfo = document.querySelector('.subtheme-info');
+                if (subthemeInfo) {
+                    subthemeInfo.innerHTML = `
+                        <div class="info-box-title">Sub-theme Information</div>
+                        <div class="subtheme-icon">
+                            <i class="icon icon-question"></i>
+                        </div>
+                        <div class="text-content">
+                            <h2 class="subtheme-title">Select a Sub-theme</h2>
+                            <p class="subtheme-description">Choose a sub-theme from the dropdown above to view its details.</p>
+                        </div>`;
+                }
+                
                 closeAllDropdowns();
             }
 
