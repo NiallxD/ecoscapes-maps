@@ -41,30 +41,88 @@
           font-size: 1.1em;
         }
         
-        /* Two column section with transition */
-        .three-column-section {
-          transition: all 0.3s ease;
+        /* App container: two-column layout */
+        .two-column {
+          display: grid;
+          grid-template-columns: 35% 65%; /* 35% info column, 65% map */
+          grid-template-rows: 1fr; /* Take up remaining space */
+          gap: 20px;
+          height: calc(100vh - 110px); /* Account for header height */
+          box-sizing: border-box;
           position: relative;
-          z-index: 1;
-          height: auto;
-          overflow: visible;
+          overflow: hidden;
+          width: 100%;
         }
-        
-        .three-column-section.hidden {
-          height: 0;
-          opacity: 0;
-          visibility: hidden;
-          margin: 0;
-          padding: 0;
-          transform: none;
-        }
-        
-        /* Map container adjustments */
-        .map-container {
-          transition: all 0.3s ease;
+
+        /* Info column styles */
+        .info-column {
+          width: 100%;
+          max-width: 100%;
+          overflow-x: hidden;
+          overflow-y: auto;
+          padding-right: 10px;
+          transition: transform 0.2s ease-in-out;
+          will-change: transform;
           position: relative;
+          background: white;
           z-index: 2;
+          height: 100%;
         }
+
+        /* When collapsed, slide the info column out of view */
+        .two-column.collapsed {
+          grid-template-columns: 0 1fr; /* Use 1fr to take remaining space */
+        }
+
+        .two-column.collapsed .info-column {
+          transform: translateX(-100%);
+          padding-right: 0;
+        }
+
+        /* Map container takes remaining space */
+        .map-container {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          min-width: 0; /* Allows the map to shrink below its content size */
+          transition: margin-left 0.3s ease-in-out;
+          overflow: hidden; /* Prevent any content from overflowing */
+        }
+        
+        /* When info column is collapsed, let map take full width */
+        .two-column.collapsed .map-container {
+          width: 100%;
+          grid-column: 1 / -1; /* Make map span full width */
+        }
+        
+        /* Map container takes remaining space */
+        .map-container {
+          width: 100%;
+          height: 100%;
+          min-width: 0; /* Allows the map to shrink below its content size */
+        }
+
+        /* Three-column-section: stack info boxes vertically in left column */
+        .three-column-section {
+          display: flex;
+          flex-direction: column; /* stack children */
+          gap: 15px;
+          grid-column: 1; /* place in left column of grid */
+          margin-bottom: 0; /* remove bottom margin since map is beside */
+          height: auto;
+        }
+
+        /* Map container: fills the right column */
+        .map-container {
+          grid-column: 2; /* place in right column of grid */
+          width: 100%;
+          height: 100%; /* stretch to full height of app-container */
+          position: relative;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
         
         .three-column-section:not(.hidden) + .map-container {
           margin-top: 20px;
@@ -300,6 +358,7 @@
         /* Three Column Section Styling */
         .three-column-section {
             display: flex;
+            flex-wrap: wrap;
             align-items: stretch;
             margin-bottom: 20px;
             gap: 15px;
@@ -309,17 +368,24 @@
         }
 
         .column-left, .column-middle, .column-right {
-            flex: 1;
+            flex: 1 1 100%;
             min-width: 0;
-            min-height: 100%;
             display: flex;
             flex-direction: column;
             background: white;
             border-radius: 20px;
-            padding: 15px;
+            padding: 20px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
             box-sizing: border-box;
         }
+
+        .info-column {
+          display: flex;
+          flex-direction: column;
+          gap: 20px; /* space between cards */
+        }
+
+
         body, html {
             margin: 0;
             padding: 0;
@@ -328,31 +394,56 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Container Styles */
-        .indicator-info, .theme-info, .subtheme-info {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 20px;
-            width: 100%;
-            padding: 25px 20px 15px;
-            margin: 0;
-            min-height: 120px;
-            position: relative;
-            text-align: left;
+        /* Info box containers: row with icon + text */
+        .theme-info,
+        .subtheme-info,
+        .indicator-info {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          width: 100%;
+          margin: 0;
+          min-height: 140px;
+          position: relative;
+          text-align: left;
         }
         
+        .info-box-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;  /* Align items to top */
+          width: 100%;
+          position: relative;
+          z-index: 2;  /* Ensure header content stays above the icon */
+          max-height: 25px;
+        }
+        
+        /* Ensure the title has enough right padding to not be covered by the icon */
         .info-box-title {
-            position: absolute;
-            top: 5px;
-            left: 0;
-            right: 0;
+          padding-right: 50px;  /* Make room for the icon */
+          position: relative;
+          z-index: 2;  /* Ensure title stays above the icon */
+        }
+
+        /* Text block: align with icon top, add slight offset */
+        .text-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          min-width: 0;
+          text-align: left;
+        }
+
+
+        
+        .info-box-title {
             font-size: 11px;
             font-weight: 600;
             color: #6b7280;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            padding: 0 5px;
+            margin: 0;
         }
 
         .indicator-meta-head {
@@ -376,16 +467,20 @@
             .indicator-icon,
             .theme-icon,
             .subtheme-icon {
-              font-size: 100px;       /* controls size */
+              font-size: 50px;       /* Increased size */
               color: #4CAF50;
               margin: 0;
-              display: inline-block;  /* or inline-flex if needed */
-              line-height: 1;         /* keep line box stable */
-              vertical-align: middle; /* keeps it aligned with text */
+              display: flex;
+              align-items: flex-start; /* Align to top */
+              justify-content: center;
               transition: all 0.2s ease;
               opacity: 0.9;
-              flex-shrink: 0;
-              min-width: 60px;
+              width: 60px;           /* Increased width */
+              height: 70px;          /* Increased height to allow overflow */
+              margin-top: 0px;     /* Pull up slightly into the header */
+              margin-right: 0px;    /* Pull right slightly */
+              position: relative;    /* For z-index */
+              z-index: 1;            /* Ensure icon stays above other elements */
             }
 
 
@@ -413,17 +508,6 @@
         .theme-info:hover .theme-icon {
             opacity: 1;
             transform: translateY(-1px);
-        }
-
-        /* Text Content */
-        .text-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0;
-            min-width: 0;
-            text-align: left;
         }
 
         /* Title Styles */
@@ -798,6 +882,7 @@
             opacity: 1;
             pointer-events: auto;
         }
+
     </style>
 <base href="./">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -858,92 +943,112 @@
           <i class="fas fa-info-circle"></i> Toggle Info
         </button>
       </div>
-
-        <div class="three-column-section">
-            <div class="column-left">
-              <div class="theme-info">
+      <div class="two-column">
+        <div class="info-column">
+          <div class="column-left">
+            <div class="theme-info">
+              <div class="info-box-header">
                 <div class="info-box-title">Theme Information</div>
                 <div class="theme-icon">
                   <i class="icon icon-question"></i>
                 </div>
-                <div class="text-content">
-                  <h2 class="theme-title">Select a Theme</h2>
-                  <p class="theme-description">Choose a theme from the dropdown to view its details.</p>
-                </div>
+              </div>
+              <div class="text-content">
+                <h2 class="theme-title">Select a Theme</h2>
+                <p class="theme-description">Choose a theme from the dropdown to view its details.</p>
               </div>
             </div>
-            <div class="column-middle">
-              <div class="subtheme-info">
+          </div>
+          <div class="column-middle">
+            <div class="subtheme-info">
+              <div class="info-box-header">
                 <div class="info-box-title">Sub-theme Information</div>
                 <div class="subtheme-icon">
                   <i class="icon icon-question"></i>
                 </div>
-                <div class="text-content">
-                  <h2 class="subtheme-title">Select a Sub-theme</h2>
-                  <p class="subtheme-description">Choose a sub-theme from the dropdown to view its details.</p>
-                </div>
+              </div>
+              <div class="text-content">
+                <h2 class="subtheme-title">Select a Sub-theme</h2>
+                <p class="subtheme-description">Choose a sub-theme from the dropdown to view its details.</p>
               </div>
             </div>
-            <div class="column-right">
-              <div class="indicator-info">
+          </div>
+          <div class="column-right">
+            <div class="indicator-info">
+              <div class="info-box-header">
                 <div class="info-box-title">Indicator Information</div>
                 <div class="indicator-icon">
                   <i class="icon icon-question"></i>
                 </div>
-                <div class="text-content">
-                  <h2 class="indicator-title">Select an Indicator</h2>
-                  <p class="indicator-description">Choose a theme and sub-theme first, then select an indicator to view its details.</p>
-                </div>
+              </div>
+              <div class="text-content">
+                <h2 class="indicator-title">Select an Indicator</h2>
+                <p class="indicator-description">Choose an indicator from the dropdown to view its details and related data.</p>
               </div>
             </div>
+          </div>
         </div>
-    </div>
 
-      <!-- Map Section -->
-        <div class="map-container">
-          <div id="mapPlaceholder" class="map-placeholder">
-            <div class="placeholder-content">
-              <i class="fas fa-map-marked-alt" style="font-size: 3em; margin-bottom: 20px; color: #4CAF50;"></i>
-              <h3>Select a Sub-theme and Indicator</h3>
-              <p>Please choose a sub-theme from the dropdown menu above, then select an indicator to view the map.</p>
+        <!-- Right column: map -->
+        <div class="map-column">
+          <div class="map-container">
+            <div id="mapPlaceholder" class="map-placeholder">
+              <div class="placeholder-content">
+                <i class="fas fa-map-marked-alt" style="font-size: 3em; margin-bottom: 20px; color: #4CAF50;"></i>
+                <h3>Select a Sub-theme and Indicator</h3>
+                <p>Please choose a sub-theme from the dropdown menu above, then select an indicator to view the map.</p>
+              </div>
             </div>
+            <div id="loadingSpinner" class="loading-spinner">
+              <div class="spinner"></div>
+              <p style="text-align: center; color: #4CAF50; font-weight: 500; margin-top: 15px;">Loading map data...</p>
+            </div>
+            <iframe id="map1" class="map-iframe" src="" style="display: none;"></iframe>
+            <iframe id="map2" class="map-iframe" src="" style="display: none;"></iframe>
           </div>
-          <div id="loadingSpinner" class="loading-spinner">
-            <div class="spinner"></div>
-            <p style="text-align: center; color: #4CAF50; font-weight: 500; margin-top: 15px;">Loading map data...</p>
-          </div>
-          <iframe id="map1" class="map-iframe" src="" style="display: none;"></iframe>
-          <iframe id="map2" class="map-iframe" src="" style="display: none;"></iframe>
         </div>
+      </div>
 
       <script>
         // Toggle info box functionality
         document.addEventListener('DOMContentLoaded', function() {
-          const toggleBtn = document.getElementById('toggleInfoBox');
-          const infoBox = document.querySelector('.three-column-section');
-          
-          // Load saved preference or default to visible
-          const isInfoVisible = localStorage.getItem('infoBoxVisible') !== 'false';
-          if (!isInfoVisible) {
-            infoBox.classList.add('hidden');
-            toggleBtn.classList.add('collapsed');
-          }
-          
-          toggleBtn.addEventListener('click', function() {
-            infoBox.classList.toggle('hidden');
-            const isNowHidden = infoBox.classList.contains('hidden');
-            localStorage.setItem('infoBoxVisible', !isNowHidden);
+            const toggleInfoBox = document.getElementById('toggleInfoBox');
+            const twoColumnLayout = document.querySelector('.two-column');
+            const infoColumn = document.querySelector('.info-column');
+            const mapContainer = document.querySelector('.map-container');
+            const toggleIcon = toggleInfoBox.querySelector('i');
+
+            // Toggle the info box
+            toggleInfoBox.addEventListener('click', () => {
+                // Toggle the 'collapsed' class on the two-column layout
+                twoColumnLayout.classList.toggle('collapsed');
+                
+                // Toggle between chevron icons and update the tooltip
+                const isCollapsed = twoColumnLayout.classList.contains('collapsed');
+                toggleIcon.className = isCollapsed ? 'fas fa-chevron-right' : 'fas fa-chevron-left';
+                toggleInfoBox.title = isCollapsed ? 'Show Info Box' : 'Hide Info Box';
+                
+                // Force map resize after a small delay to ensure the container has resized
+                const resizeMaps = () => {
+                    if (window.map1) window.map1.invalidateSize();
+                    if (window.map2) window.map2.invalidateSize();
+                };
+                
+                // Trigger resize events with a small delay to ensure DOM has updated
+                setTimeout(resizeMaps, 10);
+                setTimeout(resizeMaps, 100);
+                
+                // Also trigger window resize for any other elements that might need it
+                setTimeout(() => window.dispatchEvent(new Event('resize')), 10);
+            });
             
-            // Toggle icon and text
-            const icon = this.querySelector('i');
-            if (isNowHidden) {
-              icon.className = 'fas fa-chevron-down';
-              this.title = 'Show Info Box';
-            } else {
-              icon.className = 'fas fa-info-circle';
-              this.title = 'Hide Info Box';
-            }
-          });
+            // Initial map resize after everything is loaded
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    if (window.map1) window.map1.invalidateSize();
+                    if (window.map2) window.map2.invalidateSize();
+                }, 100);
+            });
         });
         
         // Define Dropdown class first
@@ -1399,8 +1504,8 @@
                                             title: '8.3.8 Ensatina Salamander',
                                             description: 'The Ensatina salamander is a small, lungless amphibian with smooth skin and a constricted tail base. Its coloration varies from reddish\u002Dbrown to orange or gray, often with mottled patterns. Unlike many amphibians, Ensatinas do not have an aquatic larval stage, they hatch directly from eggs laid in moist terrestrial microhabitats. These salamanders breathe through their skin and require cool, damp environments to survive. They are nocturnal and secretive, sheltering under logs, leaf litter, and rocks during the day.',
                                             icon: 'icon\u002Densatina\u002Dsalamander',
-                                            map1_url: '',
-                                            map2_url: '',
+                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
@@ -1414,8 +1519,8 @@
                                             title: '8.3.9 Northwestern Salamander',
                                             description: 'The Northwestern salamander is a secretive amphibian with smooth brown skin and large parotoid glands behind the eyes. Adults are terrestrial, while larvae and juvenile individuals remain aquatic. They breed in still or slow\u002Dmoving water, laying egg masses attached to submerged vegetation. After metamorphosis, juveniles disperse into moist forest habitats, often sheltering under logs, leaf litter, or in burrows. These salamanders are long\u002Dlived and sensitive to habitat disturbance, especially changes in moisture and temperature.',
                                             icon: 'icon\u002Dnorthwest\u002Dsalamander',
-                                            map1_url: '',
-                                            map2_url: '',
+                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
@@ -1429,8 +1534,8 @@
                                             title: '8.3.10 Long\u002DToed Salamander',
                                             description: 'The long\u002Dtoed salamander is a slender amphibian with a dark body, yellow or olive dorsal stripe, and notably elongated fourth toe on the hind foot. It breeds in shallow ponds and lakes, laying eggs singly or in small clusters attached to submerged vegetation. Larvae are aquatic, while adults are terrestrial and nocturnal, sheltering under logs, rocks, and leaf litter. These salamanders are active in spring and fall, often migrating short distances between breeding and foraging habitats. Their permeable skin makes them highly sensitive to pollutants and moisture loss.',
                                             icon: 'icon\u002Dlong\u002Dtoed\u002Dsalamander',
-                                            map1_url: '',
-                                            map2_url: '',
+                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
@@ -1444,8 +1549,8 @@
                                             title: '8.3.11 Northern Alligator Lizard',
                                             description: 'Alligator lizards are slender, long\u002Dbodied reptiles with rough scales and a distinctive fold along each side of the body. Their coloration ranges from olive to brown with dark bands, and have the ability to drop their tails to escape predators. These lizards are secretive and often found under logs, rocks, or leaf litter. They are active during warm months and hibernate in winter. Alligator lizards give birth to live young rather than laying eggs, a rare trait among reptiles in BC.',
                                             icon: 'icon\u002Daligator\u002Dlizard',
-                                            map1_url: '',
-                                            map2_url: '',
+                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
+                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
@@ -1620,9 +1725,11 @@
                 const themeInfo = document.querySelector('.theme-info');
                 if (!theme) {
                     themeInfo.innerHTML = `
-                        <div class="info-box-title">Theme Information</div>
-                        <div class="theme-icon">
-                            <i class="fas fa-map-marked-alt"></i>
+                        <div class="info-box-header">
+                            <div class="info-box-title">Theme Information</div>
+                            <div class="theme-icon">
+                                <i class="icon fas fa-map-marked-alt"></i>
+                            </div>
                         </div>
                         <div class="text-content">
                             <h2 class="theme-title">Map Viewer</h2>
@@ -1632,9 +1739,11 @@
                 }
                 
                 themeInfo.innerHTML = `
-                    <div class="info-box-title">Theme Information</div>
-                    <div class="theme-icon">
-                        <i class="icon ${theme.icon}"></i>
+                    <div class="info-box-header">
+                        <div class="info-box-title">Theme Information</div>
+                        <div class="theme-icon">
+                            <i class="icon ${theme.icon || 'fa-map-marked-alt'}"></i>
+                        </div>
                     </div>
                     <div class="text-content">
                         <h2 class="theme-title">${theme.name}</h2>
@@ -1671,9 +1780,11 @@
                 const themeInfo = document.querySelector('.theme-info');
                 if (themeInfo) {
                     themeInfo.innerHTML = `
-                        <div class="info-box-title">Theme Information</div>
-                        <div class="theme-icon">
-                            <i class="icon ${theme.icon || 'fa-map-marked-alt'}"></i>
+                        <div class="info-box-header">
+                            <div class="info-box-title">Theme Information</div>
+                            <div class="theme-icon">
+                                <i class="icon ${theme.icon || 'fa-map-marked-alt'}"></i>
+                            </div>
                         </div>
                         <div class="text-content">
                             <h2 class="theme-title">${theme.name}</h2>
@@ -1704,9 +1815,11 @@
                 const indicatorInfo = document.querySelector('.indicator-info');
                 if (indicatorInfo) {
                     indicatorInfo.innerHTML = `
-                        <div class="info-box-title">Indicator Information</div>
-                        <div class="indicator-icon">
-                            <i class="icon icon-question"></i>
+                        <div class="info-box-header">
+                            <div class="info-box-title">Indicator Information</div>
+                            <div class="indicator-icon">
+                                <i class="icon icon-question"></i>
+                            </div>
                         </div>
                         <div class="text-content">
                             <h2 class="indicator-title">Select an Indicator</h2>
@@ -1718,9 +1831,11 @@
                 const subthemeInfo = document.querySelector('.subtheme-info');
                 if (subthemeInfo) {
                     subthemeInfo.innerHTML = `
-                        <div class="info-box-title">Sub-theme Information</div>
-                        <div class="subtheme-icon">
-                            <i class="icon icon-question"></i>
+                        <div class="info-box-header">
+                            <div class="info-box-title">Sub-theme Information</div>
+                            <div class="subtheme-icon">
+                                <i class="icon icon-question"></i>
+                            </div>
                         </div>
                         <div class="text-content">
                             <h2 class="subtheme-title">Select a Sub-theme</h2>
@@ -1763,9 +1878,11 @@
                 const subthemeInfo = document.querySelector('.subtheme-info');
                 if (subthemeInfo) {
                     subthemeInfo.innerHTML = `
-                        <div class="info-box-title">Sub-theme Information</div>
-                        <div class="subtheme-icon">
-                            <i class="icon ${subtheme.icon}"></i>
+                        <div class="info-box-header">
+                            <div class="info-box-title">Sub-theme Information</div>
+                            <div class="subtheme-icon">
+                                <i class="icon ${subtheme.icon || 'fa-folder-open'}"></i>
+                            </div>
                         </div>
                         <div class="text-content">
                             <h2 class="subtheme-title">${subtheme.name}</h2>
@@ -1777,9 +1894,11 @@
                 const indicatorInfo = document.querySelector('.indicator-info');
                 if (indicatorInfo) {
                     indicatorInfo.innerHTML = `
-                        <div class="info-box-title">Indicator Information</div>
-                        <div class="indicator-icon">
-                            <i class="icon icon-question"></i>
+                        <div class="info-box-header">
+                            <div class="info-box-title">Indicator Information</div>
+                            <div class="indicator-icon">
+                                <i class="icon icon-question"></i>
+                            </div>
                         </div>
                         <div class="text-content">
                             <h2 class="indicator-title">Select an Indicator</h2>
