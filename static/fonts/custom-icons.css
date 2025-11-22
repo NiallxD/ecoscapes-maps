@@ -1,7 +1,7 @@
 @font-face {
     font-family: "custom-icons";
-    src: url("https://niallxd.github.io/ecoscapes-maps/static/fonts/custom-icons.woff2") format("woff2"),
-         url("https://niallxd.github.io/ecoscapes-maps/static/fonts/custom-icons.woff") format("woff");
+    src: url("https://niallxd.github.io/ecoscapes-maps/static/fonts/custom-icons.woff2?1cd49996ac9a5281e8cde4244a0a85a8") format("woff2"),
+url("https://niallxd.github.io/ecoscapes-maps/static/fonts/custom-icons.woff?1cd49996ac9a5281e8cde4244a0a85a8") format("woff");
 }
 
 .icon:before {
