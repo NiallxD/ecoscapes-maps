@@ -6,9 +6,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map Viewer - default</title>
+    <title>Map Viewer - Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/static/fonts/custom-icons.css">
+    <link rel="stylesheet" href="./static/fonts/custom-icons.css">
     <style>
         body, html {
             margin: 0;
@@ -61,11 +61,8 @@
           max-width: 100%;
           overflow-x: hidden;
           overflow-y: auto;
-          padding-right: 10px;
-          transition: transform 0.2s ease-in-out;
           will-change: transform;
           position: relative;
-          background: white;
           z-index: 2;
           height: 100%;
         }
@@ -73,6 +70,7 @@
         /* When collapsed, slide the info column out of view */
         .two-column.collapsed {
           grid-template-columns: 0 1fr; /* Use 1fr to take remaining space */
+          gap: 0px;
         }
 
         .two-column.collapsed .info-column {
@@ -86,7 +84,6 @@
           width: 100%;
           height: 100%;
           min-width: 0; /* Allows the map to shrink below its content size */
-          transition: margin-left 0.3s ease-in-out;
           overflow: hidden; /* Prevent any content from overflowing */
         }
 
@@ -347,7 +344,8 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            margin-left: 10px;
             padding: 15px 20px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
             background-color: #ffffff;
@@ -376,7 +374,7 @@
             background: white;
             border-radius: 20px;
             padding: 20px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             box-sizing: border-box;
         }
 
@@ -384,6 +382,11 @@
           display: flex;
           flex-direction: column;
           gap: 20px; /* space between cards */
+          padding: 10px;
+        }
+
+        .map-column {
+          padding: 10px;
         }
 
 
@@ -533,6 +536,7 @@
             height: 100%;
             border-radius: 8px;
             overflow: hidden;
+            border-radius: 20px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
@@ -875,7 +879,6 @@
             height: 100%;
             border: none;
             opacity: 0;
-            transition: opacity 0.3s ease;
             pointer-events: none;
         }
 
@@ -885,6 +888,8 @@
         }
 
     </style>
+<base href="./">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="app-container">
@@ -3791,7 +3796,7 @@
             // Fetch posts when the page loads with the current indicator's data
             const currentIndicator = {
                 posts: '',
-                title: '1.1.1 Ecosystem Integrity'
+                title: ''
             };
             fetchWordPressPosts(currentIndicator);
         });
