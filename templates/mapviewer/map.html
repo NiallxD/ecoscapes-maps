@@ -41,30 +41,36 @@
           font-size: 1.1em;
         }
         
-        /* Two column section with transition */
+        /* App container: two-column layout */
+        .two-column {
+          display: grid;
+          grid-template-columns: 1fr 2fr; /* left column narrower, right column wider */
+          gap: 20px;
+          height: 100%; /* ensures map can stretch full height */
+          box-sizing: border-box;
+        }
+
+        /* Three-column-section: stack info boxes vertically in left column */
         .three-column-section {
-          transition: all 0.3s ease;
-          position: relative;
-          z-index: 1;
+          display: flex;
+          flex-direction: column; /* stack children */
+          gap: 15px;
+          grid-column: 1; /* place in left column of grid */
+          margin-bottom: 0; /* remove bottom margin since map is beside */
           height: auto;
-          overflow: visible;
         }
-        
-        .three-column-section.hidden {
-          height: 0;
-          opacity: 0;
-          visibility: hidden;
-          margin: 0;
-          padding: 0;
-          transform: none;
-        }
-        
-        /* Map container adjustments */
+
+        /* Map container: fills the right column */
         .map-container {
-          transition: all 0.3s ease;
+          grid-column: 2; /* place in right column of grid */
+          width: 100%;
+          height: 100%; /* stretch to full height of app-container */
           position: relative;
-          z-index: 2;
+          border-radius: 8px;
+          overflow: hidden;
+          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
+
         
         .three-column-section:not(.hidden) + .map-container {
           margin-top: 20px;
@@ -300,6 +306,7 @@
         /* Three Column Section Styling */
         .three-column-section {
             display: flex;
+            flex-wrap: wrap;
             align-items: stretch;
             margin-bottom: 20px;
             gap: 15px;
@@ -309,17 +316,24 @@
         }
 
         .column-left, .column-middle, .column-right {
-            flex: 1;
+            flex: 1 1 100%;
             min-width: 0;
-            min-height: 100%;
             display: flex;
             flex-direction: column;
             background: white;
             border-radius: 20px;
-            padding: 15px;
+            padding: 20px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
             box-sizing: border-box;
         }
+
+        .info-column {
+          display: flex;
+          flex-direction: column;
+          gap: 20px; /* space between cards */
+        }
+
+
         body, html {
             margin: 0;
             padding: 0;
@@ -328,19 +342,33 @@
             font-family: Arial, sans-serif;
         }
 
-        /* Container Styles */
-        .indicator-info, .theme-info, .subtheme-info {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 20px;
-            width: 100%;
-            padding: 25px 20px 15px;
-            margin: 0;
-            min-height: 120px;
-            position: relative;
-            text-align: left;
+        /* Info box containers: row with icon + text */
+        .theme-info,
+        .subtheme-info,
+        .indicator-info {
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start; /* align icon and text at the same top baseline */
+          gap: 20px;
+          width: 100%;
+          margin: 0;
+          min-height: 120px;
+          position: relative;
+          text-align: left;
         }
+
+        /* Text block: align with icon top, add slight offset */
+        .text-content {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          padding-top: 28px;   /* <-- this nudges the title down to line up with icon top */
+          min-width: 0;
+          text-align: left;
+        }
+
+
         
         .info-box-title {
             position: absolute;
@@ -413,17 +441,6 @@
         .theme-info:hover .theme-icon {
             opacity: 1;
             transform: translateY(-1px);
-        }
-
-        /* Text Content */
-        .text-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0;
-            min-width: 0;
-            text-align: left;
         }
 
         /* Title Styles */
@@ -798,6 +815,7 @@
             opacity: 1;
             pointer-events: auto;
         }
+
     </style>
 </head>
 <body>
@@ -856,63 +874,65 @@
           <i class="fas fa-info-circle"></i> Toggle Info
         </button>
       </div>
-
-        <div class="three-column-section">
-            <div class="column-left">
-              <div class="theme-info">
-                <div class="info-box-title">Theme Information</div>
-                <div class="theme-icon">
-                  <i class="icon icon-question"></i>
-                </div>
-                <div class="text-content">
-                  <h2 class="theme-title">Select a Theme</h2>
-                  <p class="theme-description">Choose a theme from the dropdown to view its details.</p>
-                </div>
+      <div class="two-column">
+        <div class="info-column">
+          <div class="column-left">
+            <div class="theme-info">
+              <div class="info-box-title">Theme Information</div>
+              <div class="theme-icon">
+                <i class="icon icon-question"></i>
               </div>
-            </div>
-            <div class="column-middle">
-              <div class="subtheme-info">
-                <div class="info-box-title">Sub-theme Information</div>
-                <div class="subtheme-icon">
-                  <i class="icon icon-question"></i>
-                </div>
-                <div class="text-content">
-                  <h2 class="subtheme-title">Select a Sub-theme</h2>
-                  <p class="subtheme-description">Choose a sub-theme from the dropdown to view its details.</p>
-                </div>
+              <div class="text-content">
+                <h2 class="theme-title">Select a Theme</h2>
+                <p class="theme-description">Choose a theme from the dropdown to view its details.</p>
               </div>
-            </div>
-            <div class="column-right">
-              <div class="indicator-info">
-                <div class="info-box-title">Indicator Information</div>
-                <div class="indicator-icon">
-                  <i class="icon icon-question"></i>
-                </div>
-                <div class="text-content">
-                  <h2 class="indicator-title">Select an Indicator</h2>
-                  <p class="indicator-description">Choose a theme and sub-theme first, then select an indicator to view its details.</p>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
-
-      <!-- Map Section -->
-        <div class="map-container">
-          <div id="mapPlaceholder" class="map-placeholder">
-            <div class="placeholder-content">
-              <i class="fas fa-map-marked-alt" style="font-size: 3em; margin-bottom: 20px; color: #4CAF50;"></i>
-              <h3>Select a Sub-theme and Indicator</h3>
-              <p>Please choose a sub-theme from the dropdown menu above, then select an indicator to view the map.</p>
             </div>
           </div>
-          <div id="loadingSpinner" class="loading-spinner">
-            <div class="spinner"></div>
-            <p style="text-align: center; color: #4CAF50; font-weight: 500; margin-top: 15px;">Loading map data...</p>
+          <div class="column-middle">
+            <div class="subtheme-info">
+              <div class="info-box-title">Sub-theme Information</div>
+              <div class="subtheme-icon">
+                <i class="icon icon-question"></i>
+              </div>
+              <div class="text-content">
+                <h2 class="subtheme-title">Select a Sub-theme</h2>
+                <p class="subtheme-description">Choose a sub-theme from the dropdown to view its details.</p>
+              </div>
+            </div>
           </div>
-          <iframe id="map1" class="map-iframe" src="" style="display: none;"></iframe>
-          <iframe id="map2" class="map-iframe" src="" style="display: none;"></iframe>
+          <div class="column-right">
+            <div class="indicator-info">
+              <div class="info-box-title">Indicator Information</div>
+              <div class="indicator-icon">
+                <i class="icon icon-question"></i>
+              </div>
+              <div class="text-content">
+                <h2 class="indicator-title">Select an Indicator</h2>
+                <p class="indicator-description">Choose a theme and sub-theme first, then select an indicator to view its details.</p>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Right column: map -->
+        <div class="map-column">
+          <div class="map-container">
+            <div id="mapPlaceholder" class="map-placeholder">
+              <div class="placeholder-content">
+                <i class="fas fa-map-marked-alt" style="font-size: 3em; margin-bottom: 20px; color: #4CAF50;"></i>
+                <h3>Select a Sub-theme and Indicator</h3>
+                <p>Please choose a sub-theme from the dropdown menu above, then select an indicator to view the map.</p>
+              </div>
+            </div>
+            <div id="loadingSpinner" class="loading-spinner">
+              <div class="spinner"></div>
+              <p style="text-align: center; color: #4CAF50; font-weight: 500; margin-top: 15px;">Loading map data...</p>
+            </div>
+            <iframe id="map1" class="map-iframe" src="" style="display: none;"></iframe>
+            <iframe id="map2" class="map-iframe" src="" style="display: none;"></iframe>
+          </div>
+        </div>
+      </div>
 
       <script>
         // Toggle info box functionality
