@@ -70,7 +70,7 @@ for theme_name, theme_group in df.groupby('Theme', sort=False):
     theme_icon = clean_text(theme_group['Theme Icon'].iloc[0]) if 'Theme Icon' in theme_group.columns else "fa-seedling"
 
     theme_obj = {
-        "id": theme_id,
+        "id": f"{theme_order[theme_name]:02d}-{theme_id}",
         "name": f"{theme_order[theme_name]}.0 {theme_name}",
         "description": theme_info,
         "icon": theme_icon,
@@ -90,13 +90,12 @@ for theme_name, theme_group in df.groupby('Theme', sort=False):
             subtheme_group['SubThemeIcon'].iloc[0]) if 'SubThemeIcon' in subtheme_group.columns else "fa-leaf"
 
         subtheme_obj = {
-            "id": subtheme_id,
+            "id": f"{theme_order[theme_name]:02d}-{subtheme_counter:02d}-{subtheme_id}",
             "name": f"{theme_order[theme_name]}.{subtheme_counter} {subtheme_name}",
             "description": subtheme_info,
             "icon": subtheme_icon,
             "indicators": []
         }
-        subtheme_counter += 1
 
         # Process indicators in order of appearance
         indicator_counter = 1
@@ -105,7 +104,18 @@ for theme_name, theme_group in df.groupby('Theme', sort=False):
             if not indicator_name or indicator_name.lower() == 'nan':
                 continue
 
-            indicator_id = slugify(indicator_name)
+            # Generate the base indicator ID with full index path
+            indicator_base_id = slugify(indicator_name)
+            indicator_id = f"{theme_order[theme_name]:02d}-{subtheme_counter:02d}-{indicator_counter:02d}-{indicator_base_id}"
+            
+            # Keep the original ID for reference in the title
+            original_id = indicator_base_id
+            subtheme_lower = subtheme_name.lower()
+            if 'linkage' in subtheme_lower:
+                original_id = f"linkage-{original_id}"
+            elif 'habitat' in subtheme_lower and 'core' in subtheme_lower:
+                original_id = f"habitat-{original_id}"
+                
             clean_description = clean_text(row.get("IndicatorInfo", ""))
             clean_source = clean_text(row.get("Source", ""))
             clean_unit = clean_text(row.get("UnitOfMeasure", ""))
@@ -116,7 +126,7 @@ for theme_name, theme_group in df.groupby('Theme', sort=False):
 
             # Add indicator details to indicators dictionary
             indicators[indicator_id] = {
-                "title": f"{theme_order[theme_name]}.{subtheme_counter - 1}.{indicator_counter} {indicator_name}",
+                "title": f"{theme_order[theme_name]}.{subtheme_counter}.{indicator_counter} {indicator_name}",
                 "description": clean_description,
                 "source": format_source(clean_source),
                 "unit_of_measure": clean_unit,
@@ -131,6 +141,7 @@ for theme_name, theme_group in df.groupby('Theme', sort=False):
 
             indicator_counter += 1
 
+        subtheme_counter += 1
         theme_obj["subthemes"].append(subtheme_obj)
 
     themes.append(theme_obj)

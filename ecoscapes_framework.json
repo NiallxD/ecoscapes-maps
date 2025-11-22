@@ -1,18 +1,4 @@
 {
-  "themeGroups": [
-    {
-      "id": "biodiversity",
-      "name": "Biodiversity",
-      "icon": "fa-leaf",
-      "themeIds": ["ecosystem-health", "biogeoclimatic-zones", "species-occurrences"]
-    },
-    {
-      "id": "connectivity",
-      "name": "Species",
-      "icon": "fa-paw",
-      "themeIds": ["habitat-suitability", "wildlife-corridors", "threats"]
-    }
-  ],
   "themes": [
     {
       "id": "01-ecosystem-resileince",
@@ -880,5 +866,7 @@
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-pinchpoints"
     }
-  }
- }
+  },
+  "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+  "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+}
