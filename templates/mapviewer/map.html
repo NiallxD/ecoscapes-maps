@@ -399,14 +399,30 @@
         .subtheme-info,
         .indicator-info {
           display: flex;
-          flex-direction: row;
-          align-items: flex-start; /* align icon and text at the same top baseline */
-          gap: 20px;
+          flex-direction: column;
+          gap: 12px;
           width: 100%;
           margin: 0;
-          min-height: 120px;
+          min-height: 140px;
           position: relative;
           text-align: left;
+        }
+        
+        .info-box-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;  /* Align items to top */
+          width: 100%;
+          position: relative;
+          z-index: 2;  /* Ensure header content stays above the icon */
+          max-height: 25px;
+        }
+        
+        /* Ensure the title has enough right padding to not be covered by the icon */
+        .info-box-title {
+          padding-right: 50px;  /* Make room for the icon */
+          position: relative;
+          z-index: 2;  /* Ensure title stays above the icon */
         }
 
         /* Text block: align with icon top, add slight offset */
@@ -414,8 +430,7 @@
           flex: 1;
           display: flex;
           flex-direction: column;
-          justify-content: flex-start;
-          padding-top: 28px;   /* <-- this nudges the title down to line up with icon top */
+          gap: 8px;
           min-width: 0;
           text-align: left;
         }
@@ -423,16 +438,12 @@
 
         
         .info-box-title {
-            position: absolute;
-            top: 5px;
-            left: 0;
-            right: 0;
             font-size: 11px;
             font-weight: 600;
             color: #6b7280;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            padding: 0 5px;
+            margin: 0;
         }
 
         .indicator-meta-head {
@@ -456,16 +467,20 @@
             .indicator-icon,
             .theme-icon,
             .subtheme-icon {
-              font-size: 100px;       /* controls size */
+              font-size: 50px;       /* Increased size */
               color: #4CAF50;
               margin: 0;
-              display: inline-block;  /* or inline-flex if needed */
-              line-height: 1;         /* keep line box stable */
-              vertical-align: middle; /* keeps it aligned with text */
+              display: flex;
+              align-items: flex-start; /* Align to top */
+              justify-content: center;
               transition: all 0.2s ease;
               opacity: 0.9;
-              flex-shrink: 0;
-              min-width: 60px;
+              width: 60px;           /* Increased width */
+              height: 70px;          /* Increased height to allow overflow */
+              margin-top: 0px;     /* Pull up slightly into the header */
+              margin-right: 0px;    /* Pull right slightly */
+              position: relative;    /* For z-index */
+              z-index: 1;            /* Ensure icon stays above other elements */
             }
 
 
@@ -930,9 +945,11 @@
         <div class="info-column">
           <div class="column-left">
             <div class="theme-info">
-              <div class="info-box-title">Theme Information</div>
-              <div class="theme-icon">
-                <i class="icon icon-question"></i>
+              <div class="info-box-header">
+                <div class="info-box-title">Theme Information</div>
+                <div class="theme-icon">
+                  <i class="icon icon-question"></i>
+                </div>
               </div>
               <div class="text-content">
                 <h2 class="theme-title">Select a Theme</h2>
@@ -942,9 +959,11 @@
           </div>
           <div class="column-middle">
             <div class="subtheme-info">
-              <div class="info-box-title">Sub-theme Information</div>
-              <div class="subtheme-icon">
-                <i class="icon icon-question"></i>
+              <div class="info-box-header">
+                <div class="info-box-title">Sub-theme Information</div>
+                <div class="subtheme-icon">
+                  <i class="icon icon-question"></i>
+                </div>
               </div>
               <div class="text-content">
                 <h2 class="subtheme-title">Select a Sub-theme</h2>
@@ -954,13 +973,15 @@
           </div>
           <div class="column-right">
             <div class="indicator-info">
-              <div class="info-box-title">Indicator Information</div>
-              <div class="indicator-icon">
-                <i class="icon icon-question"></i>
+              <div class="info-box-header">
+                <div class="info-box-title">Indicator Information</div>
+                <div class="indicator-icon">
+                  <i class="icon icon-question"></i>
+                </div>
               </div>
               <div class="text-content">
                 <h2 class="indicator-title">Select an Indicator</h2>
-                <p class="indicator-description">Choose a theme and sub-theme first, then select an indicator to view its details.</p>
+                <p class="indicator-description">Choose an indicator from the dropdown to view its details and related data.</p>
               </div>
             </div>
           </div>
@@ -1427,9 +1448,11 @@
                 const themeInfo = document.querySelector('.theme-info');
                 if (!theme) {
                     themeInfo.innerHTML = `
-                        <div class="info-box-title">Theme Information</div>
-                        <div class="theme-icon">
-                            <i class="fas fa-map-marked-alt"></i>
+                        <div class="info-box-header">
+                            <div class="info-box-title">Theme Information</div>
+                            <div class="theme-icon">
+                                <i class="icon fas fa-map-marked-alt"></i>
+                            </div>
                         </div>
                         <div class="text-content">
                             <h2 class="theme-title">Map Viewer</h2>
@@ -1439,9 +1462,11 @@
                 }
                 
                 themeInfo.innerHTML = `
-                    <div class="info-box-title">Theme Information</div>
-                    <div class="theme-icon">
-                        <i class="icon ${theme.icon}"></i>
+                    <div class="info-box-header">
+                        <div class="info-box-title">Theme Information</div>
+                        <div class="theme-icon">
+                            <i class="icon ${theme.icon || 'fa-map-marked-alt'}"></i>
+                        </div>
                     </div>
                     <div class="text-content">
                         <h2 class="theme-title">${theme.name}</h2>
@@ -1478,9 +1503,11 @@
                 const themeInfo = document.querySelector('.theme-info');
                 if (themeInfo) {
                     themeInfo.innerHTML = `
-                        <div class="info-box-title">Theme Information</div>
-                        <div class="theme-icon">
-                            <i class="icon ${theme.icon || 'fa-map-marked-alt'}"></i>
+                        <div class="info-box-header">
+                            <div class="info-box-title">Theme Information</div>
+                            <div class="theme-icon">
+                                <i class="icon ${theme.icon || 'fa-map-marked-alt'}"></i>
+                            </div>
                         </div>
                         <div class="text-content">
                             <h2 class="theme-title">${theme.name}</h2>
@@ -1511,9 +1538,11 @@
                 const indicatorInfo = document.querySelector('.indicator-info');
                 if (indicatorInfo) {
                     indicatorInfo.innerHTML = `
-                        <div class="info-box-title">Indicator Information</div>
-                        <div class="indicator-icon">
-                            <i class="icon icon-question"></i>
+                        <div class="info-box-header">
+                            <div class="info-box-title">Indicator Information</div>
+                            <div class="indicator-icon">
+                                <i class="icon icon-question"></i>
+                            </div>
                         </div>
                         <div class="text-content">
                             <h2 class="indicator-title">Select an Indicator</h2>
@@ -1525,9 +1554,11 @@
                 const subthemeInfo = document.querySelector('.subtheme-info');
                 if (subthemeInfo) {
                     subthemeInfo.innerHTML = `
-                        <div class="info-box-title">Sub-theme Information</div>
-                        <div class="subtheme-icon">
-                            <i class="icon icon-question"></i>
+                        <div class="info-box-header">
+                            <div class="info-box-title">Sub-theme Information</div>
+                            <div class="subtheme-icon">
+                                <i class="icon icon-question"></i>
+                            </div>
                         </div>
                         <div class="text-content">
                             <h2 class="subtheme-title">Select a Sub-theme</h2>
@@ -1570,9 +1601,11 @@
                 const subthemeInfo = document.querySelector('.subtheme-info');
                 if (subthemeInfo) {
                     subthemeInfo.innerHTML = `
-                        <div class="info-box-title">Sub-theme Information</div>
-                        <div class="subtheme-icon">
-                            <i class="icon ${subtheme.icon}"></i>
+                        <div class="info-box-header">
+                            <div class="info-box-title">Sub-theme Information</div>
+                            <div class="subtheme-icon">
+                                <i class="icon ${subtheme.icon || 'fa-folder-open'}"></i>
+                            </div>
                         </div>
                         <div class="text-content">
                             <h2 class="subtheme-title">${subtheme.name}</h2>
@@ -1584,9 +1617,11 @@
                 const indicatorInfo = document.querySelector('.indicator-info');
                 if (indicatorInfo) {
                     indicatorInfo.innerHTML = `
-                        <div class="info-box-title">Indicator Information</div>
-                        <div class="indicator-icon">
-                            <i class="icon icon-question"></i>
+                        <div class="info-box-header">
+                            <div class="info-box-title">Indicator Information</div>
+                            <div class="indicator-icon">
+                                <i class="icon icon-question"></i>
+                            </div>
                         </div>
                         <div class="text-content">
                             <h2 class="indicator-title">Select an Indicator</h2>
