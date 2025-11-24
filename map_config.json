@@ -18,7 +18,7 @@
       "id": "01-ecosystem-resileince",
       "name": "1.0 Ecosystem Resileince",
       "description": "The ability of an ecosystem to respond to a disturbance, whether natural or human-made, by resisting damage and recovering without losing its core functions and structure. A key characteristic of a resilient ecosystem is high biodiversity, which allows it to better adapt to change. Monitoring changes in ecosystem resilience helps identify and prioritize areas in need of habitat protection and restoration.",
-      "icon": "icon-icon-ecosystem-resilience",
+      "icon": "icon-ecosystem-resilience",
       "subthemes": [
         {
           "id": "01-01-ecosystem-integrity",
@@ -63,13 +63,13 @@
       "id": "02-ecosystem-health",
       "name": "2.0 Ecosystem Health",
       "description": "An ecosystem's overall condition of health in relation to a natural or relatively undisturbed reference state. It is a measure of the ecosystem's capacity to maintain its biodiversity, ecological functions, and to cope with and adapt to environmental stressors over time. Losses in ecosystem health help identify areas in need of restoration. Gains in ecosystem health over time help identify areas that contribute to biodiversity and require protection.",
-      "icon": "icon-icon-ecosystem-health",
+      "icon": "icon-ecosystem-health",
       "subthemes": [
         {
           "id": "02-01-habitat-values",
           "name": "2.1 Habitat Values",
           "description": "The intrinsic health of terrestrial and freshwater habitats and the benefits they provide through ecosystem services, such as clean air, water filtration, pollination, carbon storage, and the regulation of natural hazard processes related to climate change. Ecosystem values are used to monitor the relative impacts of landscape changes associated with human activities over time, and to help identify and prioritize conservation efforts that protect vulnerable wildlife habitat for the broadest possible range of native species.",
-          "icon": "icon-",
+          "icon": "icon-ecological-values",
           "indicators": [
             "02-01-01-land-cover",
             "02-01-02-ecosystem-services",
@@ -110,7 +110,7 @@
       "id": "03-biogeoclimatic-zones",
       "name": "3.0 Biogeoclimatic Zones",
       "description": "BC’s Biogeoclimatic Ecosystem Classification (BEC) classifies broad forested landscapes and site-level vegetated areas based on similarities in climate, geography, and dominant plant and animal communities. Each regional zone reflects long-term interactions between climate and biology that shape the development of distinct habitats, ecological niches, and unique assemblages of plants and animals.  In landscape ecology, they help organize the landscape into manageable areas for conservation planning and for understanding how climate change may shift ecosystems at both regional and global scales.",
-      "icon": "icon-icon-biogeoclimatic-realms",
+      "icon": "icon-biogeoclimatic-realms",
       "subthemes": [
         {
           "id": "03-01-regional-zones",
@@ -136,7 +136,7 @@
       "id": "04-species-occurrences",
       "name": "4.0 Species Occurrences",
       "description": "Field-based observations help identify groups of interacting populations of different species living in the same area, as well as the overall characteristics of an ecological community. These include species richness (number of species), species abundance (population sizes), trophic structure (food web relationships), and interactions such as competition and predation. In the context of biodiversity and landscape ecology, communities are vital because they form the functional units of ecosystems and play a key role in nutrient cycling, energy flow, and maintaining ecosystem stability.",
-      "icon": "icon-icon-species-occurrences",
+      "icon": "icon-species-occurrences",
       "subthemes": [
         {
           "id": "04-01-mammals",
@@ -180,7 +180,7 @@
       "id": "05-climate-change-refugia",
       "name": "5.0 Climate Change Refugia",
       "description": "Areas of the landscape that remain buffered from the most severe effects of climate change, enabling sensitive species to survive locally. They are characterized by stable microclimates, unique hydrological features, or protective topography that provides sanctuary. In the context of biodiversity and landscape ecology, refugia are vital for species survival, acting as \"arks\" that safeguard genetic diversity and ecological communities. They serve as source populations for future re-colonization of the surrounding landscape, thereby supporting ecosystem functions and building resilience.",
-      "icon": "icon-icon-climate-change-refugia",
+      "icon": "icon-climate-change-refugia",
       "subthemes": [
         {
           "id": "05-01-macrorefugia",
@@ -206,7 +206,7 @@
       "id": "06-connectivity-network",
       "name": "6.0 Connectivity Network",
       "description": "An integrated system of core habitats (protected areas and other undisturbed natural regions) connected by wildlife corridors that are established through coordinated land-use policies to enable the unimpeded movement of species and the flow of natural processes. They are essential for maintaining and restoring ecological functions, halting current trends in biodiversity loss, and assisting species in adapting to changing environmental conditions in fragmented wildland habitats affected by landscape disturbance and climate change.",
-      "icon": "icon-icon-connectivity-network",
+      "icon": "icon-connectivity-network",
       "subthemes": [
         {
           "id": "06-01-priority-linkages",
@@ -251,7 +251,7 @@
       "id": "07-habitat-cores",
       "name": "7.0 Habitat Cores",
       "description": "Protected areas and other relatively undisturbed wildland habitats are defined by stable environmental conditions and healthy terrestrial ecosystem functions that sustain the life-cycle needs of diverse animal and plant communities. Wildlife habitat cores range from large home-range areas to smaller stepping-stone patches within fragmented landscapes. They serve as resource hubs within broader networks of ecological connectivity, offering refuge for larger animals migrating along movement pathways between areas of higher habitat suitability, as well as for resident populations of smaller animals.",
-      "icon": "icon-icon-habitat-cores",
+      "icon": "icon-habitat-cores",
       "subthemes": [
         {
           "id": "07-01-large-range-species",
@@ -309,7 +309,7 @@
       "id": "08-wildlife-corridors",
       "name": "8.0 Wildlife Corridors",
       "description": "A clearly defined geographical space where governance, management, and stewardship over the long term sustain or restore effective ecological connectivity while honouring Indigenous stewardship values. Also known as Ecological Corridors in wildland settings or Green Infrastructure Networks in settled areas, these movement pathways link protected and conserved regions and/or unprotected natural habitats. They complement Other effective area-based conservation measures (OECMs) and, together, form ecological networks that conserve biodiversity and promote long-term ecosystem resilience.",
-      "icon": "icon-icon-wildlife-corridors",
+      "icon": "icon-wildlife-corridors",
       "subthemes": [
         {
           "id": "08-01-large-range-linkages",
@@ -359,7 +359,7 @@
       "id": "09-resistance-to-movement",
       "name": "9.0 Resistance to Movement",
       "description": "Resistance to movement describes the challenges species encounter when traversing a landscape. Human-made barriers, such as roads and urban areas, along with natural obstacles like extreme weather and rough terrain, increase resistance and can isolate populations. High resistance reduces ecological connectivity and hampers the natural processes essential for ecosystems to recover from disturbances. This disruption to wildlife movement diminishes ecosystem resilience by impeding species' ability to migrate to new resources, adapt to climate change, and sustain genetic diversity.",
-      "icon": "icon-icon-resistance-to-movement",
+      "icon": "icon-resistance-to-movement",
       "subthemes": [
         {
           "id": "09-01-barriers",

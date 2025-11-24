@@ -60,18 +60,15 @@
           max-width: 100%;
           overflow-x: hidden;
           overflow-y: auto;
-          padding-right: 10px;
-          transition: transform 0.2s ease-in-out;
           will-change: transform;
           position: relative;
-          background: white;
           z-index: 2;
-          height: 100%;
         }
 
         /* When collapsed, slide the info column out of view */
         .two-column.collapsed {
           grid-template-columns: 0 1fr; /* Use 1fr to take remaining space */
+          gap: 0px;
         }
 
         .two-column.collapsed .info-column {
@@ -85,21 +82,15 @@
           width: 100%;
           height: 100%;
           min-width: 0; /* Allows the map to shrink below its content size */
-          transition: margin-left 0.3s ease-in-out;
           overflow: hidden; /* Prevent any content from overflowing */
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border-radius: 20px;
         }
-        
+
         /* When info column is collapsed, let map take full width */
         .two-column.collapsed .map-container {
           width: 100%;
           grid-column: 1 / -1; /* Make map span full width */
-        }
-        
-        /* Map container takes remaining space */
-        .map-container {
-          width: 100%;
-          height: 100%;
-          min-width: 0; /* Allows the map to shrink below its content size */
         }
 
         /* Three-column-section: stack info boxes vertically in left column */
@@ -111,18 +102,6 @@
           margin-bottom: 0; /* remove bottom margin since map is beside */
           height: auto;
         }
-
-        /* Map container: fills the right column */
-        .map-container {
-          grid-column: 2; /* place in right column of grid */
-          width: 100%;
-          height: 100%; /* stretch to full height of app-container */
-          position: relative;
-          border-radius: 8px;
-          overflow: hidden;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
         
         .three-column-section:not(.hidden) + .map-container {
           margin-top: 20px;
@@ -346,7 +325,8 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            margin-left: 10px;
             padding: 15px 20px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
             background-color: #ffffff;
@@ -375,7 +355,7 @@
             background: white;
             border-radius: 20px;
             padding: 20px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             box-sizing: border-box;
         }
 
@@ -383,6 +363,33 @@
           display: flex;
           flex-direction: column;
           gap: 20px; /* space between cards */
+          padding: 10px;
+        }
+
+        .map-column {
+          padding: 10px;
+          min-width: 0;
+          width: 100%;
+          height: 100%;
+          box-sizing: border-box;
+          overflow: hidden; /* Prevent map from overflowing */
+        }
+        
+        .map-container {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+        }
+        
+        .map-iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+          box-sizing: border-box;
         }
 
 
@@ -526,15 +533,7 @@
             font-size: 0.9em;
             max-width: 100%;
         }
-        .map-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
+
         .loading-spinner {
             position: absolute;
             top: 0;
@@ -874,7 +873,6 @@
             height: 100%;
             border: none;
             opacity: 0;
-            transition: opacity 0.3s ease;
             pointer-events: none;
         }
 
@@ -1255,444 +1253,6 @@
 
             // Get all themes data from the template
             const themesData = [
-                
-                {
-                    id: 'ecosystem\u002Dhealth',
-                    name: '2.0 Ecosystem Health',
-                    subthemes: [
-                        
-                        {
-                            id: 'habitat\u002Dvalues',
-                            name: '2.1 Habitat Values',
-                            description: 'The intrinsic health of terrestrial and freshwater habitats and the benefits they provide through ecosystem services, such as clean air, water filtration, pollination, carbon storage, and the regulation of natural hazard processes related to climate change. Ecosystem values are used to monitor the relative impacts of landscape changes associated with human activities over time, and to help identify and prioritize conservation efforts that protect vulnerable wildlife habitat for the broadest possible range of native species.',
-                            icon: 'icon\u002D',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'land\u002Dcover',
-                                            title: '2.1.1 Land Cover',
-                                            description: 'Visible terrestrial components of the Earth\u0027s surface, which include forests, grasslands, wetlands, alpine areas and various land uses associated with human settlement, such as urban and agricultural areas and linear infrastructure. The spatial arrangement and distribution of these components serve as indicators for monitoring landscape patterns and understanding their effects on ecosystem health and integrity over time, and identifying the underlying causes of biodiversity loss.',
-                                            icon: 'icon\u002Dland\u002Dcover',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'categorical values',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'ecosystem\u002Dservices',
-                                            title: '2.1.2 Ecosystem Services',
-                                            description: 'A subjective evaluation of the benefits that current and future generations receive from physical, chemical, and biological processes supporting the functional health and long\u002Dterm resilience of a natural ecosystem. These include provisioning (food and water), regulating (climate control and disease mitigation), supporting (nutrient cycles and pollination), and cultural services (spiritual and aesthetic value). Valuing these services involves economic methods to assign subjective worth to natural processes. However, most Indigenous worldviews view nature as kin with inherent rights, not as a commodity valued solely for human utility.',
-                                            icon: 'icon\u002Decosystem\u002Dservices',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: '$CAD/hectare/year',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'habitat\u002Dsuitability',
-                                            title: '2.1.3 Habitat Suitability',
-                                            description: 'The capacity of terrestrial and freshwater ecosystems to provide essential life\u002Dcycle resources (food, water, shelter, breeding sites) and suitable living conditions for a species to survive and reproduce. The suitability of a given wildlife habitat is determined by site\u002Dspecific environmental variables that influence the occurrence and distribution of wildlife species. These include a wide range of biotic and abiotic variables, including the structure and composition of ecological communities within a given biogeoclimatic zone, soil moisture and nutrient levels, topographic position, temperature, slope aspect and solar insolation.',
-                                            icon: 'icon\u002Dhabitat\u002Dsuitability',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'relative similarity (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'structural\u002Dconnectivity',
-                                            title: '2.1.4 Structural Connectivity',
-                                            description: 'The physical arrangement and connectivity of habitat patches and natural landscape features (e.g., forests, water bodies) across a landscape, regardless of species\u002Dspecific behaviour. Structural connectivity is crucial for biodiversity conservation because it offers essential physical pathways that allow wildlife to move freely to access food, shelter, and breeding sites. This movement supports genetic exchange, enhances ecosystem resilience to disturbances, enables species to adjust their ranges in response to climate change, and diminishes the negative effects of habitat fragmentation.',
-                                            icon: 'icon\u002D',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'habitat\u002Dthreats',
-                            name: '2.2 Habitat Threats',
-                            description: 'Factors or conditions that can cause harm and negatively impact the health and resilience of terrestrial and freshwater habitats. These include human activities that directly disturb the landscape (e.g., urbanization, infrastructure development, agricultural land use, and resource extraction), as well as natural hazard events like floods and wildfires. The cumulative effects of these processes lead to habitat loss and fragmentation, decreasing the natural ability of ecosystems and wildlife species to cope with and adapt to changes over time.',
-                            icon: 'icon\u002Dhabitat\u002Dthreats',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'urbanization',
-                                            title: '2.2.1 Urbanization',
-                                            description: 'The conversion of natural wildland habitats into built environments to accommodate population growth and development. Examples include clearing land for residential neighbourhoods and businesses, agricultural use, resource extraction activities, and associated linear infrastructure such as roads, pipelines, and utility corridors. Direct physical consequences include the loss and fragmentation of wildland habitats and the disruption of natural ecological connectivity pathways. Indirect effects involve altered hydrology (e.g., stormwater runoff) and increased vulnerability to the spread of invasive species and biodiversity loss.',
-                                            icon: 'icon\u002Durbanization',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'linear\u002Dinfrastructure',
-                                            title: '2.2.2 Linear Infrastructure',
-                                            description: 'Conversion of wildland habitat for the development of linear transportation and utility corridors.  These include networks of primary and secondary resource roads, rail lines, water and energy pipelines, electrical transmission lines, and related facilities. The construction of these infrastructure corridors requires extensive vegetation clearing, permanently transforming natural landscapes into developed areas. Primary threats include habitat fragmentation, disruption of wildlife movement patterns, increased access and vulnerability to invasive species and the pressures of human activity.',
-                                            icon: 'icon\u002Dlinear\u002Dinfrastructure',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'categorical values',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'agricultural\u002Duse',
-                                            title: '2.2.3 Agricultural Use',
-                                            description: 'The conversion of wildland habitat for agricultural purposes, including land clearing for irrigated and non\u002Dirrigated crops and orchards, as well as for rangeland pasture. Direct physical impacts include loss and fragmentation of wildland habitat and species displacement, soil contamination from pesticides affecting non\u002Dtarget species, alteration of surface and groundwater flow patterns, and disruption of ecological connectivity networks through boundary fencing. Indirect effects involve changed hydrology (e.g., stormwater runoff) and increased vulnerability to invasive species and associated biodiversity loss.',
-                                            icon: 'icon\u002Dagricultural\u002Duse',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'forest\u002Dharvest',
-                                            title: '2.2.4 Forest Harvest',
-                                            description: 'While land disturbances caused by timber harvesting will regenerate over time, there are direct and indirect consequences that can be lasting if sustainable management practices are not in place. Direct physical impacts include the loss and fragmentation of wildland habitat, species displacement, alterations in surface and groundwater flow patterns, and disruptions to ecological connectivity networks. Indirect impacts include increased susceptibility to soil compaction and erosion, modifications to natural wildlife behaviour caused by greater access for recreational activities, and the increased spread of invasive species.',
-                                            icon: 'icon\u002Dfores\u002Dharvest',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'forest\u002Dthinning',
-                                            title: '2.2.5 Forest Thinning',
-                                            description: 'Forest thinning involves the selective removal of trees to improve the health and growth of terrestrial ecosystems and to lessen the threat of wildfire and disease. Although thinning methods cause less noticeable changes to the landscape, they can still have lasting effects. Direct physical impacts include increased light and ground temperatures, the removal of critical habitat features (e.g., dead trees, dense undergrowth), and changes to water flow and related ecosystem functions. Indirect effects include reduced habitat quality for interior\u002Ddwelling species and shifts in wildlife movement patterns.',
-                                            icon: 'icon\u002Dforest\u002Dthinning',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'invasive\u002Dspecies',
-                                            title: '2.2.6 Invasive Species',
-                                            description: 'Invasive species are non\u002Dnative organisms introduced to new environments that can quickly establish and spread, displacing native plants and animals. Their impact on biodiversity loss includes outcompeting native species for resources, disrupting food webs, and spreading diseases, often causing population declines and extinctions. This loss of native species reduces genetic, species, and ecosystem diversity, which lowers the resilience of terrestrial ecosystems to stressors like climate change by simplifying community structures and impairing key ecological functions.',
-                                            icon: 'icon\u002Dinvasive\u002Dspecies',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '',
-                                            unit_of_measure: '',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'wildfire',
-                                            title: '2.2.7 Wildfire',
-                                            description: 'A wildfire conflagration is a severe fire event triggered by a combination of fuel (vegetation), weather conditions (such as high temperatures, strong winds, and drought), and topography (slopes). Wildfires can result in loss of life, destruction of natural habitats, and disruption of ecological connectivity networks. Although some ecosystems are adapted to fire, the increased frequency and intensity of fires can cause lasting changes in vegetation—such as forests turning into shrublands—leading to a decline in the ecosystem\u0027s overall health, diversity, and resilience.',
-                                            icon: 'icon\u002Dwildfire',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'Head Fire Intensity (kW/m)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'habitat\u002Dlosses',
-                            name: '2.3 Habitat Losses',
-                            description: 'Habitat loss and fragmentation are two related but distinct concepts in ecology that describe changes in the natural environment caused by the cumulative effects of landscape disturbance and climate change. Habitat loss refers to the permanent destruction, removal, or temporary degradation of terrestrial and freshwater ecosystems. Habitat fragmentation, however, involves breaking larger continuous habitats into smaller, isolated patches. Both habitat loss and fragmentation disrupt natural patterns of ecological connectivity and are the main causes of biodiversity loss.',
-                            icon: 'icon\u002Dhabitat\u002Dlosses',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'forest\u002Dcover',
-                                            title: '2.3.1 Forest Cover',
-                                            description: 'Loss and fragmentation of forest ecosystems, primarily due to timber harvesting, agriculture, urbanization and wildfire, are critical indicators of habitat disturbance. Removal of tree cover and understory vegetation eliminates homes, food sources, and breeding grounds for many species, leading to habitat fragmentation. The remaining patches of forest cover become isolated, thereby disrupting natural patterns of wildlife movement and the flow of ecological processes. Fragmentation also decreases the amount of suitable habitat along forest edges and increases vulnerability to the impacts of human activity and invasive species.',
-                                            icon: 'icon\u002Dforest\u002Dtypes',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'wetlands\u002Dand\u002Driparian\u002Dareas',
-                                            title: '2.3.2 Wetlands \u0026 Riparian Areas',
-                                            description: 'Wetlands and riparian areas (vegetation zones along rivers and streams) are highly vulnerable and critical ecosystems that provide essential ecological services and support networks of ecological connectivity for plants and animals. They are hotspots of biodiversity and support the life\u002Dcycle needs for a majority of freshwater and terrestrial species. Degradation and loss of these habitats severely impact nutrient cycles, the provision of food and clean water, the regulation of natural flood cycles and the buffering of climate change impacts. Their loss destroys critical habitats for fish, amphibians, birds, and mammals, threatening species extinction.',
-                                            icon: 'icon\u002Dwetland\u002Driparian',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'mesic\u002Dvegetation',
-                                            title: '2.3.3 Mesic Vegetation',
-                                            description: 'Plant communities that thrive in soils with higher moisture and nutrient content in areas of groundwater discharge. These include herbs and shrubs that occur in non\u002Dforested areas at mid\u002D and lower\u002Dslope elevations and along valley bottoms. Fragmentation and loss of these habitats may lead to instability in the flow and provision of ecosystem functions (e.g., pollination, food provisioning), which are essential to a wide range of terrestrial species. It may also weaken an ecosystem\u0027s ability to cope with and adapt to disturbances caused by human activity and climate change.',
-                                            icon: 'icon\u002Dmesic\u002Dvegetation',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        },
-                                    
-                                
-                                    
-                                        {
-                                            id: 'xeric\u002Dvegetation',
-                                            title: '2.3.4 Xeric Vegetation',
-                                            description: 'Plant communities that thrive in soils with lower moisture and nutrient levels. These include shrublands in non\u002Dforested areas exposed to more sunlight and in drier biogeoclimatic zones of the eastern Coast Mountains. These habitats support species that are uniquely adapted to extreme climatic conditions. Fragmentation and loss of these habitats may cause severe disruption of ecosystem functions, desertification, and reduce the capacity to cope with and adapt to disturbances caused by human activity and climate change.',
-                                            icon: 'icon\u002Dxeric\u002Dvegetation',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        }
-                        
-                    ],
-                    description: 'An ecosystem\u0027s overall condition of health in relation to a natural or relatively undisturbed reference state. It is a measure of the ecosystem\u0027s capacity to maintain its biodiversity, ecological functions, and to cope with and adapt to environmental stressors over time. Losses in ecosystem health help identify areas in need of restoration. Gains in ecosystem health over time help identify areas that contribute to biodiversity and require protection.',
-                    icon: 'icon\u002Decosystem\u002Dhealth'
-
-                },
-                
-                {
-                    id: 'biogeoclimatic\u002Dzones',
-                    name: '3.0 Biogeoclimatic Zones',
-                    subthemes: [
-                        
-                        {
-                            id: 'regional\u002Dzones',
-                            name: '3.1 Regional Zones',
-                            description: 'The Regional Zone component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is a large geographic area defined by a unique combination of climate and physiographic factors, and the dominant plant species of its old\u002Dgrowth forests (e.g., Coastal Western Hemlock Zone). It provides the \u0022big picture\u0022 framework for understanding how climate influences ecosystem development and species distribution, and allows for the development of large\u002Dscale conservation strategies, such as identifying representative ecosystems for protection and modelling the potential impacts of climate change on vegetation patterns.',
-                            icon: 'icon\u002Dbiogeoclimatic\u002Drealms',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'regional\u002Dzones',
-                                            title: '3.1.1 Regional Zones',
-                                            description: 'The Regional Zone component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is a large geographic area defined by a unique combination of climate and physiographic factors, and the dominant plant species of its old\u002Dgrowth forests (e.g., Coastal Western Hemlock Zone). It provides the \u0022big picture\u0022 framework for understanding how climate influences ecosystem development and species distribution, and allows for the development of large\u002Dscale conservation strategies, such as identifying representative ecosystems for protection and modelling the potential impacts of climate change on vegetation patterns.',
-                                            icon: 'icon\u002Dbiogeoclimatic\u002Drealms',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'categorical values',
-                                            theme: 'biogeoclimatic\u002Dzones'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'site\u002Dlevel\u002Dvegetation',
-                            name: '3.2 Site Level Vegetation',
-                            description: 'The Site Level component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is defined by unique combinations of understory vegetation, soil characteristics (e.g., moisture and nutrient content), and physiographic features that influence the structure and composition of ecological communities during successional growth stages following episodes of landscape disturbance.  Identifying and mapping the distribution of site\u002Dlevel vegetation is vital for practical conservation planning, as most on\u002Dthe\u002Dground management decisions, like tree species selection for reforestation or defining specific habitat management strategies, happen at this level.',
-                            icon: 'icon\u002Dsite\u002Dlevel\u002Dvegetation',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'site\u002Dlevel\u002Dvegetation',
-                                            title: '3.2.1 Site Level Vegetation',
-                                            description: 'The Site Level component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is defined by unique combinations of understory vegetation, soil characteristics (e.g., moisture and nutrient content), and physiographic features that influence the structure and composition of ecological communities during successional growth stages following episodes of landscape disturbance.  Identifying and mapping the distribution of site\u002Dlevel vegetation is vital for practical conservation planning, as most on\u002Dthe\u002Dground management decisions, like tree species selection for reforestation or defining specific habitat management strategies, happen at this level.',
-                                            icon: 'icon\u002Dsite\u002Dlevel\u002Dvegetation',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'categorical values',
-                                            theme: 'biogeoclimatic\u002Dzones'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        }
-                        
-                    ],
-                    description: 'BC’s Biogeoclimatic Ecosystem Classification (BEC) classifies broad forested landscapes and site\u002Dlevel vegetated areas based on similarities in climate, geography, and dominant plant and animal communities. Each regional zone reflects long\u002Dterm interactions between climate and biology that shape the development of distinct habitats, ecological niches, and unique assemblages of plants and animals.  In landscape ecology, they help organize the landscape into manageable areas for conservation planning and for understanding how climate change may shift ecosystems at both regional and global scales.',
-                    icon: 'icon\u002Dbiogeoclimatic\u002Drealms'
-
-                },
-                
-                {
-                    id: 'species\u002Doccurrences',
-                    name: '4.0 Species Occurrences',
-                    subthemes: [
-                        
-                        {
-                            id: 'mammals',
-                            name: '4.1 Mammals',
-                            description: 'Vertebrate animals of the class Mammalia are distinguished by having milk\u002Dproducing mammary glands to nourish their young, a large neocortex region in the brain, body fur or hair for insulation, and three middle ear bones that amplify sound and greatly enhance hearing sensitivity. They are endothermic (warm\u002Dblooded), breathe air, and are quadrupedal, with most mammals using four limbs for land movement. More than 80 unique species are known to inhabit the southwest Coast Mountains, ranging in size from small ground squirrels to large\u002Dranging grizzly bears.',
-                            icon: 'icon\u002Dmammals',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'mammals',
-                                            title: '4.1.1 Mammals',
-                                            description: 'Vertebrate animals of the class Mammalia are distinguished by having milk\u002Dproducing mammary glands to nourish their young, a large neocortex region in the brain, body fur or hair for insulation, and three middle ear bones that amplify sound and greatly enhance hearing sensitivity. They are endothermic (warm\u002Dblooded), breathe air, and are quadrupedal, with most mammals using four limbs for land movement. More than 80 unique species are known to inhabit the southwest Coast Mountains, ranging in size from small ground squirrels to large\u002Dranging grizzly bears.',
-                                            icon: 'icon\u002Dmammals',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://www.gbif.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'occurrences',
-                                            theme: 'species\u002Doccurrences'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'herptiles',
-                            name: '4.2 Herptiles',
-                            description: 'Herptiles are an informal group of vertebrates that includes both amphibians and reptiles found in both terrestrial and freshwater environments. Amphibians (Class Amphibia) are commonly characterized by a life cycle that features an aquatic larval stage with gills and a terrestrial adult stage with lungs. Reptiles (Class Reptilia) are air\u002Dbreathing, ectothermic (cold\u002Dblooded) vertebrates with scaly skin, most of which lay eggs on land. Over 25 distinct species are documented in the southwest Coast Mountains, including various toads, frogs, salamanders, turtles, lizards, and snakes.',
-                            icon: 'icon\u002Dherptiles',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'herptiles',
-                                            title: '4.2.1 Herptiles',
-                                            description: 'Herptiles are an informal group of vertebrates that includes both amphibians and reptiles found in both terrestrial and freshwater environments. Amphibians (Class Amphibia) are commonly characterized by a life cycle that features an aquatic larval stage with gills and a terrestrial adult stage with lungs. Reptiles (Class Reptilia) are air\u002Dbreathing, ectothermic (cold\u002Dblooded) vertebrates with scaly skin, most of which lay eggs on land. Over 25 distinct species are documented in the southwest Coast Mountains, including various toads, frogs, salamanders, turtles, lizards, and snakes.',
-                                            icon: 'icon\u002Dherptiles',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://www.gbif.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'occurrences',
-                                            theme: 'species\u002Doccurrences'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'vascular\u002Dplants',
-                            name: '4.3 Vascular Plants',
-                            description: 'Vascular plants (Tracheophyta) have specialized vascular tissues (xylem and phloem) for transporting water and nutrients, allowing them to grow taller and more complex than non\u002Dvascular plants. They possess true roots, stems, and leaves. Types include trees, shrubs, grasses, flowering plants (angiosperms), and ferns, many of which produce seeds. Their ability to grow larger and access resources (sunlight, water, nutrients) gives them a competitive advantage, making them the dominant group in most terrestrial ecosystems. There are 60 distinct vascular plant species documented in the southwest Coast Mountains.',
-                            icon: 'icon\u002Dvascular\u002Dplants',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'vascular\u002Dplants',
-                                            title: '4.3.1 Vascular Plants',
-                                            description: 'Vascular plants (Tracheophyta) have specialized vascular tissues (xylem and phloem) for transporting water and nutrients, allowing them to grow taller and more complex than non\u002Dvascular plants. They possess true roots, stems, and leaves. Types include trees, shrubs, grasses, flowering plants (angiosperms), and ferns, many of which produce seeds. Their ability to grow larger and access resources (sunlight, water, nutrients) gives them a competitive advantage, making them the dominant group in most terrestrial ecosystems. There are 60 distinct vascular plant species documented in the southwest Coast Mountains.',
-                                            icon: 'icon\u002Dvascular\u002Dplants',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://www.gbif.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'occurrences',
-                                            theme: 'species\u002Doccurrences'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        },
-                        
-                        {
-                            id: 'non\u002Dvascular\u002Dplants',
-                            name: '4.4 Non\u002DVascular Plants',
-                            description: 'Non\u002Dvascular plants, known informally as bryophytes, include various mosses, liverworts, and hornworts. They lack true vascular tissue, roots, stems, and leaves, and instead use hair\u002Dlike rhizoids for anchoring and accessing water and nutrients. Bryophytes grow close to the ground, are typically found in moist environments, and reproduce through spores. They play a crucial role in ecological communities, acting as pioneer species that promote soil formation and regulate water and nutrient cycles. Over 280 unique bryophyte species have been documented in the southwest Coast Mountains.',
-                            icon: 'icon\u002Dbryophytes',
-                            indicators: [
-                                
-                                    
-                                        {
-                                            id: 'non\u002Dvascular\u002Dplants',
-                                            title: '4.4.1 Non\u002DVascular Plants',
-                                            description: 'Non\u002Dvascular plants, known informally as bryophytes, include various mosses, liverworts, and hornworts. They lack true vascular tissue, roots, stems, and leaves, and instead use hair\u002Dlike rhizoids for anchoring and accessing water and nutrients. Bryophytes grow close to the ground, are typically found in moist environments, and reproduce through spores. They play a crucial role in ecological communities, acting as pioneer species that promote soil formation and regulate water and nutrient cycles. Over 280 unique bryophyte species have been documented in the southwest Coast Mountains.',
-                                            icon: 'icon\u002Dbryophytes',
-                                            map1_url: '',
-                                            map2_url: '',
-                                            posts: '',
-                                            source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://www.gbif.org/\u0022\u003ESource\u003C/a\u003E',
-                                            unit_of_measure: 'occurrences',
-                                            theme: 'species\u002Doccurrences'  // Add theme ID to each indicator
-                                        }
-                                    
-                                
-                            ]
-                        }
-                        
-                    ],
-                    description: 'Field\u002Dbased observations help identify groups of interacting populations of different species living in the same area, as well as the overall characteristics of an ecological community. These include species richness (number of species), species abundance (population sizes), trophic structure (food web relationships), and interactions such as competition and predation. In the context of biodiversity and landscape ecology, communities are vital because they form the functional units of ecosystems and play a key role in nutrient cycling, energy flow, and maintaining ecosystem stability.',
-                    icon: 'icon\u002Dspecies\u002Doccurrences'
-
-                }
                 
             ];
 

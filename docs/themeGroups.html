@@ -60,18 +60,15 @@
           max-width: 100%;
           overflow-x: hidden;
           overflow-y: auto;
-          padding-right: 10px;
-          transition: transform 0.2s ease-in-out;
           will-change: transform;
           position: relative;
-          background: white;
           z-index: 2;
-          height: 100%;
         }
 
         /* When collapsed, slide the info column out of view */
         .two-column.collapsed {
           grid-template-columns: 0 1fr; /* Use 1fr to take remaining space */
+          gap: 0px;
         }
 
         .two-column.collapsed .info-column {
@@ -85,21 +82,15 @@
           width: 100%;
           height: 100%;
           min-width: 0; /* Allows the map to shrink below its content size */
-          transition: margin-left 0.3s ease-in-out;
           overflow: hidden; /* Prevent any content from overflowing */
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border-radius: 20px;
         }
-        
+
         /* When info column is collapsed, let map take full width */
         .two-column.collapsed .map-container {
           width: 100%;
           grid-column: 1 / -1; /* Make map span full width */
-        }
-        
-        /* Map container takes remaining space */
-        .map-container {
-          width: 100%;
-          height: 100%;
-          min-width: 0; /* Allows the map to shrink below its content size */
         }
 
         /* Three-column-section: stack info boxes vertically in left column */
@@ -111,18 +102,6 @@
           margin-bottom: 0; /* remove bottom margin since map is beside */
           height: auto;
         }
-
-        /* Map container: fills the right column */
-        .map-container {
-          grid-column: 2; /* place in right column of grid */
-          width: 100%;
-          height: 100%; /* stretch to full height of app-container */
-          position: relative;
-          border-radius: 8px;
-          overflow: hidden;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
         
         .three-column-section:not(.hidden) + .map-container {
           margin-top: 20px;
@@ -346,7 +325,8 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
+            margin-left: 10px;
             padding: 15px 20px;
             box-shadow: 0 2px 6px rgba(0,0,0,0.05);
             background-color: #ffffff;
@@ -375,7 +355,7 @@
             background: white;
             border-radius: 20px;
             padding: 20px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             box-sizing: border-box;
         }
 
@@ -383,6 +363,33 @@
           display: flex;
           flex-direction: column;
           gap: 20px; /* space between cards */
+          padding: 10px;
+        }
+
+        .map-column {
+          padding: 10px;
+          min-width: 0;
+          width: 100%;
+          height: 100%;
+          box-sizing: border-box;
+          overflow: hidden; /* Prevent map from overflowing */
+        }
+        
+        .map-container {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+          box-sizing: border-box;
+          padding: 0;
+          margin: 0;
+        }
+        
+        .map-iframe {
+          width: 100%;
+          height: 100%;
+          border: none;
+          box-sizing: border-box;
         }
 
 
@@ -526,15 +533,7 @@
             font-size: 0.9em;
             max-width: 100%;
         }
-        .map-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
+
         .loading-spinner {
             position: absolute;
             top: 0;
@@ -874,7 +873,6 @@
             height: 100%;
             border: none;
             opacity: 0;
-            transition: opacity 0.3s ease;
             pointer-events: none;
         }
 
@@ -1257,12 +1255,12 @@
             const themesData = [
                 
                 {
-                    id: 'ecosystem\u002Dresileince',
+                    id: '01\u002Decosystem\u002Dresileince',
                     name: '1.0 Ecosystem Resileince',
                     subthemes: [
                         
                         {
-                            id: 'ecosystem\u002Dintegrity',
+                            id: '01\u002D01\u002Decosystem\u002Dintegrity',
                             name: '1.1 Ecosystem Integrity',
                             description: 'Terrestrial ecosystems are dynamic and constantly changing. Natural habitats disrupted by human activity and/or altered by changing environmental conditions will recover, depending on the intensity and frequency of landscape disturbances. Terrestrial ecosystems that become highly fragmented and/or sustain ongoing environmental degradation can collapse in areas where adaptive capacity to respond and recover is exceeded. Assessment criteria include levels of habitat connectivity (i.e., lack of fragmentation) and relative degrees of habitat suitability (i.e., biotic value) for representative terrestrial ecosystems at a given location.',
                             icon: 'icon\u002Decosystem\u002Dintegrity',
@@ -1270,16 +1268,16 @@
                                 
                                     
                                         {
-                                            id: 'ecosystem\u002Dintegrity',
+                                            id: '01\u002D01\u002D01\u002Decosystem\u002Dintegrity',
                                             title: '1.1.1 Ecosystem Integrity',
                                             description: 'Terrestrial ecosystems are dynamic and constantly changing. Natural habitats disrupted by human activity and/or altered by changing environmental conditions will recover, depending on the intensity and frequency of landscape disturbances. Terrestrial ecosystems that become highly fragmented and/or sustain ongoing environmental degradation can collapse in areas where adaptive capacity to respond and recover is exceeded. Assessment criteria include levels of habitat connectivity (i.e., lack of fragmentation) and relative degrees of habitat suitability (i.e., biotic value) for representative terrestrial ecosystems at a given location.',
                                             icon: 'icon\u002Decosystem\u002Dintegrity',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: '% change over time',
-                                            theme: 'ecosystem\u002Dresileince'  // Add theme ID to each indicator
+                                            theme: '01\u002Decosystem\u002Dresileince'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1287,7 +1285,7 @@
                         },
                         
                         {
-                            id: 'human\u002Dfootprint',
+                            id: '01\u002D02\u002Dhuman\u002Dfootprint',
                             name: '1.2 Human Footprint',
                             description: 'The extent and degree to which human impacts reduce or damage ecosystem health and fragment natural wildland habitats. This includes both the permanent loss of wildland habitat for urban expansion (e.g., environment, roads, energy pipelines, and utility corridors) and shorter\u002Dterm landscape disturbances caused by agriculture, timber harvesting, and mining. The cumulative impact of increased human activities in these areas results in biodiversity loss and disrupts natural patterns of ecological connectivity.',
                             icon: 'icon\u002Dhuman\u002Dfootprint',
@@ -1295,16 +1293,16 @@
                                 
                                     
                                         {
-                                            id: 'human\u002Dfootprint',
-                                            title: '6.2.1 Human Footprint',
+                                            id: '01\u002D02\u002D01\u002Dhuman\u002Dfootprint',
+                                            title: '1.2.1 Human Footprint',
                                             description: 'The extent and degree to which human impacts reduce or damage ecosystem health and fragment natural wildland habitats. This includes both the permanent loss of wildland habitat for urban expansion (e.g., environment, roads, energy pipelines, and utility corridors) and shorter\u002Dterm landscape disturbances caused by agriculture, timber harvesting, and mining. The cumulative impact of increased human activities in these areas results in biodiversity loss and disrupts natural patterns of ecological connectivity.',
                                             icon: 'icon\u002Dhuman\u002Dfootprint',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dresileince'  // Add theme ID to each indicator
+                                            theme: '01\u002Decosystem\u002Dresileince'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1312,7 +1310,7 @@
                         },
                         
                         {
-                            id: 'climate\u002Drefugia',
+                            id: '01\u002D03\u002Dclimate\u002Drefugia',
                             name: '1.3 Climate Refugia',
                             description: 'Areas of the landscape that remain buffered from the most severe effects of climate change, enabling sensitive species to survive locally. They are characterized by stable microclimates, unique hydrological features, or protective topography that provides sanctuary. In the context of biodiversity and landscape ecology, refugia are vital for species survival, acting as \u0022arks\u0022 that safeguard genetic diversity and ecological communities. They serve as source populations for future re\u002Dcolonization of the surrounding landscape, thereby supporting ecosystem resilience and function.',
                             icon: 'icon\u002Dclimate\u002Dchange\u002Drefugia',
@@ -1320,16 +1318,16 @@
                                 
                                     
                                         {
-                                            id: 'climate\u002Drefugia',
+                                            id: '01\u002D03\u002D01\u002Dclimate\u002Drefugia',
                                             title: '1.3.1 Climate Refugia',
                                             description: 'Areas of the landscape that remain buffered from the most severe effects of climate change, enabling sensitive species to survive locally. They are characterized by stable microclimates, unique hydrological features, or protective topography that provides sanctuary. In the context of biodiversity and landscape ecology, refugia are vital for species survival, acting as \u0022arks\u0022 that safeguard genetic diversity and ecological communities. They serve as source populations for future re\u002Dcolonization of the surrounding landscape, thereby supporting ecosystem resilience and function.',
                                             icon: 'icon\u002Dclimate\u002Dchange\u002Drefugia',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: 'In preparation',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dresileince'  // Add theme ID to each indicator
+                                            theme: '01\u002Decosystem\u002Dresileince'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1337,7 +1335,7 @@
                         },
                         
                         {
-                            id: 'biodiversity\u002Dconservation',
+                            id: '01\u002D04\u002Dbiodiversity\u002Dconservation',
                             name: '1.4 Biodiversity Conservation',
                             description: 'Actions focused on establishing, improving, or maintaining ecosystem health and connectivity for the natural environment and for the benefit of present and future generations. Actions are focused on protecting and restoring disturbed wildland habitats to reduce the cumulative impacts of ongoing landscape disturbances and climate change. Through coordination across geographic scales and jurisdictional boundaries, these actions can help to decrease or halt current trends in biodiversity loss and disruptions to ecological connectivity.',
                             icon: 'icon\u002Dbiodiversity\u002Dconservation',
@@ -1345,31 +1343,31 @@
                                 
                                     
                                         {
-                                            id: 'habitat\u002Dprotection',
+                                            id: '01\u002D04\u002D01\u002Dhabitat\u002Dprotection',
                                             title: '1.4.1 Habitat Protection',
                                             description: 'The act of safeguarding existing natural environments from harm to maintain existing levels of ecosystem health and connectivity. It is a proactive approach, emphasized in the Global Biodiversity Framework\u0027s Target 3, which calls for protecting at least 30% of land and seas by 2030 to prevent the loss of biodiversity and ecosystem services. Actions that can be taken at local and regional scales include the formal designation of protected areas managed through legislation or Indigenous law, and the designation of Other Effective Conservation Measures (OECMs).',
                                             icon: 'icon\u002Dhabitat\u002Dprotection',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dresileince'  // Add theme ID to each indicator
+                                            theme: '01\u002Decosystem\u002Dresileince'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'habitat\u002Drestoration',
+                                            id: '01\u002D04\u002D02\u002Dhabitat\u002Drestoration',
                                             title: '1.4.2 Habitat Restoration',
                                             description: 'Habitat restoration is the purposeful process of assisting the recovery of degraded, damaged, or destroyed wildland habitats to improve ecosystem health and connectivity and enhance in\u002Dsitu biodiversity. It is a reactive approach, highlighted by the UN Decade on Ecosystem Restoration (2021\u002D2030), that aims to reverse damage and rebuild resilient landscapes that provide functional ecosystem services. Actions that can be taken at local and regional scales include reforestation of native trees and understory vegetation, eradicating invasive species, and reintroducing native plants and animals.',
                                             icon: 'icon\u002Dhabitat\u002Drestoration',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dresileince'  // Add theme ID to each indicator
+                                            theme: '01\u002Decosystem\u002Dresileince'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1383,12 +1381,12 @@
                 },
                 
                 {
-                    id: 'ecosystem\u002Dhealth',
+                    id: '02\u002Decosystem\u002Dhealth',
                     name: '2.0 Ecosystem Health',
                     subthemes: [
                         
                         {
-                            id: 'habitat\u002Dvalues',
+                            id: '02\u002D01\u002Dhabitat\u002Dvalues',
                             name: '2.1 Habitat Values',
                             description: 'The intrinsic health of terrestrial and freshwater habitats and the benefits they provide through ecosystem services, such as clean air, water filtration, pollination, carbon storage, and the regulation of natural hazard processes related to climate change. Ecosystem values are used to monitor the relative impacts of landscape changes associated with human activities over time, and to help identify and prioritize conservation efforts that protect vulnerable wildlife habitat for the broadest possible range of native species.',
                             icon: 'icon\u002D',
@@ -1396,22 +1394,22 @@
                                 
                                     
                                         {
-                                            id: 'land\u002Dcover',
+                                            id: '02\u002D01\u002D01\u002Dland\u002Dcover',
                                             title: '2.1.1 Land Cover',
                                             description: 'Visible terrestrial components of the Earth\u0027s surface, which include forests, grasslands, wetlands, alpine areas and various land uses associated with human settlement, such as urban and agricultural areas and linear infrastructure. The spatial arrangement and distribution of these components serve as indicators for monitoring landscape patterns and understanding their effects on ecosystem health and integrity over time, and identifying the underlying causes of biodiversity loss.',
                                             icon: 'icon\u002Dland\u002Dcover',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'categorical values',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'ecosystem\u002Dservices',
+                                            id: '02\u002D01\u002D02\u002Decosystem\u002Dservices',
                                             title: '2.1.2 Ecosystem Services',
                                             description: 'A subjective evaluation of the benefits that current and future generations receive from physical, chemical, and biological processes supporting the functional health and long\u002Dterm resilience of a natural ecosystem. These include provisioning (food and water), regulating (climate control and disease mitigation), supporting (nutrient cycles and pollination), and cultural services (spiritual and aesthetic value). Valuing these services involves economic methods to assign subjective worth to natural processes. However, most Indigenous worldviews view nature as kin with inherent rights, not as a commodity valued solely for human utility.',
                                             icon: 'icon\u002Decosystem\u002Dservices',
@@ -1420,13 +1418,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: '$CAD/hectare/year',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'habitat\u002Dsuitability',
+                                            id: '02\u002D01\u002D03\u002Dhabitat\u002Dsuitability',
                                             title: '2.1.3 Habitat Suitability',
                                             description: 'The capacity of terrestrial and freshwater ecosystems to provide essential life\u002Dcycle resources (food, water, shelter, breeding sites) and suitable living conditions for a species to survive and reproduce. The suitability of a given wildlife habitat is determined by site\u002Dspecific environmental variables that influence the occurrence and distribution of wildlife species. These include a wide range of biotic and abiotic variables, including the structure and composition of ecological communities within a given biogeoclimatic zone, soil moisture and nutrient levels, topographic position, temperature, slope aspect and solar insolation.',
                                             icon: 'icon\u002Dhabitat\u002Dsuitability',
@@ -1435,13 +1433,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative similarity (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'structural\u002Dconnectivity',
+                                            id: '02\u002D01\u002D04\u002Dstructural\u002Dconnectivity',
                                             title: '2.1.4 Structural Connectivity',
                                             description: 'The physical arrangement and connectivity of habitat patches and natural landscape features (e.g., forests, water bodies) across a landscape, regardless of species\u002Dspecific behaviour. Structural connectivity is crucial for biodiversity conservation because it offers essential physical pathways that allow wildlife to move freely to access food, shelter, and breeding sites. This movement supports genetic exchange, enhances ecosystem resilience to disturbances, enables species to adjust their ranges in response to climate change, and diminishes the negative effects of habitat fragmentation.',
                                             icon: 'icon\u002D',
@@ -1450,7 +1448,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1458,7 +1456,7 @@
                         },
                         
                         {
-                            id: 'habitat\u002Dthreats',
+                            id: '02\u002D02\u002Dhabitat\u002Dthreats',
                             name: '2.2 Habitat Threats',
                             description: 'Factors or conditions that can cause harm and negatively impact the health and resilience of terrestrial and freshwater habitats. These include human activities that directly disturb the landscape (e.g., urbanization, infrastructure development, agricultural land use, and resource extraction), as well as natural hazard events like floods and wildfires. The cumulative effects of these processes lead to habitat loss and fragmentation, decreasing the natural ability of ecosystems and wildlife species to cope with and adapt to changes over time.',
                             icon: 'icon\u002Dhabitat\u002Dthreats',
@@ -1466,7 +1464,7 @@
                                 
                                     
                                         {
-                                            id: 'urbanization',
+                                            id: '02\u002D02\u002D01\u002Durbanization',
                                             title: '2.2.1 Urbanization',
                                             description: 'The conversion of natural wildland habitats into built environments to accommodate population growth and development. Examples include clearing land for residential neighbourhoods and businesses, agricultural use, resource extraction activities, and associated linear infrastructure such as roads, pipelines, and utility corridors. Direct physical consequences include the loss and fragmentation of wildland habitats and the disruption of natural ecological connectivity pathways. Indirect effects involve altered hydrology (e.g., stormwater runoff) and increased vulnerability to the spread of invasive species and biodiversity loss.',
                                             icon: 'icon\u002Durbanization',
@@ -1475,13 +1473,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'linear\u002Dinfrastructure',
+                                            id: '02\u002D02\u002D02\u002Dlinear\u002Dinfrastructure',
                                             title: '2.2.2 Linear Infrastructure',
                                             description: 'Conversion of wildland habitat for the development of linear transportation and utility corridors.  These include networks of primary and secondary resource roads, rail lines, water and energy pipelines, electrical transmission lines, and related facilities. The construction of these infrastructure corridors requires extensive vegetation clearing, permanently transforming natural landscapes into developed areas. Primary threats include habitat fragmentation, disruption of wildlife movement patterns, increased access and vulnerability to invasive species and the pressures of human activity.',
                                             icon: 'icon\u002Dlinear\u002Dinfrastructure',
@@ -1490,13 +1488,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'categorical values',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'agricultural\u002Duse',
+                                            id: '02\u002D02\u002D03\u002Dagricultural\u002Duse',
                                             title: '2.2.3 Agricultural Use',
                                             description: 'The conversion of wildland habitat for agricultural purposes, including land clearing for irrigated and non\u002Dirrigated crops and orchards, as well as for rangeland pasture. Direct physical impacts include loss and fragmentation of wildland habitat and species displacement, soil contamination from pesticides affecting non\u002Dtarget species, alteration of surface and groundwater flow patterns, and disruption of ecological connectivity networks through boundary fencing. Indirect effects involve changed hydrology (e.g., stormwater runoff) and increased vulnerability to invasive species and associated biodiversity loss.',
                                             icon: 'icon\u002Dagricultural\u002Duse',
@@ -1505,13 +1503,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'forest\u002Dharvest',
+                                            id: '02\u002D02\u002D04\u002Dforest\u002Dharvest',
                                             title: '2.2.4 Forest Harvest',
                                             description: 'While land disturbances caused by timber harvesting will regenerate over time, there are direct and indirect consequences that can be lasting if sustainable management practices are not in place. Direct physical impacts include the loss and fragmentation of wildland habitat, species displacement, alterations in surface and groundwater flow patterns, and disruptions to ecological connectivity networks. Indirect impacts include increased susceptibility to soil compaction and erosion, modifications to natural wildlife behaviour caused by greater access for recreational activities, and the increased spread of invasive species.',
                                             icon: 'icon\u002Dfores\u002Dharvest',
@@ -1520,13 +1518,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'forest\u002Dthinning',
+                                            id: '02\u002D02\u002D05\u002Dforest\u002Dthinning',
                                             title: '2.2.5 Forest Thinning',
                                             description: 'Forest thinning involves the selective removal of trees to improve the health and growth of terrestrial ecosystems and to lessen the threat of wildfire and disease. Although thinning methods cause less noticeable changes to the landscape, they can still have lasting effects. Direct physical impacts include increased light and ground temperatures, the removal of critical habitat features (e.g., dead trees, dense undergrowth), and changes to water flow and related ecosystem functions. Indirect effects include reduced habitat quality for interior\u002Ddwelling species and shifts in wildlife movement patterns.',
                                             icon: 'icon\u002Dforest\u002Dthinning',
@@ -1535,13 +1533,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'invasive\u002Dspecies',
+                                            id: '02\u002D02\u002D06\u002Dinvasive\u002Dspecies',
                                             title: '2.2.6 Invasive Species',
                                             description: 'Invasive species are non\u002Dnative organisms introduced to new environments that can quickly establish and spread, displacing native plants and animals. Their impact on biodiversity loss includes outcompeting native species for resources, disrupting food webs, and spreading diseases, often causing population declines and extinctions. This loss of native species reduces genetic, species, and ecosystem diversity, which lowers the resilience of terrestrial ecosystems to stressors like climate change by simplifying community structures and impairing key ecological functions.',
                                             icon: 'icon\u002Dinvasive\u002Dspecies',
@@ -1550,13 +1548,13 @@
                                             posts: '',
                                             source: '',
                                             unit_of_measure: '',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'wildfire',
+                                            id: '02\u002D02\u002D07\u002Dwildfire',
                                             title: '2.2.7 Wildfire',
                                             description: 'A wildfire conflagration is a severe fire event triggered by a combination of fuel (vegetation), weather conditions (such as high temperatures, strong winds, and drought), and topography (slopes). Wildfires can result in loss of life, destruction of natural habitats, and disruption of ecological connectivity networks. Although some ecosystems are adapted to fire, the increased frequency and intensity of fires can cause lasting changes in vegetation—such as forests turning into shrublands—leading to a decline in the ecosystem\u0027s overall health, diversity, and resilience.',
                                             icon: 'icon\u002Dwildfire',
@@ -1565,7 +1563,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'Head Fire Intensity (kW/m)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1573,7 +1571,7 @@
                         },
                         
                         {
-                            id: 'habitat\u002Dlosses',
+                            id: '02\u002D03\u002Dhabitat\u002Dlosses',
                             name: '2.3 Habitat Losses',
                             description: 'Habitat loss and fragmentation are two related but distinct concepts in ecology that describe changes in the natural environment caused by the cumulative effects of landscape disturbance and climate change. Habitat loss refers to the permanent destruction, removal, or temporary degradation of terrestrial and freshwater ecosystems. Habitat fragmentation, however, involves breaking larger continuous habitats into smaller, isolated patches. Both habitat loss and fragmentation disrupt natural patterns of ecological connectivity and are the main causes of biodiversity loss.',
                             icon: 'icon\u002Dhabitat\u002Dlosses',
@@ -1581,7 +1579,7 @@
                                 
                                     
                                         {
-                                            id: 'forest\u002Dcover',
+                                            id: '02\u002D03\u002D01\u002Dforest\u002Dcover',
                                             title: '2.3.1 Forest Cover',
                                             description: 'Loss and fragmentation of forest ecosystems, primarily due to timber harvesting, agriculture, urbanization and wildfire, are critical indicators of habitat disturbance. Removal of tree cover and understory vegetation eliminates homes, food sources, and breeding grounds for many species, leading to habitat fragmentation. The remaining patches of forest cover become isolated, thereby disrupting natural patterns of wildlife movement and the flow of ecological processes. Fragmentation also decreases the amount of suitable habitat along forest edges and increases vulnerability to the impacts of human activity and invasive species.',
                                             icon: 'icon\u002Dforest\u002Dtypes',
@@ -1590,13 +1588,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'wetlands\u002Dand\u002Driparian\u002Dareas',
+                                            id: '02\u002D03\u002D02\u002Dwetlands\u002Dand\u002Driparian\u002Dareas',
                                             title: '2.3.2 Wetlands \u0026 Riparian Areas',
                                             description: 'Wetlands and riparian areas (vegetation zones along rivers and streams) are highly vulnerable and critical ecosystems that provide essential ecological services and support networks of ecological connectivity for plants and animals. They are hotspots of biodiversity and support the life\u002Dcycle needs for a majority of freshwater and terrestrial species. Degradation and loss of these habitats severely impact nutrient cycles, the provision of food and clean water, the regulation of natural flood cycles and the buffering of climate change impacts. Their loss destroys critical habitats for fish, amphibians, birds, and mammals, threatening species extinction.',
                                             icon: 'icon\u002Dwetland\u002Driparian',
@@ -1605,13 +1603,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'mesic\u002Dvegetation',
+                                            id: '02\u002D03\u002D03\u002Dmesic\u002Dvegetation',
                                             title: '2.3.3 Mesic Vegetation',
                                             description: 'Plant communities that thrive in soils with higher moisture and nutrient content in areas of groundwater discharge. These include herbs and shrubs that occur in non\u002Dforested areas at mid\u002D and lower\u002Dslope elevations and along valley bottoms. Fragmentation and loss of these habitats may lead to instability in the flow and provision of ecosystem functions (e.g., pollination, food provisioning), which are essential to a wide range of terrestrial species. It may also weaken an ecosystem\u0027s ability to cope with and adapt to disturbances caused by human activity and climate change.',
                                             icon: 'icon\u002Dmesic\u002Dvegetation',
@@ -1620,13 +1618,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'xeric\u002Dvegetation',
+                                            id: '02\u002D03\u002D04\u002Dxeric\u002Dvegetation',
                                             title: '2.3.4 Xeric Vegetation',
                                             description: 'Plant communities that thrive in soils with lower moisture and nutrient levels. These include shrublands in non\u002Dforested areas exposed to more sunlight and in drier biogeoclimatic zones of the eastern Coast Mountains. These habitats support species that are uniquely adapted to extreme climatic conditions. Fragmentation and loss of these habitats may cause severe disruption of ecosystem functions, desertification, and reduce the capacity to cope with and adapt to disturbances caused by human activity and climate change.',
                                             icon: 'icon\u002Dxeric\u002Dvegetation',
@@ -1635,7 +1633,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'ecosystem\u002Dhealth'  // Add theme ID to each indicator
+                                            theme: '02\u002Decosystem\u002Dhealth'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1649,12 +1647,12 @@
                 },
                 
                 {
-                    id: 'biogeoclimatic\u002Dzones',
+                    id: '03\u002Dbiogeoclimatic\u002Dzones',
                     name: '3.0 Biogeoclimatic Zones',
                     subthemes: [
                         
                         {
-                            id: 'regional\u002Dzones',
+                            id: '03\u002D01\u002Dregional\u002Dzones',
                             name: '3.1 Regional Zones',
                             description: 'The Regional Zone component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is a large geographic area defined by a unique combination of climate and physiographic factors, and the dominant plant species of its old\u002Dgrowth forests (e.g., Coastal Western Hemlock Zone). It provides the \u0022big picture\u0022 framework for understanding how climate influences ecosystem development and species distribution, and allows for the development of large\u002Dscale conservation strategies, such as identifying representative ecosystems for protection and modelling the potential impacts of climate change on vegetation patterns.',
                             icon: 'icon\u002Dbiogeoclimatic\u002Drealms',
@@ -1662,7 +1660,7 @@
                                 
                                     
                                         {
-                                            id: 'regional\u002Dzones',
+                                            id: '03\u002D01\u002D01\u002Dregional\u002Dzones',
                                             title: '3.1.1 Regional Zones',
                                             description: 'The Regional Zone component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is a large geographic area defined by a unique combination of climate and physiographic factors, and the dominant plant species of its old\u002Dgrowth forests (e.g., Coastal Western Hemlock Zone). It provides the \u0022big picture\u0022 framework for understanding how climate influences ecosystem development and species distribution, and allows for the development of large\u002Dscale conservation strategies, such as identifying representative ecosystems for protection and modelling the potential impacts of climate change on vegetation patterns.',
                                             icon: 'icon\u002Dbiogeoclimatic\u002Drealms',
@@ -1671,7 +1669,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'categorical values',
-                                            theme: 'biogeoclimatic\u002Dzones'  // Add theme ID to each indicator
+                                            theme: '03\u002Dbiogeoclimatic\u002Dzones'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1679,7 +1677,7 @@
                         },
                         
                         {
-                            id: 'site\u002Dlevel\u002Dvegetation',
+                            id: '03\u002D02\u002Dsite\u002Dlevel\u002Dvegetation',
                             name: '3.2 Site Level Vegetation',
                             description: 'The Site Level component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is defined by unique combinations of understory vegetation, soil characteristics (e.g., moisture and nutrient content), and physiographic features that influence the structure and composition of ecological communities during successional growth stages following episodes of landscape disturbance.  Identifying and mapping the distribution of site\u002Dlevel vegetation is vital for practical conservation planning, as most on\u002Dthe\u002Dground management decisions, like tree species selection for reforestation or defining specific habitat management strategies, happen at this level.',
                             icon: 'icon\u002Dsite\u002Dlevel\u002Dvegetation',
@@ -1687,7 +1685,7 @@
                                 
                                     
                                         {
-                                            id: 'site\u002Dlevel\u002Dvegetation',
+                                            id: '03\u002D02\u002D01\u002Dsite\u002Dlevel\u002Dvegetation',
                                             title: '3.2.1 Site Level Vegetation',
                                             description: 'The Site Level component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is defined by unique combinations of understory vegetation, soil characteristics (e.g., moisture and nutrient content), and physiographic features that influence the structure and composition of ecological communities during successional growth stages following episodes of landscape disturbance.  Identifying and mapping the distribution of site\u002Dlevel vegetation is vital for practical conservation planning, as most on\u002Dthe\u002Dground management decisions, like tree species selection for reforestation or defining specific habitat management strategies, happen at this level.',
                                             icon: 'icon\u002Dsite\u002Dlevel\u002Dvegetation',
@@ -1696,7 +1694,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'categorical values',
-                                            theme: 'biogeoclimatic\u002Dzones'  // Add theme ID to each indicator
+                                            theme: '03\u002Dbiogeoclimatic\u002Dzones'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1710,12 +1708,12 @@
                 },
                 
                 {
-                    id: 'species\u002Doccurrences',
+                    id: '04\u002Dspecies\u002Doccurrences',
                     name: '4.0 Species Occurrences',
                     subthemes: [
                         
                         {
-                            id: 'mammals',
+                            id: '04\u002D01\u002Dmammals',
                             name: '4.1 Mammals',
                             description: 'Vertebrate animals of the class Mammalia are distinguished by having milk\u002Dproducing mammary glands to nourish their young, a large neocortex region in the brain, body fur or hair for insulation, and three middle ear bones that amplify sound and greatly enhance hearing sensitivity. They are endothermic (warm\u002Dblooded), breathe air, and are quadrupedal, with most mammals using four limbs for land movement. More than 80 unique species are known to inhabit the southwest Coast Mountains, ranging in size from small ground squirrels to large\u002Dranging grizzly bears.',
                             icon: 'icon\u002Dmammals',
@@ -1723,7 +1721,7 @@
                                 
                                     
                                         {
-                                            id: 'mammals',
+                                            id: '04\u002D01\u002D01\u002Dmammals',
                                             title: '4.1.1 Mammals',
                                             description: 'Vertebrate animals of the class Mammalia are distinguished by having milk\u002Dproducing mammary glands to nourish their young, a large neocortex region in the brain, body fur or hair for insulation, and three middle ear bones that amplify sound and greatly enhance hearing sensitivity. They are endothermic (warm\u002Dblooded), breathe air, and are quadrupedal, with most mammals using four limbs for land movement. More than 80 unique species are known to inhabit the southwest Coast Mountains, ranging in size from small ground squirrels to large\u002Dranging grizzly bears.',
                                             icon: 'icon\u002Dmammals',
@@ -1732,7 +1730,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://www.gbif.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'occurrences',
-                                            theme: 'species\u002Doccurrences'  // Add theme ID to each indicator
+                                            theme: '04\u002Dspecies\u002Doccurrences'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1740,7 +1738,7 @@
                         },
                         
                         {
-                            id: 'herptiles',
+                            id: '04\u002D02\u002Dherptiles',
                             name: '4.2 Herptiles',
                             description: 'Herptiles are an informal group of vertebrates that includes both amphibians and reptiles found in both terrestrial and freshwater environments. Amphibians (Class Amphibia) are commonly characterized by a life cycle that features an aquatic larval stage with gills and a terrestrial adult stage with lungs. Reptiles (Class Reptilia) are air\u002Dbreathing, ectothermic (cold\u002Dblooded) vertebrates with scaly skin, most of which lay eggs on land. Over 25 distinct species are documented in the southwest Coast Mountains, including various toads, frogs, salamanders, turtles, lizards, and snakes.',
                             icon: 'icon\u002Dherptiles',
@@ -1748,7 +1746,7 @@
                                 
                                     
                                         {
-                                            id: 'herptiles',
+                                            id: '04\u002D02\u002D01\u002Dherptiles',
                                             title: '4.2.1 Herptiles',
                                             description: 'Herptiles are an informal group of vertebrates that includes both amphibians and reptiles found in both terrestrial and freshwater environments. Amphibians (Class Amphibia) are commonly characterized by a life cycle that features an aquatic larval stage with gills and a terrestrial adult stage with lungs. Reptiles (Class Reptilia) are air\u002Dbreathing, ectothermic (cold\u002Dblooded) vertebrates with scaly skin, most of which lay eggs on land. Over 25 distinct species are documented in the southwest Coast Mountains, including various toads, frogs, salamanders, turtles, lizards, and snakes.',
                                             icon: 'icon\u002Dherptiles',
@@ -1757,7 +1755,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://www.gbif.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'occurrences',
-                                            theme: 'species\u002Doccurrences'  // Add theme ID to each indicator
+                                            theme: '04\u002Dspecies\u002Doccurrences'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1765,7 +1763,7 @@
                         },
                         
                         {
-                            id: 'vascular\u002Dplants',
+                            id: '04\u002D03\u002Dvascular\u002Dplants',
                             name: '4.3 Vascular Plants',
                             description: 'Vascular plants (Tracheophyta) have specialized vascular tissues (xylem and phloem) for transporting water and nutrients, allowing them to grow taller and more complex than non\u002Dvascular plants. They possess true roots, stems, and leaves. Types include trees, shrubs, grasses, flowering plants (angiosperms), and ferns, many of which produce seeds. Their ability to grow larger and access resources (sunlight, water, nutrients) gives them a competitive advantage, making them the dominant group in most terrestrial ecosystems. There are 60 distinct vascular plant species documented in the southwest Coast Mountains.',
                             icon: 'icon\u002Dvascular\u002Dplants',
@@ -1773,7 +1771,7 @@
                                 
                                     
                                         {
-                                            id: 'vascular\u002Dplants',
+                                            id: '04\u002D03\u002D01\u002Dvascular\u002Dplants',
                                             title: '4.3.1 Vascular Plants',
                                             description: 'Vascular plants (Tracheophyta) have specialized vascular tissues (xylem and phloem) for transporting water and nutrients, allowing them to grow taller and more complex than non\u002Dvascular plants. They possess true roots, stems, and leaves. Types include trees, shrubs, grasses, flowering plants (angiosperms), and ferns, many of which produce seeds. Their ability to grow larger and access resources (sunlight, water, nutrients) gives them a competitive advantage, making them the dominant group in most terrestrial ecosystems. There are 60 distinct vascular plant species documented in the southwest Coast Mountains.',
                                             icon: 'icon\u002Dvascular\u002Dplants',
@@ -1782,7 +1780,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://www.gbif.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'occurrences',
-                                            theme: 'species\u002Doccurrences'  // Add theme ID to each indicator
+                                            theme: '04\u002Dspecies\u002Doccurrences'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1790,7 +1788,7 @@
                         },
                         
                         {
-                            id: 'non\u002Dvascular\u002Dplants',
+                            id: '04\u002D04\u002Dnon\u002Dvascular\u002Dplants',
                             name: '4.4 Non\u002DVascular Plants',
                             description: 'Non\u002Dvascular plants, known informally as bryophytes, include various mosses, liverworts, and hornworts. They lack true vascular tissue, roots, stems, and leaves, and instead use hair\u002Dlike rhizoids for anchoring and accessing water and nutrients. Bryophytes grow close to the ground, are typically found in moist environments, and reproduce through spores. They play a crucial role in ecological communities, acting as pioneer species that promote soil formation and regulate water and nutrient cycles. Over 280 unique bryophyte species have been documented in the southwest Coast Mountains.',
                             icon: 'icon\u002Dbryophytes',
@@ -1798,7 +1796,7 @@
                                 
                                     
                                         {
-                                            id: 'non\u002Dvascular\u002Dplants',
+                                            id: '04\u002D04\u002D01\u002Dnon\u002Dvascular\u002Dplants',
                                             title: '4.4.1 Non\u002DVascular Plants',
                                             description: 'Non\u002Dvascular plants, known informally as bryophytes, include various mosses, liverworts, and hornworts. They lack true vascular tissue, roots, stems, and leaves, and instead use hair\u002Dlike rhizoids for anchoring and accessing water and nutrients. Bryophytes grow close to the ground, are typically found in moist environments, and reproduce through spores. They play a crucial role in ecological communities, acting as pioneer species that promote soil formation and regulate water and nutrient cycles. Over 280 unique bryophyte species have been documented in the southwest Coast Mountains.',
                                             icon: 'icon\u002Dbryophytes',
@@ -1807,7 +1805,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://www.gbif.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'occurrences',
-                                            theme: 'species\u002Doccurrences'  // Add theme ID to each indicator
+                                            theme: '04\u002Dspecies\u002Doccurrences'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1821,12 +1819,12 @@
                 },
                 
                 {
-                    id: 'climate\u002Dchange\u002Drefugia',
+                    id: '05\u002Dclimate\u002Dchange\u002Drefugia',
                     name: '5.0 Climate Change Refugia',
                     subthemes: [
                         
                         {
-                            id: 'macrorefugia',
+                            id: '05\u002D01\u002Dmacrorefugia',
                             name: '5.1 MacroRefugia',
                             description: 'Macrorefugia are large geographical regions, such as entire mountain ranges or vast forest systems, that serve as long\u002Dterm sanctuaries and offer a broad spectrum of buffered environmental conditions across the landscape. Their main function is to maintain large, viable populations and support ecosystem\u002Dlevel processes, enabling adaptation through genetic diversity and species migration over time. In the southern Coast Mountains, these include higher elevation slopes and mountain ranges, large intact watersheds, riparian corridors and associated wetlands, and extensive old\u002Dgrowth forests.',
                             icon: 'icon\u002Dmacro\u002Drefugia',
@@ -1834,7 +1832,7 @@
                                 
                                     
                                         {
-                                            id: 'macrorefugia',
+                                            id: '05\u002D01\u002D01\u002Dmacrorefugia',
                                             title: '5.1.1 MacroRefugia',
                                             description: 'Macrorefugia are large geographical regions, such as entire mountain ranges or vast forest systems, that serve as long\u002Dterm sanctuaries and offer a broad spectrum of buffered environmental conditions across the landscape. Their main function is to maintain large, viable populations and support ecosystem\u002Dlevel processes, enabling adaptation through genetic diversity and species migration over time. In the southern Coast Mountains, these include higher elevation slopes and mountain ranges, large intact watersheds, riparian corridors and associated wetlands, and extensive old\u002Dgrowth forests.',
                                             icon: 'icon\u002Dmacro\u002Drefugia',
@@ -1843,7 +1841,7 @@
                                             posts: '',
                                             source: 'In preparation',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'climate\u002Dchange\u002Drefugia'  // Add theme ID to each indicator
+                                            theme: '05\u002Dclimate\u002Dchange\u002Drefugia'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1851,7 +1849,7 @@
                         },
                         
                         {
-                            id: 'microrefugia',
+                            id: '05\u002D02\u002Dmicrorefugia',
                             name: '5.2 MicroRefugia',
                             description: 'Microrefugia are much smaller, localized \u0022safe spots,\u0022 potentially just a cool, moist slope or a shaded canyon bottom, defined by highly localized variations in topography or hydrology. They enable the short\u002Dterm persistence of sensitive species by providing immediate shelter from extreme conditions and serving as critical stepping stones for survival across otherwise inhospitable areas. In the southern Coast Mountains, these include north\u002Dfacing slopes and shaded ravines, groundwater\u002Dfed springs and perennial streams, and topographic depressions where dense cool air flows downslope, creating cooler pockets of buffered habitat.',
                             icon: 'icon\u002Dmicro\u002Drefugia',
@@ -1859,7 +1857,7 @@
                                 
                                     
                                         {
-                                            id: 'microrefugia',
+                                            id: '05\u002D02\u002D01\u002Dmicrorefugia',
                                             title: '5.2.1 MicroRefugia',
                                             description: 'Microrefugia are much smaller, localized \u0022safe spots,\u0022 potentially just a cool, moist slope or a shaded canyon bottom, defined by highly localized variations in topography or hydrology. They enable the short\u002Dterm persistence of sensitive species by providing immediate shelter from extreme conditions and serving as critical stepping stones for survival across otherwise inhospitable areas. In the southern Coast Mountains, these include north\u002Dfacing slopes and shaded ravines, groundwater\u002Dfed springs and perennial streams, and topographic depressions where dense cool air flows downslope, creating cooler pockets of buffered habitat.',
                                             icon: 'icon\u002Dmicro\u002Drefugia',
@@ -1868,7 +1866,7 @@
                                             posts: '',
                                             source: 'In preparation',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'climate\u002Dchange\u002Drefugia'  // Add theme ID to each indicator
+                                            theme: '05\u002Dclimate\u002Dchange\u002Drefugia'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1882,12 +1880,12 @@
                 },
                 
                 {
-                    id: 'connectivity\u002Dnetwork',
+                    id: '06\u002Dconnectivity\u002Dnetwork',
                     name: '6.0 Connectivity Network',
                     subthemes: [
                         
                         {
-                            id: 'priority\u002Dlinkages',
+                            id: '06\u002D01\u002Dpriority\u002Dlinkages',
                             name: '6.1 Priority Linkages',
                             description: 'Modelled pathways of ecological connectivity that provide the most efficient movement corridors for wildlife and gene flow across the widest range of species. These pathways identify areas of least resistance for animals and plants to move between protected areas and other high\u002Dvalue habitats, including core and stepping\u002Dstone patches found in fragmented landscapes at lower elevations and in valley bottoms. Mapping these movement corridors helps guide the development of practical conservation solutions that deliver the greatest benefits for vulnerable plants and animals.',
                             icon: 'icon\u002Dpriority\u002Dlinkages',
@@ -1895,7 +1893,7 @@
                                 
                                     
                                         {
-                                            id: 'priority\u002Dlinkages',
+                                            id: '06\u002D01\u002D01\u002Dpriority\u002Dlinkages',
                                             title: '6.1.1 Priority Linkages',
                                             description: 'Modelled pathways of ecological connectivity that provide the most efficient movement corridors for wildlife and gene flow across the widest range of species. These pathways identify areas of least resistance for animals and plants to move between protected areas and other high\u002Dvalue habitats, including core and stepping\u002Dstone patches found in fragmented landscapes at lower elevations and in valley bottoms. Mapping these movement corridors helps guide the development of practical conservation solutions that deliver the greatest benefits for vulnerable plants and animals.',
                                             icon: 'icon\u002Dpriority\u002Dlinkages',
@@ -1904,7 +1902,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'connectivity\u002Dnetwork'  // Add theme ID to each indicator
+                                            theme: '06\u002Dconnectivity\u002Dnetwork'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1912,7 +1910,7 @@
                         },
                         
                         {
-                            id: 'human\u002Dfootprint',
+                            id: '06\u002D02\u002Dhuman\u002Dfootprint',
                             name: '6.2 Human Footprint',
                             description: 'The extent and degree to which human impacts reduce or damage ecosystem health and fragment natural wildland habitats. This includes both the permanent loss of wildland habitat for urban expansion (e.g., environment, roads, energy pipelines, and utility corridors) and shorter\u002Dterm landscape disturbances caused by agriculture, timber harvesting, and mining. The cumulative impact of increased human activities in these areas results in biodiversity loss and disrupts natural patterns of ecological connectivity.',
                             icon: 'icon\u002Dhuman\u002Dfootprint',
@@ -1920,16 +1918,16 @@
                                 
                                     
                                         {
-                                            id: 'human\u002Dfootprint',
+                                            id: '06\u002D02\u002D01\u002Dhuman\u002Dfootprint',
                                             title: '6.2.1 Human Footprint',
                                             description: 'The extent and degree to which human impacts reduce or damage ecosystem health and fragment natural wildland habitats. This includes both the permanent loss of wildland habitat for urban expansion (e.g., environment, roads, energy pipelines, and utility corridors) and shorter\u002Dterm landscape disturbances caused by agriculture, timber harvesting, and mining. The cumulative impact of increased human activities in these areas results in biodiversity loss and disrupts natural patterns of ecological connectivity.',
                                             icon: 'icon\u002Dhuman\u002Dfootprint',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'connectivity\u002Dnetwork'  // Add theme ID to each indicator
+                                            theme: '06\u002Dconnectivity\u002Dnetwork'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1937,7 +1935,7 @@
                         },
                         
                         {
-                            id: 'climate\u002Dcorridors',
+                            id: '06\u002D03\u002Dclimate\u002Dcorridors',
                             name: '6.3 Climate Corridors',
                             description: 'Defined geographical areas of natural habitat, riparian zones (areas along rivers or streams), or mountain ranges, that connect larger patches of suitable wildland habitat. They are used to develop conservation strategies to mitigate the effects of a warming climate by providing physical routes for plants and animals to migrate to more suitable, cooler environments (e.g., higher latitudes or elevations). They are a practical, on\u002Dthe\u002Dground approach to reducing habitat fragmentation and encouraging species dispersal, aiming to build landscape resilience in the southern Coast Mountains.',
                             icon: 'icon\u002Dclimate\u002Dcorridors',
@@ -1945,7 +1943,7 @@
                                 
                                     
                                         {
-                                            id: 'climate\u002Dcorridors',
+                                            id: '06\u002D03\u002D01\u002Dclimate\u002Dcorridors',
                                             title: '6.3.1 Climate Corridors',
                                             description: 'Defined geographical areas of natural habitat, riparian zones (areas along rivers or streams), or mountain ranges, that connect larger patches of suitable wildland habitat. They are used to develop conservation strategies to mitigate the effects of a warming climate by providing physical routes for plants and animals to migrate to more suitable, cooler environments (e.g., higher latitudes or elevations). They are a practical, on\u002Dthe\u002Dground approach to reducing habitat fragmentation and encouraging species dispersal, aiming to build landscape resilience in the southern Coast Mountains.',
                                             icon: 'icon\u002Dclimate\u002Dcorridors',
@@ -1954,7 +1952,7 @@
                                             posts: '',
                                             source: 'In preparation',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'connectivity\u002Dnetwork'  // Add theme ID to each indicator
+                                            theme: '06\u002Dconnectivity\u002Dnetwork'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -1962,7 +1960,7 @@
                         },
                         
                         {
-                            id: 'connectivity\u002Dconservation',
+                            id: '06\u002D04\u002Dconnectivity\u002Dconservation',
                             name: '6.4 Connectivity Conservation',
                             description: 'Actions focused on establishing, improving, or maintaining ecosystem health and connectivity for the natural environment and for the benefit of present and future generations. Actions are focused on protecting and restoring disturbed wildland habitats to reduce the cumulative impacts of ongoing landscape disturbances and climate change. Through coordination across geographic scales and jurisdictional boundaries, these actions can help to decrease or halt current trends in biodiversity loss and disruptions to ecological connectivity.',
                             icon: 'icon\u002Dconnectivity\u002Dconservation',
@@ -1970,7 +1968,7 @@
                                 
                                     
                                         {
-                                            id: 'connectivity\u002Doverlay',
+                                            id: '06\u002D04\u002D01\u002Dconnectivity\u002Doverlay',
                                             title: '6.4.1 Connectivity Overlay',
                                             description: 'A planning tool based on the results of an ecological connectivity network design that establishes specific management criteria for identifying compatible and incompatible land use activities according to their potential to cause adverse effects on animal movement within a designated wildlife corridor. The overlay references existing zoning or resource development plans and prioritizes the management of more restrictive land\u002Duse activities within zones with moderate and high connectivity potential. It also helps to increase awareness and understanding of ecological connectivity within the community.',
                                             icon: 'icon\u002Dconnectivity\u002Doverlay',
@@ -1979,13 +1977,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'categorical values',
-                                            theme: 'connectivity\u002Dnetwork'  // Add theme ID to each indicator
+                                            theme: '06\u002Dconnectivity\u002Dnetwork'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'effective\u002Dmeans',
+                                            id: '06\u002D04\u002D02\u002Deffective\u002Dmeans',
                                             title: '6.4.2 Effective Means',
                                             description: 'Formal and informal mechanisms that planners and decision\u002Dmakers can use to implement a wildlife connectivity action plan. Formal mechanisms include legal means, such as Indigenous law, legislation, and land\u002Duse regulations\u003B policy instruments, such as official community plans rooted in law\u003B bylaws\u003B binding agreements\u003B partnerships\u003B or contracts. Informal mechanisms encompass voluntary agreements or partnerships not governed by law, incentive programs, negotiation outcomes, cultural customs, or recognized traditional values. Spatial representations of these mechanisms help guide practical solutions for implementing a wildlife connectivity action plan.',
                                             icon: 'icon\u002Deffective\u002Dmeans',
@@ -1994,7 +1992,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'categorical values',
-                                            theme: 'connectivity\u002Dnetwork'  // Add theme ID to each indicator
+                                            theme: '06\u002Dconnectivity\u002Dnetwork'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -2008,12 +2006,12 @@
                 },
                 
                 {
-                    id: 'habitat\u002Dcores',
+                    id: '07\u002Dhabitat\u002Dcores',
                     name: '7.0 Habitat Cores',
                     subthemes: [
                         
                         {
-                            id: 'large\u002Drange\u002Dspecies',
+                            id: '07\u002D01\u002Dlarge\u002Drange\u002Dspecies',
                             name: '7.1 Large\u002DRange Species',
                             description: 'Habitat cores for large\u002Dranging focal species reflect access to food, water, and shelter\u003B reproduction\u003B social structures (i.e., solitary or group behaviour)\u003B environmental stability\u003B and the ability to move freely within a given home range.  For carnivore species in this grouping, habitat cores are characterized by mean home\u002Drange sizes of 30 square kilometres, minimum stepping\u002Dstone patch sizes of 13,000 hectares, and dispersal distances of 60 kilometres.',
                             icon: 'icon\u002Dlarge\u002Drange\u002Dspecies',
@@ -2021,8 +2019,8 @@
                                 
                                     
                                         {
-                                            id: 'grizzly\u002Dbear',
-                                            title: '8.1.1 Grizzly Bear',
+                                            id: '07\u002D01\u002D01\u002Dgrizzly\u002Dbear',
+                                            title: '7.1.1 Grizzly Bear',
                                             description: 'Grizzly bears are powerful omnivores with a distinctive shoulder hump and long claws adapted for digging. Their fur ranges from dark brown to blonde, often tipped with silver giving them a “grizzled” appearance. Found in remote mountainous and forested regions of British Columbia, grizzlies are solitary and wide\u002Dranging, with home ranges spanning hundreds of square kilometres. They play a keystone role in ecosystems by turning over soil, dispersing seeds, and regulating prey populations. Grizzlies enter hibernation from November to April, and like black bears, undergo hyperphagia in late summer, consuming up to 20,000 calories daily to prepare for winter.',
                                             icon: 'icon\u002Dgrizzly\u002Dbear',
                                             map1_url: '',
@@ -2030,14 +2028,14 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'wolverine',
-                                            title: '8.1.2 Wolverine',
+                                            id: '07\u002D01\u002D02\u002Dwolverine',
+                                            title: '7.1.2 Wolverine',
                                             description: 'Wolverines are muscular, solitary carnivores known for their strength, endurance, and tenacity. With thick dark fur, pale facial masks, and bushy tails, they resemble small bears more than weasels. Wolverines are adapted to cold, snowy environments and can travel vast distances in search of food. They scavenge large carcasses and hunt small prey, often caching food. In BC, wolverines are rare and elusive, with populations concentrated in remote mountainous terrain. Their low reproductive rate and sensitivity to disturbance make them vulnerable to habitat fragmentation.',
                                             icon: 'icon\u002Dwolverine',
                                             map1_url: '',
@@ -2045,14 +2043,14 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'pacific\u002Dfisher',
-                                            title: '8.1.3 Pacific Fisher',
+                                            id: '07\u002D01\u002D03\u002Dpacific\u002Dfisher',
+                                            title: '7.1.3 Pacific Fisher',
                                             description: 'The Pacific fisher is a secretive, forest\u002Ddwelling carnivore in the weasel family. With sleek chocolate\u002Dbrown fur, bushy tails, and agile bodies, fishers are expert climbers and hunters. They prefer mature coniferous forests with complex canopy structure and abundant windfall timber, which they use for denning and hunting. Despite their name, fishers do not eat fish and instead they prey on squirrels, snowshoe hares, and even porcupines. In BC, Pacific fishers are rare and declining, with fragmented populations in the southern interior and isolated individuals in the Sea\u002Dto\u002Dsky region.',
                                             icon: 'icon\u002Dpacific\u002Dfisher',
                                             map1_url: '',
@@ -2060,14 +2058,14 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'canada\u002Dlynx',
-                                            title: '8.1.4 Canada Lynx',
+                                            id: '07\u002D01\u002D04\u002Dcanada\u002Dlynx',
+                                            title: '7.1.4 Canada Lynx',
                                             description: 'Canada lynx are elusive, long\u002Dlegged felines with tufted ears, short tails, and thick fur adapted to cold climates. Their oversized paws act like snowshoes, allowing them to hunt effectively in deep snow. Lynx are highly specialised predators of snowshoe hares, and their populations fluctuate in tandem with hare abundance. Solitary and nocturnal, lynx prefer dense coniferous forests with abundant understory and minimal human disturbance. In BC, they are most common in interior plateaus and northern ranges, with scattered individuals in the Sea\u002Dto\u002DSky region.',
                                             icon: 'icon\u002Dcanada\u002Dlynx',
                                             map1_url: '',
@@ -2075,7 +2073,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -2083,7 +2081,7 @@
                         },
                         
                         {
-                            id: 'medium\u002Drange\u002Dspecies',
+                            id: '07\u002D02\u002Dmedium\u002Drange\u002Dspecies',
                             name: '7.2 Medium\u002DRange Species',
                             description: 'Habitat cores for large\u002Dranging focal species reflect access to food, water, and shelter\u003B reproduction\u003B social structures (i.e., solitary or group behaviour)\u003B environmental stability\u003B and the ability to move freely within a given home range.  For carnivore species in this grouping, habitat cores are characterized by mean home\u002Drange sizes of 30 square kilometres, minimum stepping\u002Dstone patch sizes of 13,000 hectares, and dispersal distances of 60 kilometres.',
                             icon: 'icon\u002Dmoderate\u002Drange\u002Dspecies',
@@ -2091,8 +2089,8 @@
                                 
                                     
                                         {
-                                            id: 'black\u002Dbear',
-                                            title: '8.2.1 Black Bear',
+                                            id: '07\u002D02\u002D01\u002Dblack\u002Dbear',
+                                            title: '7.2.1 Black Bear',
                                             description: 'Black bears are adaptable mammals found throughout British Columbia’s diverse landscapes, from coastal rainforests to alpine slopes. They have a stocky build, short claws, and a keen sense of smell that helps them forage for berries, insects, and fish. Their coat can range in colour from jet black to cinnamon or even creamy white. They play a vital role in maintaining healthy ecosystems by dispersing seeds and recycling nutrients. Unless food is abundant, black bears typically hibernate from November to March. From September, bears enter hyperphagia, during which their calorie intake increases from 5,000 to 20,000 per day.',
                                             icon: 'icon\u002Dblack\u002Dbear',
                                             map1_url: '',
@@ -2100,14 +2098,14 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'mountain\u002Dgoat',
-                                            title: '8.2.2 Mountain Goat',
+                                            id: '07\u002D02\u002D02\u002Dmountain\u002Dgoat',
+                                            title: '7.2.2 Mountain Goat',
                                             description: 'Mountain goats are iconic alpine specialists, adapted to life on steep cliffs and rugged terrain. With thick white coats, black horns, and muscular builds, they navigate vertical landscapes with ease. Their split hooves and rough pads provide grip on rock faces, allowing them to escape predators and access high\u002Delevation forage. Found throughout BC’s mountainous regions, mountain goats are sensitive to disturbance and require undisturbed escape terrain. Their seasonal movements follow snowlines and forage availability, often descending in winter and ascending in summer.',
                                             icon: 'icon\u002Dmountain\u002Dgoat',
                                             map1_url: '',
@@ -2115,14 +2113,14 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://doi.org/10.3389/fenvs.2022.958596\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'black\u002Dtailed\u002Ddeer',
-                                            title: '8.2.3 Black\u002DTailed Deer',
+                                            id: '07\u002D02\u002D03\u002Dblack\u002Dtailed\u002Ddeer',
+                                            title: '7.2.3 Black\u002DTailed Deer',
                                             description: 'Black\u002Dtailed deer, also known as mule deer, are browsers adapted to BC’s coastal rainforests. With reddish\u002Dbrown summer coats and darker winter pelage, they’re named for their distinctive black\u002Dtipped tails. These deer are crepuscular, feeding at dawn and dusk, and rely on dense understory for cover. Males grow forked antlers annually, shedding them in late winter. Black\u002Dtailed deer are a vital prey species for cougars and wolves and play a key role in shaping forest vegetation through browsing.',
                                             icon: 'icon\u002Dblack\u002Dtailed\u002Ddeer',
                                             map1_url: '',
@@ -2130,7 +2128,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -2138,7 +2136,7 @@
                         },
                         
                         {
-                            id: 'small\u002Drange\u002Dspecies',
+                            id: '07\u002D03\u002Dsmall\u002Drange\u002Dspecies',
                             name: '7.3 Small\u002DRange Species',
                             description: 'Habitat cores for small\u002Dranging focal species reflect life\u002Dcycle needs such as access to food, water, and shelter\u003B reproduction\u003B social structures (i.e., solitary or group behaviour)\u003B environmental stability\u003B and the ability to move freely within a given home range.  For species in this grouping, habitat cores are characterized by mean home\u002Drange sizes of less than 1 square kilometre, minimum stepping\u002Dstone patch sizes of 350 hectares, and dispersal distances of 6 kilometres.',
                             icon: 'icon\u002Dsmall\u002Drange\u002Dspecies',
@@ -2146,8 +2144,8 @@
                                 
                                     
                                         {
-                                            id: 'hoary\u002Dmarmot',
-                                            title: '8.3.1 Hoary Marmot',
+                                            id: '07\u002D03\u002D01\u002Dhoary\u002Dmarmot',
+                                            title: '7.3.1 Hoary Marmot',
                                             description: 'Hoary marmots are large, social ground squirrels known for their loud whistles, which gave Whistler its name, and communal sunbathing. Their thick silver\u002Dgrey fur and white muzzle give them a frosted appearance, hence the name “hoary.” Marmots live in colonies and dig extensive burrow systems in alpine meadows, where they forage during the short summer season. They hibernate for up to eight months, relying on fat reserves built during peak forage. In BC, hoary marmots are common in high\u002Delevation habitats, including the Garibaldi and Tantalus ranges.',
                                             icon: 'icon\u002Dhoary\u002Dmarmot',
                                             map1_url: '',
@@ -2155,14 +2153,14 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'douglas’s\u002Dsquirrel',
-                                            title: '8.3.2 Douglas’s Squirrel',
+                                            id: '07\u002D03\u002D02\u002Ddouglas’s\u002Dsquirrel',
+                                            title: '7.3.2 Douglas’s Squirrel',
                                             description: 'he Douglas squirrel is a lively, vocal tree squirrel with a rusty brown back, pale belly, bushy tail, and a distinct black side stripe in summer. Known for its rapid movements and sharp chatter, it plays a key role in forest ecosystems by dispersing seeds and spores. These squirrels are active year\u002Dround, caching cones and mushrooms around the forest. They prefer mature coniferous forests, especially those dominated by Douglas\u002Dfir, hemlock, and pine. Their nests, called dreys, are built in tree cavities or branch forks and lined with moss and bark.',
                                             icon: 'icon\u002Ddouglass\u002Dsquirell',
                                             map1_url: '',
@@ -2170,14 +2168,14 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'yellow\u002Dpine\u002Dchipmunk',
-                                            title: '8.3.3 Yellow\u002DPine Chipmunk',
+                                            id: '07\u002D03\u002D03\u002Dyellow\u002Dpine\u002Dchipmunk',
+                                            title: '7.3.3 Yellow\u002DPine Chipmunk',
                                             description: 'The yellow\u002Dpine chipmunk is a small, agile rodent with bold facial stripes and a reddish\u002Dbrown back. Chipmunks are excellent climbers and often forage in shrubs and low trees. They’re active during the day, storing food in cheek pouches and caching seeds for winter. Yellow\u002Dpine chipmunks hibernate in colder months, emerging in spring to breed and forage. Their vocalisations include high\u002Dpitched chips and trills used for alarm and territory defence.',
                                             icon: 'icon\u002Dyellow\u002Dpine\u002Dchipmunk',
                                             map1_url: '',
@@ -2185,14 +2183,14 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'garter\u002Dsnake',
-                                            title: '8.3.4 Garter Snake',
+                                            id: '07\u002D03\u002D04\u002Dgarter\u002Dsnake',
+                                            title: '7.3.4 Garter Snake',
                                             description: 'Garter snakes are slender, non\u002Dvenomous reptiles with distinctive longitudinal stripes, typically yellow, green, or blue, running down their dark bodies. Males are considerably smaller than females. They are highly adaptable and often found near water, where they hunt amphibians and small fish. Garter snakes are active during the day and hibernate communally in winter, sometimes in large numbers. They give birth to live young and use their keen sense of smell and tongue\u002Dflicking to locate prey. In BC, several subspecies exist, including the common western garter and the more aquatic valley garter. In the Sea\u002Dto\u002DSky the most frequently seen is the common garter snake.',
                                             icon: 'icon\u002Dgarter\u002Dsnake',
                                             map1_url: '',
@@ -2200,14 +2198,14 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'pacific\u002Dtree\u002Dfrog',
-                                            title: '8.3.5 Pacific Tree Frog',
+                                            id: '07\u002D03\u002D05\u002Dpacific\u002Dtree\u002Dfrog',
+                                            title: '7.3.5 Pacific Tree Frog',
                                             description: 'The Pacific Tree frog is a tiny, vocal amphibian known for its loud nighttime calls and remarkable colour variation, ranging from green to brown, with a dark eye stripe. Despite their name, they are technically tree frogs and possess toe pads for climbing. These frogs breed in shallow wetlands and temporary pools, laying eggs in clusters attached to vegetation. After metamorphosis, juveniles disperse into upland habitats. Pacific chorus frogs are active from spring through fall and hibernate in leaf litter or underground during winter.',
                                             icon: 'icon\u002Dpacific\u002Dtree\u002Dfrog',
                                             map1_url: '',
@@ -2215,7 +2213,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -2223,7 +2221,7 @@
                         },
                         
                         {
-                            id: 'micro\u002Drange\u002Dspecies',
+                            id: '07\u002D04\u002Dmicro\u002Drange\u002Dspecies',
                             name: '7.4 Micro\u002DRange Species',
                             description: 'Habitat cores for small\u002Dranging focal species reflect life\u002Dcycle needs such as access to food, water, and shelter\u003B reproduction\u003B social structures (i.e., solitary or group behaviour)\u003B environmental stability\u003B and the ability to move freely within a given home range.  For species in this grouping, habitat cores are characterized by patch sizes of 2 \u002D5 hectares and mean dispersal distances of up to 1 kilometre.',
                             icon: 'icon\u002Dmicro\u002Drange\u002Dspecies',
@@ -2231,8 +2229,8 @@
                                 
                                     
                                         {
-                                            id: 'western\u002Dtoad',
-                                            title: '8.3.6 Western Toad',
+                                            id: '07\u002D04\u002D01\u002Dwestern\u002Dtoad',
+                                            title: '7.4.1 Western Toad',
                                             description: 'Western toads are stout amphibians with dry, bumpy skin and a pale stripe running down their back. Unlike frogs, they walk rather than hop, and their parotoid glands behind the eyes secrete mild toxins to deter predators. These toads breed in shallow wetlands and lay long strings of eggs. After metamorphosis, juveniles disperse into upland habitats, often traveling hundreds of meters from breeding sites. Western toads are active from spring to fall and hibernate underground during winter.',
                                             icon: 'icon\u002Dwestern\u002Dtoad',
                                             map1_url: '',
@@ -2240,14 +2238,14 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'red\u002Dlegged\u002Dfrog',
-                                            title: '8.3.7 Red\u002DLegged Frog',
+                                            id: '07\u002D04\u002D02\u002Dred\u002Dlegged\u002Dfrog',
+                                            title: '7.4.2 Red\u002DLegged Frog',
                                             description: 'Northern red\u002Dlegged frogs are slender, long\u002Dlegged amphibians with smooth skin and a reddish hue on their hind limbs. Their eyes are positioned slightly forward, and they often have a faint gold wash on their back. These frogs breed early in the year, sometimes while snow still lingers, laying egg masses in cool, still wetlands. After metamorphosis, juveniles disperse into moist forest habitats, where they forage and overwinter under logs or in root channels. They are sensitive to habitat disturbance and require cool, shaded environments to thrive.',
                                             icon: 'icon\u002Dred\u002Dlegged\u002Dfrog',
                                             map1_url: '',
@@ -2255,67 +2253,67 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'ensatina\u002Dsalamander',
-                                            title: '8.3.8 Ensatina Salamander',
+                                            id: '07\u002D04\u002D03\u002Densatina\u002Dsalamander',
+                                            title: '7.4.3 Ensatina Salamander',
                                             description: 'The Ensatina salamander is a small, lungless amphibian with smooth skin and a constricted tail base. Its coloration varies from reddish\u002Dbrown to orange or gray, often with mottled patterns. Unlike many amphibians, Ensatinas do not have an aquatic larval stage, they hatch directly from eggs laid in moist terrestrial microhabitats. These salamanders breathe through their skin and require cool, damp environments to survive. They are nocturnal and secretive, sheltering under logs, leaf litter, and rocks during the day.',
                                             icon: 'icon\u002Densatina\u002Dsalamander',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'northwestern\u002Dsalamander',
-                                            title: '8.3.9 Northwestern Salamander',
+                                            id: '07\u002D04\u002D04\u002Dnorthwestern\u002Dsalamander',
+                                            title: '7.4.4 Northwestern Salamander',
                                             description: 'The Northwestern salamander is a secretive amphibian with smooth brown skin and large parotoid glands behind the eyes. Adults are terrestrial, while larvae and juvenile individuals remain aquatic. They breed in still or slow\u002Dmoving water, laying egg masses attached to submerged vegetation. After metamorphosis, juveniles disperse into moist forest habitats, often sheltering under logs, leaf litter, or in burrows. These salamanders are long\u002Dlived and sensitive to habitat disturbance, especially changes in moisture and temperature.',
                                             icon: 'icon\u002Dnorthwest\u002Dsalamander',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'long\u002Dtoed\u002Dsalamander',
-                                            title: '8.3.10 Long\u002DToed Salamander',
+                                            id: '07\u002D04\u002D05\u002Dlong\u002Dtoed\u002Dsalamander',
+                                            title: '7.4.5 Long\u002DToed Salamander',
                                             description: 'The long\u002Dtoed salamander is a slender amphibian with a dark body, yellow or olive dorsal stripe, and notably elongated fourth toe on the hind foot. It breeds in shallow ponds and lakes, laying eggs singly or in small clusters attached to submerged vegetation. Larvae are aquatic, while adults are terrestrial and nocturnal, sheltering under logs, rocks, and leaf litter. These salamanders are active in spring and fall, often migrating short distances between breeding and foraging habitats. Their permeable skin makes them highly sensitive to pollutants and moisture loss.',
                                             icon: 'icon\u002Dlong\u002Dtoed\u002Dsalamander',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'northern\u002Dalligator\u002Dlizard',
-                                            title: '8.3.11 Northern Alligator Lizard',
+                                            id: '07\u002D04\u002D06\u002Dnorthern\u002Dalligator\u002Dlizard',
+                                            title: '7.4.6 Northern Alligator Lizard',
                                             description: 'Alligator lizards are slender, long\u002Dbodied reptiles with rough scales and a distinctive fold along each side of the body. Their coloration ranges from olive to brown with dark bands, and have the ability to drop their tails to escape predators. These lizards are secretive and often found under logs, rocks, or leaf litter. They are active during warm months and hibernate in winter. Alligator lizards give birth to live young rather than laying eggs, a rare trait among reptiles in BC.',
                                             icon: 'icon\u002Daligator\u002Dlizard',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'habitat\u002Dcores'  // Add theme ID to each indicator
+                                            theme: '07\u002Dhabitat\u002Dcores'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -2324,17 +2322,17 @@
                         
                     ],
                     description: 'Protected areas and other relatively undisturbed wildland habitats are defined by stable environmental conditions and healthy terrestrial ecosystem functions that sustain the life\u002Dcycle needs of diverse animal and plant communities. Wildlife habitat cores range from large home\u002Drange areas to smaller stepping\u002Dstone patches within fragmented landscapes. They serve as resource hubs within broader networks of ecological connectivity, offering refuge for larger animals migrating along movement pathways between areas of higher habitat suitability, as well as for resident populations of smaller animals.',
-                    icon: 'icon\u002Dquestion'
+                    icon: 'icon\u002Dhabitat\u002Dcores'
 
                 },
                 
                 {
-                    id: 'wildlife\u002Dcorridors',
+                    id: '08\u002Dwildlife\u002Dcorridors',
                     name: '8.0 Wildlife Corridors',
                     subthemes: [
                         
                         {
-                            id: 'large\u002Drange\u002Dlinkages',
+                            id: '08\u002D01\u002Dlarge\u002Drange\u002Dlinkages',
                             name: '8.1 Large\u002DRange Linkages',
                             description: 'Corridors for large\u002Dranging mammals (e.g., grizzly bears, wolves, elk, lynx) are usually extensive, often spanning landscape\u002Dscale or transboundary natural pathways that link large core habitats. These corridors must be wide enough to support not only movement but also normal behaviour, providing adequate food, water, and cover to reduce human\u002Dwildlife conflict and facilitate genetic exchange over broad areas. At local and regional levels, they help guide the placement of crossing structures, such as highway overpasses and underpasses, to ensure safe passage across human\u002Dmade barriers.',
                             icon: 'icon\u002Dlarge\u002Drange\u002Dcorridors',
@@ -2342,7 +2340,7 @@
                                 
                                     
                                         {
-                                            id: 'grizzly\u002Dbear',
+                                            id: '08\u002D01\u002D01\u002Dgrizzly\u002Dbear',
                                             title: '8.1.1 Grizzly Bear',
                                             description: 'Grizzly bears are powerful omnivores with a distinctive shoulder hump and long claws adapted for digging. Their fur ranges from dark brown to blonde, often tipped with silver giving them a “grizzled” appearance. Found in remote mountainous and forested regions of British Columbia, grizzlies are solitary and wide\u002Dranging, with home ranges spanning hundreds of square kilometres. They play a keystone role in ecosystems by turning over soil, dispersing seeds, and regulating prey populations. Grizzlies enter hibernation from November to April, and like black bears, undergo hyperphagia in late summer, consuming up to 20,000 calories daily to prepare for winter.',
                                             icon: 'icon\u002Dgrizzly\u002Dbear',
@@ -2351,13 +2349,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'wolverine',
+                                            id: '08\u002D01\u002D02\u002Dwolverine',
                                             title: '8.1.2 Wolverine',
                                             description: 'Wolverines are muscular, solitary carnivores known for their strength, endurance, and tenacity. With thick dark fur, pale facial masks, and bushy tails, they resemble small bears more than weasels. Wolverines are adapted to cold, snowy environments and can travel vast distances in search of food. They scavenge large carcasses and hunt small prey, often caching food. In BC, wolverines are rare and elusive, with populations concentrated in remote mountainous terrain. Their low reproductive rate and sensitivity to disturbance make them vulnerable to habitat fragmentation.',
                                             icon: 'icon\u002Dwolverine',
@@ -2366,13 +2364,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'pacific\u002Dfisher',
+                                            id: '08\u002D01\u002D03\u002Dpacific\u002Dfisher',
                                             title: '8.1.3 Pacific Fisher',
                                             description: 'The Pacific fisher is a secretive, forest\u002Ddwelling carnivore in the weasel family. With sleek chocolate\u002Dbrown fur, bushy tails, and agile bodies, fishers are expert climbers and hunters. They prefer mature coniferous forests with complex canopy structure and abundant windfall timber, which they use for denning and hunting. Despite their name, fishers do not eat fish and instead they prey on squirrels, snowshoe hares, and even porcupines. In BC, Pacific fishers are rare and declining, with fragmented populations in the southern interior and isolated individuals in the Sea\u002Dto\u002Dsky region.',
                                             icon: 'icon\u002Dpacific\u002Dfisher',
@@ -2381,13 +2379,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'canada\u002Dlynx',
+                                            id: '08\u002D01\u002D04\u002Dcanada\u002Dlynx',
                                             title: '8.1.4 Canada Lynx',
                                             description: 'Canada lynx are elusive, long\u002Dlegged felines with tufted ears, short tails, and thick fur adapted to cold climates. Their oversized paws act like snowshoes, allowing them to hunt effectively in deep snow. Lynx are highly specialised predators of snowshoe hares, and their populations fluctuate in tandem with hare abundance. Solitary and nocturnal, lynx prefer dense coniferous forests with abundant understory and minimal human disturbance. In BC, they are most common in interior plateaus and northern ranges, with scattered individuals in the Sea\u002Dto\u002DSky region.',
                                             icon: 'icon\u002Dcanada\u002Dlynx',
@@ -2396,7 +2394,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://terradapt.org/\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -2404,7 +2402,7 @@
                         },
                         
                         {
-                            id: 'medium\u002Drange\u002Dlinkages',
+                            id: '08\u002D02\u002Dmedium\u002Drange\u002Dlinkages',
                             name: '8.2 Medium\u002DRange Linkages',
                             description: 'Corridors for medium\u002Dranging mammals (e.g., bobcats, coyotes, foxes, deer) connect smaller, more numerous core habitat patches. They can be natural features, such as riparian buffers or hedgerows, and must be protected from intense edge effects including invasive species, human activity, and high predation risk. These medium\u002Drange corridors help identify bottlenecks (pinch points) and guide land management solutions to improve passage (e.g., fencing or vegetation restoration). Locally, they support connections between green spaces in settled areas and regional connectivity corridors.',
                             icon: 'icon\u002Dmoderate\u002Drange\u002Dcorridors',
@@ -2412,7 +2410,7 @@
                                 
                                     
                                         {
-                                            id: 'black\u002Dbear',
+                                            id: '08\u002D02\u002D01\u002Dblack\u002Dbear',
                                             title: '8.2.1 Black Bear',
                                             description: 'Black bears are adaptable mammals found throughout British Columbia’s diverse landscapes, from coastal rainforests to alpine slopes. They have a stocky build, short claws, and a keen sense of smell that helps them forage for berries, insects, and fish. Their coat can range in colour from jet black to cinnamon or even creamy white. They play a vital role in maintaining healthy ecosystems by dispersing seeds and recycling nutrients. Unless food is abundant, black bears typically hibernate from November to March. From September, bears enter hyperphagia, during which their calorie intake increases from 5,000 to 20,000 per day.',
                                             icon: 'icon\u002Dblack\u002Dbear',
@@ -2421,13 +2419,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'mountain\u002Dgoat',
+                                            id: '08\u002D02\u002D02\u002Dmountain\u002Dgoat',
                                             title: '8.2.2 Mountain Goat',
                                             description: 'Mountain goats are iconic alpine specialists, adapted to life on steep cliffs and rugged terrain. With thick white coats, black horns, and muscular builds, they navigate vertical landscapes with ease. Their split hooves and rough pads provide grip on rock faces, allowing them to escape predators and access high\u002Delevation forage. Found throughout BC’s mountainous regions, mountain goats are sensitive to disturbance and require undisturbed escape terrain. Their seasonal movements follow snowlines and forage availability, often descending in winter and ascending in summer.',
                                             icon: 'icon\u002Dmountain\u002Dgoat',
@@ -2436,13 +2434,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://doi.org/10.3389/fenvs.2022.958596\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'black\u002Dtailed\u002Ddeer',
+                                            id: '08\u002D02\u002D03\u002Dblack\u002Dtailed\u002Ddeer',
                                             title: '8.2.3 Black\u002DTailed Deer',
                                             description: 'Black\u002Dtailed deer, also known as mule deer, are browsers adapted to BC’s coastal rainforests. With reddish\u002Dbrown summer coats and darker winter pelage, they’re named for their distinctive black\u002Dtipped tails. These deer are crepuscular, feeding at dawn and dusk, and rely on dense understory for cover. Males grow forked antlers annually, shedding them in late winter. Black\u002Dtailed deer are a vital prey species for cougars and wolves and play a key role in shaping forest vegetation through browsing.',
                                             icon: 'icon\u002Dblack\u002Dtailed\u002Ddeer',
@@ -2451,7 +2449,7 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -2459,7 +2457,7 @@
                         },
                         
                         {
-                            id: 'small\u002Drange\u002Dlinkages',
+                            id: '08\u002D03\u002Dsmall\u002Drange\u002Dlinkages',
                             name: '8.3 Small\u002DRange Linkages',
                             description: 'Corridors for small\u002Dranging species (e.g., shrews, some rodents and herptiles) are on a much finer scale, often consisting of maintained strips of vegetation, brush piles, or even simple culverts that allow movement between adjacent micro\u002Dhabitats. Their design focuses on safe passage over very short distances to avoid local threats such as roads, trails or developed lots. At the local level, they can be integrated into urban design and land use policies. At the regional scale, they help enhance ecosystem resilience to microclimatic changes.',
                             icon: 'icon\u002Dsmall\u002Drange\u002Dcorridors',
@@ -2467,7 +2465,7 @@
                                 
                                     
                                         {
-                                            id: 'hoary\u002Dmarmot',
+                                            id: '08\u002D03\u002D01\u002Dhoary\u002Dmarmot',
                                             title: '8.3.1 Hoary Marmot',
                                             description: 'Hoary marmots are large, social ground squirrels known for their loud whistles, which gave Whistler its name, and communal sunbathing. Their thick silver\u002Dgrey fur and white muzzle give them a frosted appearance, hence the name “hoary.” Marmots live in colonies and dig extensive burrow systems in alpine meadows, where they forage during the short summer season. They hibernate for up to eight months, relying on fat reserves built during peak forage. In BC, hoary marmots are common in high\u002Delevation habitats, including the Garibaldi and Tantalus ranges.',
                                             icon: 'icon\u002Dhoary\u002Dmarmot',
@@ -2476,13 +2474,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'douglas’s\u002Dsquirrel',
+                                            id: '08\u002D03\u002D02\u002Ddouglas’s\u002Dsquirrel',
                                             title: '8.3.2 Douglas’s Squirrel',
                                             description: 'he Douglas squirrel is a lively, vocal tree squirrel with a rusty brown back, pale belly, bushy tail, and a distinct black side stripe in summer. Known for its rapid movements and sharp chatter, it plays a key role in forest ecosystems by dispersing seeds and spores. These squirrels are active year\u002Dround, caching cones and mushrooms around the forest. They prefer mature coniferous forests, especially those dominated by Douglas\u002Dfir, hemlock, and pine. Their nests, called dreys, are built in tree cavities or branch forks and lined with moss and bark.',
                                             icon: 'icon\u002Ddouglass\u002Dsquirell',
@@ -2491,13 +2489,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'yellow\u002Dpine\u002Dchipmunk',
+                                            id: '08\u002D03\u002D03\u002Dyellow\u002Dpine\u002Dchipmunk',
                                             title: '8.3.3 Yellow\u002DPine Chipmunk',
                                             description: 'The yellow\u002Dpine chipmunk is a small, agile rodent with bold facial stripes and a reddish\u002Dbrown back. Chipmunks are excellent climbers and often forage in shrubs and low trees. They’re active during the day, storing food in cheek pouches and caching seeds for winter. Yellow\u002Dpine chipmunks hibernate in colder months, emerging in spring to breed and forage. Their vocalisations include high\u002Dpitched chips and trills used for alarm and territory defence.',
                                             icon: 'icon\u002Dyellow\u002Dpine\u002Dchipmunk',
@@ -2506,13 +2504,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'garter\u002Dsnake',
+                                            id: '08\u002D03\u002D04\u002Dgarter\u002Dsnake',
                                             title: '8.3.4 Garter Snake',
                                             description: 'Garter snakes are slender, non\u002Dvenomous reptiles with distinctive longitudinal stripes, typically yellow, green, or blue, running down their dark bodies. Males are considerably smaller than females. They are highly adaptable and often found near water, where they hunt amphibians and small fish. Garter snakes are active during the day and hibernate communally in winter, sometimes in large numbers. They give birth to live young and use their keen sense of smell and tongue\u002Dflicking to locate prey. In BC, several subspecies exist, including the common western garter and the more aquatic valley garter. In the Sea\u002Dto\u002DSky the most frequently seen is the common garter snake.',
                                             icon: 'icon\u002Dgarter\u002Dsnake',
@@ -2521,13 +2519,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'pacific\u002Dtree\u002Dfrog',
+                                            id: '08\u002D03\u002D05\u002Dpacific\u002Dtree\u002Dfrog',
                                             title: '8.3.5 Pacific Tree Frog',
                                             description: 'The Pacific Tree frog is a tiny, vocal amphibian known for its loud nighttime calls and remarkable colour variation, ranging from green to brown, with a dark eye stripe. Despite their name, they are technically tree frogs and possess toe pads for climbing. These frogs breed in shallow wetlands and temporary pools, laying eggs in clusters attached to vegetation. After metamorphosis, juveniles disperse into upland habitats. Pacific chorus frogs are active from spring through fall and hibernate in leaf litter or underground during winter.',
                                             icon: 'icon\u002Dpacific\u002Dtree\u002Dfrog',
@@ -2536,13 +2534,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'western\u002Dtoad',
+                                            id: '08\u002D03\u002D06\u002Dwestern\u002Dtoad',
                                             title: '8.3.6 Western Toad',
                                             description: 'Western toads are stout amphibians with dry, bumpy skin and a pale stripe running down their back. Unlike frogs, they walk rather than hop, and their parotoid glands behind the eyes secrete mild toxins to deter predators. These toads breed in shallow wetlands and lay long strings of eggs. After metamorphosis, juveniles disperse into upland habitats, often traveling hundreds of meters from breeding sites. Western toads are active from spring to fall and hibernate underground during winter.',
                                             icon: 'icon\u002Dwestern\u002Dtoad',
@@ -2551,13 +2549,13 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'red\u002Dlegged\u002Dfrog',
+                                            id: '08\u002D03\u002D07\u002Dred\u002Dlegged\u002Dfrog',
                                             title: '8.3.7 Red\u002DLegged Frog',
                                             description: 'Northern red\u002Dlegged frogs are slender, long\u002Dlegged amphibians with smooth skin and a reddish hue on their hind limbs. Their eyes are positioned slightly forward, and they often have a faint gold wash on their back. These frogs breed early in the year, sometimes while snow still lingers, laying egg masses in cool, still wetlands. After metamorphosis, juveniles disperse into moist forest habitats, where they forage and overwinter under logs or in root channels. They are sensitive to habitat disturbance and require cool, shaded environments to thrive.',
                                             icon: 'icon\u002Dred\u002Dlegged\u002Dfrog',
@@ -2566,67 +2564,67 @@
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'ensatina\u002Dsalamander',
+                                            id: '08\u002D03\u002D08\u002Densatina\u002Dsalamander',
                                             title: '8.3.8 Ensatina Salamander',
                                             description: 'The Ensatina salamander is a small, lungless amphibian with smooth skin and a constricted tail base. Its coloration varies from reddish\u002Dbrown to orange or gray, often with mottled patterns. Unlike many amphibians, Ensatinas do not have an aquatic larval stage, they hatch directly from eggs laid in moist terrestrial microhabitats. These salamanders breathe through their skin and require cool, damp environments to survive. They are nocturnal and secretive, sheltering under logs, leaf litter, and rocks during the day.',
                                             icon: 'icon\u002Densatina\u002Dsalamander',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'northwestern\u002Dsalamander',
+                                            id: '08\u002D03\u002D09\u002Dnorthwestern\u002Dsalamander',
                                             title: '8.3.9 Northwestern Salamander',
                                             description: 'The Northwestern salamander is a secretive amphibian with smooth brown skin and large parotoid glands behind the eyes. Adults are terrestrial, while larvae and juvenile individuals remain aquatic. They breed in still or slow\u002Dmoving water, laying egg masses attached to submerged vegetation. After metamorphosis, juveniles disperse into moist forest habitats, often sheltering under logs, leaf litter, or in burrows. These salamanders are long\u002Dlived and sensitive to habitat disturbance, especially changes in moisture and temperature.',
                                             icon: 'icon\u002Dnorthwest\u002Dsalamander',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'long\u002Dtoed\u002Dsalamander',
+                                            id: '08\u002D03\u002D10\u002Dlong\u002Dtoed\u002Dsalamander',
                                             title: '8.3.10 Long\u002DToed Salamander',
                                             description: 'The long\u002Dtoed salamander is a slender amphibian with a dark body, yellow or olive dorsal stripe, and notably elongated fourth toe on the hind foot. It breeds in shallow ponds and lakes, laying eggs singly or in small clusters attached to submerged vegetation. Larvae are aquatic, while adults are terrestrial and nocturnal, sheltering under logs, rocks, and leaf litter. These salamanders are active in spring and fall, often migrating short distances between breeding and foraging habitats. Their permeable skin makes them highly sensitive to pollutants and moisture loss.',
                                             icon: 'icon\u002Dlong\u002Dtoed\u002Dsalamander',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         },
                                     
                                 
                                     
                                         {
-                                            id: 'northern\u002Dalligator\u002Dlizard',
+                                            id: '08\u002D03\u002D11\u002Dnorthern\u002Dalligator\u002Dlizard',
                                             title: '8.3.11 Northern Alligator Lizard',
                                             description: 'Alligator lizards are slender, long\u002Dbodied reptiles with rough scales and a distinctive fold along each side of the body. Their coloration ranges from olive to brown with dark bands, and have the ability to drop their tails to escape predators. These lizards are secretive and often found under logs, rocks, or leaf litter. They are active during warm months and hibernate in winter. Alligator lizards give birth to live young rather than laying eggs, a rare trait among reptiles in BC.',
                                             icon: 'icon\u002Daligator\u002Dlizard',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'wildlife\u002Dcorridors'  // Add theme ID to each indicator
+                                            theme: '08\u002Dwildlife\u002Dcorridors'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -2640,12 +2638,12 @@
                 },
                 
                 {
-                    id: 'resistance\u002Dto\u002Dmovement',
+                    id: '09\u002Dresistance\u002Dto\u002Dmovement',
                     name: '9.0 Resistance to Movement',
                     subthemes: [
                         
                         {
-                            id: 'barriers',
+                            id: '09\u002D01\u002Dbarriers',
                             name: '9.1 Barriers',
                             description: 'Landscape features that prevent or severely restrict movement, fragmenting habitats and isolating populations. These can be natural (e.g., large rivers, mountain ranges) but are often human\u002Dmade structures, such as major roads, clusters of buildings, fences, and agricultural clearings. Barriers are modelled as areas of high resistance to movement within a landscape resistance surface, effectively identifying where connectivity linkages are broken or severely compromised. Specific interventions can include installing wildlife crossings (overpasses and underpasses) on roads, removing unnecessary fences, and restoring habitat within narrow corridor sections.',
                             icon: 'icon\u002Dresistance\u002Dto\u002Dmovement',
@@ -2653,16 +2651,16 @@
                                 
                                     
                                         {
-                                            id: 'barriers',
+                                            id: '09\u002D01\u002D01\u002Dbarriers',
                                             title: '9.1.1 Barriers',
                                             description: 'Landscape features that prevent or severely restrict movement, fragmenting habitats and isolating populations. These can be natural (e.g., large rivers, mountain ranges) but are often human\u002Dmade structures, such as major roads, clusters of buildings, fences, and agricultural clearings. Barriers are modelled as areas of high resistance to movement within a landscape resistance surface, effectively identifying where connectivity linkages are broken or severely compromised. Specific interventions can include installing wildlife crossings (overpasses and underpasses) on roads, removing unnecessary fences, and restoring habitat within narrow corridor sections.',
                                             icon: 'icon\u002Dbarriers',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'resistance\u002Dto\u002Dmovement'  // Add theme ID to each indicator
+                                            theme: '09\u002Dresistance\u002Dto\u002Dmovement'  // Add theme ID to each indicator
                                         }
                                     
                                 
@@ -2670,24 +2668,24 @@
                         },
                         
                         {
-                            id: 'pinchpoints',
+                            id: '09\u002D02\u002Dpinchpoints',
                             name: '9.2 Pinchpoints',
                             description: 'Narrow landscape features that restrict or hinder wildlife movement within an otherwise continuous ecological network. Natural pinch points include sudden topographic changes, such as steep ravines or channelized creeks. Human\u002Dmade pinch points include fencing that physically guides larger mammals into narrow movement paths, and crossing structures, such as culverts and underpasses, that direct the movement of smaller mammals and herptiles across roads and other linear infrastructure features.  Mitigating the adverse effects of these pinch points requires harmonizing land\u002Duse policies across jurisdictional boundaries.',
-                            icon: 'icon\u002Dpinchpoints',
+                            icon: 'icon\u002Dresistance\u002Dto\u002Dmovement',
                             indicators: [
                                 
                                     
                                         {
-                                            id: 'pinchpoints',
+                                            id: '09\u002D02\u002D01\u002Dpinchpoints',
                                             title: '9.2.1 Pinchpoints',
                                             description: 'Narrow landscape features that restrict or hinder wildlife movement within an otherwise continuous ecological network. Natural pinch points include sudden topographic changes, such as steep ravines or channelized creeks. Human\u002Dmade pinch points include fencing that physically guides larger mammals into narrow movement paths, and crossing structures, such as culverts and underpasses, that direct the movement of smaller mammals and herptiles across roads and other linear infrastructure features.  Mitigating the adverse effects of these pinch points requires harmonizing land\u002Duse policies across jurisdictional boundaries.',
                                             icon: 'icon\u002Dpinchpoints',
-                                            map1_url: 'https://felt.com/embed/map/SDMs\u002Ddeer\u002DX9AjFUSHPReeCPjqSO8nP9BB?loc\u003D49.7628,\u002D123.309,9.74z\u0026legend\u003D1\u0026cooperativeGestures\u003D0\u0026link\u003D1\u0026geolocation\u003D0\u0026zoomControls\u003D1\u0026scaleBar\u003D1',
-                                            map2_url: 'https://cascadia.staging.dashboard.terradapt.org/?zoom\u003D10.57924853633501\u0026lng\u003D\u002D123.16974611514613\u0026lat\u003D49.724616106137404\u0026opacity\u003D0.75\u0026layerTheme\u003D%22landcover%22\u0026layerScope\u003D%22monitor%22\u0026layerVisualisation\u003D%22pixel%22\u0026minTimestamp\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026maxTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026selectedLayer\u003D%22landcover_class%22\u0026layerView\u003D%22status%22\u0026layerStart\u003D%221984\u002D07\u002D01T00%3A00%3A00%22\u0026layerEnd\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026currentTimestamp\u003D%222024\u002D07\u002D01T00%3A00%3A00%22\u0026pitch\u003D45.997005671225544\u0026bearing\u003D11.999218870754135',
+                                            map1_url: '',
+                                            map2_url: '',
                                             posts: '',
                                             source: '\u003Ca target\u003D\u0022_blank\u0022 href\u003D\u0022https://github.com/S2S\u002DWildlifeConnectivity\u0022\u003ESource\u003C/a\u003E',
                                             unit_of_measure: 'relative index value (0\u002D100)',
-                                            theme: 'resistance\u002Dto\u002Dmovement'  // Add theme ID to each indicator
+                                            theme: '09\u002Dresistance\u002Dto\u002Dmovement'  // Add theme ID to each indicator
                                         }
                                     
                                 
