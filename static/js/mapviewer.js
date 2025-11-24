@@ -1,139 +1,4 @@
-{% load dict_filters %}
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Map Viewer - {{ page_name }}</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'fonts/custom-icons.css' %}">
-    <link rel="stylesheet" href="{% static 'css/mapviewer.css' %}">
-</head>
-<body>
-    <div class="app-container">
-      <!-- Top Toolbar with Dropdowns -->
-      <div class="toolbar-top">
-        <!-- Theme Dropdown -->
-        <div class="dropdown" id="themeDropdown">
-          <p><strong>Step 1:</strong> Choose a Theme: </p>
-          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-            <span>Select Theme</span>
-            <i class="dd-chevron fas fa-chevron-down"></i>
-          </button>
-          <div class="dropdown-menu" id="themeMenu" role="menu">
-            <!-- Will be populated by JavaScript -->
-          </div>
-        </div>
-
-        <!-- Subtheme Dropdown (initially hidden) -->
-        <div class="dropdown" id="subthemeDropdown">
-          <p><strong>Step 2:</strong> Choose a Sub-theme: </p>
-          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-            <span>Select Sub-theme</span>
-            <i class="dd-chevron fas fa-chevron-down"></i>
-          </button>
-          <div class="dropdown-menu" id="subthemeMenu" role="menu">
-            <!-- Will be populated by JavaScript -->
-          </div>
-        </div>
-
-        <!-- Indicator Dropdown (initially hidden) -->
-        <div class="dropdown" id="indicatorDropdown">
-          <p><strong>Step 3:</strong> Choose an Indicator: </p>
-          <button class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
-            <span>Select Indicator</span>
-            <i class="dd-chevron fas fa-chevron-down"></i>
-          </button>
-          <div class="dropdown-menu" id="indicatorMenu" role="menu">
-            <!-- Will be populated by JavaScript -->
-          </div>
-        </div>
-
-        <div class="toggle-container">
-          <p class="time-series-note">Note: Not all indicators have time-series data.</p>
-          <div class="toggle-wrapper">
-            <span id="exploreLabel" class="toggle-label active">Explore</span>
-            <label class="toggle-switch">
-              <input type="checkbox" id="viewToggle">
-              <span class="toggle-slider"></span>
-            </label>
-            <span id="analyzeLabel" class="toggle-label">Analyze</span>
-          </div>
-        </div>
-        
-        <button id="toggleInfoBox" class="toggle-info-btn" title="Toggle Info Box">
-          <i class="fas fa-info-circle"></i> Toggle Info
-        </button>
-      </div>
-      <div class="two-column">
-        <div class="info-column">
-          <div class="column-left">
-            <div class="theme-info">
-              <div class="info-box-header">
-                <div class="info-box-title">Theme Information</div>
-                <div class="theme-icon">
-                  <i class="icon icon-question"></i>
-                </div>
-              </div>
-              <div class="text-content">
-                <h2 class="theme-title">Select a Theme</h2>
-                <p class="theme-description">Choose a theme from the dropdown to view its details.</p>
-              </div>
-            </div>
-          </div>
-          <div class="column-middle">
-            <div class="subtheme-info">
-              <div class="info-box-header">
-                <div class="info-box-title">Sub-theme Information</div>
-                <div class="subtheme-icon">
-                  <i class="icon icon-question"></i>
-                </div>
-              </div>
-              <div class="text-content">
-                <h2 class="subtheme-title">Select a Sub-theme</h2>
-                <p class="subtheme-description">Choose a sub-theme from the dropdown to view its details.</p>
-              </div>
-            </div>
-          </div>
-          <div class="column-right">
-            <div class="indicator-info">
-              <div class="info-box-header">
-                <div class="info-box-title">Indicator Information</div>
-                <div class="indicator-icon">
-                  <i class="icon icon-question"></i>
-                </div>
-              </div>
-              <div class="text-content">
-                <h2 class="indicator-title">Select an Indicator</h2>
-                <p class="indicator-description">Choose an indicator from the dropdown to view its details and related data.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right column: map -->
-        <div class="map-column">
-          <div class="map-container">
-            <div id="mapPlaceholder" class="map-placeholder">
-              <div class="placeholder-content">
-                <i class="fas fa-map-marked-alt map-marker-icon"></i>
-                <h3>Select a Sub-theme and Indicator</h3>
-                <p>Please choose a sub-theme from the dropdown menu above, then select an indicator to view the map.</p>
-              </div>
-            </div>
-            <div id="loadingSpinner" class="loading-spinner">
-              <div class="spinner"></div>
-              <p class="loading-text">Loading map data...</p>
-            </div>
-            <iframe id="map1" class="map-iframe" src=""></iframe>
-            <iframe id="map2" class="map-iframe" src=""></iframe>
-          </div>
-        </div>
-      </div>
-
-      <script>
-        // Toggle info box functionality
+// Toggle info box functionality
         document.addEventListener('DOMContentLoaded', function() {
             const toggleInfoBox = document.getElementById('toggleInfoBox');
             const twoColumnLayout = document.querySelector('.two-column');
@@ -145,26 +10,26 @@
             toggleInfoBox.addEventListener('click', () => {
                 // Toggle the 'collapsed' class on the two-column layout
                 twoColumnLayout.classList.toggle('collapsed');
-                
+
                 // Toggle between chevron icons and update the tooltip
                 const isCollapsed = twoColumnLayout.classList.contains('collapsed');
                 toggleIcon.className = isCollapsed ? 'fas fa-chevron-right' : 'fas fa-chevron-left';
                 toggleInfoBox.title = isCollapsed ? 'Show Info Box' : 'Hide Info Box';
-                
+
                 // Force map resize after a small delay to ensure the container has resized
                 const resizeMaps = () => {
                     if (window.map1) window.map1.invalidateSize();
                     if (window.map2) window.map2.invalidateSize();
                 };
-                
+
                 // Trigger resize events with a small delay to ensure DOM has updated
                 setTimeout(resizeMaps, 10);
                 setTimeout(resizeMaps, 100);
-                
+
                 // Also trigger window resize for any other elements that might need it
                 setTimeout(() => window.dispatchEvent(new Event('resize')), 10);
             });
-            
+
             // Initial map resize after everything is loaded
             window.addEventListener('load', () => {
                 setTimeout(() => {
@@ -173,7 +38,7 @@
                 }, 100);
             });
         });
-        
+
         // Define Dropdown class first
         class Dropdown {
             constructor(element) {
@@ -184,83 +49,83 @@
                 this.isOpen = false;
                 this.menuItems = Array.from(this.menu.querySelectorAll('a'));
                 this.focusedIndex = -1;
-                
+
                 this.initialize();
             }
-            
+
             initialize() {
                 // Add ARIA attributes
                 this.toggle.setAttribute('aria-haspopup', 'true');
                 this.toggle.setAttribute('aria-expanded', 'false');
-                
+
                 // Toggle dropdown on click
                 this.toggle.addEventListener('click', (e) => this.toggleDropdown(e));
-                
+
                 // Close when clicking outside
                 document.addEventListener('click', (e) => this.handleOutsideClick(e));
-                
+
                 // Handle keyboard navigation
                 this.toggle.addEventListener('keydown', (e) => this.handleToggleKeyDown(e));
                 this.menu.addEventListener('keydown', (e) => this.handleMenuKeyDown(e));
-                
+
                 // Handle menu item interactions
                 this.menuItems.forEach((item, index) => {
                     item.addEventListener('click', () => this.close());
                     item.addEventListener('focus', () => this.focusedIndex = index);
                 });
             }
-            
+
             toggleDropdown(e) {
                 e.stopPropagation();
-                
+
                 if (this.isOpen) {
                     this.close();
                 } else {
                     this.open();
                 }
             }
-            
+
             open() {
                 if (this.isOpen) return;
-                
+
                 // Close other dropdowns first
                 Dropdown.closeAll(this);
-                
+
                 // Open this dropdown
                 this.element.classList.add('active');
                 this.toggle.setAttribute('aria-expanded', 'true');
                 this.chevron.style.transform = 'rotate(180deg)';
                 this.isOpen = true;
-                
+
                 // Focus first item if available
                 if (this.menuItems.length > 0) {
                     this.focusedIndex = 0;
                     this.menuItems[0].focus();
                 }
             }
-            
+
             close() {
                 if (!this.isOpen) return;
-                
+
                 this.element.classList.remove('active');
                 this.toggle.setAttribute('aria-expanded', 'false');
                 this.chevron.style.transform = '';
                 this.isOpen = false;
                 this.focusedIndex = -1;
-                
+
                 // Return focus to toggle
                 this.toggle.focus();
             }
-            
+
             handleOutsideClick(e) {
                 if (!this.element.contains(e.target)) {
                     this.close();
                 }
             }
-            
+
             handleToggleKeyDown(e) {
                 const { key } = e;
-                
+
                 if (key === 'Enter' || key === ' ' || key === 'ArrowDown' || key === 'Down') {
                     e.preventDefault();
                     this.open();
@@ -275,38 +140,38 @@
                     }
                 }
             }
-            
+
             handleMenuKeyDown(e) {
                 const { key } = e;
-                
+
                 switch (key) {
                     case 'Escape':
                         e.preventDefault();
                         this.close();
                         break;
-                        
+
                     case 'ArrowDown':
                     case 'Down':
                         e.preventDefault();
                         this.focusNextItem();
                         break;
-                        
+
                     case 'ArrowUp':
                     case 'Up':
                         e.preventDefault();
                         this.focusPrevItem();
                         break;
-                        
+
                     case 'Home':
                         e.preventDefault();
                         this.focusItem(0);
                         break;
-                        
+
                     case 'End':
                         e.preventDefault();
                         this.focusItem(this.menuItems.length - 1);
                         break;
-                        
+
                     case 'Tab':
                         if (!e.shiftKey && this.focusedIndex === this.menuItems.length - 1) {
                             // Close dropdown when tabbing out of the last item
@@ -319,24 +184,24 @@
                         break;
                 }
             }
-            
+
             focusNextItem() {
                 this.focusedIndex = (this.focusedIndex + 1) % this.menuItems.length;
                 this.menuItems[this.focusedIndex].focus();
             }
-            
+
             focusPrevItem() {
                 this.focusedIndex = (this.focusedIndex - 1 + this.menuItems.length) % this.menuItems.length;
                 this.menuItems[this.focusedIndex].focus();
             }
-            
+
             focusItem(index) {
                 if (index >= 0 && index < this.menuItems.length) {
                     this.focusedIndex = index;
                     this.menuItems[index].focus();
                 }
             }
-            
+
             static closeAll(exceptDropdown = null) {
                 document.querySelectorAll('.dropdown').forEach(dropdown => {
                     const instance = dropdown._dropdownInstance;
@@ -352,7 +217,7 @@
             document.querySelectorAll('.dropdown').forEach(dropdown => {
                 dropdown._dropdownInstance = new Dropdown(dropdown);
             });
-            
+
             // Handle map toggle functionality
             const viewToggle = document.getElementById('viewToggle');
             const map1 = document.getElementById('map1');
@@ -434,44 +299,44 @@
             let currentTheme = null;
             let currentSubtheme = null;
             let currentIndicator = null;
-            
+
             // Function to update URL with current state
             function updateURL() {
                 const params = new URLSearchParams();
                 if (currentTheme) params.set('theme', currentTheme.id);
                 if (currentSubtheme) params.set('subtheme', currentSubtheme.id);
                 if (currentIndicator) params.set('indicator', currentIndicator.id);
-                
+
                 const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
                 window.history.pushState({}, '', newUrl);
             }
-            
+
             // Function to find theme by ID
             function findThemeById(themeId) {
                 return themesData.find(theme => theme.id === themeId);
             }
-            
+
             // Load state from URL parameters
             function loadStateFromURL() {
                 const params = new URLSearchParams(window.location.search);
                 const themeId = params.get('theme');
                 const subthemeId = params.get('subtheme');
                 const indicatorId = params.get('indicator');
-                
+
                 if (themeId) {
                     const theme = findThemeById(themeId);
                     if (theme) {
                         // Use setTimeout to ensure dropdowns are initialized
                         setTimeout(() => {
                             selectTheme(theme);
-                            
+
                             if (subthemeId) {
                                 // Small delay to ensure theme is processed
                                 setTimeout(() => {
                                     const subtheme = theme.subthemes.find(s => s.id === subthemeId);
                                     if (subtheme) {
                                         selectSubtheme(subtheme);
-                                        
+
                                         if (indicatorId) {
                                             // Small delay to ensure subtheme is processed
                                             setTimeout(() => {
@@ -488,7 +353,7 @@
                     }
                 }
             }
-            
+
             // Handle browser back/forward buttons
             window.addEventListener('popstate', () => {
                 loadStateFromURL();
@@ -585,7 +450,7 @@
                         </div>`;
                     return;
                 }
-                
+
                 themeInfo.innerHTML = `
                     <div class="info-box-header">
                         <div class="info-box-title">Theme Information</div>
@@ -604,26 +469,26 @@
                 currentTheme = theme;
                 currentSubtheme = null;
                 currentIndicator = null;
-                
+
                 // Get map elements
                 const map1 = document.getElementById('map1');
                 const map2 = document.getElementById('map2');
                 const mapPlaceholder = document.getElementById('mapPlaceholder');
-                
+
                 // Reset map display to show placeholder and hide maps
                 if (mapPlaceholder && map1 && map2) {
                     mapPlaceholder.style.display = 'flex';
                     map1.style.display = 'none';
                     map2.style.display = 'none';
-                    
+
                     // Clear map sources
                     map1.src = '';
                     map2.src = '';
                 }
-                
+
                 // Update theme button
                 updateButton(themeDropdown, theme.name, 'folder');
-                
+
                 // Reset theme info to default
                 const themeInfo = document.querySelector('.theme-info');
                 if (themeInfo) {
@@ -639,13 +504,13 @@
                             <p class="theme-description">${theme.description}</p>
                         </div>`;
                 }
-                
+
                 // Reset subtheme dropdown
                 updateButton(subthemeDropdown, 'Select Subtheme', 'folder-open');
-                
+
                 // Show subtheme dropdown
                 subthemeDropdown.style.display = 'block';
-                
+
                 // Clear and populate subthemes
                 subthemeMenu.innerHTML = '';
                 theme.subthemes.forEach(subtheme => {
@@ -654,11 +519,11 @@
                     });
                     subthemeMenu.appendChild(item);
                 });
-                
+
                 // Reset and hide indicator dropdown
                 updateButton(indicatorDropdown, 'Select Indicator', 'chart-bar');
                 indicatorDropdown.style.display = 'none';
-                
+
                 // Reset indicator info box to default state
                 const indicatorInfo = document.querySelector('.indicator-info');
                 if (indicatorInfo) {
@@ -674,7 +539,7 @@
                             <p class="indicator-description">Choose a sub-theme first, then select an indicator to view its details.</p>
                         </div>`;
                 }
-                
+
                 // Reset subtheme info box to default state
                 const subthemeInfo = document.querySelector('.subtheme-info');
                 if (subthemeInfo) {
@@ -690,7 +555,7 @@
                             <p class="subtheme-description">Choose a sub-theme from the dropdown above to view its details.</p>
                         </div>`;
                 }
-                
+
                 closeAllDropdowns();
             }
 
@@ -698,30 +563,30 @@
             function selectSubtheme(subtheme) {
                 // Reset current indicator
                 currentIndicator = null;
-                
+
                 // Get map elements
                 const map1 = document.getElementById('map1');
                 const map2 = document.getElementById('map2');
                 const mapPlaceholder = document.getElementById('mapPlaceholder');
-                
+
                 // Reset map display to show placeholder and hide maps
                 mapPlaceholder.style.display = 'flex';
                 map1.style.display = 'none';
                 map2.style.display = 'none';
-                
+
                 // Clear map sources
                 map1.src = '';
                 map2.src = '';
-                
+
                 // Update current subtheme
                 currentSubtheme = subtheme;
-                
+
                 // Update subtheme button
                 updateButton(subthemeDropdown, subtheme.name, 'folder-open');
-                
+
                 // Reset and update indicator button
                 updateButton(indicatorDropdown, 'Select Indicator', 'chart-bar');
-                
+
                 // Update subtheme info box
                 const subthemeInfo = document.querySelector('.subtheme-info');
                 if (subthemeInfo) {
@@ -737,7 +602,7 @@
                             <p class="subtheme-description">${subtheme.description || 'No description available.'}</p>
                         </div>`;
                 }
-                
+
                 // Reset indicator info box to default state
                 const indicatorInfo = document.querySelector('.indicator-info');
                 if (indicatorInfo) {
@@ -753,10 +618,10 @@
                             <p class="indicator-description">Choose an indicator from the dropdown above to view its details and map.</p>
                         </div>`;
                 }
-                
+
                 // Show indicator dropdown
                 indicatorDropdown.style.display = 'block';
-                
+
                 // Clear and populate indicators
                 indicatorMenu.innerHTML = '';
                 subtheme.indicators.forEach(indicator => {
@@ -767,14 +632,14 @@
                     });
                     indicatorMenu.appendChild(item);
                 });
-                
+
                 // Close all dropdowns using the Dropdown class if available
                 if (window.Dropdown) {
                     Dropdown.closeAll();
                 } else {
                     closeAllDropdowns();
                 }
-                
+
                 // Ensure theme info is still showing the parent theme
                 if (currentTheme) {
                     updateThemeInfo(currentTheme);
@@ -789,10 +654,10 @@
             // Indicator selected
             function selectIndicator(indicator) {
                 currentIndicator = indicator;
-                
+
                 // Update indicator button
                 updateButton(indicatorDropdown, indicator.title, indicator.icon.replace('fa-', ''));
-                
+
                 // Close the dropdown directly using the element's instance
                 const dropdownElement = document.querySelector('.dropdown.active');
                 if (dropdownElement && dropdownElement._dropdownInstance) {
@@ -809,17 +674,17 @@
                         }
                     });
                 }
-                
+
                 // Update indicator info box
                 const indicatorInfo = document.querySelector('.indicator-info');
                 let unitsHtml = indicator.unit_of_measure ? `<span class="indicator-meta-head"><strong>Units:</strong></span><span class="indicator-meta-body"> ${indicator.unit_of_measure}  |  </span>` : '';
                 let sourceHtml = indicator.source ? `<span class="indicator-meta-head"><strong>Source:</strong></span><span class="indicator-meta-body"> ${indicator.source}</span>` : '';
                 let metaHtml = '';
-                
+
                 if (indicator.source || indicator.unit_of_measure) {
                     metaHtml = `<div class="indicator-meta-container">${unitsHtml}${sourceHtml}</div>`;
                 }
-                
+
                 indicatorInfo.innerHTML = `
                     <div class="info-box-header">
                         <div class="info-box-title">Indicator Information</div>
@@ -832,7 +697,7 @@
                         <p class="indicator-description">${indicator.description}</p>
                         <div class="meta-info">${metaHtml}</div>
                     </div>`;
-                
+
                 // Find and update the current theme based on the indicator's theme ID
                 if (indicator.theme) {
                     const theme = findThemeById(indicator.theme);
@@ -846,41 +711,41 @@
                     // Fallback to current theme if no theme ID in indicator
                     updateThemeInfo(currentTheme);
                 }
-                
+
                 // Get map elements
                 const map1 = document.getElementById('map1');
                 const map2 = document.getElementById('map2');
                 const mapPlaceholder = document.getElementById('mapPlaceholder');
-                
+
                 if (indicator && indicator.map1_url) {
                     // Get the loading spinner
                     const loadingSpinner = document.getElementById('loadingSpinner');
-                    
+
                     // Hide the placeholder and show the loading spinner
                     mapPlaceholder.style.display = 'none';
                     loadingSpinner.style.display = 'flex';
-                    
+
                     // Hide any previously shown map
                     map1.style.display = 'none';
-                    
+
                     // Set up map1 with load event to hide spinner and show map
                     map1.onload = function() {
                         loadingSpinner.style.display = 'none';
                         map1.style.display = 'block';
                     };
-                    
+
                     // Set up error handling
                     map1.onerror = function() {
                         loadingSpinner.style.display = 'none';
                         mapPlaceholder.style.display = 'flex';
                         console.error('Failed to load map');
                     };
-                    
+
                     // Start loading the map after a small delay to ensure spinner is visible
                     setTimeout(() => {
                         map1.src = indicator.map1_url;
                     }, 50);
-                    
+
                     // Set up map2 if URL exists
                     if (indicator.map2_url) {
                         map2.onload = function() {
@@ -891,7 +756,7 @@
                     } else {
                         map2.style.display = 'none';
                     }
-                    
+
                     // Set active view to explore
                     if (exploreLabel) exploreLabel.classList.add('active');
                     if (analyzeLabel) analyzeLabel.classList.remove('active');
@@ -903,10 +768,10 @@
                     map1.style.display = 'none';
                     map2.style.display = 'none';
                 }
-                
+
                 // Update URL without page reload
                 window.history.pushState({}, '', indicator.url);
-                
+
                 // Close all dropdowns
                 if (window.Dropdown) {
                     Dropdown.closeAll();
@@ -929,7 +794,7 @@
         });
         document.addEventListener('DOMContentLoaded', function() {
           const resourcesButton = document.getElementById('resourcesButton');
-          
+
           resourcesButton.addEventListener('click', function() {
             try {
               // Send a message to the parent window to navigate to the resources section
@@ -937,7 +802,7 @@
                 type: 'NAVIGATE_TO_RESOURCES',
                 target: 'newdev.naturesquamish.ca'  // Target origin for verification
               }, '*');
-              
+
               // Also update the parent URL if we're not in an iframe (for testing)
               if (window === window.top) {
                 const currentUrl = window.location.href.split('#')[0];
@@ -947,7 +812,7 @@
               console.error('Error navigating to resources:', e);
             }
           });
-          
+
           // Optional: Listen for a response from the parent
           window.addEventListener('message', function(event) {
             // Verify the message is from a trusted origin
@@ -958,11 +823,7 @@
             }
           });
         });
-      </script>
-    </div>
 
-
-    <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Enhanced dropdown functionality
             class Dropdown {
@@ -974,83 +835,83 @@
                     this.isOpen = false;
                     this.menuItems = Array.from(this.menu.querySelectorAll('a'));
                     this.focusedIndex = -1;
-                    
+
                     this.initialize();
                 }
-                
+
                 initialize() {
                     // Add ARIA attributes
                     this.toggle.setAttribute('aria-haspopup', 'true');
                     this.toggle.setAttribute('aria-expanded', 'false');
-                    
+
                     // Toggle dropdown on click
                     this.toggle.addEventListener('click', (e) => this.toggleDropdown(e));
-                    
+
                     // Close when clicking outside
                     document.addEventListener('click', (e) => this.handleOutsideClick(e));
-                    
+
                     // Handle keyboard navigation
                     this.toggle.addEventListener('keydown', (e) => this.handleToggleKeyDown(e));
                     this.menu.addEventListener('keydown', (e) => this.handleMenuKeyDown(e));
-                    
+
                     // Handle menu item interactions
                     this.menuItems.forEach((item, index) => {
                         item.addEventListener('click', () => this.close());
                         item.addEventListener('focus', () => this.focusedIndex = index);
                     });
                 }
-                
+
                 toggleDropdown(e) {
                     e.stopPropagation();
-                    
+
                     if (this.isOpen) {
                         this.close();
                     } else {
                         this.open();
                     }
                 }
-                
+
                 open() {
                     if (this.isOpen) return;
-                    
+
                     // Close other dropdowns first
                     Dropdown.closeAll(this);
-                    
+
                     // Open this dropdown
                     this.element.classList.add('active');
                     this.toggle.setAttribute('aria-expanded', 'true');
                     this.chevron.style.transform = 'rotate(180deg)';
                     this.isOpen = true;
-                    
+
                     // Focus first item if available
                     if (this.menuItems.length > 0) {
                         this.focusedIndex = 0;
                         this.menuItems[0].focus();
                     }
                 }
-                
+
                 close() {
                     if (!this.isOpen) return;
-                    
+
                     this.element.classList.remove('active');
                     this.toggle.setAttribute('aria-expanded', 'false');
                     this.chevron.style.transform = '';
                     this.isOpen = false;
                     this.focusedIndex = -1;
-                    
+
                     // Return focus to toggle
                     this.toggle.focus();
                 }
-                
+
                 handleOutsideClick(e) {
                     if (!this.element.contains(e.target)) {
                         this.close();
                     }
                 }
-                
+
                 handleToggleKeyDown(e) {
                     const { key } = e;
-                    
+
                     if (key === 'Enter' || key === ' ' || key === 'ArrowDown' || key === 'Down') {
                         e.preventDefault();
                         this.open();
@@ -1065,38 +926,38 @@
                         }
                     }
                 }
-                
+
                 handleMenuKeyDown(e) {
                     const { key } = e;
-                    
+
                     switch (key) {
                         case 'Escape':
                             e.preventDefault();
                             this.close();
                             break;
-                            
+
                         case 'ArrowDown':
                         case 'Down':
                             e.preventDefault();
                             this.focusNextItem();
                             break;
-                            
+
                         case 'ArrowUp':
                         case 'Up':
                             e.preventDefault();
                             this.focusPrevItem();
                             break;
-                            
+
                         case 'Home':
                             e.preventDefault();
                             this.focusItem(0);
                             break;
-                            
+
                         case 'End':
                             e.preventDefault();
                             this.focusItem(this.menuItems.length - 1);
                             break;
-                            
+
                         case 'Tab':
                             if (!e.shiftKey && this.focusedIndex === this.menuItems.length - 1) {
                                 // Close dropdown when tabbing out of the last item
@@ -1109,24 +970,24 @@
                             break;
                     }
                 }
-                
+
                 focusNextItem() {
                     this.focusedIndex = (this.focusedIndex + 1) % this.menuItems.length;
                     this.menuItems[this.focusedIndex].focus();
                 }
-                
+
                 focusPrevItem() {
                     this.focusedIndex = (this.focusedIndex - 1 + this.menuItems.length) % this.menuItems.length;
                     this.menuItems[this.focusedIndex].focus();
                 }
-                
+
                 focusItem(index) {
                     if (index >= 0 && index < this.menuItems.length) {
                         this.focusedIndex = index;
                         this.menuItems[index].focus();
                     }
                 }
-                
+
                 static closeAll(exceptDropdown = null) {
                     document.querySelectorAll('.dropdown').forEach(dropdown => {
                         const instance = dropdown._dropdownInstance;
@@ -1136,17 +997,17 @@
                     });
                 }
             }
-            
+
             // Initialize all dropdowns on the page
             document.querySelectorAll('.dropdown').forEach(dropdown => {
                 dropdown._dropdownInstance = new Dropdown(dropdown);
             });
-            
+
             // Update the map iframe source and show the map
             const map1 = document.getElementById('map1');
             const map2 = document.getElementById('map2');
             const mapPlaceholder = document.getElementById('mapPlaceholder');
-            
+
             if (map1 && map2 && mapPlaceholder) {
                 if (subTheme && indicator && indicator.map1_url) {
                     map1.src = indicator.map1_url;
@@ -1192,7 +1053,7 @@
             // Fetch WordPress posts with tag 'indicator one'
             const postsContainer = document.getElementById('postsList');
             const loadingElement = document.getElementById('loadingPosts');
-            
+
             // Debug function to log API responses
             async function debugFetch(url) {
                 try {
@@ -1206,19 +1067,19 @@
                     throw error;
                 }
             }
-            
+
             // Function to format date
             function formatDate(dateString) {
                 const options = { year: 'numeric', month: 'long', day: 'numeric' };
                 return new Date(dateString).toLocaleDateString(undefined, options);
             }
-            
+
             // Function to strip HTML tags and limit excerpt length
             function stripHtml(html, maxLength = 100) {
                 const tmp = document.createElement('div');
                 tmp.innerHTML = html;
                 let text = tmp.textContent || tmp.innerText || '';
-                
+
                 // Trim and limit length
                 text = text.trim();
                 if (text.length > maxLength) {
@@ -1278,13 +1139,13 @@
             function updateCarouselSize() {
                 const carousel = document.getElementById('carousel');
                 if (!carousel || !carouselState.cards.length) return;
-                
+
                 const card = carouselState.cards[0];
                 const cardStyle = window.getComputedStyle(card);
-                carouselState.cardWidth = card.offsetWidth + 
-                    parseInt(cardStyle.marginLeft) + 
+                carouselState.cardWidth = card.offsetWidth +
+                    parseInt(cardStyle.marginLeft) +
                     parseInt(cardStyle.marginRight);
-                
+
                 updateCarouselPosition();
             }
 
@@ -1292,7 +1153,7 @@
             function updateCarouselPosition() {
                 const carousel = document.getElementById('carousel');
                 if (!carousel) return;
-                
+
                 carousel.scrollTo({
                     left: carouselState.currentIndex * carouselState.cardWidth,
                     behavior: 'smooth'
@@ -1305,7 +1166,7 @@
                 const prevBtn = document.getElementById('prevBtn');
                 const nextBtn = document.getElementById('nextBtn');
                 if (!prevBtn || !nextBtn) return;
-                
+
                 prevBtn.style.display = carouselState.currentIndex === 0 ? 'none' : 'flex';
                 nextBtn.style.display = carouselState.currentIndex >= carouselState.cards.length - 1 ? 'none' : 'flex';
             }
@@ -1313,23 +1174,23 @@
             // Initialize carousel
             function initCarousel() {
                 cleanupCarousel();
-                
+
                 const carousel = document.getElementById('carousel');
                 const prevBtn = document.getElementById('prevBtn');
                 const nextBtn = document.getElementById('nextBtn');
-                
+
                 if (!carousel || !prevBtn || !nextBtn) {
                     console.warn('Carousel elements not found');
                     return;
                 }
-                
+
                 carouselState.cards = Array.from(document.querySelectorAll('.post-card'));
                 if (!carouselState.cards.length) return;
-                
+
                 // Initial setup
                 updateCarouselSize();
                 updateButtons();
-                
+
                 // Event listeners
                 prevBtn.addEventListener('click', () => {
                     if (carouselState.currentIndex > 0) {
@@ -1337,18 +1198,18 @@
                         updateCarouselPosition();
                     }
                 });
-                
+
                 nextBtn.addEventListener('click', () => {
                     if (carouselState.currentIndex < carouselState.cards.length - 1) {
                         carouselState.currentIndex++;
                         updateCarouselPosition();
                     }
                 });
-                
+
                 // Resize observer for better performance
                 carouselState.resizeObserver = new ResizeObserver(handleResize);
                 carouselState.resizeObserver.observe(document.body);
-                
+
                 // Initial position
                 updateCarouselPosition();
             }
@@ -1357,10 +1218,10 @@
             async function fetchWordPressPosts(indicator) {
                 const postsContainer = document.getElementById('posts-container');
                 const loadingElement = document.getElementById('loading-indicator');
-                
+
                 // Clean up previous carousel
                 cleanupCarousel();
-                
+
                 // Reset state
                 carouselState = {
                     resizeObserver: null,
@@ -1369,14 +1230,14 @@
                     cardWidth: 0,
                     cards: []
                 };
-                
+
                 // Show loading state
                 if (loadingElement) loadingElement.style.display = 'block';
                 if (postsContainer) {
                     postsContainer.innerHTML = '';
                     postsContainer.style.display = 'block';
                 }
-                
+
                 try {
                     if (!indicator || !indicator.posts) {
                         console.log('No posts filter defined for this indicator');
@@ -1387,34 +1248,34 @@
                     // Convert the posts string to a slug format
                     const tagSlug = indicator.posts.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
                     console.log('Searching for WordPress posts with tag slug:', tagSlug);
-                    
+
                     // Add timeout for the fetch request
                     const controller = new AbortController();
                     const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
-                    
+
                     // First, get the tag ID for the indicator's posts
                     const tagResponse = await fetch(
                         `https://newdev.naturesquamish.ca/wp-json/wp/v2/tags?slug=${tagSlug}`,
                         { signal: controller.signal }
                     );
                     clearTimeout(timeoutId);
-                    
+
                     if (!tagResponse.ok) {
                         throw new Error(`HTTP error! status: ${tagResponse.status}`);
                     }
-                    
+
                     const tags = await tagResponse.json();
                     console.log('Found matching tags:', tags);
-                    
+
                     if (!tags || tags.length === 0) {
                         console.warn(`No matching tags found for: ${tagSlug}`);
                         if (postsContainer) postsContainer.innerHTML = `<p>No posts found for: ${indicator.posts}</p>`;
                         return;
                     }
-                    
+
                     const tagId = tags[0].id;
                     console.log(`Found tag ID ${tagId} for "${tagSlug}"`);
-                    
+
                     // Fetch posts with excerpts and featured image
                     const postsResponse = await fetch(
                         `https://newdev.naturesquamish.ca/wp-json/wp/v2/posts?tags=${tagId}` +
@@ -1423,19 +1284,19 @@
                         `&per_page=3`,
                         { signal: controller.signal }
                     );
-                    
+
                     if (!postsResponse.ok) {
                         throw new Error(`Failed to fetch posts: ${postsResponse.statusText}`);
                     }
-                    
+
                     const posts = await postsResponse.json();
                     console.log(`Fetched ${posts.length} posts for tag ID ${tagId}`);
-                    
+
                     if (posts.length === 0) {
                         if (postsContainer) postsContainer.innerHTML = '<p>No updates available at the moment.</p>';
                         return;
                     }
-                    
+
                     // Generate HTML for each post
                     const postsHtml = `
                         <div class="carousel-container" id="carousel">
@@ -1462,33 +1323,33 @@
                         <button id="prevBtn" class="carousel-nav prev" aria-label="Previous">❮</button>
                         <button id="nextBtn" class="carousel-nav next" aria-label="Next">❯</button>
                     `;
-            
+
                     // Initialize carousel after posts are loaded
                     if (postsContainer) {
                         // Use requestAnimationFrame for smoother updates
                         requestAnimationFrame(() => {
                             postsContainer.innerHTML = postsHtml;
-                            
+
                             // Initialize carousel on next frame
                             requestAnimationFrame(() => {
                                 initCarousel();
-                                
+
                                 // Force a reflow to ensure styles are applied
                                 void postsContainer.offsetHeight;
-                                
+
                                 // Show the container
                                 postsContainer.style.opacity = '1';
                             });
                         });
                     }
-                    
-                    
+
+
                 } catch (error) {
                     console.error('Error fetching WordPress posts:', error);
-                    const errorMessage = error.name === 'AbortError' 
+                    const errorMessage = error.name === 'AbortError'
                         ? 'Request timed out. Please check your connection and try again.'
                         : 'Unable to load updates at this time. Please try again later.';
-                    
+
                     if (postsContainer) {
                         postsContainer.innerHTML = `
                             <div class="error-message">
@@ -1503,7 +1364,7 @@
                     if (loadingElement) loadingElement.style.display = 'none';
                 }
             }
-            
+
             // Fetch posts when the page loads with the current indicator's data
             const currentIndicator = {
                 posts: '{{ indicators.page_name.posts|escapejs }}',
@@ -1511,6 +1372,3 @@
             };
             fetchWordPressPosts(currentIndicator);
         });
-    </script>
-</body>
-</html>
