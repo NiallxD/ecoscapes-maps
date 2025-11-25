@@ -683,6 +683,7 @@ body, html {
       margin: 0;
       box-shadow: var(--shadow);
       border-radius: 20px;
+      background: white;
     }
 
 
