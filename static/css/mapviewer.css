@@ -804,7 +804,7 @@ body, html {
     .theme-info:hover .theme-icon,
     .subtheme-info:hover .subtheme-icon {
         opacity: 1;
-        transform: translateY(-1px);
+        font-size: 54px;
     }
 
     /* Title Styles */
