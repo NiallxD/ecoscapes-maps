@@ -770,7 +770,7 @@ body, html {
           align-items: flex-start; /* Align to top */
           justify-content: center;
           transition: all 0.2s ease;
-          opacity: 0.9;
+          opacity: 1;
           width: 60px;           /* Increased width */
           height: 70px;          /* Increased height to allow overflow */
           margin-top: 0px;     /* Pull up slightly into the header */
