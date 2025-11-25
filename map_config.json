@@ -4,13 +4,13 @@
       "id": "biodiversity",
       "name": "Biodiversity",
       "icon": "fa-leaf",
-      "themeIds": ["ecosystem-health", "biogeoclimatic-zones", "species-occurrences"]
+      "themeIds": ["02-ecosystem-health", "03-biogeoclimatic-zones", "04-species-occurrences"]
     },
     {
       "id": "connectivity",
       "name": "Species",
       "icon": "fa-paw",
-      "themeIds": ["habitat-suitability", "wildlife-corridors", "threats"]
+      "themeIds": ["07-habitat-cores", "08-wildlife-corridors", "06-connectivity-network"]
     }
   ],
   "themes": [
