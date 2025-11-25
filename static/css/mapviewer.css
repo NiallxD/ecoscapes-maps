@@ -116,10 +116,7 @@ body, html {
   border-color: var(--primary);
   background-color: var(--bg-hover);
   color: var(--primary);
-}
-
-.toggle-info-btn i {
-  font-size: 1.1em;
+  width: 200px;
 }
 
 /* Dropdowns */
@@ -322,6 +319,7 @@ body, html {
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  width: 200px;
   padding: 10px 16px;
   margin-left: 10px;
   cursor: pointer;

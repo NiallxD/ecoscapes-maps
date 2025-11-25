@@ -62,8 +62,8 @@
           </div>
         </div>
         
-        <button id="toggleInfoBox" class="toggle-info-btn" title="Toggle Info Box">
-          <i class="fas fa-info-circle"></i> Toggle Info
+        <button id="toggleInfoBox" class="toggle-info-btn" title="Hide Info">
+          <i class="fas fa-eye-slash"></i> Hide Information Pane
         </button>
       </div>
       <div class="two-column">
@@ -148,8 +148,10 @@
                 
                 // Toggle between chevron icons and update the tooltip
                 const isCollapsed = twoColumnLayout.classList.contains('collapsed');
-                toggleIcon.className = isCollapsed ? 'fas fa-chevron-right' : 'fas fa-chevron-left';
-                toggleInfoBox.title = isCollapsed ? 'Show Info Box' : 'Hide Info Box';
+                const iconClass = isCollapsed ? 'fa-eye' : 'fa-eye-slash';
+                toggleIcon.className = `fas ${iconClass}`;
+                toggleInfoBox.title = isCollapsed ? 'Show Info' : 'Hide Info';
+                toggleInfoBox.innerHTML = `<i class="fas ${iconClass}"></i> ${isCollapsed ? 'Show' : 'Hide'} Information Pane`;
                 
                 // Force map resize after a small delay to ensure the container has resized
                 const resizeMaps = () => {
