@@ -1,7 +1,7 @@
 @font-face {
     font-family: "custom-icons";
-    src: url("https://niallxd.github.io/ecoscapes-maps/static/fonts/custom-icons.woff2?3b1ae29a108c1ed1fbd64125746f7480") format("woff2"),
-url("https://niallxd.github.io/ecoscapes-maps/static/fonts/custom-icons.woff?3b1ae29a108c1ed1fbd64125746f7480") format("woff");
+    src: url("/static/fonts/custom-icons.woff2?eeff448078cf8961cdd78ab2c02ec1f1") format("woff2"),
+url("/static/fonts/custom-icons.woff?eeff448078cf8961cdd78ab2c02ec1f1") format("woff");
 }
 
 .icon:before {
@@ -111,186 +111,195 @@ url("https://niallxd.github.io/ecoscapes-maps/static/fonts/custom-icons.woff?3b1
 .icon.icon-mission:before {
     content: "\f120";
 }
-.icon.icon-micro-refugia:before {
+.icon.icon-mink:before {
     content: "\f121";
 }
-.icon.icon-micro-range-species:before {
+.icon.icon-micro-refugia:before {
     content: "\f122";
 }
-.icon.icon-mesic-vegetation:before {
+.icon.icon-micro-range-species:before {
     content: "\f123";
 }
-.icon.icon-mammals:before {
+.icon.icon-mesic-vegetation:before {
     content: "\f124";
 }
-.icon.icon-macro-refugia:before {
+.icon.icon-mammals:before {
     content: "\f125";
 }
-.icon.icon-long-toed-salamander:before {
+.icon.icon-macro-refugia:before {
     content: "\f126";
 }
-.icon.icon-local-knowledge:before {
+.icon.icon-long-toed-salamander:before {
     content: "\f127";
 }
-.icon.icon-linear-infrastructure:before {
+.icon.icon-local-knowledge:before {
     content: "\f128";
 }
-.icon.icon-learning-resources:before {
+.icon.icon-linear-infrastructure:before {
     content: "\f129";
 }
-.icon.icon-large-range-species:before {
+.icon.icon-learning-resources:before {
     content: "\f12a";
 }
-.icon.icon-large-range-corridors:before {
+.icon.icon-large-range-species:before {
     content: "\f12b";
 }
-.icon.icon-land-cover:before {
+.icon.icon-large-range-corridors:before {
     content: "\f12c";
 }
-.icon.icon-invasive-species:before {
+.icon.icon-land-cover:before {
     content: "\f12d";
 }
-.icon.icon-human-footprint:before {
+.icon.icon-invasive-species:before {
     content: "\f12e";
 }
-.icon.icon-how-to-contribute:before {
+.icon.icon-human-footprint:before {
     content: "\f12f";
 }
-.icon.icon-hoary-marmot:before {
+.icon.icon-how-to-contribute:before {
     content: "\f130";
 }
-.icon.icon-herptiles:before {
+.icon.icon-hoary-marmot:before {
     content: "\f131";
 }
-.icon.icon-habitat-threats:before {
+.icon.icon-herptiles:before {
     content: "\f132";
 }
-.icon.icon-habitat-suitability:before {
+.icon.icon-habitat-threats:before {
     content: "\f133";
 }
-.icon.icon-habitat-restoration:before {
+.icon.icon-habitat-suitability:before {
     content: "\f134";
 }
-.icon.icon-habitat-protection:before {
+.icon.icon-habitat-restoration:before {
     content: "\f135";
 }
-.icon.icon-habitat-losses:before {
+.icon.icon-habitat-protection:before {
     content: "\f136";
 }
-.icon.icon-habitat-cores:before {
+.icon.icon-habitat-losses:before {
     content: "\f137";
 }
-.icon.icon-habitat-connectivity:before {
+.icon.icon-habitat-cores:before {
     content: "\f138";
 }
-.icon.icon-grizzly-bear:before {
+.icon.icon-habitat-connectivity:before {
     content: "\f139";
 }
-.icon.icon-garter-snake:before {
+.icon.icon-grizzly-bear:before {
     content: "\f13a";
 }
-.icon.icon-forest-types:before {
+.icon.icon-garter-snake:before {
     content: "\f13b";
 }
-.icon.icon-forest-thinning:before {
+.icon.icon-forest-types:before {
     content: "\f13c";
 }
-.icon.icon-fores-harvest:before {
+.icon.icon-forest-thinning:before {
     content: "\f13d";
 }
-.icon.icon-ensatina-salamander:before {
+.icon.icon-fores-harvest:before {
     content: "\f13e";
 }
-.icon.icon-emvironmental-education:before {
+.icon.icon-ensatina-salamander:before {
     content: "\f13f";
 }
-.icon.icon-effective-means:before {
+.icon.icon-emvironmental-education:before {
     content: "\f140";
 }
-.icon.icon-ecosystem-services:before {
+.icon.icon-effective-means:before {
     content: "\f141";
 }
-.icon.icon-ecosystem-resilience:before {
+.icon.icon-ecosystem-services:before {
     content: "\f142";
 }
-.icon.icon-ecosystem-integrity:before {
+.icon.icon-ecosystem-resilience:before {
     content: "\f143";
 }
-.icon.icon-ecosystem-health:before {
+.icon.icon-ecosystem-integrity:before {
     content: "\f144";
 }
-.icon.icon-ecological-values:before {
+.icon.icon-ecosystem-health:before {
     content: "\f145";
 }
-.icon.icon-ecological-connectivity:before {
+.icon.icon-ecological-values:before {
     content: "\f146";
 }
-.icon.icon-douglass-squirell:before {
+.icon.icon-ecological-connectivity:before {
     content: "\f147";
 }
-.icon.icon-consequences:before {
+.icon.icon-douglass-squirell:before {
     content: "\f148";
 }
-.icon.icon-connectivity-overlay:before {
+.icon.icon-coyote:before {
     content: "\f149";
 }
-.icon.icon-connectivity-network:before {
+.icon.icon-consequences:before {
     content: "\f14a";
 }
-.icon.icon-connectivity-conservation:before {
+.icon.icon-connectivity-overlay:before {
     content: "\f14b";
 }
-.icon.icon-community-mapping:before {
+.icon.icon-connectivity-network:before {
     content: "\f14c";
 }
-.icon.icon-climate-corridors:before {
+.icon.icon-connectivity-conservation:before {
     content: "\f14d";
 }
-.icon.icon-climate-change:before {
+.icon.icon-community-mapping:before {
     content: "\f14e";
 }
-.icon.icon-climate-change-refugia:before {
+.icon.icon-climate-corridors:before {
     content: "\f14f";
 }
-.icon.icon-citizen-science:before {
+.icon.icon-climate-change:before {
     content: "\f150";
 }
-.icon.icon-canada-lynx:before {
+.icon.icon-climate-change-refugia:before {
     content: "\f151";
 }
-.icon.icon-bryophytes:before {
+.icon.icon-citizen-science:before {
     content: "\f152";
 }
-.icon.icon-black-tailed-deer:before {
+.icon.icon-canada-lynx:before {
     content: "\f153";
 }
-.icon.icon-black-bear:before {
+.icon.icon-bryophytes:before {
     content: "\f154";
 }
-.icon.icon-biogeoclimatic-realms:before {
+.icon.icon-black-tailed-deer:before {
     content: "\f155";
 }
-.icon.icon-biodiversity:before {
+.icon.icon-black-bear:before {
     content: "\f156";
 }
-.icon.icon-biodiversity-conservation:before {
+.icon.icon-biogeoclimatic-realms:before {
     content: "\f157";
 }
-.icon.icon-barriers:before {
+.icon.icon-biodiversity:before {
     content: "\f158";
 }
-.icon.icon-aligator-lizard:before {
+.icon.icon-biodiversity-conservation:before {
     content: "\f159";
 }
-.icon.icon-agricultural-use:before {
+.icon.icon-beaver:before {
     content: "\f15a";
 }
-.icon.icon-actionable-solutions:before {
+.icon.icon-barriers:before {
     content: "\f15b";
 }
-.icon.icon-about:before {
+.icon.icon-aligator-lizard:before {
     content: "\f15c";
 }
-.icon.icon-EcoScapes:before {
+.icon.icon-agricultural-use:before {
     content: "\f15d";
+}
+.icon.icon-actionable-solutions:before {
+    content: "\f15e";
+}
+.icon.icon-about:before {
+    content: "\f15f";
+}
+.icon.icon-EcoScapes:before {
+    content: "\f160";
 }
