@@ -763,9 +763,9 @@ body, html {
         /* Icon Base Styles */
         .indicator-icon,
         .theme-icon,
-        .subtheme-icon {
-          font-size: 50px;       /* Increased size */
-          color: #4CAF50;
+        .subtheme-icon { /* Increased size */
+          font-size: 4em;
+          color: #4CAF5026;
           margin: 0;
           display: flex;
           align-items: flex-start; /* Align to top */
@@ -775,7 +775,7 @@ body, html {
           width: 60px;           /* Increased width */
           height: 70px;          /* Increased height to allow overflow */
           margin-top: 0px;     /* Pull up slightly into the header */
-          margin-right: 0px;    /* Pull right slightly */
+          margin-right: 95px;    /* Pull right slightly */
           position: relative;    /* For z-index */
           z-index: 1;            /* Ensure icon stays above other elements */
         }
@@ -785,7 +785,7 @@ body, html {
         .indicator-icon i,
         .theme-icon i,
         .subtheme-icon i {
-            font-size: 1em;
+            font-size: 4em;
             line-height: 0;
             display: flex;
             align-items: center;
