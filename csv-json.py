@@ -144,22 +144,51 @@ for theme_name, theme_group in df.groupby('Theme', sort=False):
             # Add indicator to subtheme's indicators list
             subtheme_obj["indicators"].append(indicator_id)
 
+            # Initialize map URLs as empty strings
+            map1_url = ""
+            map2_url = ""
+
+            # Extract map URLs if they exist in the CSV
+            if 'map1' in row and pd.notna(row['map1']):
+                map1_value = str(row['map1']).strip()  # Don't use clean_text as it might modify the URL
+                if map1_value:
+                    if 'iframe' in map1_value:
+                        # Extract the URL from the iframe src attribute
+                        import re
+
+                        match = re.search(r'src="([^"]+)"', map1_value)
+                        if match:
+                            map1_url = match.group(1)
+                        else:
+                            map1_url = map1_value
+                    else:
+                        map1_url = map1_value  # Use the value directly if it's not an iframe
+
+            if 'map2' in row and pd.notna(row['map2']):
+                map2_value = str(row['map2']).strip()  # Don't use clean_text as it might modify the URL
+                if map2_value:
+                    if 'iframe' in map2_value:
+                        # Extract the URL from the iframe src attribute
+                        import re
+
+                        match = re.search(r'src="([^"]+)"', map2_value)
+                        if match:
+                            map2_url = match.group(1)
+                        else:
+                            map2_url = map2_value
+                    else:
+                        map2_url = map2_value  # Use the value directly if it's not an iframe
+            
             # Add indicator details to indicators dictionary
             indicators[indicator_id] = {
                 "title": f"{theme_order[theme_name]}.{subtheme_counter}.{indicator_counter} {indicator_name}",
                 "description": clean_description,
                 "source": format_source(row),
                 "unit_of_measure": clean_unit,
-                "icon": clean_text(row.get("IndicatorIcon", "")) or "fa-leaf"
+                "icon": clean_text(row.get("IndicatorIcon", "")) or "fa-leaf",
+                "map1_url": map1_url,
+                "map2_url": map2_url
             }
-
-            # Set default map URLs
-            default_map1 = "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1"
-            default_map2 = "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
-            
-            # Use map URLs from CSV if they exist, otherwise use defaults
-            indicators[indicator_id]["map1_url"] = clean_text(row.get("map1_url", default_map1)) or default_map1
-            indicators[indicator_id]["map2_url"] = clean_text(row.get("map2_url", default_map2)) or default_map2
 
             indicator_counter += 1
 
@@ -171,9 +200,7 @@ for theme_name, theme_group in df.groupby('Theme', sort=False):
 # Final JSON structure
 final_json = {
     "themes": themes,
-    "indicators": indicators,
-    "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-    "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+    "indicators": indicators
 }
 
 

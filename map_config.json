@@ -18,7 +18,7 @@
       "id": "01-ecosystem-resileince",
       "name": "1.0 Ecosystem Resileince",
       "description": "The ability of an ecosystem to respond to a disturbance, whether natural or human-made, by resisting damage and recovering without losing its core functions and structure. A key characteristic of a resilient ecosystem is high biodiversity, which allows it to better adapt to change. Monitoring changes in ecosystem resilience helps identify and prioritize areas in need of habitat protection and restoration.",
-      "icon": "icon-ecosystem-resilience",
+      "icon": "icon-icon-ecosystem-resilience",
       "subthemes": [
         {
           "id": "01-01-ecosystem-integrity",
@@ -63,7 +63,7 @@
       "id": "02-ecosystem-health",
       "name": "2.0 Ecosystem Health",
       "description": "An ecosystem's overall condition of health in relation to a natural or relatively undisturbed reference state. It is a measure of the ecosystem's capacity to maintain its biodiversity, ecological functions, and to cope with and adapt to environmental stressors over time. Losses in ecosystem health help identify areas in need of restoration. Gains in ecosystem health over time help identify areas that contribute to biodiversity and require protection.",
-      "icon": "icon-ecosystem-health",
+      "icon": "icon-icon-ecosystem-health",
       "subthemes": [
         {
           "id": "02-01-habitat-values",
@@ -84,12 +84,9 @@
           "icon": "icon-habitat-threats",
           "indicators": [
             "02-02-01-urbanization",
-            "02-02-02-linear-infrastructure",
-            "02-02-03-agricultural-use",
-            "02-02-04-forest-harvest",
-            "02-02-05-forest-thinning",
-            "02-02-06-invasive-species",
-            "02-02-07-wildfire"
+            "02-02-02-forest-harvest",
+            "02-02-03-invasive-species",
+            "02-02-04-wildfire"
           ]
         },
         {
@@ -109,8 +106,8 @@
     {
       "id": "03-biogeoclimatic-zones",
       "name": "3.0 Biogeoclimatic Zones",
-      "description": "BC’s Biogeoclimatic Ecosystem Classification (BEC) classifies broad forested landscapes and site-level vegetated areas based on similarities in climate, geography, and dominant plant and animal communities. Each regional zone reflects long-term interactions between climate and biology that shape the development of distinct habitats, ecological niches, and unique assemblages of plants and animals.  In landscape ecology, they help organize the landscape into manageable areas for conservation planning and for understanding how climate change may shift ecosystems at both regional and global scales.",
-      "icon": "icon-biogeoclimatic-realms",
+      "description": "BC’s Biogeoclimatic Ecosystem Classification (BEC) classifies broad forested landscapes and site-level vegetated areas based on similarities in climate, geography, and dominant plant and animal communities. Each regional zone reflects long-term interactions between climate and biology that shape the development of distinct habitats, ecological niches, and unique assemblages of plants and animals. In landscape ecology, they help organize the landscape into manageable areas for conservation planning and for understanding how climate change may shift ecosystems at both regional and global scales.",
+      "icon": "icon-icon-biogeoclimatic-realms",
       "subthemes": [
         {
           "id": "03-01-regional-zones",
@@ -124,7 +121,7 @@
         {
           "id": "03-02-site-level-vegetation",
           "name": "3.2 Site Level Vegetation",
-          "description": "The Site Level component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is defined by unique combinations of understory vegetation, soil characteristics (e.g., moisture and nutrient content), and physiographic features that influence the structure and composition of ecological communities during successional growth stages following episodes of landscape disturbance.  Identifying and mapping the distribution of site-level vegetation is vital for practical conservation planning, as most on-the-ground management decisions, like tree species selection for reforestation or defining specific habitat management strategies, happen at this level.",
+          "description": "The Site Level component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is defined by unique combinations of understory vegetation, soil characteristics (e.g., moisture and nutrient content), and physiographic features that influence the structure and composition of ecological communities during successional growth stages following episodes of landscape disturbance. Identifying and mapping the distribution of site-level vegetation is vital for practical conservation planning, as most on-the-ground management decisions, like tree species selection for reforestation or defining specific habitat management strategies, happen at this level.",
           "icon": "icon-site-level-vegetation",
           "indicators": [
             "03-02-01-site-level-vegetation"
@@ -138,6 +135,24 @@
           "indicators": [
             "03-03-01-vascular-plants"
           ]
+        },
+        {
+          "id": "03-04-mammals",
+          "name": "3.4 Mammals",
+          "description": "Vertebrate animals of the class Mammalia are distinguished by having milk-producing mammary glands to nourish their young, a large neocortex region in the brain, body fur or hair for insulation, and three middle ear bones that amplify sound and greatly enhance hearing sensitivity. They are endothermic (warm-blooded), breathe air, and are quadrupedal, with most mammals using four limbs for land movement. More than 80 unique species are known to inhabit the southwest Coast Mountains, ranging in size from small ground squirrels to large-ranging grizzly bears.",
+          "icon": "icon-pacific-fisher",
+          "indicators": [
+            "03-04-01-mammals"
+          ]
+        },
+        {
+          "id": "03-05-herptiles",
+          "name": "3.5 Herptiles",
+          "description": "Herptiles are an informal group of vertebrates that includes both amphibians and reptiles found in both terrestrial and freshwater environments. Amphibians (Class Amphibia) are commonly characterized by a life cycle that features an aquatic larval stage with gills and a terrestrial adult stage with lungs. Reptiles (Class Reptilia) are air-breathing, ectothermic (cold-blooded) vertebrates with scaly skin, most of which lay eggs on land. Over 25 distinct species are documented in the southwest Coast Mountains, including various toads, frogs, salamanders, turtles, lizards, and snakes.",
+          "icon": "icon-herptiles",
+          "indicators": [
+            "03-05-01-herptiles"
+          ]
         }
       ]
     },
@@ -145,7 +160,7 @@
       "id": "04-focal-species",
       "name": "4.0 Focal Species",
       "description": "Focal species are those most vulnerable to ecosystem threats within a specific region. They represent the needs of other local animal populations that share similar behavioural traits and habitat preferences, including dispersal ability, resource reliance, and sensitivity to disruptions in ecological processes. The core premise is that by managing a landscape to accommodate the needs of selected focal species, you also protect many other species with less strict requirements. In this way, focal species serve as surrogates for the broader ecosystem.",
-      "icon": "icon-focal-species",
+      "icon": "icon-icon-focal-species",
       "subthemes": [
         {
           "id": "04-01-mammals",
@@ -158,14 +173,13 @@
             "04-01-03-pacific-fisher",
             "04-01-04-canada-lynx",
             "04-01-05-black-bear",
-            "04-01-06-mountain-goat",
-            "04-01-07-black-tailed-deer",
-            "04-01-08-coyote",
-            "04-01-09-beaver",
-            "04-01-10-mink",
-            "04-01-11-hoary-marmot",
-            "04-01-12-douglas’s-squirrel",
-            "04-01-13-yellow-pine-chipmunk"
+            "04-01-06-black-tailed-deer",
+            "04-01-07-coyote",
+            "04-01-08-beaver",
+            "04-01-09-mink",
+            "04-01-10-hoary-marmot",
+            "04-01-11-douglas’s-squirrel",
+            "04-01-12-yellow-pine-chipmunk"
           ]
         },
         {
@@ -190,7 +204,7 @@
       "id": "05-climate-change-refugia",
       "name": "5.0 Climate Change Refugia",
       "description": "Areas of the landscape that remain buffered from the most severe effects of climate change, enabling sensitive species to survive locally. They are characterized by stable microclimates, unique hydrological features, or protective topography that provides sanctuary. In the context of biodiversity and landscape ecology, refugia are vital for species survival, acting as \"arks\" that safeguard genetic diversity and ecological communities. They serve as source populations for future re-colonization of the surrounding landscape, thereby supporting ecosystem functions and building resilience.",
-      "icon": "icon-climate-change-refugia",
+      "icon": "icon-icon-climate-change-refugia",
       "subthemes": [
         {
           "id": "05-01-macrorefugia",
@@ -216,7 +230,7 @@
       "id": "06-connectivity-network",
       "name": "6.0 Connectivity Network",
       "description": "An integrated system of core habitats (protected areas and other undisturbed natural regions) connected by wildlife corridors that are established through coordinated land-use policies to enable the unimpeded movement of species and the flow of natural processes. They are essential for maintaining and restoring ecological functions, halting current trends in biodiversity loss, and assisting species in adapting to changing environmental conditions in fragmented wildland habitats affected by landscape disturbance and climate change.",
-      "icon": "icon-connectivity-network",
+      "icon": "icon-icon-connectivity-network",
       "subthemes": [
         {
           "id": "06-01-priority-linkages",
@@ -261,12 +275,12 @@
       "id": "07-habitat-cores",
       "name": "7.0 Habitat Cores",
       "description": "Protected areas and other relatively undisturbed wildland habitats are defined by stable environmental conditions and healthy terrestrial ecosystem functions that sustain the life-cycle needs of diverse animal and plant communities. Wildlife habitat cores range from large home-range areas to smaller stepping-stone patches within fragmented landscapes. They serve as resource hubs within broader networks of ecological connectivity, offering refuge for larger animals migrating along movement pathways between areas of higher habitat suitability, as well as for resident populations of smaller animals.",
-      "icon": "icon-habitat-cores",
+      "icon": "icon-icon-habitat-cores",
       "subthemes": [
         {
           "id": "07-01-large-range-cores",
           "name": "7.1 Large-Range Cores",
-          "description": "Habitat cores for large-ranging focal species reflect access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range.  For carnivore species in this grouping, habitat cores are characterized by mean home-range sizes of 30 square kilometres, minimum stepping-stone patch sizes of 13,000 hectares, and dispersal distances of 60 kilometres.",
+          "description": "Habitat cores for large-ranging focal species reflect access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range. For carnivore species in this grouping, habitat cores are characterized by mean home-range sizes of 30 square kilometres, minimum stepping-stone patch sizes of 13,000 hectares, and dispersal distances of 60 kilometres.",
           "icon": "icon-large-range-species",
           "indicators": [
             "07-01-01-large-range-cores",
@@ -279,7 +293,7 @@
         {
           "id": "07-02-medium-range-cores",
           "name": "7.2 Medium-Range Cores",
-          "description": "Habitat cores for large-ranging focal species reflect access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range.  For carnivore species in this grouping, habitat cores are characterized by mean home-range sizes of 30 square kilometres, minimum stepping-stone patch sizes of 13,000 hectares, and dispersal distances of 60 kilometres.",
+          "description": "Habitat cores for large-ranging focal species reflect access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range. For carnivore species in this grouping, habitat cores are characterized by mean home-range sizes of 30 square kilometres, minimum stepping-stone patch sizes of 13,000 hectares, and dispersal distances of 60 kilometres.",
           "icon": "icon-moderate-range-species",
           "indicators": [
             "07-02-01-medium-range-cores",
@@ -292,12 +306,12 @@
         {
           "id": "07-03-small-range-cores",
           "name": "7.3 Small-Range Cores",
-          "description": "Habitat cores for small-ranging focal species reflect life-cycle needs such as access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range.  For species in this grouping, habitat cores are characterized by mean home-range sizes of less than 1 square kilometre, minimum stepping-stone patch sizes of 350 hectares, and dispersal distances of 6 kilometres.",
+          "description": "Habitat cores for small-ranging focal species reflect life-cycle needs such as access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range. For species in this grouping, habitat cores are characterized by mean home-range sizes of less than 1 square kilometre, minimum stepping-stone patch sizes of 350 hectares, and dispersal distances of 6 kilometres.",
           "icon": "icon-small-range-species",
           "indicators": [
             "07-03-01-small-range-cores",
             "07-03-02-beaver",
-            "07-03-03-mink",
+            "07-03-03-minkj",
             "07-03-04-hoary-marmot",
             "07-03-05-douglas’s-squirrel",
             "07-03-06-yellow-pine-chipmunk",
@@ -308,7 +322,7 @@
         {
           "id": "07-04-micro-range-cores",
           "name": "7.4 Micro-Range Cores",
-          "description": "Habitat cores for small-ranging focal species reflect life-cycle needs such as access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range.  For species in this grouping, habitat cores are characterized by patch sizes of 2 -5 hectares and mean dispersal distances of up to 1 kilometre.",
+          "description": "Habitat cores for small-ranging focal species reflect life-cycle needs such as access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range. For species in this grouping, habitat cores are characterized by patch sizes of 2 -5 hectares and mean dispersal distances of up to 1 kilometre.",
           "icon": "icon-micro-range-species",
           "indicators": [
             "07-04-01-micro-range-cores",
@@ -326,7 +340,7 @@
       "id": "08-wildlife-corridors",
       "name": "8.0 Wildlife Corridors",
       "description": "A clearly defined geographical space where governance, management, and stewardship over the long term sustain or restore effective ecological connectivity while honouring Indigenous stewardship values. Also known as Ecological Corridors in wildland settings or Green Infrastructure Networks in settled areas, these movement pathways link protected and conserved regions and/or unprotected natural habitats. They complement Other effective area-based conservation measures (OECMs) and, together, form ecological networks that conserve biodiversity and promote long-term ecosystem resilience.",
-      "icon": "icon-wildlife-corridors",
+      "icon": "icon-icon-wildlife-corridors",
       "subthemes": [
         {
           "id": "08-01-large-range-linkages",
@@ -382,7 +396,7 @@
       "id": "09-resistance-to-movement",
       "name": "9.0 Resistance to Movement",
       "description": "Resistance to movement describes the challenges species encounter when traversing a landscape. Human-made barriers, such as roads and urban areas, along with natural obstacles like extreme weather and rough terrain, increase resistance and can isolate populations. High resistance reduces ecological connectivity and hampers the natural processes essential for ecosystems to recover from disturbances. This disruption to wildlife movement diminishes ecosystem resilience by impeding species' ability to migrate to new resources, adapt to climate change, and sustain genetic diversity.",
-      "icon": "icon-resistance-to-movement",
+      "icon": "icon-icon-resistance-to-movement",
       "subthemes": [
         {
           "id": "09-01-barriers",
@@ -396,7 +410,7 @@
         {
           "id": "09-02-pinchpoints",
           "name": "9.2 Pinchpoints",
-          "description": "Narrow landscape features that restrict or hinder wildlife movement within an otherwise continuous ecological network. Natural pinch points include sudden topographic changes, such as steep ravines or channelized creeks. Human-made pinch points include fencing that physically guides larger mammals into narrow movement paths, and crossing structures, such as culverts and underpasses, that direct the movement of smaller mammals and herptiles across roads and other linear infrastructure features.  Mitigating the adverse effects of these pinch points requires harmonizing land-use policies across jurisdictional boundaries.",
+          "description": "Narrow landscape features that restrict or hinder wildlife movement within an otherwise continuous ecological network. Natural pinch points include sudden topographic changes, such as steep ravines or channelized creeks. Human-made pinch points include fencing that physically guides larger mammals into narrow movement paths, and crossing structures, such as culverts and underpasses, that direct the movement of smaller mammals and herptiles across roads and other linear infrastructure features. Mitigating the adverse effects of these pinch points requires harmonizing land-use policies across jurisdictional boundaries.",
           "icon": "icon-resistance-to-movement",
           "indicators": [
             "09-02-01-pinchpoints"
@@ -412,8 +426,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "",
       "icon": "icon-ecosystem-integrity",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-40yr-Trends-oCBG0ngLROmqMCCsJtH0WA?loc=50.117%2C-123.056%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=9.123127764960543&lng=-123.26048725554921&lat=49.712561509002825&layerTheme=%22forest_ecosystems%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221985-07-01T00%3A00%3A00%22&maxTimestamp=%222022-07-01T00%3A00%3A00%22&opacity=0.75&selectedLayer=%22forest_ecosystem_habitat%22&layerView=%22trend%22&layerStart=%221985-07-01T00%3A00%3A00%22&layerEnd=%222022-07-01T00%3A00%3A00%22&currentTimestamp=%222022-07-01T00%3A00%3A00%22&pitch=56.49999999999978"
     },
     "01-02-01-human-footprint": {
       "title": "1.2.1 Human Footprint",
@@ -421,8 +435,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-human-footprint",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Cumuilative-Impacts-YqoEPcJ7SK9Bh9CsSDscExIB?loc=50.117%2C-123.057%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=9.123127764960543&lng=-123.26048725554921&lat=49.712561509002825&layerTheme=%22human_footprint%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221985-07-01T00%3A00%3A00%22&maxTimestamp=%222022-07-01T00%3A00%3A00%22&opacity=0.75&pitch=56.49999999999978&selectedLayer=%22human_footprint%22&layerView=%22status%22&layerStart=%221985-07-01T00%3A00%3A00%22&layerEnd=%222022-07-01T00%3A00%3A00%22&currentTimestamp=%222022-07-01T00%3A00%3A00%22"
     },
     "01-03-01-climate-refugia": {
       "title": "1.3.1 Climate Refugia",
@@ -430,8 +444,8 @@
       "source": "<a target=\"_blank\" href=\"https://zenodo.org/records/10603162\">Stolar et al., 2024</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-climate-change-refugia",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Climate-Conservation-Priorities-FDiHAmijTFKwxOJvPIAXvA?loc=50.117%2C-123.05%2C7.73z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Climate-Conservation-Priorities-FDiHAmijTFKwxOJvPIAXvA?loc=50.117%2C-123.05%2C7.73z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "01-04-01-habitat-protection": {
       "title": "1.4.1 Habitat Protection",
@@ -439,8 +453,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-habitat-protection",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Climate-Conservation-Priorities-FDiHAmijTFKwxOJvPIAXvA?loc=50.117%2C-123.05%2C7.73z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Climate-Conservation-Priorities-FDiHAmijTFKwxOJvPIAXvA?loc=50.117%2C-123.05%2C7.73z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "01-04-02-habitat-restoration": {
       "title": "1.4.2 Habitat Restoration",
@@ -448,8 +462,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-habitat-restoration",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Climate-Restoration-Priorities-Stle9Ck9B1Tfyau6gHorixpD?loc=50.117%2C-123.05%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Climate-Restoration-Priorities-Stle9Ck9B1Tfyau6gHorixpD?loc=50.117%2C-123.05%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "02-01-01-land-cover": {
       "title": "2.1.1 Land Cover",
@@ -457,8 +471,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "categorical values",
       "icon": "icon-land-cover",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Land-Cover-2022-XKxpq2C0R9C6gHCz4XyohrB?loc=50.122%2C-123.836%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=9.123127764960543&lng=-123.26048725554921&lat=49.712561509002825&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&opacity=0.75&pitch=56.49999999999978&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22"
     },
     "02-01-02-ecosystem-services": {
       "title": "2.1.2 Ecosystem Services",
@@ -466,8 +480,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "$CAD/hectare/year",
       "icon": "icon-ecosystem-services",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-40yr-Trends-oCBG0ngLROmqMCCsJtH0WA?loc=50.117%2C-123.056%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-40yr-Trends-oCBG0ngLROmqMCCsJtH0WA?loc=50.117%2C-123.056%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "02-01-03-habitat-suitability": {
       "title": "2.1.3 Habitat Suitability",
@@ -475,8 +489,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative similarity (0-100)",
       "icon": "icon-habitat-suitability",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Haitat-Suitability-2022-rhxcxQrBSNayka69BGoOMhD?loc=50.117%2C-123.057%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=9.123127764960543&lng=-123.26048725554921&lat=49.712561509002825&layerTheme=%22forest_ecosystems%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221985-07-01T00%3A00%3A00%22&maxTimestamp=%222022-07-01T00%3A00%3A00%22&opacity=0.75&pitch=56.49999999999978&selectedLayer=%22forest_ecosystem_habitat%22&layerView=%22status%22&layerStart=%221985-07-01T00%3A00%3A00%22&layerEnd=%222022-07-01T00%3A00%3A00%22&currentTimestamp=%222022-07-01T00%3A00%3A00%22"
     },
     "02-01-04-structural-connectivity": {
       "title": "2.1.4 Structural Connectivity",
@@ -484,8 +498,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "index value (0-100)",
       "icon": "icon-structural-connectivity",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Haitat-Permeability-2022-dHQPHdXlQMu0LO9Ah1RCNPB?loc=50.117%2C-123.056%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=9.123127764960543&lng=-123.26048725554921&lat=49.712561509002825&layerTheme=%22forest_ecosystems%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221985-07-01T00%3A00%3A00%22&maxTimestamp=%222022-07-01T00%3A00%3A00%22&opacity=0.75&pitch=56.49999999999978&selectedLayer=%22forest_ecosystem_permeability%22&layerView=%22status%22&layerStart=%221985-07-01T00%3A00%3A00%22&layerEnd=%222022-07-01T00%3A00%3A00%22&currentTimestamp=%222022-07-01T00%3A00%3A00%22"
     },
     "02-02-01-urbanization": {
       "title": "2.2.1 Urbanization",
@@ -493,62 +507,35 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-urbanization",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Human-Footprint-40yr-Trends-m7aQ4GiOS0Ox9CJeCUlNgMD?loc=50.117%2C-123.056%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=9.123127764960543&lng=-123.26048725554921&lat=49.712561509002825&layerTheme=%22human_footprint%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221985-07-01T00%3A00%3A00%22&maxTimestamp=%222022-07-01T00%3A00%3A00%22&opacity=0.75&pitch=56.49999999999978&selectedLayer=%22human_footprint%22&layerView=%22trend%22&layerStart=%221985-07-01T00%3A00%3A00%22&layerEnd=%222022-07-01T00%3A00%3A00%22&currentTimestamp=%222022-07-01T00%3A00%3A00%22"
     },
-    "02-02-02-linear-infrastructure": {
-      "title": "2.2.2 Linear Infrastructure",
-      "description": "Conversion of wildland habitat for the development of linear transportation and utility corridors.  These include networks of primary and secondary resource roads, rail lines, water and energy pipelines, electrical transmission lines, and related facilities. The construction of these infrastructure corridors requires extensive vegetation clearing, permanently transforming natural landscapes into developed areas. Primary threats include habitat fragmentation, disruption of wildlife movement patterns, increased access and vulnerability to invasive species and the pressures of human activity.",
-      "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
-      "unit_of_measure": "categorical values",
-      "icon": "icon-linear-infrastructure",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
-    },
-    "02-02-03-agricultural-use": {
-      "title": "2.2.3 Agricultural Use",
-      "description": "The conversion of wildland habitat for agricultural purposes, including land clearing for irrigated and non-irrigated crops and orchards, as well as for rangeland pasture. Direct physical impacts include loss and fragmentation of wildland habitat and species displacement, soil contamination from pesticides affecting non-target species, alteration of surface and groundwater flow patterns, and disruption of ecological connectivity networks through boundary fencing. Indirect effects involve changed hydrology (e.g., stormwater runoff) and increased vulnerability to invasive species and associated biodiversity loss.",
-      "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
-      "unit_of_measure": "relative index value (0-100)",
-      "icon": "icon-agricultural-use",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
-    },
-    "02-02-04-forest-harvest": {
-      "title": "2.2.4 Forest Harvest",
+    "02-02-02-forest-harvest": {
+      "title": "2.2.2 Forest Harvest",
       "description": "While land disturbances caused by timber harvesting will regenerate over time, there are direct and indirect consequences that can be lasting if sustainable management practices are not in place. Direct physical impacts include the loss and fragmentation of wildland habitat, species displacement, alterations in surface and groundwater flow patterns, and disruptions to ecological connectivity networks. Indirect impacts include increased susceptibility to soil compaction and erosion, modifications to natural wildlife behaviour caused by greater access for recreational activities, and the increased spread of invasive species.",
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-fores-harvest",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Forest-Change-40yr-Trends-6173igyHQKu3u1o3eg9BloA?loc=50.117%2C-123.056%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Forest-Change-40yr-Trends-6173igyHQKu3u1o3eg9BloA?loc=50.117%2C-123.056%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
-    "02-02-05-forest-thinning": {
-      "title": "2.2.5 Forest Thinning",
-      "description": "Forest thinning involves the selective removal of trees to improve the health and growth of terrestrial ecosystems and to lessen the threat of wildfire and disease. Although thinning methods cause less noticeable changes to the landscape, they can still have lasting effects. Direct physical impacts include increased light and ground temperatures, the removal of critical habitat features (e.g., dead trees, dense undergrowth), and changes to water flow and related ecosystem functions. Indirect effects include reduced habitat quality for interior-dwelling species and shifts in wildlife movement patterns.",
-      "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
-      "unit_of_measure": "relative index value (0-100)",
-      "icon": "icon-forest-thinning",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
-    },
-    "02-02-06-invasive-species": {
-      "title": "2.2.6 Invasive Species",
+    "02-02-03-invasive-species": {
+      "title": "2.2.3 Invasive Species",
       "description": "Invasive species are non-native organisms introduced to new environments that can quickly establish and spread, displacing native plants and animals. Their impact on biodiversity loss includes outcompeting native species for resources, disrupting food webs, and spreading diseases, often causing population declines and extinctions. This loss of native species reduces genetic, species, and ecosystem diversity, which lowers the resilience of terrestrial ecosystems to stressors like climate change by simplifying community structures and impairing key ecological functions.",
       "source": "<a target=\"_blank\" href=\"https://catalogue.data.gov.bc.ca/dataset/9cf5d0b3-6ea7-4383-9d17-359c944db618\">BC Data Catalogue</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-invasive-species",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Invasive-Species-Dfw6CNxyQRuIzdANVk7ddD?loc=50.123%2C-123.094%2C7.78z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Invasive-Species-Dfw6CNxyQRuIzdANVk7ddD?loc=50.123%2C-123.094%2C7.78z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
-    "02-02-07-wildfire": {
-      "title": "2.2.7 Wildfire",
+    "02-02-04-wildfire": {
+      "title": "2.2.4 Wildfire",
       "description": "A wildfire conflagration is a severe fire event triggered by a combination of fuel (vegetation), weather conditions (such as high temperatures, strong winds, and drought), and topography (slopes). Wildfires can result in loss of life, destruction of natural habitats, and disruption of ecological connectivity networks. Although some ecosystems are adapted to fire, the increased frequency and intensity of fires can cause lasting changes in vegetation—such as forests turning into shrublands—leading to a decline in the ecosystem's overall health, diversity, and resilience.",
       "source": "<a target=\"_blank\" href=\"https://catalogue.data.gov.bc.ca/dataset/b756c2ac-e753-4771-bbb8-48c7f73d564a\">BC Data Catalogue</a>",
       "unit_of_measure": "Head Fire Intensity (kW/m)",
       "icon": "icon-wildfire",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Wildfire-Hazards-Current-Conditions-7qGLN0otRjSWwk1S6HEKQA?loc=50.117%2C-123.068%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Wildfire-Hazards-Current-Conditions-7qGLN0otRjSWwk1S6HEKQA?loc=50.117%2C-123.068%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "02-03-01-forest-cover": {
       "title": "2.3.1 Forest Cover",
@@ -556,8 +543,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-forest-types",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Forest-Change-40yr-Trends-6173igyHQKu3u1o3eg9BloA?loc=50.117%2C-123.056%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=9.123127764960543&lng=-123.26048725554921&lat=49.712561509002825&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&opacity=0.75&pitch=56.49999999999978&selectedLayer=%22deciduous_forest_prob%22&layerView=%22trend%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22"
     },
     "02-03-02-wetlands-and-riparian-areas": {
       "title": "2.3.2 Wetlands & Riparian Areas",
@@ -565,8 +552,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-wetland-riparian",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Riparian-Area-Change-40yr-Trends-yQcKcYKVT3ivZksr9CXMuHD?loc=50.117%2C-123.056%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=9.123127764960543&lng=-123.26048725554921&lat=49.712561509002825&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&opacity=0.75&pitch=56.49999999999978&selectedLayer=%22woody_wetland_prob%22&layerView=%22trend%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22"
     },
     "02-03-03-mesic-vegetation": {
       "title": "2.3.3 Mesic Vegetation",
@@ -574,8 +561,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-mesic-vegetation",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Mesic-Vegetation-Change-40yr-Trends-VmoTKg9ArQDqVqJDSIz0oyA?loc=50.117%2C-123.056%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=9.123127764960543&lng=-123.26048725554921&lat=49.712561509002825&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&opacity=0.75&pitch=56.49999999999978&selectedLayer=%22mesic_shrub_prob%22&layerView=%22trend%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22"
     },
     "02-03-04-xeric-vegetation": {
       "title": "2.3.4 Xeric Vegetation",
@@ -583,8 +570,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-xeric-vegetation",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Xerix-Vegetation-Change-40yr-Trends-SFCMpmCyQPetsVG9AJlp0yC?loc=50.117%2C-123.056%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=9.123127764960543&lng=-123.26048725554921&lat=49.712561509002825&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&opacity=0.75&pitch=56.49999999999978&selectedLayer=%22xeric_shrub_prob%22&layerView=%22trend%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22"
     },
     "03-01-01-regional-zones": {
       "title": "3.1.1 Regional Zones",
@@ -592,17 +579,17 @@
       "source": "<a target=\"_blank\" href=\"https://catalogue.data.gov.bc.ca/dataset/b2b6920f-2532-473a-8e7f-6bdc75f5b987\">BC Data Catalogue</a>",
       "unit_of_measure": "categorical values",
       "icon": "icon-biogeoclimatic-realms",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "03-02-01-site-level-vegetation": {
       "title": "3.2.1 Site Level Vegetation",
-      "description": "The Site Level component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is defined by unique combinations of understory vegetation, soil characteristics (e.g., moisture and nutrient content), and physiographic features that influence the structure and composition of ecological communities during successional growth stages following episodes of landscape disturbance.  Identifying and mapping the distribution of site-level vegetation is vital for practical conservation planning, as most on-the-ground management decisions, like tree species selection for reforestation or defining specific habitat management strategies, happen at this level.",
+      "description": "The Site Level component of BC’s Biogeoclimatic Ecosystem Classification (BEC) is defined by unique combinations of understory vegetation, soil characteristics (e.g., moisture and nutrient content), and physiographic features that influence the structure and composition of ecological communities during successional growth stages following episodes of landscape disturbance. Identifying and mapping the distribution of site-level vegetation is vital for practical conservation planning, as most on-the-ground management decisions, like tree species selection for reforestation or defining specific habitat management strategies, happen at this level.",
       "source": "<a target=\"_blank\" href=\"https://catalogue.data.gov.bc.ca/dataset/8fd15e4e-e7b1-4566-81d1-1ff8947bfd46\">BC Data Catalogue</a>",
       "unit_of_measure": "categorical values",
       "icon": "icon-site-level-vegetation",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "03-03-01-vascular-plants": {
       "title": "3.3.1 Vascular Plants",
@@ -610,8 +597,26 @@
       "source": "<a target=\"_blank\" href=\"https://www.gbif.org/\">GBIF</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-vascular-plants",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Vascular-Plant-Occurrences-9CDUDi5qKQ3mbIxcOZ2WgWD?loc=50.117%2C-123.057%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Vascular-Plant-Occurrences-9CDUDi5qKQ3mbIxcOZ2WgWD?loc=50.117%2C-123.057%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+    },
+    "03-04-01-mammals": {
+      "title": "3.4.1 Mammals",
+      "description": "Vertebrate animals of the class Mammalia are distinguished by having milk-producing mammary glands to nourish their young, a large neocortex region in the brain, body fur or hair for insulation, and three middle ear bones that amplify sound and greatly enhance hearing sensitivity. They are endothermic (warm-blooded), breathe air, and are quadrupedal, with most mammals using four limbs for land movement. More than 80 unique species are known to inhabit the southwest Coast Mountains, ranging in size from small ground squirrels to large-ranging grizzly bears.",
+      "source": "<a target=\"_blank\" href=\"https://www.gbif.org/\">GBIF</a>",
+      "unit_of_measure": "occurrences",
+      "icon": "icon-pacific-fisher",
+      "map1_url": "https://felt.com/embed/map/Mammal-Occurrences-lERDBeqmQ5Gudobw9CTQWjB?loc=50.117%2C-123.057%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Mammal-Occurrences-lERDBeqmQ5Gudobw9CTQWjB?loc=50.117%2C-123.057%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
+    },
+    "03-05-01-herptiles": {
+      "title": "3.5.1 Herptiles",
+      "description": "Herptiles are an informal group of vertebrates that includes both amphibians and reptiles found in both terrestrial and freshwater environments. Amphibians (Class Amphibia) are commonly characterized by a life cycle that features an aquatic larval stage with gills and a terrestrial adult stage with lungs. Reptiles (Class Reptilia) are air-breathing, ectothermic (cold-blooded) vertebrates with scaly skin, most of which lay eggs on land. Over 25 distinct species are documented in the southwest Coast Mountains, including various toads, frogs, salamanders, turtles, lizards, and snakes.",
+      "source": "<a target=\"_blank\" href=\"https://www.gbif.org/\">GBIF</a>",
+      "unit_of_measure": "occurrences",
+      "icon": "icon-western-toad",
+      "map1_url": "https://felt.com/embed/map/Herptile-Occurrences-D2mciHXKThG2NWKgCSb3tB?loc=50.117%2C-123.057%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Herptile-Occurrences-D2mciHXKThG2NWKgCSb3tB?loc=50.117%2C-123.057%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-01-01-grizzly-bear": {
       "title": "4.1.1 Grizzly Bear",
@@ -619,8 +624,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-grizzly-bear",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Grizzly-Bear-copy-9Ch9ARiWIsTz6gP9BOZVvQBMD?loc=50.117%2C-123.029%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Grizzly-Bear-copy-9Ch9ARiWIsTz6gP9BOZVvQBMD?loc=50.117%2C-123.029%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-01-02-wolverine": {
       "title": "4.1.2 Wolverine",
@@ -628,8 +633,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-wolverine",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Canada-Lynx-b2g9Bzmb0RB2xisc89A2WKsB?loc=50.117%2C-123.029%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Canada-Lynx-b2g9Bzmb0RB2xisc89A2WKsB?loc=50.117%2C-123.029%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-01-03-pacific-fisher": {
       "title": "4.1.3 Pacific Fisher",
@@ -637,8 +642,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-pacific-fisher",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Pacific-Fisher-1eAqPrcgRFCOkSnC882UUB?loc=50.117%2C-123.029%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Pacific-Fisher-1eAqPrcgRFCOkSnC882UUB?loc=50.117%2C-123.029%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-01-04-canada-lynx": {
       "title": "4.1.4 Canada Lynx",
@@ -646,8 +651,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-canada-lynx",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Canada-Lynx-b2g9Bzmb0RB2xisc89A2WKsB?loc=50.117%2C-123.029%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Canada-Lynx-b2g9Bzmb0RB2xisc89A2WKsB?loc=50.117%2C-123.029%2C7.73z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-01-05-black-bear": {
       "title": "4.1.5 Black Bear",
@@ -655,80 +660,71 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-black-bear",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Black-Bear-uNZQagx9AT4Os3Rn7Ew9AjZD?loc=50.057%2C-123.212%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Black-Bear-uNZQagx9AT4Os3Rn7Ew9AjZD?loc=50.057%2C-123.212%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
-    "04-01-06-mountain-goat": {
-      "title": "4.1.6 Mountain Goat",
-      "description": "Mountain goats (Ursus americanus) are iconic alpine specialists, adapted to life on steep cliffs and rugged terrain. With thick white coats, black horns, and muscular builds, they navigate vertical landscapes with ease. Their split hooves and rough pads provide grip on rock faces, allowing them to escape predators and access high-elevation forage. Found throughout BC’s mountainous regions, mountain goats are sensitive to disturbance and require undisturbed escape terrain. Their seasonal movements follow snowlines and forage availability, often descending in winter and ascending in summer.",
-      "source": "<a target=\"_blank\" href=\"https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2022.958596/full\">Wilson et al., 2022</a>",
-      "unit_of_measure": "occurrences",
-      "icon": "icon-mountain-goat",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
-    },
-    "04-01-07-black-tailed-deer": {
-      "title": "4.1.7 Black-Tailed Deer",
+    "04-01-06-black-tailed-deer": {
+      "title": "4.1.6 Black-Tailed Deer",
       "description": "Black-tailed deer (Odocoileus hemionus columbianus), also known as mule deer, are browsers adapted to BC’s coastal rainforests. With reddish-brown summer coats and darker winter pelage, they’re named for their distinctive black-tipped tails. These deer are crepuscular, feeding at dawn and dusk, and rely on dense understory for cover. Males grow forked antlers annually, shedding them in late winter. Black-tailed deer are a vital prey species for cougars and wolves and play a key role in shaping forest vegetation through browsing.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-black-tailed-deer",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Black-tailed-Deer-h2YsekcnQuqD9BZxmkNZpqD?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Black-tailed-Deer-h2YsekcnQuqD9BZxmkNZpqD?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
-    "04-01-08-coyote": {
-      "title": "4.1.8 Coyote",
+    "04-01-07-coyote": {
+      "title": "4.1.7 Coyote",
       "description": "Coyotes (Canis latrans) are versatile canids distinguished by their pointed ears, slender muzzle, and bushy, black-tipped tail often held downward while running. They have a grizzled, gray-brown coat that changes with the seasons. Highly adaptable, they thrive in diverse habitats ranging from forests and grasslands to dense urban environments. As a focal species, they function as mesopredators, helping regulate small-mammal populations and serving as generalist indicators of ecosystem connectivity and adaptability in fragmented landscapes.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-coyote",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Coyote-8eOuPKGdT9CqiNHUCuyrlxB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Coyote-8eOuPKGdT9CqiNHUCuyrlxB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
-    "04-01-09-beaver": {
-      "title": "4.1.9 Beaver",
+    "04-01-08-beaver": {
+      "title": "4.1.8 Beaver",
       "description": "The beaver (Castor canadensis) is North America’s largest rodent, easily recognized by its large orange incisors, webbed hind feet, and broad, flat, scaly tail. These semi-aquatic mammals prefer freshwater habitats, such as rivers, streams, and lakes, bordered by abundant trees. Beavers are the quintessential ecosystem engineers and a keystone species; their dam-building fundamentally alters hydrology, creating wetlands that filter water, mitigate droughts, and provide critical habitat for a vast array of other species.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-beaver",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Beaver-kIQsHfkCQoGMlZ2oHdTLXD?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Beaver-kIQsHfkCQoGMlZ2oHdTLXD?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
-    "04-01-10-mink": {
-      "title": "4.1.10 Mink",
+    "04-01-09-mink": {
+      "title": "4.1.9 Mink",
       "description": "The American mink (Neovison vison) is a sleek, semi-aquatic weasel characterized by a long, tubular body, dark chocolate-brown fur, and a distinctive white chin patch. They inhabit riparian zones, favouring banks of streams, lakes, and marshes with dense cover. As a focal species, the mink serves as an essential bioindicator of wetland health and water quality. As top-level aquatic predators, they are susceptible to pollutants such as mercury, reflecting the overall condition of their aquatic food webs.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-mink",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Mink-JWhVv9AafRJC9A6OTtoiaOpD?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Mink-JWhVv9AafRJC9A6OTtoiaOpD?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
-    "04-01-11-hoary-marmot": {
-      "title": "4.1.11 Hoary Marmot",
+    "04-01-10-hoary-marmot": {
+      "title": "4.1.10 Hoary Marmot",
       "description": "Hoary marmots (Marmota caligata) are large, social ground squirrels known for their loud whistles, which gave Whistler its name, and communal sunbathing. Their thick silver-grey fur and white muzzle give them a frosted appearance, hence the name “hoary.” Marmots live in colonies and dig extensive burrow systems in alpine meadows, where they forage during the short summer season. They hibernate for up to eight months, relying on fat reserves built during peak forage. In BC, hoary marmots are common in high-elevation habitats, including the Garibaldi and Tantalus ranges.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-hoary-marmot",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Hoary-Marmot-Active-Season-copy-fB4SXj7OT5y9APpLv3haE9BA?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Hoary-Marmot-Active-Season-copy-fB4SXj7OT5y9APpLv3haE9BA?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
-    "04-01-12-douglas’s-squirrel": {
-      "title": "4.1.12 Douglas’s Squirrel",
+    "04-01-11-douglas’s-squirrel": {
+      "title": "4.1.11 Douglas’s Squirrel",
       "description": "The Douglas’s squirrel (Tamiasciurus douglasii) is a lively, vocal tree squirrel with a rusty brown back, pale belly, bushy tail, and a distinct black side stripe in summer. Known for its rapid movements and sharp chatter, it plays a key role in forest ecosystems by dispersing seeds and spores. These squirrels are active year-round, caching cones and mushrooms around the forest. They prefer mature coniferous forests, especially those dominated by Douglas-fir, hemlock, and pine. Their nests, called dreys, are built in tree cavities or branch forks and lined with moss and bark.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
-      "icon": "icon-douglass-squirrel",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "icon": "icon-douglass-squirel",
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Douglass-Squirrel-NgesYfdhQwy6fWn4VGKQOD?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Douglass-Squirrel-NgesYfdhQwy6fWn4VGKQOD?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
-    "04-01-13-yellow-pine-chipmunk": {
-      "title": "4.1.13 Yellow-Pine Chipmunk",
+    "04-01-12-yellow-pine-chipmunk": {
+      "title": "4.1.12 Yellow-Pine Chipmunk",
       "description": "The Yellow-pine chipmunk (Neotamias amoenus) is a small, agile rodent with bold facial stripes and a reddish-brown back. Chipmunks are excellent climbers and often forage in shrubs and low trees. They’re active during the day, storing food in cheek pouches and caching seeds for winter. Yellow-pine chipmunks hibernate in colder months, emerging in spring to breed and forage. Their vocalizations include high-pitched chips and trills used for alarm and territory defence.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-yellow-pine-chipmunk",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Yellow-Pine-Chipmunk-qn0xeF4eQ6GP1wYlTsk1lC?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Yellow-Pine-Chipmunk-qn0xeF4eQ6GP1wYlTsk1lC?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-02-01-pacific-tree-frog": {
       "title": "4.2.1 Pacific Tree Frog",
@@ -736,8 +732,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-pacific-tree-frog",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Pacific-Tree-Frog-Breeding-Season-xtTxdcpUSpayQRh5xZfIaC?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Pacific-Tree-Frog-Breeding-Season-xtTxdcpUSpayQRh5xZfIaC?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-02-02-western-toad": {
       "title": "4.2.2 Western Toad",
@@ -745,8 +741,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-western-toad",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Western-Toad-Breeding-Season-BBUTM682SmeOH8ajV4rlTB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Western-Toad-Breeding-Season-BBUTM682SmeOH8ajV4rlTB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-02-03-red-legged-frog": {
       "title": "4.2.3 Red-Legged Frog",
@@ -754,17 +750,17 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-red-legged-frog",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-N-Red-Legged-Frog-Non-breeding-Season-MYZ9Ap3YEQfOiXH9BUPWKcZB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-N-Red-Legged-Frog-Non-breeding-Season-MYZ9Ap3YEQfOiXH9BUPWKcZB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-02-04-ensatina-salamander": {
       "title": "4.2.4 Ensatina Salamander",
-      "description": "The Ensatina salamander (Ensatina eschscholtzii)  is a small, lungless amphibian with smooth skin and a constricted tail base. Its coloration varies from reddish-brown to orange or gray, often with mottled patterns. Unlike many amphibians, Ensatinas do not have an aquatic larval stage, they hatch directly from eggs laid in moist terrestrial microhabitats. These salamanders breathe through their skin and require cool, damp environments to survive. They are nocturnal and secretive, sheltering under logs, leaf litter, and rocks during the day.",
+      "description": "The Ensatina salamander (Ensatina eschscholtzii) is a small, lungless amphibian with smooth skin and a constricted tail base. Its coloration varies from reddish-brown to orange or gray, often with mottled patterns. Unlike many amphibians, Ensatinas do not have an aquatic larval stage, they hatch directly from eggs laid in moist terrestrial microhabitats. These salamanders breathe through their skin and require cool, damp environments to survive. They are nocturnal and secretive, sheltering under logs, leaf litter, and rocks during the day.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-ensatina-salamander",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Ensatina-Salamander-hB9BY4NtaTU9BiaWdPWZ5FwB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Ensatina-Salamander-hB9BY4NtaTU9BiaWdPWZ5FwB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-02-05-northwestern-salamander": {
       "title": "4.2.5 Northwestern Salamander",
@@ -772,8 +768,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-northwest-salamander",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Northwest-Salamander-Breeding-Season-j3msob7iT9Cu3mBLd8hMMsB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Northwest-Salamander-Breeding-Season-j3msob7iT9Cu3mBLd8hMMsB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-02-06-long-toed-salamander": {
       "title": "4.2.6 Long-Toed Salamander",
@@ -781,8 +777,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-long-toed-salamander",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Long-Toed-Salamander-Breeding-Season-4BVbmpD9BR7elPJP5n4xxZA?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Long-Toed-Salamander-Breeding-Season-4BVbmpD9BR7elPJP5n4xxZA?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-02-07-northern-alligator-lizard": {
       "title": "4.2.7 Northern Alligator Lizard",
@@ -790,8 +786,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-aligator-lizard",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-N-Alligator-Lizard-3rnzid5PSOi5sSPP6wUTiB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-N-Alligator-Lizard-3rnzid5PSOi5sSPP6wUTiB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "04-02-08-garter-snake": {
       "title": "4.2.8 Garter Snake",
@@ -799,8 +795,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "occurrences",
       "icon": "icon-garter-snake",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "https://felt.com/embed/map/Habitat-Suitability-Common-Garter-Snake-Active-Season-copy-WJstrX2DTPO1z11EdtC9BIB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1",
+      "map2_url": "https://felt.com/embed/map/Habitat-Suitability-Common-Garter-Snake-Active-Season-copy-WJstrX2DTPO1z11EdtC9BIB?loc=50.107%2C-123.063%2C7.76z&legend=1&cooperativeGestures=0&link=1&geolocation=0&zoomControls=1&scaleBar=1"
     },
     "05-01-01-macrorefugia": {
       "title": "5.1.1 MacroRefugia",
@@ -808,8 +804,8 @@
       "source": "<a target=\"_blank\" href=\"https://zenodo.org/records/10603162\">Stolar et al., 2024</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-macro-refugia",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "05-02-01-microrefugia": {
       "title": "5.2.1 MicroRefugia",
@@ -817,8 +813,8 @@
       "source": "<a target=\"_blank\" href=\"https://zenodo.org/records/10603162\">Stolar et al., 2024</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-micro-refugia",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "06-01-01-priority-linkages": {
       "title": "6.1.1 Priority Linkages",
@@ -826,8 +822,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-priority-linkages",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "06-02-01-human-footprint": {
       "title": "6.2.1 Human Footprint",
@@ -835,8 +831,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-human-footprint",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "06-03-01-climate-corridors": {
       "title": "6.3.1 Climate Corridors",
@@ -844,8 +840,8 @@
       "source": "<a target=\"_blank\" href=\"https://zenodo.org/records/10603162\">Stolar et al., 2024</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-climate-corridors",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "06-04-01-connectivity-overlay": {
       "title": "6.4.1 Connectivity Overlay",
@@ -853,8 +849,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "categorical values",
       "icon": "icon-connectivity-overlay",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "06-04-02-effective-means": {
       "title": "6.4.2 Effective Means",
@@ -862,17 +858,17 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "categorical values",
       "icon": "icon-effective-means",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-01-01-large-range-cores": {
       "title": "7.1.1 Large-Range Cores",
-      "description": "Habitat cores for large-ranging focal species reflect access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range.  For carnivore species in this grouping, habitat cores are characterized by mean home-range sizes of 30 square kilometres, minimum stepping-stone patch sizes of 13,000 hectares, and dispersal distances of 60 kilometres.",
+      "description": "Habitat cores for large-ranging focal species reflect access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range. For carnivore species in this grouping, habitat cores are characterized by mean home-range sizes of 30 square kilometres, minimum stepping-stone patch sizes of 13,000 hectares, and dispersal distances of 60 kilometres.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "",
       "icon": "icon-large-range-species",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-01-02-grizzly-bear": {
       "title": "7.1.2 Grizzly Bear",
@@ -880,8 +876,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-grizzly-bear",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-01-03-wolverine": {
       "title": "7.1.3 Wolverine",
@@ -889,8 +885,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-wolverine",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-01-04-pacific-fisher": {
       "title": "7.1.4 Pacific Fisher",
@@ -898,8 +894,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-pacific-fisher",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-01-05-canada-lynx": {
       "title": "7.1.5 Canada Lynx",
@@ -907,17 +903,17 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-canada-lynx",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-02-01-medium-range-cores": {
       "title": "7.2.1 Medium-Range Cores",
-      "description": "Habitat cores for large-ranging focal species reflect access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range.  For carnivore species in this grouping, habitat cores are characterized by mean home-range sizes of 30 square kilometres, minimum stepping-stone patch sizes of 13,000 hectares, and dispersal distances of 60 kilometres.",
+      "description": "Habitat cores for large-ranging focal species reflect access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range. For carnivore species in this grouping, habitat cores are characterized by mean home-range sizes of 30 square kilometres, minimum stepping-stone patch sizes of 13,000 hectares, and dispersal distances of 60 kilometres.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "",
       "icon": "icon-moderate-range-species",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-02-02-black-bear": {
       "title": "7.2.2 Black Bear",
@@ -925,8 +921,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-black-bear",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-02-03-mountain-goat": {
       "title": "7.2.3 Mountain Goat",
@@ -934,8 +930,8 @@
       "source": "<a target=\"_blank\" href=\"https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2022.958596/full\">Wilson et al., 2022</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-mountain-goat",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-02-04-black-tailed-deer": {
       "title": "7.2.4 Black-Tailed Deer",
@@ -943,8 +939,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-black-tailed-deer",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-02-05-coyote": {
       "title": "7.2.5 Coyote",
@@ -952,17 +948,17 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-coyote",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-03-01-small-range-cores": {
       "title": "7.3.1 Small-Range Cores",
-      "description": "Habitat cores for small-ranging focal species reflect life-cycle needs such as access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range.  For species in this grouping, habitat cores are characterized by mean home-range sizes of less than 1 square kilometre, minimum stepping-stone patch sizes of 350 hectares, and dispersal distances of 6 kilometres.",
+      "description": "Habitat cores for small-ranging focal species reflect life-cycle needs such as access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range. For species in this grouping, habitat cores are characterized by mean home-range sizes of less than 1 square kilometre, minimum stepping-stone patch sizes of 350 hectares, and dispersal distances of 6 kilometres.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "",
       "icon": "icon-small-range-species",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-03-02-beaver": {
       "title": "7.3.2 Beaver",
@@ -970,17 +966,17 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-beaver",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
-    "07-03-03-mink": {
-      "title": "7.3.3 Mink",
+    "07-03-03-minkj": {
+      "title": "7.3.3 Minkj",
       "description": "The American mink (Neovison vison) is a sleek, semi-aquatic weasel characterized by a long, tubular body, dark chocolate-brown fur, and a distinctive white chin patch. They inhabit riparian zones, favouring banks of streams, lakes, and marshes with dense cover. As a focal species, the mink serves as an essential bioindicator of wetland health and water quality. As top-level aquatic predators, they are susceptible to pollutants such as mercury, reflecting the overall condition of their aquatic food webs.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-mink",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-03-04-hoary-marmot": {
       "title": "7.3.4 Hoary Marmot",
@@ -988,17 +984,17 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-hoary-marmot",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-03-05-douglas’s-squirrel": {
       "title": "7.3.5 Douglas’s Squirrel",
       "description": "The Douglas’s squirrel (Tamiasciurus douglasii) is a lively, vocal tree squirrel with a rusty brown back, pale belly, bushy tail, and a distinct black side stripe in summer. Known for its rapid movements and sharp chatter, it plays a key role in forest ecosystems by dispersing seeds and spores. These squirrels are active year-round, caching cones and mushrooms around the forest. They prefer mature coniferous forests, especially those dominated by Douglas-fir, hemlock, and pine. Their nests, called dreys, are built in tree cavities or branch forks and lined with moss and bark.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
-      "icon": "icon-douglass-squirrel",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "icon": "icon-douglass-squirel",
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-03-06-yellow-pine-chipmunk": {
       "title": "7.3.6 Yellow-Pine Chipmunk",
@@ -1006,8 +1002,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-yellow-pine-chipmunk",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-03-07-garter-snake": {
       "title": "7.3.7 Garter Snake",
@@ -1015,8 +1011,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-garter-snake",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-03-08-pacific-tree-frog": {
       "title": "7.3.8 Pacific Tree Frog",
@@ -1024,17 +1020,17 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-pacific-tree-frog",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-04-01-micro-range-cores": {
       "title": "7.4.1 Micro-Range Cores",
-      "description": "Habitat cores for small-ranging focal species reflect life-cycle needs such as access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range.  For species in this grouping, habitat cores are characterized by patch sizes of 2 -5 hectares and mean dispersal distances of up to 1 kilometre.",
+      "description": "Habitat cores for small-ranging focal species reflect life-cycle needs such as access to food, water, and shelter; reproduction; social structures (i.e., solitary or group behaviour); environmental stability; and the ability to move freely within a given home range. For species in this grouping, habitat cores are characterized by patch sizes of 2 -5 hectares and mean dispersal distances of up to 1 kilometre.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "",
       "icon": "icon-micro-range-species",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-04-02-western-toad": {
       "title": "7.4.2 Western Toad",
@@ -1042,8 +1038,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-western-toad",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-04-03-red-legged-frog": {
       "title": "7.4.3 Red-Legged Frog",
@@ -1051,17 +1047,17 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-red-legged-frog",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-04-04-ensatina-salamander": {
       "title": "7.4.4 Ensatina Salamander",
-      "description": "The Ensatina salamander (Ensatina eschscholtzii)  is a small, lungless amphibian with smooth skin and a constricted tail base. Its coloration varies from reddish-brown to orange or gray, often with mottled patterns. Unlike many amphibians, Ensatinas do not have an aquatic larval stage, they hatch directly from eggs laid in moist terrestrial microhabitats. These salamanders breathe through their skin and require cool, damp environments to survive. They are nocturnal and secretive, sheltering under logs, leaf litter, and rocks during the day.",
+      "description": "The Ensatina salamander (Ensatina eschscholtzii) is a small, lungless amphibian with smooth skin and a constricted tail base. Its coloration varies from reddish-brown to orange or gray, often with mottled patterns. Unlike many amphibians, Ensatinas do not have an aquatic larval stage, they hatch directly from eggs laid in moist terrestrial microhabitats. These salamanders breathe through their skin and require cool, damp environments to survive. They are nocturnal and secretive, sheltering under logs, leaf litter, and rocks during the day.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-ensatina-salamander",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-04-05-northwestern-salamander": {
       "title": "7.4.5 Northwestern Salamander",
@@ -1069,8 +1065,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-northwest-salamander",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-04-06-long-toed-salamander": {
       "title": "7.4.6 Long-Toed Salamander",
@@ -1078,8 +1074,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-long-toed-salamander",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "07-04-07-northern-alligator-lizard": {
       "title": "7.4.7 Northern Alligator Lizard",
@@ -1087,8 +1083,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-aligator-lizard",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-01-01-large-range-linkages": {
       "title": "8.1.1 Large-Range Linkages",
@@ -1096,8 +1092,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "",
       "icon": "icon-large-range-corridors",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-01-02-grizzly-bear": {
       "title": "8.1.2 Grizzly Bear",
@@ -1105,8 +1101,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-grizzly-bear",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-01-03-wolverine": {
       "title": "8.1.3 Wolverine",
@@ -1114,8 +1110,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-wolverine",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-01-04-pacific-fisher": {
       "title": "8.1.4 Pacific Fisher",
@@ -1123,8 +1119,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-pacific-fisher",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-01-05-canada-lynx": {
       "title": "8.1.5 Canada Lynx",
@@ -1132,8 +1128,8 @@
       "source": "<a target=\"_blank\" href=\"https://terradapt.org/\">TerrAdapt</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-canada-lynx",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-02-01-medium-range-linkages": {
       "title": "8.2.1 Medium-Range Linkages",
@@ -1141,8 +1137,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "",
       "icon": "icon-moderate-range-corridors",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-02-02-black-bear": {
       "title": "8.2.2 Black Bear",
@@ -1150,8 +1146,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-black-bear",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-02-03-mountain-goat": {
       "title": "8.2.3 Mountain Goat",
@@ -1159,8 +1155,8 @@
       "source": "<a target=\"_blank\" href=\"https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2022.958596/full\">Wilson et al., 2022</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-mountain-goat",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-02-04-black-tailed-deer": {
       "title": "8.2.4 Black-Tailed Deer",
@@ -1168,8 +1164,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-black-tailed-deer",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-02-05-coyote": {
       "title": "8.2.5 Coyote",
@@ -1177,8 +1173,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-coyote",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-01-small-range-linkages": {
       "title": "8.3.1 Small-Range Linkages",
@@ -1186,8 +1182,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "",
       "icon": "icon-small-range-corridors",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-02-beaver": {
       "title": "8.3.2 Beaver",
@@ -1195,8 +1191,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-beaver",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-03-mink": {
       "title": "8.3.3 Mink",
@@ -1204,8 +1200,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-mink",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-04-hoary-marmot": {
       "title": "8.3.4 Hoary Marmot",
@@ -1213,17 +1209,17 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-hoary-marmot",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-05-douglas’s-squirrel": {
       "title": "8.3.5 Douglas’s Squirrel",
       "description": "The Douglas’s squirrel (Tamiasciurus douglasii) is a lively, vocal tree squirrel with a rusty brown back, pale belly, bushy tail, and a distinct black side stripe in summer. Known for its rapid movements and sharp chatter, it plays a key role in forest ecosystems by dispersing seeds and spores. These squirrels are active year-round, caching cones and mushrooms around the forest. They prefer mature coniferous forests, especially those dominated by Douglas-fir, hemlock, and pine. Their nests, called dreys, are built in tree cavities or branch forks and lined with moss and bark.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
-      "icon": "icon-douglass-squirrel",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "icon": "icon-douglass-squirel",
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-06-yellow-pine-chipmunk": {
       "title": "8.3.6 Yellow-Pine Chipmunk",
@@ -1231,8 +1227,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-yellow-pine-chipmunk",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-07-garter-snake": {
       "title": "8.3.7 Garter Snake",
@@ -1240,8 +1236,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-garter-snake",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-08-pacific-tree-frog": {
       "title": "8.3.8 Pacific Tree Frog",
@@ -1249,8 +1245,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-pacific-tree-frog",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-09-western-toad": {
       "title": "8.3.9 Western Toad",
@@ -1258,8 +1254,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-western-toad",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-10-red-legged-frog": {
       "title": "8.3.10 Red-Legged Frog",
@@ -1267,17 +1263,17 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-red-legged-frog",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-11-ensatina-salamander": {
       "title": "8.3.11 Ensatina Salamander",
-      "description": "The Ensatina salamander (Ensatina eschscholtzii)  is a small, lungless amphibian with smooth skin and a constricted tail base. Its coloration varies from reddish-brown to orange or gray, often with mottled patterns. Unlike many amphibians, Ensatinas do not have an aquatic larval stage, they hatch directly from eggs laid in moist terrestrial microhabitats. These salamanders breathe through their skin and require cool, damp environments to survive. They are nocturnal and secretive, sheltering under logs, leaf litter, and rocks during the day.",
+      "description": "The Ensatina salamander (Ensatina eschscholtzii) is a small, lungless amphibian with smooth skin and a constricted tail base. Its coloration varies from reddish-brown to orange or gray, often with mottled patterns. Unlike many amphibians, Ensatinas do not have an aquatic larval stage, they hatch directly from eggs laid in moist terrestrial microhabitats. These salamanders breathe through their skin and require cool, damp environments to survive. They are nocturnal and secretive, sheltering under logs, leaf litter, and rocks during the day.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-ensatina-salamander",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-12-northwestern-salamander": {
       "title": "8.3.12 Northwestern Salamander",
@@ -1285,8 +1281,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-northwest-salamander",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-13-long-toed-salamander": {
       "title": "8.3.13 Long-Toed Salamander",
@@ -1294,8 +1290,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-long-toed-salamander",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "08-03-14-northern-alligator-lizard": {
       "title": "8.3.14 Northern Alligator Lizard",
@@ -1303,8 +1299,8 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-aligator-lizard",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "09-01-01-barriers": {
       "title": "9.1.1 Barriers",
@@ -1312,19 +1308,17 @@
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-barriers",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     },
     "09-02-01-pinchpoints": {
       "title": "9.2.1 Pinchpoints",
-      "description": "Narrow landscape features that restrict or hinder wildlife movement within an otherwise continuous ecological network. Natural pinch points include sudden topographic changes, such as steep ravines or channelized creeks. Human-made pinch points include fencing that physically guides larger mammals into narrow movement paths, and crossing structures, such as culverts and underpasses, that direct the movement of smaller mammals and herptiles across roads and other linear infrastructure features.  Mitigating the adverse effects of these pinch points requires harmonizing land-use policies across jurisdictional boundaries.",
+      "description": "Narrow landscape features that restrict or hinder wildlife movement within an otherwise continuous ecological network. Natural pinch points include sudden topographic changes, such as steep ravines or channelized creeks. Human-made pinch points include fencing that physically guides larger mammals into narrow movement paths, and crossing structures, such as culverts and underpasses, that direct the movement of smaller mammals and herptiles across roads and other linear infrastructure features. Mitigating the adverse effects of these pinch points requires harmonizing land-use policies across jurisdictional boundaries.",
       "source": "<a target=\"_blank\" href=\"https://github.com/S2S-WildlifeConnectivity\">Nature Squamish</a>",
       "unit_of_measure": "relative index value (0-100)",
       "icon": "icon-pinchpoints",
-      "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-      "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+      "map1_url": "",
+      "map2_url": ""
     }
-  },
-  "map1_url": "https://felt.com/embed/map/S2S-ConnectivityModel-v0p1-copy-mr4RufF9AQM9B5KvTx1IczZC?loc=50.1164%2C-123.0674%2C8.51z&legend=1&cooperativeGestures=1&link=1&geolocation=0&zoomControls=1&scaleBar=1",
-  "map2_url": "https://cascadia.staging.dashboard.terradapt.org/?zoom=10.57924853633501&lng=-123.16974611514613&lat=49.724616106137404&opacity=0.75&layerTheme=%22landcover%22&layerScope=%22monitor%22&layerVisualisation=%22pixel%22&minTimestamp=%221984-07-01T00%3A00%3A00%22&maxTimestamp=%222024-07-01T00%3A00%3A00%22&selectedLayer=%22landcover_class%22&layerView=%22status%22&layerStart=%221984-07-01T00%3A00%3A00%22&layerEnd=%222024-07-01T00%3A00%3A00%22&currentTimestamp=%222024-07-01T00%3A00%3A00%22&pitch=45.997005671225544&bearing=11.999218870754135"
+  }
 }
