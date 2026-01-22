@@ -1,0 +1,505 @@
+All Possible EcoScapes Map URLs
+==================================================
+
+1. https://niallxd.github.io/ecoscapes-maps/?theme=01-ecosystem-resileince&subtheme=01-01-ecosystem-integrity&indicator=01-01-01-ecosystem-integrity
+   Theme: 1.0 Ecosystem Resileince (01-ecosystem-resileince)
+   Subtheme: 1.1 Ecosystem Integrity (01-01-ecosystem-integrity)
+   Indicator: 1.1.1 Ecosystem Integrity (01-01-01-ecosystem-integrity)
+
+2. https://niallxd.github.io/ecoscapes-maps/?theme=01-ecosystem-resileince&subtheme=01-02-human-footprint&indicator=01-02-01-human-footprint
+   Theme: 1.0 Ecosystem Resileince (01-ecosystem-resileince)
+   Subtheme: 1.2 Human Footprint (01-02-human-footprint)
+   Indicator: 1.2.1 Human Footprint (01-02-01-human-footprint)
+
+3. https://niallxd.github.io/ecoscapes-maps/?theme=01-ecosystem-resileince&subtheme=01-03-climate-refugia&indicator=01-03-01-climate-refugia
+   Theme: 1.0 Ecosystem Resileince (01-ecosystem-resileince)
+   Subtheme: 1.3 Climate Refugia (01-03-climate-refugia)
+   Indicator: 1.3.1 Climate Refugia (01-03-01-climate-refugia)
+
+4. https://niallxd.github.io/ecoscapes-maps/?theme=01-ecosystem-resileince&subtheme=01-04-biodiversity-conservation&indicator=01-04-01-habitat-protection
+   Theme: 1.0 Ecosystem Resileince (01-ecosystem-resileince)
+   Subtheme: 1.4 Biodiversity Conservation (01-04-biodiversity-conservation)
+   Indicator: 1.4.1 Habitat Protection (01-04-01-habitat-protection)
+
+5. https://niallxd.github.io/ecoscapes-maps/?theme=01-ecosystem-resileince&subtheme=01-04-biodiversity-conservation&indicator=01-04-02-habitat-restoration
+   Theme: 1.0 Ecosystem Resileince (01-ecosystem-resileince)
+   Subtheme: 1.4 Biodiversity Conservation (01-04-biodiversity-conservation)
+   Indicator: 1.4.2 Habitat Restoration (01-04-02-habitat-restoration)
+
+6. https://niallxd.github.io/ecoscapes-maps/?theme=02-ecosystem-health&subtheme=02-01-habitat-values&indicator=02-01-01-land-cover
+   Theme: 2.0 Ecosystem Health (02-ecosystem-health)
+   Subtheme: 2.1 Habitat Values (02-01-habitat-values)
+   Indicator: 2.1.1 Land Cover (02-01-01-land-cover)
+
+7. https://niallxd.github.io/ecoscapes-maps/?theme=02-ecosystem-health&subtheme=02-01-habitat-values&indicator=02-01-02-ecosystem-services
+   Theme: 2.0 Ecosystem Health (02-ecosystem-health)
+   Subtheme: 2.1 Habitat Values (02-01-habitat-values)
+   Indicator: 2.1.2 Ecosystem Services (02-01-02-ecosystem-services)
+
+8. https://niallxd.github.io/ecoscapes-maps/?theme=02-ecosystem-health&subtheme=02-01-habitat-values&indicator=02-01-03-habitat-suitability
+   Theme: 2.0 Ecosystem Health (02-ecosystem-health)
+   Subtheme: 2.1 Habitat Values (02-01-habitat-values)
+   Indicator: 2.1.3 Habitat Suitability (02-01-03-habitat-suitability)
+
+9. https://niallxd.github.io/ecoscapes-maps/?theme=02-ecosystem-health&subtheme=02-01-habitat-values&indicator=02-01-04-structural-connectivity
+   Theme: 2.0 Ecosystem Health (02-ecosystem-health)
+   Subtheme: 2.1 Habitat Values (02-01-habitat-values)
+   Indicator: 2.1.4 Structural Connectivity (02-01-04-structural-connectivity)
+
+10. https://niallxd.github.io/ecoscapes-maps/?theme=02-ecosystem-health&subtheme=02-02-habitat-threats&indicator=02-02-01-urbanization
+   Theme: 2.0 Ecosystem Health (02-ecosystem-health)
+   Subtheme: 2.2 Habitat Threats (02-02-habitat-threats)
+   Indicator: 2.2.1 Urbanization (02-02-01-urbanization)
+
+11. https://niallxd.github.io/ecoscapes-maps/?theme=02-ecosystem-health&subtheme=02-02-habitat-threats&indicator=02-02-02-forest-harvest
+   Theme: 2.0 Ecosystem Health (02-ecosystem-health)
+   Subtheme: 2.2 Habitat Threats (02-02-habitat-threats)
+   Indicator: 2.2.2 Forest Harvest (02-02-02-forest-harvest)
+
+12. https://niallxd.github.io/ecoscapes-maps/?theme=02-ecosystem-health&subtheme=02-02-habitat-threats&indicator=02-02-03-invasive-species
+   Theme: 2.0 Ecosystem Health (02-ecosystem-health)
+   Subtheme: 2.2 Habitat Threats (02-02-habitat-threats)
+   Indicator: 2.2.3 Invasive Species (02-02-03-invasive-species)
+
+13. https://niallxd.github.io/ecoscapes-maps/?theme=02-ecosystem-health&subtheme=02-02-habitat-threats&indicator=02-02-04-wildfire
+   Theme: 2.0 Ecosystem Health (02-ecosystem-health)
+   Subtheme: 2.2 Habitat Threats (02-02-habitat-threats)
+   Indicator: 2.2.4 Wildfire (02-02-04-wildfire)
+
+14. https://niallxd.github.io/ecoscapes-maps/?theme=02-ecosystem-health&subtheme=02-03-habitat-losses&indicator=02-03-01-forest-cover
+   Theme: 2.0 Ecosystem Health (02-ecosystem-health)
+   Subtheme: 2.3 Habitat Losses (02-03-habitat-losses)
+   Indicator: 2.3.1 Forest Cover (02-03-01-forest-cover)
+
+15. https://niallxd.github.io/ecoscapes-maps/?theme=02-ecosystem-health&subtheme=02-03-habitat-losses&indicator=02-03-02-wetlands-and-riparian-areas
+   Theme: 2.0 Ecosystem Health (02-ecosystem-health)
+   Subtheme: 2.3 Habitat Losses (02-03-habitat-losses)
+   Indicator: 2.3.2 Wetlands & Riparian Areas (02-03-02-wetlands-and-riparian-areas)
+
+16. https://niallxd.github.io/ecoscapes-maps/?theme=02-ecosystem-health&subtheme=02-03-habitat-losses&indicator=02-03-03-mesic-vegetation
+   Theme: 2.0 Ecosystem Health (02-ecosystem-health)
+   Subtheme: 2.3 Habitat Losses (02-03-habitat-losses)
+   Indicator: 2.3.3 Mesic Vegetation (02-03-03-mesic-vegetation)
+
+17. https://niallxd.github.io/ecoscapes-maps/?theme=02-ecosystem-health&subtheme=02-03-habitat-losses&indicator=02-03-04-xeric-vegetation
+   Theme: 2.0 Ecosystem Health (02-ecosystem-health)
+   Subtheme: 2.3 Habitat Losses (02-03-habitat-losses)
+   Indicator: 2.3.4 Xeric Vegetation (02-03-04-xeric-vegetation)
+
+18. https://niallxd.github.io/ecoscapes-maps/?theme=03-biogeoclimatic-zones&subtheme=03-01-regional-zones&indicator=03-01-01-regional-zones
+   Theme: 3.0 Biogeoclimatic Zones (03-biogeoclimatic-zones)
+   Subtheme: 3.1 Regional Zones (03-01-regional-zones)
+   Indicator: 3.1.1 Regional Zones (03-01-01-regional-zones)
+
+19. https://niallxd.github.io/ecoscapes-maps/?theme=03-biogeoclimatic-zones&subtheme=03-02-site-level-vegetation&indicator=03-02-01-site-level-vegetation
+   Theme: 3.0 Biogeoclimatic Zones (03-biogeoclimatic-zones)
+   Subtheme: 3.2 Site Level Vegetation (03-02-site-level-vegetation)
+   Indicator: 3.2.1 Site Level Vegetation (03-02-01-site-level-vegetation)
+
+20. https://niallxd.github.io/ecoscapes-maps/?theme=03-biogeoclimatic-zones&subtheme=03-03-vascular-plants&indicator=03-03-01-vascular-plants
+   Theme: 3.0 Biogeoclimatic Zones (03-biogeoclimatic-zones)
+   Subtheme: 3.3 Vascular Plants (03-03-vascular-plants)
+   Indicator: 3.3.1 Vascular Plants (03-03-01-vascular-plants)
+
+21. https://niallxd.github.io/ecoscapes-maps/?theme=03-biogeoclimatic-zones&subtheme=03-04-mammals&indicator=03-04-01-mammals
+   Theme: 3.0 Biogeoclimatic Zones (03-biogeoclimatic-zones)
+   Subtheme: 3.4 Mammals (03-04-mammals)
+   Indicator: 3.4.1 Mammals (03-04-01-mammals)
+
+22. https://niallxd.github.io/ecoscapes-maps/?theme=03-biogeoclimatic-zones&subtheme=03-05-herptiles&indicator=03-05-01-herptiles
+   Theme: 3.0 Biogeoclimatic Zones (03-biogeoclimatic-zones)
+   Subtheme: 3.5 Herptiles (03-05-herptiles)
+   Indicator: 3.5.1 Herptiles (03-05-01-herptiles)
+
+23. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-01-mammals&indicator=04-01-01-grizzly-bear
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.1 Mammals (04-01-mammals)
+   Indicator: 4.1.1 Grizzly Bear (04-01-01-grizzly-bear)
+
+24. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-01-mammals&indicator=04-01-02-wolverine
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.1 Mammals (04-01-mammals)
+   Indicator: 4.1.2 Wolverine (04-01-02-wolverine)
+
+25. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-01-mammals&indicator=04-01-03-pacific-fisher
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.1 Mammals (04-01-mammals)
+   Indicator: 4.1.3 Pacific Fisher (04-01-03-pacific-fisher)
+
+26. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-01-mammals&indicator=04-01-04-canada-lynx
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.1 Mammals (04-01-mammals)
+   Indicator: 4.1.4 Canada Lynx (04-01-04-canada-lynx)
+
+27. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-01-mammals&indicator=04-01-05-black-bear
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.1 Mammals (04-01-mammals)
+   Indicator: 4.1.5 Black Bear (04-01-05-black-bear)
+
+28. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-01-mammals&indicator=04-01-06-black-tailed-deer
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.1 Mammals (04-01-mammals)
+   Indicator: 4.1.6 Black-Tailed Deer (04-01-06-black-tailed-deer)
+
+29. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-01-mammals&indicator=04-01-07-coyote
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.1 Mammals (04-01-mammals)
+   Indicator: 4.1.7 Coyote (04-01-07-coyote)
+
+30. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-01-mammals&indicator=04-01-08-beaver
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.1 Mammals (04-01-mammals)
+   Indicator: 4.1.8 Beaver (04-01-08-beaver)
+
+31. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-01-mammals&indicator=04-01-09-mink
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.1 Mammals (04-01-mammals)
+   Indicator: 4.1.9 Mink (04-01-09-mink)
+
+32. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-01-mammals&indicator=04-01-10-hoary-marmot
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.1 Mammals (04-01-mammals)
+   Indicator: 4.1.10 Hoary Marmot (04-01-10-hoary-marmot)
+
+33. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-01-mammals&indicator=04-01-11-douglas’s-squirrel
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.1 Mammals (04-01-mammals)
+   Indicator: 4.1.11 Douglas’s Squirrel (04-01-11-douglas’s-squirrel)
+
+34. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-01-mammals&indicator=04-01-12-yellow-pine-chipmunk
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.1 Mammals (04-01-mammals)
+   Indicator: 4.1.12 Yellow-Pine Chipmunk (04-01-12-yellow-pine-chipmunk)
+
+35. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-02-herptiles&indicator=04-02-01-pacific-tree-frog
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.2 Herptiles (04-02-herptiles)
+   Indicator: 4.2.1 Pacific Tree Frog (04-02-01-pacific-tree-frog)
+
+36. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-02-herptiles&indicator=04-02-02-western-toad
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.2 Herptiles (04-02-herptiles)
+   Indicator: 4.2.2 Western Toad (04-02-02-western-toad)
+
+37. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-02-herptiles&indicator=04-02-03-red-legged-frog
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.2 Herptiles (04-02-herptiles)
+   Indicator: 4.2.3 Red-Legged Frog (04-02-03-red-legged-frog)
+
+38. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-02-herptiles&indicator=04-02-04-ensatina-salamander
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.2 Herptiles (04-02-herptiles)
+   Indicator: 4.2.4 Ensatina Salamander (04-02-04-ensatina-salamander)
+
+39. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-02-herptiles&indicator=04-02-05-northwestern-salamander
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.2 Herptiles (04-02-herptiles)
+   Indicator: 4.2.5 Northwestern Salamander (04-02-05-northwestern-salamander)
+
+40. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-02-herptiles&indicator=04-02-06-long-toed-salamander
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.2 Herptiles (04-02-herptiles)
+   Indicator: 4.2.6 Long-Toed Salamander (04-02-06-long-toed-salamander)
+
+41. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-02-herptiles&indicator=04-02-07-northern-alligator-lizard
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.2 Herptiles (04-02-herptiles)
+   Indicator: 4.2.7 Northern Alligator Lizard (04-02-07-northern-alligator-lizard)
+
+42. https://niallxd.github.io/ecoscapes-maps/?theme=04-focal-species&subtheme=04-02-herptiles&indicator=04-02-08-garter-snake
+   Theme: 4.0 Focal Species (04-focal-species)
+   Subtheme: 4.2 Herptiles (04-02-herptiles)
+   Indicator: 4.2.8 Garter Snake (04-02-08-garter-snake)
+
+43. https://niallxd.github.io/ecoscapes-maps/?theme=05-climate-change-refugia&subtheme=05-01-macrorefugia&indicator=05-01-01-macrorefugia
+   Theme: 5.0 Climate Change Refugia (05-climate-change-refugia)
+   Subtheme: 5.1 MacroRefugia (05-01-macrorefugia)
+   Indicator: 5.1.1 MacroRefugia (05-01-01-macrorefugia)
+
+44. https://niallxd.github.io/ecoscapes-maps/?theme=05-climate-change-refugia&subtheme=05-02-microrefugia&indicator=05-02-01-microrefugia
+   Theme: 5.0 Climate Change Refugia (05-climate-change-refugia)
+   Subtheme: 5.2 MicroRefugia (05-02-microrefugia)
+   Indicator: 5.2.1 MicroRefugia (05-02-01-microrefugia)
+
+45. https://niallxd.github.io/ecoscapes-maps/?theme=06-connectivity-network&subtheme=06-01-priority-linkages&indicator=06-01-01-priority-linkages
+   Theme: 6.0 Connectivity Network (06-connectivity-network)
+   Subtheme: 6.1 Priority Linkages (06-01-priority-linkages)
+   Indicator: 6.1.1 Priority Linkages (06-01-01-priority-linkages)
+
+46. https://niallxd.github.io/ecoscapes-maps/?theme=06-connectivity-network&subtheme=06-02-human-footprint&indicator=06-02-01-human-footprint
+   Theme: 6.0 Connectivity Network (06-connectivity-network)
+   Subtheme: 6.2 Human Footprint (06-02-human-footprint)
+   Indicator: 6.2.1 Human Footprint (06-02-01-human-footprint)
+
+47. https://niallxd.github.io/ecoscapes-maps/?theme=06-connectivity-network&subtheme=06-03-climate-corridors&indicator=06-03-01-climate-corridors
+   Theme: 6.0 Connectivity Network (06-connectivity-network)
+   Subtheme: 6.3 Climate Corridors (06-03-climate-corridors)
+   Indicator: 6.3.1 Climate Corridors (06-03-01-climate-corridors)
+
+48. https://niallxd.github.io/ecoscapes-maps/?theme=06-connectivity-network&subtheme=06-04-connectivity-conservation&indicator=06-04-01-connectivity-overlay
+   Theme: 6.0 Connectivity Network (06-connectivity-network)
+   Subtheme: 6.4 Connectivity Conservation (06-04-connectivity-conservation)
+   Indicator: 6.4.1 Connectivity Overlay (06-04-01-connectivity-overlay)
+
+49. https://niallxd.github.io/ecoscapes-maps/?theme=06-connectivity-network&subtheme=06-04-connectivity-conservation&indicator=06-04-02-effective-means
+   Theme: 6.0 Connectivity Network (06-connectivity-network)
+   Subtheme: 6.4 Connectivity Conservation (06-04-connectivity-conservation)
+   Indicator: 6.4.2 Effective Means (06-04-02-effective-means)
+
+50. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-01-large-range-cores&indicator=07-01-01-large-range-cores
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.1 Large-Range Cores (07-01-large-range-cores)
+   Indicator: 7.1.1 Large-Range Cores (07-01-01-large-range-cores)
+
+51. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-01-large-range-cores&indicator=07-01-02-grizzly-bear
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.1 Large-Range Cores (07-01-large-range-cores)
+   Indicator: 7.1.2 Grizzly Bear (07-01-02-grizzly-bear)
+
+52. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-01-large-range-cores&indicator=07-01-03-wolverine
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.1 Large-Range Cores (07-01-large-range-cores)
+   Indicator: 7.1.3 Wolverine (07-01-03-wolverine)
+
+53. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-01-large-range-cores&indicator=07-01-04-pacific-fisher
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.1 Large-Range Cores (07-01-large-range-cores)
+   Indicator: 7.1.4 Pacific Fisher (07-01-04-pacific-fisher)
+
+54. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-01-large-range-cores&indicator=07-01-05-canada-lynx
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.1 Large-Range Cores (07-01-large-range-cores)
+   Indicator: 7.1.5 Canada Lynx (07-01-05-canada-lynx)
+
+55. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-02-medium-range-cores&indicator=07-02-01-medium-range-cores
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.2 Medium-Range Cores (07-02-medium-range-cores)
+   Indicator: 7.2.1 Medium-Range Cores (07-02-01-medium-range-cores)
+
+56. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-02-medium-range-cores&indicator=07-02-02-black-bear
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.2 Medium-Range Cores (07-02-medium-range-cores)
+   Indicator: 7.2.2 Black Bear (07-02-02-black-bear)
+
+57. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-02-medium-range-cores&indicator=07-02-03-mountain-goat
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.2 Medium-Range Cores (07-02-medium-range-cores)
+   Indicator: 7.2.3 Mountain Goat (07-02-03-mountain-goat)
+
+58. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-02-medium-range-cores&indicator=07-02-04-black-tailed-deer
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.2 Medium-Range Cores (07-02-medium-range-cores)
+   Indicator: 7.2.4 Black-Tailed Deer (07-02-04-black-tailed-deer)
+
+59. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-02-medium-range-cores&indicator=07-02-05-coyote
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.2 Medium-Range Cores (07-02-medium-range-cores)
+   Indicator: 7.2.5 Coyote (07-02-05-coyote)
+
+60. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-03-small-range-cores&indicator=07-03-01-small-range-cores
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.3 Small-Range Cores (07-03-small-range-cores)
+   Indicator: 7.3.1 Small-Range Cores (07-03-01-small-range-cores)
+
+61. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-03-small-range-cores&indicator=07-03-02-beaver
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.3 Small-Range Cores (07-03-small-range-cores)
+   Indicator: 7.3.2 Beaver (07-03-02-beaver)
+
+62. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-03-small-range-cores&indicator=07-03-03-minkj
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.3 Small-Range Cores (07-03-small-range-cores)
+   Indicator: 7.3.3 Minkj (07-03-03-minkj)
+
+63. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-03-small-range-cores&indicator=07-03-04-hoary-marmot
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.3 Small-Range Cores (07-03-small-range-cores)
+   Indicator: 7.3.4 Hoary Marmot (07-03-04-hoary-marmot)
+
+64. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-03-small-range-cores&indicator=07-03-05-douglas’s-squirrel
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.3 Small-Range Cores (07-03-small-range-cores)
+   Indicator: 7.3.5 Douglas’s Squirrel (07-03-05-douglas’s-squirrel)
+
+65. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-03-small-range-cores&indicator=07-03-06-yellow-pine-chipmunk
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.3 Small-Range Cores (07-03-small-range-cores)
+   Indicator: 7.3.6 Yellow-Pine Chipmunk (07-03-06-yellow-pine-chipmunk)
+
+66. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-03-small-range-cores&indicator=07-03-07-garter-snake
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.3 Small-Range Cores (07-03-small-range-cores)
+   Indicator: 7.3.7 Garter Snake (07-03-07-garter-snake)
+
+67. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-03-small-range-cores&indicator=07-03-08-pacific-tree-frog
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.3 Small-Range Cores (07-03-small-range-cores)
+   Indicator: 7.3.8 Pacific Tree Frog (07-03-08-pacific-tree-frog)
+
+68. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-04-micro-range-cores&indicator=07-04-01-micro-range-cores
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.4 Micro-Range Cores (07-04-micro-range-cores)
+   Indicator: 7.4.1 Micro-Range Cores (07-04-01-micro-range-cores)
+
+69. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-04-micro-range-cores&indicator=07-04-02-western-toad
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.4 Micro-Range Cores (07-04-micro-range-cores)
+   Indicator: 7.4.2 Western Toad (07-04-02-western-toad)
+
+70. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-04-micro-range-cores&indicator=07-04-03-red-legged-frog
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.4 Micro-Range Cores (07-04-micro-range-cores)
+   Indicator: 7.4.3 Red-Legged Frog (07-04-03-red-legged-frog)
+
+71. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-04-micro-range-cores&indicator=07-04-04-ensatina-salamander
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.4 Micro-Range Cores (07-04-micro-range-cores)
+   Indicator: 7.4.4 Ensatina Salamander (07-04-04-ensatina-salamander)
+
+72. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-04-micro-range-cores&indicator=07-04-05-northwestern-salamander
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.4 Micro-Range Cores (07-04-micro-range-cores)
+   Indicator: 7.4.5 Northwestern Salamander (07-04-05-northwestern-salamander)
+
+73. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-04-micro-range-cores&indicator=07-04-06-long-toed-salamander
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.4 Micro-Range Cores (07-04-micro-range-cores)
+   Indicator: 7.4.6 Long-Toed Salamander (07-04-06-long-toed-salamander)
+
+74. https://niallxd.github.io/ecoscapes-maps/?theme=07-habitat-cores&subtheme=07-04-micro-range-cores&indicator=07-04-07-northern-alligator-lizard
+   Theme: 7.0 Habitat Cores (07-habitat-cores)
+   Subtheme: 7.4 Micro-Range Cores (07-04-micro-range-cores)
+   Indicator: 7.4.7 Northern Alligator Lizard (07-04-07-northern-alligator-lizard)
+
+75. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-01-large-range-linkages&indicator=08-01-01-large-range-linkages
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.1 Large-Range Linkages (08-01-large-range-linkages)
+   Indicator: 8.1.1 Large-Range Linkages (08-01-01-large-range-linkages)
+
+76. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-01-large-range-linkages&indicator=08-01-02-grizzly-bear
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.1 Large-Range Linkages (08-01-large-range-linkages)
+   Indicator: 8.1.2 Grizzly Bear (08-01-02-grizzly-bear)
+
+77. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-01-large-range-linkages&indicator=08-01-03-wolverine
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.1 Large-Range Linkages (08-01-large-range-linkages)
+   Indicator: 8.1.3 Wolverine (08-01-03-wolverine)
+
+78. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-01-large-range-linkages&indicator=08-01-04-pacific-fisher
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.1 Large-Range Linkages (08-01-large-range-linkages)
+   Indicator: 8.1.4 Pacific Fisher (08-01-04-pacific-fisher)
+
+79. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-01-large-range-linkages&indicator=08-01-05-canada-lynx
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.1 Large-Range Linkages (08-01-large-range-linkages)
+   Indicator: 8.1.5 Canada Lynx (08-01-05-canada-lynx)
+
+80. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-02-medium-range-linkages&indicator=08-02-01-medium-range-linkages
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.2 Medium-Range Linkages (08-02-medium-range-linkages)
+   Indicator: 8.2.1 Medium-Range Linkages (08-02-01-medium-range-linkages)
+
+81. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-02-medium-range-linkages&indicator=08-02-02-black-bear
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.2 Medium-Range Linkages (08-02-medium-range-linkages)
+   Indicator: 8.2.2 Black Bear (08-02-02-black-bear)
+
+82. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-02-medium-range-linkages&indicator=08-02-03-mountain-goat
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.2 Medium-Range Linkages (08-02-medium-range-linkages)
+   Indicator: 8.2.3 Mountain Goat (08-02-03-mountain-goat)
+
+83. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-02-medium-range-linkages&indicator=08-02-04-black-tailed-deer
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.2 Medium-Range Linkages (08-02-medium-range-linkages)
+   Indicator: 8.2.4 Black-Tailed Deer (08-02-04-black-tailed-deer)
+
+84. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-02-medium-range-linkages&indicator=08-02-05-coyote
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.2 Medium-Range Linkages (08-02-medium-range-linkages)
+   Indicator: 8.2.5 Coyote (08-02-05-coyote)
+
+85. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-01-small-range-linkages
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.1 Small-Range Linkages (08-03-01-small-range-linkages)
+
+86. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-02-beaver
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.2 Beaver (08-03-02-beaver)
+
+87. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-03-mink
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.3 Mink (08-03-03-mink)
+
+88. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-04-hoary-marmot
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.4 Hoary Marmot (08-03-04-hoary-marmot)
+
+89. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-05-douglas’s-squirrel
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.5 Douglas’s Squirrel (08-03-05-douglas’s-squirrel)
+
+90. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-06-yellow-pine-chipmunk
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.6 Yellow-Pine Chipmunk (08-03-06-yellow-pine-chipmunk)
+
+91. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-07-garter-snake
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.7 Garter Snake (08-03-07-garter-snake)
+
+92. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-08-pacific-tree-frog
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.8 Pacific Tree Frog (08-03-08-pacific-tree-frog)
+
+93. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-09-western-toad
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.9 Western Toad (08-03-09-western-toad)
+
+94. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-10-red-legged-frog
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.10 Red-Legged Frog (08-03-10-red-legged-frog)
+
+95. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-11-ensatina-salamander
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.11 Ensatina Salamander (08-03-11-ensatina-salamander)
+
+96. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-12-northwestern-salamander
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.12 Northwestern Salamander (08-03-12-northwestern-salamander)
+
+97. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-13-long-toed-salamander
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.13 Long-Toed Salamander (08-03-13-long-toed-salamander)
+
+98. https://niallxd.github.io/ecoscapes-maps/?theme=08-wildlife-corridors&subtheme=08-03-small-range-linkages&indicator=08-03-14-northern-alligator-lizard
+   Theme: 8.0 Wildlife Corridors (08-wildlife-corridors)
+   Subtheme: 8.3 Small-Range Linkages (08-03-small-range-linkages)
+   Indicator: 8.3.14 Northern Alligator Lizard (08-03-14-northern-alligator-lizard)
+
+99. https://niallxd.github.io/ecoscapes-maps/?theme=09-resistance-to-movement&subtheme=09-01-barriers&indicator=09-01-01-barriers
+   Theme: 9.0 Resistance to Movement (09-resistance-to-movement)
+   Subtheme: 9.1 Barriers (09-01-barriers)
+   Indicator: 9.1.1 Barriers (09-01-01-barriers)
+
+100. https://niallxd.github.io/ecoscapes-maps/?theme=09-resistance-to-movement&subtheme=09-02-pinchpoints&indicator=09-02-01-pinchpoints
+   Theme: 9.0 Resistance to Movement (09-resistance-to-movement)
+   Subtheme: 9.2 Pinchpoints (09-02-pinchpoints)
+   Indicator: 9.2.1 Pinchpoints (09-02-01-pinchpoints)
+
+
+Total URLs generated: 100
